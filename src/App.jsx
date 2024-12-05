@@ -8,11 +8,13 @@ import Trending from "./components/Trending.jsx";
 import Recommended from "./components/Recommended.jsx";
 import Bookmarks from "./components/Bookmarks.jsx";
 import NotFound from "./components/NotFound.jsx";
+import Search from "./components/Search.jsx";
 
 export default function App() {
   return (
     <>
       <NavBar />
+      <Search/>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/auth" element={<Auth />} />
@@ -21,6 +23,7 @@ export default function App() {
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
     </>
   );
 }
