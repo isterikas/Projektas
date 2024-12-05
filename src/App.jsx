@@ -8,8 +8,28 @@ import Trending from "./components/Trending.jsx";
 import Recommended from "./components/Recommended.jsx";
 import Bookmarks from "./components/Bookmarks.jsx";
 import NotFound from "./components/NotFound.jsx";
+import { getAllData } from "./components/helpers/get";
+
 
 export default function App() {
+
+  const [users, setUsers] = useState([]);
+  const [update, setUpdate] = useState(0);
+  const [error, setError] = useState("");
+
+  const fetchData = async () => {
+    try {
+      const data = await getAllData();
+      setUsers(data);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  useEffect(() => {
+       fetchData();
+  }, [update]);  
+
   return (
     <>
       <NavBar />
