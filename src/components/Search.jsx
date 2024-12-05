@@ -1,9 +1,31 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { url } from "./helpers/jsonURL.js";
 
 function Search() {
   const [search, setSearch] = useState("");
+  const [error, setError] = useState("");
+  const [content, setContent] = useState([]);
   console.log(search);
-  
+  console.log(error);
+
+  const getAllData = async () => {
+    const response = await axios.get(url("contents"));
+    return response.data;
+  }; //tailored getAllData function; will have to be deleted once fetch will be executed on the main page.
+
+  const fetchData = async () => {
+    try {
+      const data = await getAllData();
+      setContent(data);
+    } catch (error) {
+      setError(error.message);
+    }
+  }; //will have to be deleted and array of content should be passed through props, params or context.
+
+  useEffect(() => {
+    fetchData();
+  }, [search]);
 
   return (
     <>
@@ -16,6 +38,20 @@ function Search() {
         />
       </form>
 
+      <div className="bg-teal-600 p-3 grid grid-cols-3">
+        {content
+          .filter((content) =>
+            content.title.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((item) => {
+            return (
+              <>
+                <p>{item.title}</p>
+        {/* movie or TV series card instead of paragraph above */}
+              </>
+            );
+          })}
+      </div>
     </>
   );
 }
