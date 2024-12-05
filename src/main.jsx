@@ -16,11 +16,11 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<Homepage/>} />
-          <Route path="/authorization" element={<Auth/>} />
-          <Route path="/movies" element={<Movies/>} />
-          <Route path="/tvshows" element={<TVShows/>} />
-          <Route path="/bookmarks" element={<Bookmarks/>} />
+          <Route index element={<Homepage />} />
+          <Route path="/authorization" element={<Auth />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/tvshows" element={<TVShows />} />
+          <Route path="/bookmarks" element={<Bookmarks />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

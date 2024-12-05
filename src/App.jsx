@@ -3,21 +3,20 @@ import NavBar from "./components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { getAllData } from "./components/helpers/get.js";
 
-
 export default function App() {
   const [authType, setAuthType] = useState("login");
   const [loggedIn, setLoggedIn] = useState("");
 
   const [contents, setContents] = useState("");
-  const [users, setUsers] = useState("")
-  const [userBookmarks, setUserBookmarks] = useState("")
+  const [users, setUsers] = useState("");
+  const [userBookmarks, setUserBookmarks] = useState("");
   const [error, setError] = useState("");
 
   const getAllcontents = async () => {
     try {
       const contents = await getAllData("contents");
       setContents(contents);
-      setError("")
+      setError("");
     } catch (error) {
       setError(error.message);
     }
@@ -27,7 +26,7 @@ export default function App() {
     try {
       const users = await getAllData("users");
       setUsers(users);
-      setError("")
+      setError("");
     } catch (error) {
       setError(error.message);
     }
@@ -37,22 +36,39 @@ export default function App() {
     try {
       const userBookmarks = await getAllData("userBookmarks");
       setUserBookmarks(userBookmarks);
-      setError("")
+      setError("");
     } catch (error) {
       setError(error.message);
     }
   };
 
-  useEffect(() =>{
-    getAllcontents()
-    getAllUsers()
-    getAllUserBookmarks()
-  }, [])
+  useEffect(() => {
+    getAllcontents();
+    getAllUsers();
+    getAllUserBookmarks();
+  }, []);
 
   return (
     <>
       <NavBar setAuthType={setAuthType} loggedIn={loggedIn} />
-      { <p>{error}</p> || <Outlet context={{ authType, setAuthType, loggedIn, setLoggedIn, contents, setContents, users, setUsers, userBookmarks, setUserBookmarks }} /> }
+      {!error ? (
+        <Outlet
+          context={{
+            authType,
+            setAuthType,
+            loggedIn,
+            setLoggedIn,
+            contents,
+            setContents,
+            users,
+            setUsers,
+            userBookmarks,
+            setUserBookmarks,
+          }}
+        />
+      ) : (
+        <p>{error}</p>
+      )}
     </>
   );
 }
