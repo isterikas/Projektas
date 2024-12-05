@@ -4,8 +4,6 @@ import Auth from "./components/Auth.jsx";
 import Homepage from "./components/Homepage.jsx";
 import Movies from "./components/Movies.jsx";
 import TVShows from "./components/TVShows.jsx";
-import Trending from "./components/Trending.jsx";
-import Recommended from "./components/Recommended.jsx";
 import Bookmarks from "./components/Bookmarks.jsx";
 import NotFound from "./components/NotFound.jsx";
 
