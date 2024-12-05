@@ -1,52 +1,80 @@
 import { Link } from "react-router";
 
 function NavBar(props) {
-  const {setAuthType, loggedin } = props;
+  const { setAuthType, loggedin } = props;
 
   const sigin = () => {
-    setAuthType("sigin");
+    setAuthType("signup");
   };
 
   const login = () => {
     setAuthType("login");
   };
   return (
-    <div className="p-[2rem] border bg-neutral-700 text-white rounded">
+    <div className="p-[2rem] border bg-[#161D2F] text-white rounded">
       <nav className="grid grid-cols-3">
-        <div>ICON</div>
-        <div className="flex justify-between">
-          <Link to="">
-            <span>Homepage</span>
-          </Link>
-          <Link to="/movies">
-            <span>Movies</span>
-          </Link>
-          <Link to="/tvshows">
-            <span>TVShows</span>
-          </Link>
-          <Link to="/bookmarks">
-            <span>Bookmarks</span>
-          </Link>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="20"
+          viewBox="0 0 25 20"
+          fill="none"
+        >
+          <path
+            d="M20 0L22.5 5H18.75L16.25 0H13.75L16.25 5H12.5L10 0H7.5L10 5H6.25L3.75 0H2.5C1.11875 0 0.0125 1.11875 0.0125 2.5L0 17.5C0 18.8813 1.11875 20 2.5 20H22.5C23.8813 20 25 18.8813 25 17.5V0H20Z"
+            fill="#FC4747"
+          />
+        </svg>
+        <div className="flex justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="134"
+            height="16"
+            viewBox="0 0 134 16"
+            fill="none"
+          >
+            <Link to="/">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M0.8 0H6.4C6.88 0 7.2 0.32 7.2 0.8V6.4C7.2 6.88 6.88 7.2 6.4 7.2H0.8C0.32 7.2 0 6.88 0 6.4V0.8C0 0.32 0.32 0 0.8 0ZM0.8 8.8H6.4C6.88 8.8 7.2 9.12 7.2 9.6V15.2C7.2 15.68 6.88 16 6.4 16H0.8C0.32 16 0 15.68 0 15.2V9.6C0 9.12 0.32 8.8 0.8 8.8ZM15.2 0H9.6C9.12 0 8.8 0.32 8.8 0.8V6.4C8.8 6.88 9.12 7.2 9.6 7.2H15.2C15.68 7.2 16 6.88 16 6.4V0.8C16 0.32 15.68 0 15.2 0ZM9.6 8.8H15.2C15.68 8.8 16 9.12 16 9.6V15.2C16 15.68 15.68 16 15.2 16H9.6C9.12 16 8.8 15.68 8.8 15.2V9.6C8.8 9.12 9.12 8.8 9.6 8.8Z"
+                fill="white"
+              />
+            </Link>
+            <Link to="/movies">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M87.264 3.58487H96V16H80V3.58487H83.936L81.776 0.962173L83.024 0.0232784L85.6 3.12706L88.176 0L89.424 0.962173L87.264 3.58487ZM81.6 14.4481H89.6V5.13676H81.6V14.4481ZM93.6 11.3443H92V9.79243H93.6V11.3443ZM92 8.24054H93.6V6.68865H92V8.24054Z"
+                fill="#5A698F"
+              />
+            </Link>
+            <Link to="/tvshows">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M53.5644 0H42.4356C41.0904 0 40 1.09044 40 2.43556V13.5644C40 14.9096 41.0904 16 42.4356 16H53.5644C54.2104 16 54.8299 15.7434 55.2866 15.2866C55.7434 14.8299 56 14.2104 56 13.5644V2.43556C56 1.78961 55.7434 1.17011 55.2866 0.713358C54.8299 0.256602 54.2104 0 53.5644 0ZM43.2 7.2H41.6V5.6H43.2V7.2ZM43.2 8.8H41.6V10.4H43.2V8.8ZM54.4 7.2H52.8V5.6H54.4V7.2ZM54.4 8.8H52.8V10.4H54.4V8.8ZM54.4 2.192V3.2H52.8V1.6H53.808C53.965 1.6 54.1156 1.66237 54.2266 1.77339C54.3376 1.88441 54.4 2.03499 54.4 2.192ZM43.2 1.6H42.192C42.035 1.6 41.8844 1.66237 41.7734 1.77339C41.6624 1.88441 41.6 2.03499 41.6 2.192V3.2H43.2V1.6ZM41.6 13.808V12.8H43.2V14.4H42.192C42.035 14.4 41.8844 14.3376 41.7734 14.2266C41.6624 14.1156 41.6 13.965 41.6 13.808ZM52.8 14.4H53.808C54.135 14.4 54.4 14.135 54.4 13.808V12.8H52.8V14.4Z"
+                fill="#5A698F"
+              />
+            </Link>
+            <Link to="/bookmarks">
+              <path
+                d="M132.309 0C132.471 0 132.627 0.031725 132.775 0.0951751C133.007 0.186825 133.192 0.331351 133.33 0.528751C133.467 0.726151 133.536 0.944701 133.536 1.1844V14.8156C133.536 15.0553 133.467 15.2738 133.33 15.4712C133.192 15.6686 133.007 15.8132 132.775 15.9048C132.641 15.9612 132.486 15.9894 132.309 15.9894C131.971 15.9894 131.678 15.8766 131.432 15.651L126.768 11.1672L122.104 15.651C121.851 15.8837 121.558 16 121.227 16C121.065 16 120.909 15.9683 120.761 15.9048C120.529 15.8132 120.344 15.6686 120.206 15.4712C120.069 15.2738 120 15.0553 120 14.8156V1.1844C120 0.944701 120.069 0.726151 120.206 0.528751C120.344 0.331351 120.529 0.186825 120.761 0.0951751C120.909 0.031725 121.065 0 121.227 0H132.309Z"
+                fill="#5A698F"
+              />
+            </Link>
+          </svg>
         </div>
         <div className="text-right">
           {!loggedin ? (
             <div>
               <Link to="/authorization">
-                <button
-                  className="me-2"
-                  type="button"
-                  value="login"
-                  onClick={login}
-                >
+                <button className="me-2" type="button" onClick={login}>
                   Log In
                 </button>
               </Link>
               <Link to="/authorization">
-                <button
-                  className="ms-2"
-                  type="button"
-                  onClick={sigin}
-                >
+                <button className="ms-2" type="button" onClick={sigin}>
                   Sign up
                 </button>
               </Link>
