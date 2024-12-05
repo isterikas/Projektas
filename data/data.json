@@ -1,4 +1,4 @@
-[
+{"contents": [
   {
     "title": "Beyond Earth",
     "thumbnail": {
@@ -454,4 +454,7 @@
     "isBookmarked": true,
     "isTrending": false
   }
-]
+],
+"users":[],
+"userBookmarks":[]
+}
