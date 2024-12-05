@@ -13,7 +13,7 @@ function NavBar(props) {
   return (
     <div className="p-[2rem] border bg-neutral-700 text-white rounded">
       <nav className="grid grid-cols-3">
-        <div></div>
+        <div>ICON</div>
         <div className="flex justify-between">
           <Link to="">
             <span>Homepage</span>
