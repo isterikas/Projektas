@@ -1,14 +1,12 @@
 import Recommended from "./Recommended";
 import Trending from "./Trending";
-import Movies from "./Movies";
-import MovieCard from "./Card";
 
 function Homepage() {
+    const {contents} = useOutletContext();
     return (
         <>
-            <Trending />
+            <Trending contents={contents}/>
             <Recommended />
-            <MovieCard/>
         </>
     );
 }
