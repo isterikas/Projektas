@@ -1,7 +1,7 @@
 {
   "contents": [
     {
-      "contentsId": 1,
+      "contentsId": "1",
       "title": "Beyond Earth",
       "thumbnail": {
         "trending": {
@@ -22,7 +22,7 @@
       "id": "26fb"
     },
     {
-      "contentsId": 2,
+      "contentsId": "2",
       "title": "Bottom Gear",
       "thumbnail": {
         "trending": {
@@ -43,7 +43,7 @@
       "id": "582b"
     },
     {
-      "contentsId": 3,
+      "contentsId": "3",
       "title": "Undiscovered Cities",
       "thumbnail": {
         "trending": {
@@ -64,7 +64,7 @@
       "id": "be1b"
     },
     {
-      "contentsId": 4,
+      "contentsId": "4",
       "title": "1998",
       "thumbnail": {
         "trending": {
@@ -85,7 +85,7 @@
       "id": "32cf"
     },
     {
-      "contentsId": 5,
+      "contentsId": "5",
       "title": "Dark Side of the Moon",
       "thumbnail": {
         "trending": {
@@ -106,7 +106,7 @@
       "id": "f76b"
     },
     {
-      "contentsId": 6,
+      "contentsId": "6",
       "title": "The Great Lands",
       "thumbnail": {
         "regular": {
@@ -123,7 +123,7 @@
       "id": "92d1"
     },
     {
-      "contentsId": 7,
+      "contentsId": "7",
       "title": "The Diary",
       "thumbnail": {
         "regular": {
@@ -140,7 +140,7 @@
       "id": "c2c7"
     },
     {
-      "contentsId": 8,
+      "contentsId": "8",
       "title": "Earth’s Untouched",
       "thumbnail": {
         "regular": {
@@ -157,7 +157,7 @@
       "id": "f012"
     },
     {
-      "contentsId": 9,
+      "contentsId": "9",
       "title": "No Land Beyond",
       "thumbnail": {
         "regular": {
@@ -174,7 +174,7 @@
       "id": "d66d"
     },
     {
-      "contentsId": 10,
+      "contentsId": "10",
       "title": "During the Hunt",
       "thumbnail": {
         "regular": {
@@ -191,7 +191,7 @@
       "id": "12df"
     },
     {
-      "contentsId": 11,
+      "contentsId": "11",
       "title": "Autosport the Series",
       "thumbnail": {
         "regular": {
@@ -208,7 +208,7 @@
       "id": "6dcb"
     },
     {
-      "contentsId": 12,
+      "contentsId": "12",
       "title": "Same Answer II",
       "thumbnail": {
         "regular": {
@@ -225,7 +225,7 @@
       "id": "66c4"
     },
     {
-      "contentsId": 13,
+      "contentsId": "13",
       "title": "Below Echo",
       "thumbnail": {
         "regular": {
@@ -242,7 +242,7 @@
       "id": "0b54"
     },
     {
-      "contentsId": 14,
+      "contentsId": "14",
       "title": "The Rockies",
       "thumbnail": {
         "regular": {
@@ -259,7 +259,7 @@
       "id": "fcde"
     },
     {
-      "contentsId": 15,
+      "contentsId": "15",
       "title": "Relentless",
       "thumbnail": {
         "regular": {
@@ -276,7 +276,7 @@
       "id": "f1b8"
     },
     {
-      "contentsId": 16,
+      "contentsId": "16",
       "title": "Community of Ours",
       "thumbnail": {
         "regular": {
@@ -293,7 +293,7 @@
       "id": "248e"
     },
     {
-      "contentsId": 17,
+      "contentsId": "17",
       "title": "Van Life",
       "thumbnail": {
         "regular": {
@@ -310,7 +310,7 @@
       "id": "fc9f"
     },
     {
-      "contentsId": 18,
+      "contentsId": "18",
       "title": "The Heiress",
       "thumbnail": {
         "regular": {
@@ -327,7 +327,7 @@
       "id": "784e"
     },
     {
-      "contentsId": 19,
+      "contentsId": "19",
       "title": "Off the Track",
       "thumbnail": {
         "regular": {
@@ -344,7 +344,7 @@
       "id": "f212"
     },
     {
-      "contentsId": 20,
+      "contentsId": "20",
       "title": "Whispering Hill",
       "thumbnail": {
         "regular": {
@@ -361,7 +361,7 @@
       "id": "c845"
     },
     {
-      "contentsId": 21,
+      "contentsId": "21",
       "title": "112",
       "thumbnail": {
         "regular": {
@@ -378,7 +378,7 @@
       "id": "d350"
     },
     {
-      "contentsId": 22,
+      "contentsId": "22",
       "title": "Lone Heart",
       "thumbnail": {
         "regular": {
@@ -395,7 +395,7 @@
       "id": "dc56"
     },
     {
-      "contentsId": 23,
+      "contentsId": "23",
       "title": "Production Line",
       "thumbnail": {
         "regular": {
@@ -412,7 +412,7 @@
       "id": "e590"
     },
     {
-      "contentsId": 24,
+      "contentsId": "24",
       "title": "Dogs",
       "thumbnail": {
         "regular": {
@@ -429,7 +429,7 @@
       "id": "28f1"
     },
     {
-      "contentsId": 25,
+      "contentsId": "25",
       "title": "Asia in 24 Days",
       "thumbnail": {
         "regular": {
@@ -446,7 +446,7 @@
       "id": "2af1"
     },
     {
-      "contentsId": 26,
+      "contentsId": "26",
       "title": "The Tasty Tour",
       "thumbnail": {
         "regular": {
@@ -463,7 +463,7 @@
       "id": "631b"
     },
     {
-      "contentsId": 27,
+      "contentsId": "27",
       "title": "Darker",
       "thumbnail": {
         "regular": {
@@ -480,7 +480,7 @@
       "id": "4ebe"
     },
     {
-      "contentsId": 28,
+      "contentsId": "28",
       "title": "Unresolved Cases",
       "thumbnail": {
         "regular": {
@@ -497,7 +497,7 @@
       "id": "595a"
     },
     {
-      "contentsId": 29,
+      "contentsId": "29",
       "title": "Mission: Saturn",
       "thumbnail": {
         "regular": {
@@ -544,59 +544,23 @@
   "userBookmarks": [
     {
       "userId": "1",
-      "contentsId": [
-        5,
-        12,
-        28,
-        7,
-        19
-      ],
-      "id": "590f"
+      "contentsId": [5, 12, 28, 7, 19]
     },
     {
       "userId": "2",
-      "contentsId": [
-        3,
-        8,
-        22,
-        14
-      ],
-      "id": "44b3"
+      "contentsId": [3, 8, 22, 14]
     },
     {
       "userId": "3",
-      "contentsId": [
-        4,
-        25,
-        18,
-        9,
-        13,
-        27
-      ],
-      "id": "f9b0"
+      "contentsId": [4, 25, 18, 9, 13, 27]
     },
     {
       "userId": "4",
-      "contentsId": [
-        1,
-        11,
-        29,
-        6,
-        15,
-        23
-      ],
-      "id": "204e"
+      "contentsId": [1, 11, 29, 6, 15, 23]
     },
     {
       "userId": "5",
-      "contentsId": [
-        2,
-        10,
-        20,
-        16,
-        24
-      ],
-      "id": "1f52"
+      "contentsId": [2, 10, 20, 16, 24]
     }
   ]
 }
