@@ -2,7 +2,7 @@ import Card from "./Card";
 import { useOutletContext } from "react-router";
 
 
-function Movies({itemsList}) {
+function Movies() {
     
     const {contents} = useOutletContext();
     const movies = contents.filter((show )=> show.category === "Movie")
