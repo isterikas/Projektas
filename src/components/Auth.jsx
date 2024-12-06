@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useOutletContext, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { getAllData } from "./helpers/get.js";
-import {postData} from "./helpers/post.js"
+import { postData } from "./helpers/post.js"
 
 function Auth() {
-    const { register, setValue, handleSubmit, formState: { errors } } = useForm();
+    const { register, watch, setValue, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const { authType, setAuthType, setLoggedIn } = useOutletContext();
     const [error, setError] = useState("");
@@ -31,6 +31,7 @@ function Auth() {
             if (authType === "login") {
                 const checkedUser = users.find((user) => user.userName === data.email);
                 if (checkedUser.userPassword === data.password) setLoggedIn(checkedUser.userId);
+                setAuthType("");
                 navigate("/");
             }
             else {
@@ -39,7 +40,11 @@ function Auth() {
                         throw new Error("This email address is already registered");
                     }
                 });
-                await postData({userName:data.email, userPassword:data.password},"users")
+                await postData({ userName: data.email, userPassword: data.password }, "users");
+                const fetchedUsers = await getAllData("users");
+                setUsers(fetchedUsers);
+                setAuthType("login");
+                alert(`New account ${data.email} was created successfully.`);
             }
         }
         catch (error) {
@@ -80,14 +85,23 @@ function Auth() {
                         }
                     })} />
                     {errors.password?.message}
-                    {authType === "signup" ? <input type="text" {...register("repeatPassword")} /> : ""}
+                    {authType === "signup" ? <input type="text" {...register("repeatPassword", {
+                        required: {
+                            value: authType === "signup",
+                            message: "Please repeat your password",
+                        },
+                        validate: (value) => {
+                            return value === watch("password") || "Passwords must match"
+                        }
+                    })} /> : ""}
+                    {errors.repeatPassword?.message}
                     <input
                         type="submit"
                         className="bg-gradient-to-tr from-violet-500 via-purple-500 to-violet-700 text-white rounded-lg py-1 px-5 hover:from-violet-400 hover:via-purple-400 hover:to-violet-600 transition duration-1000 font-bold shadow-gray-600 shadow-md hover:shadow-lg"
                     />
                 </form>
                 {authType == "signup" ? <div>Already have an account? <button onClick={() => setAuthType("login")}>Log in</button></div> :
-                    <div>Don't have an account? <button onClick={() => setAuthType("signup")}>Sign up</button></div>}
+                    <div>Don't have an account yet? <button onClick={() => setAuthType("signup")}>Sign up</button></div>}
                 {error}
             </div>
         </>

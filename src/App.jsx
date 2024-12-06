@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <>
-      {loggedIn?<NavBar setAuthType={setAuthType} loggedIn={loggedIn} />:""}
+      {loggedIn?<NavBar setAuthType={setAuthType} authType={authType} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />:""}
       {!error ? (
         <Outlet
           context={{
