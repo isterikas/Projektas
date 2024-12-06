@@ -6,17 +6,16 @@
 //     return (
 //         <>
 //             <h1>Movies</h1>
-
+import { useOutletContext } from "react-router";
 function Movies() {
+  const {contents} = useOutletContext();
     return (
-        <>
-    
+    <>
       <h1>Movies</h1>
-
-       {itemsList.map((item) => (
+      {contents.map((item) => (
         <MovieCard item={item} key={item.contentsId} />
       ))}
-      
+
     </>
   );
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useOutletContext, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { getAllData } from "./helpers/get.js";
+import {postData} from "./helpers/post.js"
 
 function Auth() {
     const { register, setValue, handleSubmit, formState: { errors } } = useForm();
@@ -38,7 +39,7 @@ function Auth() {
                         throw new Error("This email address is already registered");
                     }
                 });
-
+                await postData({userName:data.email, userPassword:data.password},"users")
             }
         }
         catch (error) {
