@@ -1,8 +1,8 @@
 import axios from "axios";
 import {url} from "./jsonURL.js";
 
-export const getAllData = async () => {
-  const response = await axios.get(url());
+export const getAllData = async (resourse) => {
+  const response = await axios.get(url(resourse));
   return response.data;
 };
 
