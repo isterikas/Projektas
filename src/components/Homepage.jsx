@@ -1,15 +1,14 @@
 import Recommended from "./Recommended";
 import Trending from "./Trending";
 import Movies from "./Movies";
+import MovieCard from "./MovieCard";
 
 function Homepage() {
     return (
         <>
-
-        <h1>Movies</h1>
             <Trending />
             <Recommended />
-            <Movies/>
+            <MovieCard/>
         </>
     );
 }
