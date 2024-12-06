@@ -1,9 +1,18 @@
+import { useOutletContext } from "react-router";
+import Search from "./Search";
+
 function TVShows() {
-    return (
-        <div>
-            <h1 className="text-[5rem] text-center pt-[3rem]">TV Shows</h1>
-        </div>
-    )
+  const { contents } = useOutletContext();
+
+  const allTvshows = contents.filter(
+    (content) => content.category === "TV Series"
+  );
+  
+
+  return (
+  <Search array = {allTvshows}/>
+
+)
 }
 
 export default TVShows;
