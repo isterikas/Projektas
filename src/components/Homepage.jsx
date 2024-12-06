@@ -1,11 +1,15 @@
 import Recommended from "./Recommended";
 import Trending from "./Trending";
+import Movies from "./Movies";
 
 function Homepage() {
     return (
-        <><h1 className="text-[5rem] pt-[3rem] text-center">Home</h1>
+        <>
+
+        <h1>Movies</h1>
             <Trending />
             <Recommended />
+            <Movies/>
         </>
     );
 }

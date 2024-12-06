@@ -8,6 +8,7 @@ export default function App() {
   const [loggedIn, setLoggedIn] = useState("");
 
   const [contents, setContents] = useState("");
+  const [update, setUpdate] = useState(0);
   const [users, setUsers] = useState("");
   const [userBookmarks, setUserBookmarks] = useState("");
   const [error, setError] = useState("");
@@ -46,7 +47,7 @@ export default function App() {
     getAllcontents();
     getAllUsers();
     getAllUserBookmarks();
-  }, []);
+  }, [update]);
 
   return (
     <>
@@ -64,6 +65,8 @@ export default function App() {
             setUsers,
             userBookmarks,
             setUserBookmarks,
+            update, 
+            setUpdate,
           }}
         />
       ) : (
