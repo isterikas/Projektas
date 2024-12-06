@@ -7,12 +7,18 @@
 //         <>
 //             <h1>Movies</h1>
 
-//         {contents.map((card) => (
-//             <MovieCard card={card} key={card.id} />
-//           ))}
+function Movies() {
+    return (
+        <>
+    
+      <h1>Movies</h1>
 
-//         </>  
-//     ) ;
-// }
+       {itemsList.map((item) => (
+        <MovieCard item={item} key={item.contentsId} />
+      ))}
+      
+    </>
+  );
+}
 
-// export default Movies;
+export default Movies;
