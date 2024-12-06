@@ -1,20 +1,13 @@
-import Card from "./Card";
 import { useOutletContext } from "react-router";
-
+import Search from "./Search";
 
 function Movies() {
-    
-    const {contents} = useOutletContext();
-    const movies = contents.filter((show )=> show.category === "Movie")
+  const { contents } = useOutletContext();
+  const movies = contents.filter((show) => show.category === "Movie");
 
-    return (
+  return (
     <>
-      <h1>Movies</h1>
-
-       {movies.map((item) => (
-        <Card item={item} key={item.contentsId} />
-      ))}
-
+      <Search array={movies} />
     </>
   );
 }
