@@ -1,17 +1,9 @@
-import MovieCard from "./MovieCard";
-
-
 function Movies() {
     return (
-        <>
-            <h1>Movies</h1>
-
-        {moviesList.map((card) => (
-            <Movie card={card} key={card.id} />
-          ))}
-
-        </>  
-    ) ;
+        <div>
+            <h1 className="text-[5rem] text-center pt-[3rem]">Movies</h1>
+        </div>
+    )
 }
 
 export default Movies;
