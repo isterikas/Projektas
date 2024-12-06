@@ -7,13 +7,12 @@ function TVShows() {
   const allTvshows = contents.filter(
     (content) => content.category === "TV Series"
   );
-  
 
   return (
-
-  <Search array = {allTvshows}/>
-
-)
+    <>
+      <Search array={allTvshows} />
+    </>
+  );
 }
 
 export default TVShows;
