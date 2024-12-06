@@ -5,7 +5,7 @@ import { getAllData } from "./components/helpers/get.js";
 
 
 export default function App() {
-  const [authType, setAuthType] = useState("login");
+  const [authType, setAuthType] = useState("");
   const [loggedIn, setLoggedIn] = useState("");
 
   const [contents, setContents] = useState([]);
@@ -52,7 +52,7 @@ export default function App() {
 
   return (
     <>
-      <NavBar setAuthType={setAuthType} loggedIn={loggedIn} />
+      <NavBar authType={authType} setAuthType={setAuthType} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       { !error ? <Outlet context={{ authType, setAuthType, loggedIn, setLoggedIn, contents, setContents, users, setUsers, userBookmarks, setUserBookmarks, update, setUpdate }} /> : <p>{error}</p> }
 
     </>

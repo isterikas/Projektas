@@ -1,9 +1,18 @@
+import { useOutletContext } from "react-router";
+import Search from "./Search";
+
 function Bookmarks() {
-    return (
-        <div>
-            <h1 className="text-[5rem] text-center pt-[3rem]">Bookmarks</h1>
-        </div>
-    )
+  const { contents } = useOutletContext();
+
+  const allBookmarks = contents.filter(
+    (content) => content.isBookmarked === true
+  );
+
+  return (
+    <>
+      <Search array={allBookmarks} />
+    </>
+  );
 }
 
 export default Bookmarks;
