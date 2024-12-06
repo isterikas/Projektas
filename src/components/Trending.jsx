@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import axios from "axios";
-import { url } from "./helpers/jsonURL.js";
-import { useOutletContext } from "react-router";
 function Trending({contents}) {
 
   return (
