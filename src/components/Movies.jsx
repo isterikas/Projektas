@@ -1,18 +1,19 @@
 import MovieCard from "./MovieCard";
 
 
-function Movies() {
-    return (
+function Movies({itemsList }) {
 
-        <>
-            <h1>Movies</h1>
 
-        {moviesList.map((card) => (
-            <Movie card={card} key={card.id} />
-          ))}
+  return (
+    <>
+      <h1>Movies</h1>
 
-        </>  
-    ) ;
+       {itemsList.map((item) => (
+        <MovieCard item={item} key={item.contentsId} />
+      ))}
+      
+    </>
+  );
 }
 
 export default Movies;

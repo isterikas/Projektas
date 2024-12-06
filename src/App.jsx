@@ -13,34 +13,21 @@ import { getAllData } from "./components/helpers/get";
 
 export default function App() {
 
-  const [users, setUsers] = useState([]);
-  const [update, setUpdate] = useState(0);
-  const [error, setError] = useState("");
 
-  const fetchData = async () => {
-    try {
-      const data = await getAllData();
-      setUsers(data);
-    } catch (error) {
-      setError(error.message);
-    }
-  };
-
-  useEffect(() => {
-       fetchData();
-  }, [update]);  
 
   return (
     <>
-      <NavBar />
+        <NavBar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/auth" element={<Auth />} />
-        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies" element={<Movies itemsList={contents}/>} />
         <Route path="/tvshows" element={<TVShows />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+
+      {/* <MoviesItems/> */}
+      </>
   );
 }

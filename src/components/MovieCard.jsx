@@ -1,8 +1,9 @@
 // import { NavLink } from "react-router";
 
 
-function MovieCard() {
-    const { movie, year, category, rating, title, id } = card;
+function MovieCard({ item }) {
+  // const { item, setItems } = props;
+    const { movie, year, category, rating, title, contentsId } = item;
 
     return (
         <div className="shadow m-3">
