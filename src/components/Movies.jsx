@@ -3,7 +3,6 @@ import MovieCard from "./MovieCard";
 
 function Movies() {
     return (
-
         <>
             <h1>Movies</h1>
 
