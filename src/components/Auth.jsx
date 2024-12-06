@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { getAllData } from "./helpers/get.js";
 import { postData } from "./helpers/post.js";
 import { sha1 } from 'js-sha1';
+import { sha256 } from "js-sha256";
 
 function Auth() {
     const { register, watch, setValue, handleSubmit, formState: { errors } } = useForm();
@@ -31,7 +32,7 @@ function Auth() {
         try {
             if (authType === "login") {
                 const checkedUser = users.find((user) => user.userName === data.email);
-                if (checkedUser.userPassword === sha1(data.password)) setLoggedIn(checkedUser.id);
+                if (checkedUser.userPassword === sha256(sha1(data.password))) setLoggedIn(checkedUser.id);
                 setAuthType("");
                 navigate("/");
             }
@@ -41,7 +42,7 @@ function Auth() {
                         throw new Error("This email address is already registered");
                     }
                 });
-                await postData({ userName: data.email, userPassword: sha1(data.password) }, "users");
+                await postData({ userName: data.email, userPassword: sha256(sha1(data.password)) }, "users");
                 const fetchedUsers = await getAllData("users");
                 setUsers(fetchedUsers);
                 setAuthType("login");
