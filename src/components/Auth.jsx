@@ -32,9 +32,14 @@ function Auth() {
         try {
             if (authType === "login") {
                 const checkedUser = users.find((user) => user.userName === data.email);
-                if (checkedUser.userPassword === sha256(sha1(data.password))) setLoggedIn(checkedUser.id);
-                setAuthType("");
-                navigate("/");
+                if (checkedUser.userPassword === sha256(sha1(data.password))) {
+                    setLoggedIn(checkedUser.id);
+                    setAuthType("");
+                    navigate("/");
+                }
+                else {
+                    throw new Error("Incorrect email or password");
+                }
             }
             else {
                 users.forEach((user) => {
@@ -71,19 +76,20 @@ function Auth() {
                     })} />
                     {errors.email?.message}
                     <input type="password" {...register("password", {
-                        required: "This field is required", pattern: {
+                        required: "This field is required",
+                        pattern:{
                             value: /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-]+$/,
-                            message: "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-",
+                            message: authType === "signup" ? "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-":"",
                         },
                         minLength: {
                             value: 8,
-                            message: "Password must be at least 8 characters long",
+                            message: authType === "signup" ? "Password must be at least 8 characters long":"",
                         },
                         validate: (value) => {
                             return (/.*[A-Z].*/.test(value) &&
                                 /.*[0-9].*/.test(value) &&
                                 /.*[$&+,:;=?@#|'<>.^*()%!-].*/.test(value)
-                            ) || "Password must contain at least 1 capital letter, 1 number and 1 special character";
+                            ) || (authType === "signup" ? "Password must contain at least 1 capital letter, 1 number and 1 special character":"");
                         }
                     })} />
                     {errors.password?.message}
