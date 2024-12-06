@@ -1,39 +1,34 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import axios from "axios";
 import { url } from "./helpers/jsonURL.js";
-function Trending() {
-  const [error, setError] = useState("");
-  const [carousel, setCarousel] = useState([]);
-  console.log(error);
-
-  const getAllData = async () => {
-    const response = await axios.get(url("contents"));
-    return response.data;
-  }; //tailored getAllData function; will have to be deleted once fetch will be executed on the main page.
-
-  const fetchData = async () => {
-    try {
-      const data = await getAllData();
-      setCarousel(data);
-    } catch (error) {
-      setError(error.message);
-    }
-  }; //will have to be deleted and array of content should be passed through props, params or context.
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+import { useOutletContext } from "react-router";
+function Trending({contents}) {
 
   return (
     <>
-      <Swiper className="mySwiper">
-        {carousel.map((id) => {
-          if (id.isTrending) {
+    <h2>Trending</h2>
+      <Swiper 
+      slidesPerView={1.5}
+      spaceBetween={10}
+      speed={100}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+     }}
+     modules={[Autoplay]}
+      pagination={{
+        clickable: true,
+      }}
+      className="mySwiper">
+        {contents.map((slide) => {
+          if (slide.isTrending) {
             return (
-              <SwiperSlide key={id.title}>
-                <img src={id.thumbnail.trending.small} alt="cf" />
+              <SwiperSlide key={slide.contentsId}>
+                <img src={"src" + slide.thumbnail.trending.small.slice(1)} 
+                alt="Film in trend" className="rounded-lg"/>
               </SwiperSlide>
             );
           }
