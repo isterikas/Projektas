@@ -1,14 +1,13 @@
 import Recommended from "./Recommended";
 import Trending from "./Trending";
-import Movies from "./Movies";
-import MovieCard from "./Card";
+import { useOutletContext } from "react-router";
 
 function Homepage() {
+    const {contents} = useOutletContext();
     return (
         <>
-            <Trending />
+            <Trending contents={contents}/>
             <Recommended />
-            <MovieCard/>
         </>
     );
 }
