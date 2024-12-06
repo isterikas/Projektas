@@ -10,6 +10,7 @@ function TVShows() {
   
 
   return (
+
   <Search array = {allTvshows}/>
 
 )
