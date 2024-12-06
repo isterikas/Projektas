@@ -27,6 +27,20 @@ function Search() {
     fetchData();
   }, [search]);
 
+  const filteredArray = content
+  .filter((content) =>
+    content.title.toLowerCase().includes(search.toLowerCase())
+  )
+  .map((item) => {
+    return (
+      <>
+        <p>{item.title}</p>
+
+
+      </>
+    );
+  })
+
   return (
     <>
       <form className="nosubmit">
@@ -39,18 +53,8 @@ function Search() {
       </form>
 
       <div className="bg-teal-600 p-3 grid grid-cols-3">
-        {content
-          .filter((content) =>
-            content.title.toLowerCase().includes(search.toLowerCase())
-          )
-          .map((item) => {
-            return (
-              <>
-                <p>{item.title}</p>
-        {/* movie or TV series card instead of paragraph above */}
-              </>
-            );
-          })}
+        {filteredArray} <br />
+        {search? <h1 className="font-bold">Found {filteredArray.length} {filteredArray.length === 1? "result" : "results"} for "{search}"</h1> : ""}
       </div>
     </>
   );
