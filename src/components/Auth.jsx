@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { useContext } from "react";
+import { useOutletContext, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { getAllData } from "./helpers/get.js";
 
 function Auth() {
     const { register, setValue, handleSubmit, formState: { errors } } = useForm();
-
-    const authType = useContext("authType");
-    const setAuthType = useContext("setAuthType");
-    // const loggedIn = useContext(/* loggedIn context variable */);
+    const navigate = useNavigate();
+    const { authType, setAuthType, setLoggedIn } = useOutletContext();
     const [error, setError] = useState("");
     const [users, setUsers] = useState([]);
 
@@ -21,10 +19,18 @@ function Auth() {
         fetchUsers();
     }, []);
 
+    useEffect(() => {
+        setValue("email", "");
+        setValue("password", "");
+        setValue("repeatPassword", "");
+    }, [authType]);
+
     const formSubmitHandler = async (data) => {
         try {
             if (authType === "login") {
-                ;
+                const checkedUser = users.find((user) => user.userName === data.email);
+                if (checkedUser.userPassword === data.password) setLoggedIn(checkedUser.userId);
+                navigate("/");
             }
             else {
                 users.forEach((user) => {
@@ -79,6 +85,8 @@ function Auth() {
                         className="bg-gradient-to-tr from-violet-500 via-purple-500 to-violet-700 text-white rounded-lg py-1 px-5 hover:from-violet-400 hover:via-purple-400 hover:to-violet-600 transition duration-1000 font-bold shadow-gray-600 shadow-md hover:shadow-lg"
                     />
                 </form>
+                {authType == "signup" ? <div>Already have an account? <button onClick={() => setAuthType("login")}>Log in</button></div> :
+                    <div>Don't have an account? <button onClick={() => setAuthType("signup")}>Sign up</button></div>}
                 {error}
             </div>
         </>

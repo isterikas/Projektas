@@ -1,17 +1,18 @@
-import MovieCard from "./MovieCard";
+// import MovieCard from "./MovieCard";
+// import { useOutletContext } from "react";
 
+// function Movies() {
+//     const {contents} = useOutletContext();
+//     return (
+//         <>
+//             <h1>Movies</h1>
 
-function Movies() {
-    return (
-        <>
-            <h1>Movies</h1>
+//         {contents.map((card) => (
+//             <MovieCard card={card} key={card.id} />
+//           ))}
 
-        {moviesList.map((card) => (
-            <Movie card={card} key={card.id} />
-          ))}
+//         </>  
+//     ) ;
+// }
 
-        </>  
-    ) ;
-}
-
-export default Movies;
+// export default Movies;
