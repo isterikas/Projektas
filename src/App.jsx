@@ -54,6 +54,7 @@ export default function App() {
     <>
       <NavBar setAuthType={setAuthType} loggedIn={loggedIn} />
       { !error ? <Outlet context={{ authType, setAuthType, loggedIn, setLoggedIn, contents, setContents, users, setUsers, userBookmarks, setUserBookmarks, update, setUpdate }} /> : <p>{error}</p> }
+
     </>
   );
 }

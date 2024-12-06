@@ -1,18 +1,20 @@
 import { Link } from "react-router";
 
 function NavBar(props) {
-  const { setAuthType, loggedin } = props;
+  const { authType, setAuthType, loggedin, setLoggedIn } = props;
 
   const sigin = () => {
     setAuthType("signup");
+    setLoggedIn("");
   };
 
   const login = () => {
     setAuthType("login");
+    setLoggedIn("");
   };
   return (
     <div className="p-[2rem] border bg-[#161D2F] text-white rounded">
-      <nav className="grid grid-cols-3">
+      {authType?"":(<nav className="grid grid-cols-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -83,7 +85,7 @@ function NavBar(props) {
             <div>ShowIcon</div>
           )}
         </div>
-      </nav>
+      </nav>)}
     </div>
   );
 }

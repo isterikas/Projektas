@@ -9,7 +9,7 @@ function Card({ item }) {
     return (
         <div className="shadow m-3">
       
-        <div><img src="re" alt="" /></div>
+        <div><img src={`../src/${thumbnail.regular.small}`} alt="#" /></div>
         <p> {year}</p>
         <p> {category}</p>
         <p> {rating}</p>

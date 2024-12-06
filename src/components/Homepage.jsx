@@ -1,13 +1,12 @@
 import Recommended from "./Recommended";
 import Trending from "./Trending";
 
-
 function Homepage() {
+    const {contents} = useOutletContext();
     return (
         <>
-            <Trending />
+            <Trending contents={contents}/>
             <Recommended />
-            
         </>
     );
 }
