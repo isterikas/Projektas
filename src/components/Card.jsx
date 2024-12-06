@@ -3,7 +3,7 @@
 
 function Card({ item }) {
 
-    const {title, year, category, rating} = item;
+    const {title, year, category, rating, thumbnail} = item;
 
 
     return (
