@@ -1,7 +1,7 @@
 import Recommended from "./Recommended";
 import Trending from "./Trending";
 import Movies from "./Movies";
-import MovieCard from "./MovieCard";
+import MovieCard from "./Card";
 
 function Homepage() {
     return (

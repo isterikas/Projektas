@@ -7,10 +7,10 @@ export default function App() {
   const [authType, setAuthType] = useState("login");
   const [loggedIn, setLoggedIn] = useState("");
 
-  const [contents, setContents] = useState("");
+  const [contents, setContents] = useState([]);
   const [update, setUpdate] = useState(0);
-  const [users, setUsers] = useState("");
-  const [userBookmarks, setUserBookmarks] = useState("");
+  const [users, setUsers] = useState([]);
+  const [userBookmarks, setUserBookmarks] = useState([]);
   const [error, setError] = useState("");
 
   const getAllcontents = async () => {
