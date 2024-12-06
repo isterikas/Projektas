@@ -14,7 +14,7 @@ function NavBar(props) {
   };
   return (
     <div className="p-[2rem] border bg-[#161D2F] text-white rounded">
-      {authType?"":(<nav className="grid grid-cols-3">
+      {authType? "" : (<nav className="grid grid-cols-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
