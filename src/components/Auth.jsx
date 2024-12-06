@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useOutletContext, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { getAllData } from "./helpers/get.js";
-import { postData } from "./helpers/post.js"
+import { postData } from "./helpers/post.js";
+import { sha1 } from 'js-sha1';
 
 function Auth() {
     const { register, watch, setValue, handleSubmit, formState: { errors } } = useForm();
@@ -30,17 +31,17 @@ function Auth() {
         try {
             if (authType === "login") {
                 const checkedUser = users.find((user) => user.userName === data.email);
-                if (checkedUser.userPassword === data.password) setLoggedIn(checkedUser.userId);
+                if (checkedUser.userPassword === sha1(data.password)) setLoggedIn(checkedUser.id);
                 setAuthType("");
                 navigate("/");
             }
             else {
                 users.forEach((user) => {
-                    if (user.email === data.email) {
+                    if (user.userName === data.email) {
                         throw new Error("This email address is already registered");
                     }
                 });
-                await postData({ userName: data.email, userPassword: data.password }, "users");
+                await postData({ userName: data.email, userPassword: sha1(data.password) }, "users");
                 const fetchedUsers = await getAllData("users");
                 setUsers(fetchedUsers);
                 setAuthType("login");
@@ -68,7 +69,7 @@ function Auth() {
                         },
                     })} />
                     {errors.email?.message}
-                    <input type="text" {...register("password", {
+                    <input type="password" {...register("password", {
                         required: "This field is required", pattern: {
                             value: /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-]+$/,
                             message: "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-",
@@ -85,7 +86,7 @@ function Auth() {
                         }
                     })} />
                     {errors.password?.message}
-                    {authType === "signup" ? <input type="text" {...register("repeatPassword", {
+                    {authType === "signup" ? <input type="password" {...register("repeatPassword", {
                         required: {
                             value: authType === "signup",
                             message: "Please repeat your password",
