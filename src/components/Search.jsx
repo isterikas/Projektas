@@ -47,7 +47,7 @@ function Search({ array }) {
         {search ? (
           <h1 className="font-bold">
             Found {filteredArray.length}{" "}
-            {filteredArray.length === 1 ? "result" : "results"} for "{search}"
+            {filteredArray.length === 1 ? "result" : "results"} for {search}
           </h1>
         ) : (
           ""
