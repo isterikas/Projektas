@@ -3,7 +3,8 @@
 
 function Card({ item }) {
 
-    const {thumbnail, title, year, category, rating, contentsId } = item;
+    const {title, year, category, rating} = item;
+
 
     return (
         <div className="shadow m-3">
