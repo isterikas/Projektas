@@ -1,26 +1,74 @@
-import { Route, Routes } from "react-router";
+import { Outlet } from "react-router";
 import NavBar from "./components/NavBar.jsx";
-import Auth from "./components/Auth.jsx";
-import Homepage from "./components/Homepage.jsx";
-import Movies from "./components/Movies.jsx";
-import TVShows from "./components/TVShows.jsx";
-import Trending from "./components/Trending.jsx";
-import Recommended from "./components/Recommended.jsx";
-import Bookmarks from "./components/Bookmarks.jsx";
-import NotFound from "./components/NotFound.jsx";
+import { useState, useEffect } from "react";
+import { getAllData } from "./components/helpers/get.js";
 
 export default function App() {
+  const [authType, setAuthType] = useState("login");
+  const [loggedIn, setLoggedIn] = useState("");
+
+  const [contents, setContents] = useState("");
+  const [users, setUsers] = useState("");
+  const [userBookmarks, setUserBookmarks] = useState("");
+  const [error, setError] = useState("");
+
+  const getAllcontents = async () => {
+    try {
+      const contents = await getAllData("contents");
+      setContents(contents);
+      setError("");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const getAllUsers = async () => {
+    try {
+      const users = await getAllData("users");
+      setUsers(users);
+      setError("");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const getAllUserBookmarks = async () => {
+    try {
+      const userBookmarks = await getAllData("userBookmarks");
+      setUserBookmarks(userBookmarks);
+      setError("");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  useEffect(() => {
+    getAllcontents();
+    getAllUsers();
+    getAllUserBookmarks();
+  }, []);
+
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/tvshows" element={<TVShows />} />
-        <Route path="/bookmarks" element={<Bookmarks />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <NavBar setAuthType={setAuthType} loggedIn={loggedIn} />
+      {!error ? (
+        <Outlet
+          context={{
+            authType,
+            setAuthType,
+            loggedIn,
+            setLoggedIn,
+            contents,
+            setContents,
+            users,
+            setUsers,
+            userBookmarks,
+            setUserBookmarks,
+          }}
+        />
+      ) : (
+        <p>{error}</p>
+      )}
     </>
   );
 }
