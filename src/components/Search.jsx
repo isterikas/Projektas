@@ -33,21 +33,22 @@ function Search({ array }) {
 
   return (
     <>
-      <form className="nosubmit">
+      <form className="nosubmit background-dark-blue">
         <input
           onChange={(e) => setSearch(e.target.value)}
-          className="nosubmit rounded bg-red-500"
+          className="nosubmit rounded caret-[#FC4747] text-white heading-m "
           type="search"
           placeholder={getPlaceholder()}
         />
       </form>
 
-      <div className="bg-teal-600 p-3 grid grid-cols-3">
+      <div className="background-dark-blue p-3 grid grid-cols-3">
         {filteredArray} <br />
         {search ? (
-          <h1 className="font-bold">
-            Found {filteredArray.length}{" "}
-            {filteredArray.length === 1 ? "result" : "results"} for {search}
+          <h1 className="heading-l text-white">
+            Found {filteredArray.length}
+            {filteredArray.length === 1 ? " result" : " results"} for{" "}
+            {`"${search}"`}
           </h1>
         ) : (
           ""
