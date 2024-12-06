@@ -1,14 +1,19 @@
-import MovieCard from "./MovieCard";
+import Card from "./Card";
+import { useOutletContext } from "react-router";
 
 
-function Movies() {
+function Movies({itemsList}) {
+    
+    const {contents} = useOutletContext();
+    const movies = contents.filter((show )=> show.category === "Movie")
+
     return (
         <>
     
       <h1>Movies</h1>
 
-       {itemsList.map((item) => (
-        <MovieCard item={item} key={item.contentsId} />
+       {movies.map((item) => (
+        <Card item={item} key={item.contentsId} />
       ))}
       
     </>
