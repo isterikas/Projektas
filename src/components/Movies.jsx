@@ -1,9 +1,23 @@
+import Card from "./Card";
+import { useOutletContext } from "react-router";
+
+
 function Movies() {
+    
+    const {contents} = useOutletContext();
+    const movies = contents.filter((show )=> show.category === "Movie")
+
     return (
-        <div>
-            <h1 className="text-[5rem] text-center pt-[3rem]">Movies</h1>
-        </div>
-    )
+        <>
+    
+      <h1>Movies</h1>
+
+       {movies.map((item) => (
+        <Card item={item} key={item.contentsId} />
+      ))}
+      
+    </>
+  );
 }
 
 export default Movies;

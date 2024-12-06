@@ -8,9 +8,10 @@ export default function App() {
   const [authType, setAuthType] = useState("login");
   const [loggedIn, setLoggedIn] = useState("");
 
-  const [contents, setContents] = useState("");
-  const [users, setUsers] = useState("")
-  const [userBookmarks, setUserBookmarks] = useState("")
+  const [contents, setContents] = useState([]);
+  const [update, setUpdate] = useState(0);
+  const [users, setUsers] = useState([]);
+  const [userBookmarks, setUserBookmarks] = useState([]);
   const [error, setError] = useState("");
 
   const getAllcontents = async () => {
@@ -52,7 +53,7 @@ export default function App() {
   return (
     <>
       <NavBar setAuthType={setAuthType} loggedIn={loggedIn} />
-      { !error ? <Outlet context={{ authType, setAuthType, loggedIn, setLoggedIn, contents, setContents, users, setUsers, userBookmarks, setUserBookmarks }} /> : <p>{error}</p> }
+      { !error ? <Outlet context={{ authType, setAuthType, loggedIn, setLoggedIn, contents, setContents, users, setUsers, userBookmarks, setUserBookmarks, update, setUpdate }} /> : <p>{error}</p> }
     </>
   );
 }
