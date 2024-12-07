@@ -1,7 +1,7 @@
 {
   "contents": [
     {
-      "contentsId": "1",
+      "contentsId": 1,
       "title": "Beyond Earth",
       "thumbnail": {
         "trending": {
@@ -18,11 +18,10 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": true,
-      "id": "26fb"
+      "isTrending": true
     },
     {
-      "contentsId": "2",
+      "contentsId": 2,
       "title": "Bottom Gear",
       "thumbnail": {
         "trending": {
@@ -39,11 +38,10 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": true,
-      "id": "582b"
+      "isTrending": true
     },
     {
-      "contentsId": "3",
+      "contentsId": 3,
       "title": "Undiscovered Cities",
       "thumbnail": {
         "trending": {
@@ -60,11 +58,10 @@
       "category": "TV Series",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": true,
-      "id": "be1b"
+      "isTrending": true
     },
     {
-      "contentsId": "4",
+      "contentsId": 4,
       "title": "1998",
       "thumbnail": {
         "trending": {
@@ -81,11 +78,10 @@
       "category": "Movie",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": true,
-      "id": "32cf"
+      "isTrending": true
     },
     {
-      "contentsId": "5",
+      "contentsId": 5,
       "title": "Dark Side of the Moon",
       "thumbnail": {
         "trending": {
@@ -102,11 +98,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": true,
-      "isTrending": true,
-      "id": "f76b"
+      "isTrending": true
     },
     {
-      "contentsId": "6",
+      "contentsId": 6,
       "title": "The Great Lands",
       "thumbnail": {
         "regular": {
@@ -119,11 +114,10 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "92d1"
+      "isTrending": false
     },
     {
-      "contentsId": "7",
+      "contentsId": 7,
       "title": "The Diary",
       "thumbnail": {
         "regular": {
@@ -136,11 +130,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "c2c7"
+      "isTrending": false
     },
     {
-      "contentsId": "8",
+      "contentsId": 8,
       "title": "Earth’s Untouched",
       "thumbnail": {
         "regular": {
@@ -153,11 +146,10 @@
       "category": "Movie",
       "rating": "18+",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "f012"
+      "isTrending": false
     },
     {
-      "contentsId": "9",
+      "contentsId": 9,
       "title": "No Land Beyond",
       "thumbnail": {
         "regular": {
@@ -170,11 +162,10 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "d66d"
+      "isTrending": false
     },
     {
-      "contentsId": "10",
+      "contentsId": 10,
       "title": "During the Hunt",
       "thumbnail": {
         "regular": {
@@ -187,11 +178,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "12df"
+      "isTrending": false
     },
     {
-      "contentsId": "11",
+      "contentsId": 11,
       "title": "Autosport the Series",
       "thumbnail": {
         "regular": {
@@ -204,11 +194,10 @@
       "category": "TV Series",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "6dcb"
+      "isTrending": false
     },
     {
-      "contentsId": "12",
+      "contentsId": 12,
       "title": "Same Answer II",
       "thumbnail": {
         "regular": {
@@ -221,11 +210,10 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "66c4"
+      "isTrending": false
     },
     {
-      "contentsId": "13",
+      "contentsId": 13,
       "title": "Below Echo",
       "thumbnail": {
         "regular": {
@@ -238,11 +226,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "0b54"
+      "isTrending": false
     },
     {
-      "contentsId": "14",
+      "contentsId": 14,
       "title": "The Rockies",
       "thumbnail": {
         "regular": {
@@ -255,11 +242,10 @@
       "category": "TV Series",
       "rating": "E",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "fcde"
+      "isTrending": false
     },
     {
-      "contentsId": "15",
+      "contentsId": 15,
       "title": "Relentless",
       "thumbnail": {
         "regular": {
@@ -272,11 +258,10 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "f1b8"
+      "isTrending": false
     },
     {
-      "contentsId": "16",
+      "contentsId": 16,
       "title": "Community of Ours",
       "thumbnail": {
         "regular": {
@@ -289,11 +274,10 @@
       "category": "TV Series",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "248e"
+      "isTrending": false
     },
     {
-      "contentsId": "17",
+      "contentsId": 17,
       "title": "Van Life",
       "thumbnail": {
         "regular": {
@@ -306,11 +290,10 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "fc9f"
+      "isTrending": false
     },
     {
-      "contentsId": "18",
+      "contentsId": 18,
       "title": "The Heiress",
       "thumbnail": {
         "regular": {
@@ -323,11 +306,10 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "784e"
+      "isTrending": false
     },
     {
-      "contentsId": "19",
+      "contentsId": 19,
       "title": "Off the Track",
       "thumbnail": {
         "regular": {
@@ -340,11 +322,10 @@
       "category": "Movie",
       "rating": "18+",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "f212"
+      "isTrending": false
     },
     {
-      "contentsId": "20",
+      "contentsId": 20,
       "title": "Whispering Hill",
       "thumbnail": {
         "regular": {
@@ -357,11 +338,10 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "c845"
+      "isTrending": false
     },
     {
-      "contentsId": "21",
+      "contentsId": 21,
       "title": "112",
       "thumbnail": {
         "regular": {
@@ -374,11 +354,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "d350"
+      "isTrending": false
     },
     {
-      "contentsId": "22",
+      "contentsId": 22,
       "title": "Lone Heart",
       "thumbnail": {
         "regular": {
@@ -391,11 +370,10 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "dc56"
+      "isTrending": false
     },
     {
-      "contentsId": "23",
+      "contentsId": 23,
       "title": "Production Line",
       "thumbnail": {
         "regular": {
@@ -408,11 +386,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "e590"
+      "isTrending": false
     },
     {
-      "contentsId": "24",
+      "contentsId": 24,
       "title": "Dogs",
       "thumbnail": {
         "regular": {
@@ -425,11 +402,10 @@
       "category": "TV Series",
       "rating": "E",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "28f1"
+      "isTrending": false
     },
     {
-      "contentsId": "25",
+      "contentsId": 25,
       "title": "Asia in 24 Days",
       "thumbnail": {
         "regular": {
@@ -442,11 +418,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "2af1"
+      "isTrending": false
     },
     {
-      "contentsId": "26",
+      "contentsId": 26,
       "title": "The Tasty Tour",
       "thumbnail": {
         "regular": {
@@ -459,11 +434,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "631b"
+      "isTrending": false
     },
     {
-      "contentsId": "27",
+      "contentsId": 27,
       "title": "Darker",
       "thumbnail": {
         "regular": {
@@ -476,11 +450,10 @@
       "category": "Movie",
       "rating": "18+",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "4ebe"
+      "isTrending": false
     },
     {
-      "contentsId": "28",
+      "contentsId": 28,
       "title": "Unresolved Cases",
       "thumbnail": {
         "regular": {
@@ -493,11 +466,10 @@
       "category": "TV Series",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": false,
-      "id": "595a"
+      "isTrending": false
     },
     {
-      "contentsId": "29",
+      "contentsId": 29,
       "title": "Mission: Saturn",
       "thumbnail": {
         "regular": {
@@ -510,40 +482,39 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": true,
-      "isTrending": false,
-      "id": "4923"
+      "isTrending": false
     }
   ],
   "users": [
     {
+      "userId": "1",
       "userName": "user5831@example.com",
-      "userPassword": "aB3.dE1Fg",
-      "id": "86c0"
+      "userPassword": "aB3.dE1Fg"
     },
     {
+      "userId": "2",
       "userName": "member8230@email.com",
-      "userPassword": "hJ2kL#m4N",
-      "id": "d1e4"
+      "userPassword": "hJ2kL#m4N"
     },
     {
+      "userId": "3",
       "userName": "player2917@test.com",
-      "userPassword": "r$5TgY6Ui",
-      "id": "91c4"
+      "userPassword": "r$5TgY6Ui"
     },
     {
+      "userId": "4",
       "userName": "user4471@example.com",
-      "userPassword": "oP9sT7V;e",
-      "id": "ae05"
+      "userPassword": "oP9sT7V;e"
     },
     {
+      "userId": "5",
       "userName": "member6754@email.com",
-      "userPassword": "qR1x%Y2Zl",
-      "id": "e4ee"
+      "userPassword": "qR1x%Y2Zl"
     },
     {
-      "id": "8a88",
-      "userName": "edgaraslaptevas88@gmail.com",
-      "userPassword": "e45f3418b8869ea7e1d6daf81228e3792fccbf24"
+      "id": "928b",
+      "userName": "pavel.gusev431@gmail.com",
+      "userPassword": "p23tuH$1"
     }
   ],
   "userBookmarks": [
