@@ -539,28 +539,64 @@
       "userName": "member6754@email.com",
       "userPassword": "qR1x%Y2Zl",
       "id": "e4ee"
+    },
+    {
+      "id": "8a88",
+      "userName": "edgaraslaptevas88@gmail.com",
+      "userPassword": "e45f3418b8869ea7e1d6daf81228e3792fccbf24"
     }
   ],
   "userBookmarks": [
     {
       "userId": "1",
-      "contentsId": [5, 12, 28, 7, 19]
+      "contentsId": [
+        5,
+        12,
+        28,
+        7,
+        19
+      ]
     },
     {
       "userId": "2",
-      "contentsId": [3, 8, 22, 14]
+      "contentsId": [
+        3,
+        8,
+        22,
+        14
+      ]
     },
     {
       "userId": "3",
-      "contentsId": [4, 25, 18, 9, 13, 27]
+      "contentsId": [
+        4,
+        25,
+        18,
+        9,
+        13,
+        27
+      ]
     },
     {
       "userId": "4",
-      "contentsId": [1, 11, 29, 6, 15, 23]
+      "contentsId": [
+        1,
+        11,
+        29,
+        6,
+        15,
+        23
+      ]
     },
     {
       "userId": "5",
-      "contentsId": [2, 10, 20, 16, 24]
+      "contentsId": [
+        2,
+        10,
+        20,
+        16,
+        24
+      ]
     }
   ]
 }
