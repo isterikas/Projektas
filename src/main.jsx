@@ -20,7 +20,7 @@ createRoot(document.getElementById("root")).render(
           <Route index element={<Homepage />} />
           <Route path="/authorization" element={<Auth />} />
           <Route path="/movies" element={<Movies />} />
-          <Route path="/tvshows" element={<TVShows />} />
+          <Route path="/tvseries" element={<TVShows />} />
           <Route path="/bookmarks" element={<Bookmarks />} />
         </Route>
         <Route path="*" element={<NotFound />} />

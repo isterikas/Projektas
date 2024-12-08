@@ -1,23 +1,17 @@
-import { NavLink } from "react-router";
+import { useState } from "react";
 import logoIcon from "../assets/icons/logo.svg";
-import homeLogo from "../assets/icons/icon-nav-home.svg";
-import moviesLogo from "../assets/icons/icon-nav-movies.svg";
-import tvSeriesLogo from "../assets/icons/icon-nav-tv-series.svg";
-import bookmarklogo from "../assets/icons/icon-nav-bookmark.svg";
-import HamburgerMenu from "./comp-icons/icon-hamburger";
+import NavBarIcons from "./icons-components/icons-navbar";
+// import homeLogo from "../assets/icons/icon-nav-home.svg";
+
+import HamburgerMenu from "./icons-components/icon-navbarHamburger";
 
 function NavBar(props) {
   const { authType, setAuthType, loggedIn, setLoggedIn } = props;
 
-  // const sigin = () => {
-  //   setAuthType("signup");
-  //   setLoggedIn("");
-  // };
-
-  // const login = () => {
-  //   setAuthType("login");
-  //   setLoggedIn("");
-  // };
+  const [isHomeLogo, setIsHomeLogo] = useState("");
+  const [isMoviesLogo, setIsMoviesLogo] = useState("");
+  const [isTVSeriesLogo, setIsTVSeriesLogo] = useState("");
+  const [isBookmarksLogo, setIsBookmarksLogo] = useState("");
   return (
     <>
       {authType ? (
@@ -31,19 +25,17 @@ function NavBar(props) {
               className="w-[25px] h-[20px] md:w-[32px] md:h-[26px]"
             />
           </div>
-          <div className="flex justify-center gap-5">
-            <NavLink to="/">
-              <img src={homeLogo} alt="SVG Image" className="" />
-            </NavLink>
-            <NavLink to="/movies">
-              <img src={moviesLogo} alt="SVG Image" className="" />
-            </NavLink>
-            <NavLink to="/tvshows">
-              <img src={tvSeriesLogo} alt="SVG Image" className="" />
-            </NavLink>
-            <NavLink to="/bookmarks">
-              <img src={bookmarklogo} alt="SVG Image" className="" />
-            </NavLink>
+          <div className="flex">
+            <NavBarIcons
+              isHomeLogo={isHomeLogo}
+              setIsHomeLogo={setIsHomeLogo}
+              isMoviesLogo={isMoviesLogo}
+              setIsMoviesLogo={setIsMoviesLogo}
+              isTVSeriesLogo={isTVSeriesLogo}
+              setIsTVSeriesLogo={setIsTVSeriesLogo}
+              isBookmarksLogo={isBookmarksLogo}
+              setIsBookmarksLogo={setIsBookmarksLogo}
+            />
           </div>
           <div className="text-right">
             {!loggedIn ? (
@@ -52,16 +44,6 @@ function NavBar(props) {
                   setAuthType={setAuthType}
                   setLoggedIn={setLoggedIn}
                 />
-                {/* <NavLink to="/authorization">
-                  <button className="me-2" type="button" onClick={login}>
-                    Log In
-                  </button>
-                </NavLink>
-                <NavLink to="/authorization">
-                  <button className="ms-2" type="button" onClick={sigin}>
-                    Sign up
-                  </button>
-                </NavLink> */}
               </div>
             ) : (
               <div>ShowIcon</div>
