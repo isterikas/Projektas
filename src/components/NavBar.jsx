@@ -1,9 +1,9 @@
 import { useState } from "react";
 import logoIcon from "../assets/icons/logo.svg";
-import NavBarIcons from "./icons-components/icons-navbar";
+import NavBarIcons from "./navbar-components/icons-navbar";
 // import homeLogo from "../assets/icons/icon-nav-home.svg";
 
-import HamburgerMenu from "./icons-components/icon-navbarHamburger";
+import HamburgerMenu from "./navbar-components/icon-navbarHamburger";
 
 function NavBar(props) {
   const { authType, setAuthType, loggedIn, setLoggedIn } = props;

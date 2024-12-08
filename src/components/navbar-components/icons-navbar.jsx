@@ -24,8 +24,6 @@ const NavBarIcons = (props) => {
       >
         <Link to="/">
           <svg
-            width="full"
-            height="auto"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
@@ -47,8 +45,6 @@ const NavBarIcons = (props) => {
       >
         <Link to="/movies">
           <svg
-            width="full"
-            height="auto"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
@@ -70,8 +66,6 @@ const NavBarIcons = (props) => {
       >
         <Link to="/tvseries">
           <svg
-            width="full"
-            height="auto"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
@@ -93,8 +87,6 @@ const NavBarIcons = (props) => {
       >
         <Link to="/bookmarks">
           <svg
-            width="full"
-            height="auto"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 17 20"
           >
