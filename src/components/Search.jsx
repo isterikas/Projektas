@@ -41,9 +41,9 @@ function Search({ array }) {
     )
     .map((item) => {
       return (
-        <>
-          <Card item={item} key={item.contentsId} />
-        </>
+        <div key={item.id}>
+          <Card item={item} key={item.contentsId} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
+        </div>
       );
     });
 

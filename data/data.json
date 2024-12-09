@@ -492,31 +492,5 @@
       "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe"
     }
   ],
-  "userBookmarks": [
-    {
-      "userId": "1",
-      "contentsId": [5, 12, 28, 7, 19],
-      "id": "9f6d"
-    },
-    {
-      "userId": "2",
-      "contentsId": [3, 8, 22, 14],
-      "id": "8847"
-    },
-    {
-      "userId": "3",
-      "contentsId": [4, 25, 18, 9, 13, 27],
-      "id": "c6c4"
-    },
-    {
-      "userId": "4",
-      "contentsId": [1, 11, 29, 6, 15, 23],
-      "id": "d56a"
-    },
-    {
-      "userId": "5",
-      "contentsId": [2, 10, 20, 16, 24],
-      "id": "0c59"
-    }
-  ]
+  "userBookmarks": []
 }
