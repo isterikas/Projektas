@@ -2,17 +2,17 @@ import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
 
 function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
-  const { thumbnail, title, year, category, rating, id } = item;
+  const { thumbnail, title, year, category, rating, contentsId } = item;
 
   const toggleBookmark = () => {
     setUpdate(update + 1);
     const thisBookmark = userBookmarks.find(
-      (bookmark) => bookmark.userId == loggedIn && bookmark.contentsId == id
+      (bookmark) => bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) {
       deleteBookmark(thisBookmark.id);
     } else {
-      postData({ contentsId: id, userId: loggedIn }, "userBookmarks");
+      postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
     }
   };
 

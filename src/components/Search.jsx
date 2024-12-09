@@ -41,7 +41,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
     )
     .map((item) => {
       return (
-        <div key={item.id}>
+        <div key={item.contentsId}>
           <Card item={item} key={item.contentsId} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
         </div>
       );
