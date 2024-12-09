@@ -22,62 +22,86 @@ input.nosubmit {
     font-size: 32px;
     font-weight: 300;
   }
+
   .heading-m {
     font-family: "Outfit";
     font-size: 24px;
     font-weight: 300;
   }
+
   .heading-s {
     font-family: "Outfit";
     font-size: 24px;
     font-weight: 500;
   }
+
   .heading-xs {
     font-family: "Outfit";
     font-size: 18px;
     font-weight: 500;
   }
+
   .body-m {
     font-family: "Outfit";
     font-size: 15px;
     font-weight: 300;
   }
+
   .body-s {
     font-family: "Outfit";
     font-size: 13px;
     font-weight: 300;
     opacity: 0.75;
   }
+
   .background-red {
     background-color: #fc4747;
   }
+
   .text-red {
     color: #fc4747;
   }
+
   .background-dark-blue {
     background-color: #10141e;
+    grid-column: 2;
   }
+
   .text-dark-blue {
     color: #10141e;
   }
+
   .background-greyish-blue {
     background-color: #5a698f;
   }
+
   .text-greyish-blue {
     color: #5a698f;
   }
+
   .background-semidark-blue {
     background-color: #161d2f;
   }
+
   .text-semidark-blue {
     color: #161d2f;
   }
+
   .btn {
     background-color: #fc4747;
     color: #ffffff;
   }
+
   .btn:hover {
     background-color: #ffffff;
     color: #161d2f;
   }
+}
+
+
+
+.bookmark-icon {
+  top: 10%;
+  left: 18rem;
+  z-index: 99;;
 }

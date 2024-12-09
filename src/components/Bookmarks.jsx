@@ -2,10 +2,13 @@ import { useOutletContext } from "react-router";
 import Search from "./Search";
 
 function Bookmarks() {
-  const { contents } = useOutletContext();
+  const { contents, userBookmarks, loggedIn } = useOutletContext();
 
   const allBookmarks = contents.filter(
-    (content) => content.isBookmarked === true
+    (content) => {
+      const isBookmarked = userBookmarks.find((bookmark) => bookmark.contentsId == content.contentsId && bookmark.userId == loggedIn);
+      return isBookmarked;
+    }
   );
 
   return (
