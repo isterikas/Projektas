@@ -1,10 +1,14 @@
 import { useOutletContext } from "react-router";
 import Search from "./Search";
-
+import { useEffect } from "react";
 
 function Movies() {
-  const { contents } = useOutletContext();
+  const { contents, pageBack } = useOutletContext();
   const movies = contents.filter((show) => show.category === "Movie");
+
+  useEffect(() => {
+    pageBack();
+  }, []);
 
   return (
     <>

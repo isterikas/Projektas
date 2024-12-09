@@ -43,6 +43,10 @@ export default function App() {
     }
   };
 
+  const pageBack = () => {
+    if (!loggedIn) setAuthType("");
+  };
+
   useEffect(() => {
     getAllcontents();
     getAllUsers();
@@ -75,6 +79,7 @@ export default function App() {
               setUserBookmarks,
               update,
               setUpdate,
+              pageBack,
             }}
           />
         ) : (

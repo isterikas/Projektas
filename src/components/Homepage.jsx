@@ -4,11 +4,7 @@ import { useOutletContext } from "react-router";
 import { useEffect } from "react";
 
 function Homepage() {
-  const { contents, loggedIn, setAuthType } = useOutletContext();
-
-  const pageBack = () => {
-    if (!loggedIn) setAuthType("");
-  };
+  const { contents, pageBack } = useOutletContext();
 
   useEffect(() => {
     pageBack();
