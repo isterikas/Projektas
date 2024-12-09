@@ -102,5 +102,6 @@ input.nosubmit {
 
 .bookmark-icon {
   top: 10%;
-  right: 10%;
+  left: 18rem;
+  z-index: 99;;
 }

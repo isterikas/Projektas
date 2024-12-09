@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
 
@@ -6,6 +6,17 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
   const [checked, setChecked] = useState(false);
+
+  const setStateChecked = async () => {
+    const thisBookmark = await userBookmarks.find(
+      (bookmark) => bookmark.userId == loggedIn && bookmark.contentsId == contentsId
+    );
+    if (thisBookmark) setChecked(true);
+  }
+
+  useEffect(()=>{
+    setStateChecked();
+  },[]);
 
   const toggleBookmark = () => {
     setUpdate(update + 1);
@@ -32,7 +43,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
         ""
       )} 
       
-        <img className="rounded-xl" src={"src" + thumbnail.regular.small.slice(1)} alt="#" />
+        <img className="rounded-xl bottom-5" src={"src" + thumbnail.regular.small.slice(1)} alt="#" />
       </div>
 
       
