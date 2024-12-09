@@ -492,5 +492,10 @@
       "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe"
     }
   ],
-  "userBookmarks": []
+  "userBookmarks": [
+    {
+      "id": "130c",
+      "userId": "ec1d"
+    }
+  ]
 }
