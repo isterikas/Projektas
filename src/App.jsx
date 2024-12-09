@@ -43,19 +43,11 @@ export default function App() {
     }
   };
 
-<<<<<<< HEAD
-  useEffect(() => {
-    getAllcontents();
-    getAllUsers();
-    getAllUserBookmarks();
-  }, []);
-=======
   useEffect(() =>{
     getAllcontents()
     getAllUsers()
     getAllUserBookmarks()
   }, [update])
->>>>>>> feature/KE-11
 
   return (
     <>
