@@ -1,7 +1,7 @@
 import Card from "./Card.jsx";
 import { useLocation, useSearchParams } from "react-router";
 
-function Search({ array }) {
+function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const location = useLocation();
