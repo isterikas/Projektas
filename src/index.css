@@ -106,7 +106,8 @@ input.nosubmit {
 }
 
 .material-symbols-outlined {
+  position: absolute;
   color: #ffffff;
-  margin-top: 200px;
-
+   /* margin-bottom: 100px; */
+ /* margin-left: 200px; */
 }

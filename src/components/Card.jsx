@@ -9,11 +9,11 @@ function Card({ item }) {
   return (
 
     <div className="columns-1">
-      <div className="movies mx-3  ">
-        <div className=" " >< img className="  rounded-lg " src={"src" + thumbnail.regular.small.slice(1)} alt="#" />  
-        <span className="material-symbols-outlined absolute ">
+      <div className="movies mx-3  ">  <span className="material-symbols-outlined ml-60">
           bookmark
         </span>
+        <div className=" " >< img className="  rounded-lg " src={"src" + thumbnail.regular.small.slice(1)} alt="#" />  
+      
          </div>
         
         <div>
