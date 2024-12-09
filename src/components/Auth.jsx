@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useOutletContext, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { getAllData } from "./helpers/get.js";
-import { postData } from "./helpers/post.js"
+import { postData } from "./helpers/post.js";
+import { sha1 } from 'js-sha1';
+import { sha256 } from "js-sha256";
 
 function Auth() {
     const { register, watch, setValue, handleSubmit, formState: { errors } } = useForm();
@@ -30,17 +32,22 @@ function Auth() {
         try {
             if (authType === "login") {
                 const checkedUser = users.find((user) => user.userName === data.email);
-                if (checkedUser.userPassword === data.password) setLoggedIn(checkedUser.userId);
-                setAuthType("");
-                navigate("/");
+                if (checkedUser.userPassword === sha256(sha1(data.password))) {
+                    setLoggedIn(checkedUser.id);
+                    setAuthType("");
+                    navigate("/");
+                }
+                else {
+                    throw new Error("Incorrect email or password");
+                }
             }
             else {
                 users.forEach((user) => {
-                    if (user.email === data.email) {
+                    if (user.userName === data.email) {
                         throw new Error("This email address is already registered");
                     }
                 });
-                await postData({ userName: data.email, userPassword: data.password }, "users");
+                await postData({ userName: data.email, userPassword: sha256(sha1(data.password)) }, "users");
                 const fetchedUsers = await getAllData("users");
                 setUsers(fetchedUsers);
                 setAuthType("login");
@@ -68,24 +75,25 @@ function Auth() {
                         },
                     })} />
                     {errors.email?.message}
-                    <input type="text" {...register("password", {
-                        required: "This field is required", pattern: {
+                    <input type="password" {...register("password", {
+                        required: "This field is required",
+                        pattern:{
                             value: /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-]+$/,
-                            message: "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-",
+                            message: authType === "signup" ? "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-":"",
                         },
                         minLength: {
                             value: 8,
-                            message: "Password must be at least 8 characters long",
+                            message: authType === "signup" ? "Password must be at least 8 characters long":"",
                         },
                         validate: (value) => {
                             return (/.*[A-Z].*/.test(value) &&
                                 /.*[0-9].*/.test(value) &&
                                 /.*[$&+,:;=?@#|'<>.^*()%!-].*/.test(value)
-                            ) || "Password must contain at least 1 capital letter, 1 number and 1 special character";
+                            ) || (authType === "signup" ? "Password must contain at least 1 capital letter, 1 number and 1 special character":"");
                         }
                     })} />
                     {errors.password?.message}
-                    {authType === "signup" ? <input type="text" {...register("repeatPassword", {
+                    {authType === "signup" ? <input type="password" {...register("repeatPassword", {
                         required: {
                             value: authType === "signup",
                             message: "Please repeat your password",

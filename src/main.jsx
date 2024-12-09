@@ -10,7 +10,7 @@ import Homepage from "./components/Homepage.jsx";
 import Movies from "./components/Movies.jsx";
 import TVShows from "./components/TVShows.jsx";
 import Bookmarks from "./components/Bookmarks.jsx";
-import Trending from "./components/Trending.jsx";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
