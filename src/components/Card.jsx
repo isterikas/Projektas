@@ -5,7 +5,6 @@ function Card({ item }) {
 
 
     const {thumbnail, title, year, category, rating, contentsId } = item;
-   console.log(thumbnail);
    
 
     return (
