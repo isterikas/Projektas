@@ -509,14 +509,6 @@
     {
       "userId": "5",
       "userName": "member6754@email.com",
-<<<<<<< HEAD
-      "userPassword": "qR1x%Y2Zl"
-    },
-    {
-      "id": "928b",
-      "userName": "pavel.gusev431@gmail.com",
-      "userPassword": "p23tuH$1"
-=======
       "userPassword": "qR1x%Y2Zl",
       "id": "e4ee"
     },
@@ -524,85 +516,33 @@
       "id": "ec1d",
       "userName": "pavel.gusev431@gmail.com",
       "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe"
->>>>>>> main
     }
   ],
   "userBookmarks": [
     {
       "userId": "1",
-      "contentsId": [
-        5,
-        12,
-        28,
-        7,
-        19
-<<<<<<< HEAD
-      ]
-=======
-      ],
+      "contentsId": [5, 12, 28, 7, 19],
       "id": "9f6d"
->>>>>>> main
     },
     {
       "userId": "2",
-      "contentsId": [
-        3,
-        8,
-        22,
-        14
-<<<<<<< HEAD
-      ]
-=======
-      ],
+      "contentsId": [3, 8, 22, 14],
       "id": "8847"
->>>>>>> main
     },
     {
       "userId": "3",
-      "contentsId": [
-        4,
-        25,
-        18,
-        9,
-        13,
-        27
-<<<<<<< HEAD
-      ]
-=======
-      ],
+      "contentsId": [4, 25, 18, 9, 13, 27],
       "id": "c6c4"
->>>>>>> main
     },
     {
       "userId": "4",
-      "contentsId": [
-        1,
-        11,
-        29,
-        6,
-        15,
-        23
-<<<<<<< HEAD
-      ]
-=======
-      ],
+      "contentsId": [1, 11, 29, 6, 15, 23],
       "id": "d56a"
->>>>>>> main
     },
     {
       "userId": "5",
-      "contentsId": [
-        2,
-        10,
-        20,
-        16,
-        24
-<<<<<<< HEAD
-      ]
-=======
-      ],
+      "contentsId": [2, 10, 20, 16, 24],
       "id": "0c59"
->>>>>>> main
     }
   ]
 }
