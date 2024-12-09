@@ -1,10 +1,15 @@
-import { useState } from "react";
 import Card from "./Card.jsx";
-import { useLocation } from "react-router";
+import { useLocation, useSearchParams } from "react-router";
 
-function Search({ array }) {
-  const [search, setSearch] = useState("");
+function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = searchParams.get("search") || "";
   const location = useLocation();
+
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setSearchParams(value ? { search: value } : {});
+  };
 
   const getPlaceholder = () => {
     switch (location.pathname) {
@@ -19,15 +24,26 @@ function Search({ array }) {
     }
   };
 
+  const getTitle = () => {
+    switch (location.pathname) {
+      case "/movies":
+        return "Movies";
+      case "/tvshows":
+        return "TV Shows";
+      default:
+        return "Bookmarked shows";
+    }
+  };
+
   const filteredArray = array
     .filter((content) =>
-      content.title.toLowerCase().includes(search.toLowerCase())
+      content.title.toLowerCase().includes(searchQuery.toLowerCase())
     )
     .map((item) => {
       return (
-        <>
-          <Card item={item} key={item.contentsId} />
-        </>
+        <div key={item.id}>
+          <Card item={item} key={item.contentsId} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
+        </div>
       );
     });
 
@@ -35,24 +51,26 @@ function Search({ array }) {
     <>
       <form className="nosubmit background-dark-blue">
         <input
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={handleSearch}
           className="nosubmit rounded caret-[#FC4747] text-white heading-m "
           type="search"
           placeholder={getPlaceholder()}
         />
       </form>
 
-      <div className="background-dark-blue p-3 grid grid-cols-3">
-        {filteredArray} <br />
-        {search ? (
+      <div className="background-dark-blue">
+        {searchParams == "" ? (
+          <h1 className="heading-l text-white">{getTitle()}</h1>
+        ) : (
           <h1 className="heading-l text-white">
             Found {filteredArray.length}
             {filteredArray.length === 1 ? " result" : " results"} for{" "}
-            {`"${search}"`}
+            {`'${searchQuery}'`}
           </h1>
-        ) : (
-          ""
         )}
+        <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {filteredArray}
+        </div>
       </div>
     </>
   );

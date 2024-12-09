@@ -3,7 +3,6 @@ import NavBar from "./components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { getAllData } from "./components/helpers/get.js";
 
-
 export default function App() {
   const [authType, setAuthType] = useState("");
   const [loggedIn, setLoggedIn] = useState("");
@@ -18,7 +17,7 @@ export default function App() {
     try {
       const contents = await getAllData("contents");
       setContents(contents);
-      setError("")
+      setError("");
     } catch (error) {
       setError(error.message);
     }
@@ -28,7 +27,7 @@ export default function App() {
     try {
       const users = await getAllData("users");
       setUsers(users);
-      setError("")
+      setError("");
     } catch (error) {
       setError(error.message);
     }
@@ -38,7 +37,7 @@ export default function App() {
     try {
       const userBookmarks = await getAllData("userBookmarks");
       setUserBookmarks(userBookmarks);
-      setError("")
+      setError("");
     } catch (error) {
       setError(error.message);
     }
@@ -48,13 +47,36 @@ export default function App() {
     getAllcontents()
     getAllUsers()
     getAllUserBookmarks()
-  }, [])
+  }, [update])
 
   return (
     <>
-      <NavBar authType={authType} setAuthType={setAuthType} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      { !error ? <Outlet context={{ authType, setAuthType, loggedIn, setLoggedIn, contents, setContents, users, setUsers, userBookmarks, setUserBookmarks, update, setUpdate }} /> : <p>{error}</p> }
-
+      <NavBar
+        authType={authType}
+        setAuthType={setAuthType}
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+      />
+      {!error ? (
+        <Outlet
+          context={{
+            authType,
+            setAuthType,
+            loggedIn,
+            setLoggedIn,
+            contents,
+            setContents,
+            users,
+            setUsers,
+            userBookmarks,
+            setUserBookmarks,
+            update,
+            setUpdate,
+          }}
+        />
+      ) : (
+        <p>{error}</p>
+      )}
     </>
   );
 }
