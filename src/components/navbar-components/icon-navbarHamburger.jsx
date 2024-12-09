@@ -25,11 +25,11 @@ function HamburgerMenu(props) {
       {/* Hamburger Icon */}
       <button
         onClick={toggleMenu}
-        className="flex flex-col w-[25px] h-[20px] md:w-[32px] md:h-[26px] justify-around"
+        className="flex flex-col w-[25px] h-[20px] md:w-[32px] md:h-[26px] justify-around group "
       >
-        <span className="block w-full h-[4px] bg-white "></span>
-        <span className="block w-full h-[4px] bg-white "></span>
-        <span className="block w-full h-[4px] bg-white"></span>
+        <span className="block w-full h-[4px] bg-white group-hover:bg-red-500 transition duration-500"></span>
+        <span className="block w-full h-[4px] bg-white group-hover:bg-red-500 transition duration-500"></span>
+        <span className="block w-full h-[4px] bg-white group-hover:bg-red-500 transition duration-500"></span>
       </button>
 
       {/* Dropdown Menu */}

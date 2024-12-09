@@ -8,7 +8,7 @@ import HamburgerMenu from "./navbar-components/icon-navbarHamburger";
 function NavBar(props) {
   const { authType, setAuthType, loggedIn, setLoggedIn } = props;
 
-  const [isHomeLogo, setIsHomeLogo] = useState("");
+  const [isHomeLogo, setIsHomeLogo] = useState(true);
   const [isMoviesLogo, setIsMoviesLogo] = useState("");
   const [isTVSeriesLogo, setIsTVSeriesLogo] = useState("");
   const [isBookmarksLogo, setIsBookmarksLogo] = useState("");
