@@ -1,5 +1,5 @@
 function Recommended() {
-    return ;
+  return;
 }
 
 export default Recommended;
