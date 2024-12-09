@@ -50,33 +50,37 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <NavBar
-        authType={authType}
-        setAuthType={setAuthType}
-        loggedIn={loggedIn}
-        setLoggedIn={setLoggedIn}
-      />
-      {!error ? (
-        <Outlet
-          context={{
-            authType,
-            setAuthType,
-            loggedIn,
-            setLoggedIn,
-            contents,
-            setContents,
-            users,
-            setUsers,
-            userBookmarks,
-            setUserBookmarks,
-            update,
-            setUpdate,
-          }}
+    <div className="lg:flex">
+      <div className="md:m-[24px] lg:m-[32px]">
+        <NavBar
+          authType={authType}
+          setAuthType={setAuthType}
+          loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
         />
-      ) : (
-        <p>{error}</p>
-      )}
-    </>
+      </div>
+      <div>
+        {!error ? (
+          <Outlet
+            context={{
+              authType,
+              setAuthType,
+              loggedIn,
+              setLoggedIn,
+              contents,
+              setContents,
+              users,
+              setUsers,
+              userBookmarks,
+              setUserBookmarks,
+              update,
+              setUpdate,
+            }}
+          />
+        ) : (
+          <p>{error}</p>
+        )}
+      </div>
+    </div>
   );
 }

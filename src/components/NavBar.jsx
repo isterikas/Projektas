@@ -17,15 +17,15 @@ function NavBar(props) {
       {authType ? (
         ""
       ) : (
-        <nav className="flex justify-between p-[2rem] border bg-[#161D2F] text-white rounded-[10px]">
-          <div>
+        <nav className="flex justify-between bg-[#161D2F] h-[56px] md:h-[72px] lg:w-[96px] lg:h-[960px] items-center px-[16px] md:px-[24px] lg:px-0  md:rounded-[10px] lg:rounded-[20px] lg:flex-col">
+          <div className="lg:mt-[32px]">
             <img
               src={logoIcon}
               alt="SVG Image"
               className="w-[25px] h-[20px] md:w-[32px] md:h-[26px]"
             />
           </div>
-          <div className="flex">
+          <div className="lg:h-[70%]">
             <NavBarIcons
               isHomeLogo={isHomeLogo}
               setIsHomeLogo={setIsHomeLogo}
@@ -37,7 +37,7 @@ function NavBar(props) {
               setIsBookmarksLogo={setIsBookmarksLogo}
             />
           </div>
-          <div className="text-right">
+          <div className="lg:mb-[32px]">
             {!loggedIn ? (
               <div>
                 <HamburgerMenu

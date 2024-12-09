@@ -12,7 +12,7 @@ const NavBarIcons = (props) => {
   } = props;
 
   return (
-    <div className="flex justify-between w-[133.5px] h-[16px] md:w-[173px] md:h-[20px] lg:w-[200px]">
+    <div className="flex justify-between w-[133.5px] h-[16px] md:w-[173px] md:h-[20px] lg:w-[20px] lg:h-[200px] lg:flex-col">
       <div
         className="w-[16px] h-[16px] md:w-[20px] md:h-[20px]"
         onClick={() => {

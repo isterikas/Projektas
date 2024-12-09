@@ -4,7 +4,7 @@
 
 
     return ( 
-       <img src={logoIcon} alt="SVG Image" />
+       <div></div>
      );
 }
  

@@ -33,6 +33,7 @@ function Search({ array }) {
 
   return (
     <>
+    <div className="w-full">
       <form className="nosubmit background-dark-blue">
         <input
           onChange={(e) => setSearch(e.target.value)}
@@ -54,6 +55,8 @@ function Search({ array }) {
           ""
         )}
       </div>
+    </div>
+      
     </>
   );
 }
