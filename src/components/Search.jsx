@@ -15,7 +15,7 @@ function Search({ array }) {
     switch (location.pathname) {
       case "/movies":
         return "Search for movies";
-      case "/tvshows":
+      case "/tvseries":
         return "Search for TV Shows";
       case "/bookmarks":
         return "Search for bookmarked shows";
@@ -28,7 +28,7 @@ function Search({ array }) {
     switch (location.pathname) {
       case "/movies":
         return "Movies";
-      case "/tvshows":
+      case "/tvseries":
         return "TV Shows";
       default:
         return "Bookmarked shows";
@@ -52,7 +52,7 @@ function Search({ array }) {
       <form className="nosubmit background-dark-blue">
         <input
           onChange={handleSearch}
-          className="nosubmit rounded caret-[#FC4747] text-white heading-m "
+          className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
           type="search"
           placeholder={getPlaceholder()}
         />
@@ -60,9 +60,9 @@ function Search({ array }) {
 
       <div className="background-dark-blue">
         {searchParams == "" ? (
-          <h1 className="heading-l text-white">{getTitle()}</h1>
+          <h1 className="content-heading text-white">{getTitle()}</h1>
         ) : (
-          <h1 className="heading-l text-white">
+          <h1 className="content-heading text-white">
             Found {filteredArray.length}
             {filteredArray.length === 1 ? " result" : " results"} for{" "}
             {`'${searchQuery}'`}
