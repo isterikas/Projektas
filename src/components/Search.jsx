@@ -1,7 +1,7 @@
 import Card from "./Card.jsx";
 import { useLocation, useSearchParams } from "react-router";
 
-function Search({ array }) {
+function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const location = useLocation();
@@ -16,7 +16,7 @@ function Search({ array }) {
       case "/movies":
         return "Search for movies";
       case "/tvseries":
-        return "Search for TV Shows";
+        return "Search for TV Series";
       case "/bookmarks":
         return "Search for bookmarked shows";
       default:
@@ -29,7 +29,7 @@ function Search({ array }) {
       case "/movies":
         return "Movies";
       case "/tvseries":
-        return "TV Shows";
+        return "TV Series";
       default:
         return "Bookmarked shows";
     }
@@ -41,9 +41,9 @@ function Search({ array }) {
     )
     .map((item) => {
       return (
-        <>
-          <Card item={item} key={item.contentsId} />
-        </>
+        <div key={item.contentsId}>
+          <Card item={item} key={item.contentsId} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
+        </div>
       );
     });
 

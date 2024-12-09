@@ -24,13 +24,13 @@ function Trending({ contents }) {
           if (slide.isTrending) {
             return (
               <SwiperSlide key={slide.contentsId}>
-               <img
-                src={"src" + slide.thumbnail.trending.small.slice(1)}
-                alt="Film in trend"
-                className="rounded-lg"
+                <img
+                  src={"src" + slide.thumbnail.trending.small.slice(1)}
+                  alt="Film in trend"
+                  className="rounded-lg"
                 />
-                <div className="relative bottom-20 left-7"> 
-                <TrendingCard slide={slide}/>
+                <div className="relative bottom-20 left-7">
+                  <TrendingCard slide={slide} />
                 </div>
               </SwiperSlide>
             );
