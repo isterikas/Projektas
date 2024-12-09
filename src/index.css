@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-form.nosubmit {
-  border: none;
-  padding: 0;
-}
-
-input.nosubmit {
-  width: 260px;
-  border: 2px solid #555;
-  display: block;
-  padding: 9px 4px 9px 40px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
-    no-repeat 13px center;
-}
-
 @layer components {
   .heading-l {
     font-family: "Outfit";
@@ -95,6 +81,39 @@ input.nosubmit {
   .btn:hover {
     background-color: #ffffff;
     color: #161d2f;
+  }
+  form.nosubmit {
+    border: none;
+    padding: 0;
+  }
+
+  .content-heading{
+font-size: 20px;
+font-family: "Outfit";
+font-weight: 400;
+}
+
+@media (min-width: 768px){
+  .content-heading{@apply heading-l}
+
+
+  }
+
+  input.nosubmit {
+    width: 100%;
+    border: none;
+    outline: none;
+    display: block;
+    padding: 9px 4px 9px 56px;
+    font-size: 16px;
+    background: transparent url("./assets/icons/icon-search.svg") no-repeat 13px
+      center;
+    background-size: 24px 24px;
+    @media (min-width: 768px) {
+      background-size: 32px 32px;
+      padding: 9px 4px 9px 64px;
+      font-size: 24px;
+    }
   }
 }
 
