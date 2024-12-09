@@ -48,7 +48,7 @@ export default function App() {
     getAllcontents()
     getAllUsers()
     getAllUserBookmarks()
-  }, [])
+  }, [update])
 
   return (
     <>

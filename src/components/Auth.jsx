@@ -9,9 +9,17 @@ import { sha256 } from "js-sha256";
 function Auth() {
     const { register, watch, setValue, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
-    const { authType, setAuthType, setLoggedIn } = useOutletContext();
+    const { authType, setAuthType, setLoggedIn, loggedIn, setUpdate, update } = useOutletContext();
     const [error, setError] = useState("");
     const [users, setUsers] = useState([]);
+
+    const pageRefresh = () => {
+        if(!loggedIn) setAuthType("login");
+    }
+
+    useEffect(()=>{
+        pageRefresh();
+    },[])
 
     const fetchUsers = async () => {
         const fetchedUsers = await getAllData("users");
@@ -51,6 +59,7 @@ function Auth() {
                 const fetchedUsers = await getAllData("users");
                 setUsers(fetchedUsers);
                 setAuthType("login");
+                setUpdate(update+1);
                 alert(`New account ${data.email} was created successfully.`);
             }
         }

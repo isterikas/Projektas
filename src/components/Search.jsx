@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "./Card.jsx";
 import { useLocation } from "react-router";
 
-function Search({ array }) {
+function Search({ array, userBookmarks, setUpdate, update, loggedIn }) {
   const [search, setSearch] = useState("");
   const location = useLocation();
 
@@ -25,9 +25,9 @@ function Search({ array }) {
     )
     .map((item) => {
       return (
-        <>
-          <Card item={item} key={item.contentsId} />
-        </>
+        <div key={item.id}>
+          <Card item={item} key={item.contentsId} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
+        </div>
       );
     });
 
