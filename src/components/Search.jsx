@@ -15,8 +15,8 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
     switch (location.pathname) {
       case "/movies":
         return "Search for movies";
-      case "/tvshows":
-        return "Search for TV Shows";
+      case "/tvseries":
+        return "Search for TV Series";
       case "/bookmarks":
         return "Search for bookmarked shows";
       default:
@@ -28,8 +28,8 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
     switch (location.pathname) {
       case "/movies":
         return "Movies";
-      case "/tvshows":
-        return "TV Shows";
+      case "/tvseries":
+        return "TV Series";
       default:
         return "Bookmarked shows";
     }
@@ -41,7 +41,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
     )
     .map((item) => {
       return (
-        <div key={item.id}>
+        <div key={item.contentsId}>
           <Card item={item} key={item.contentsId} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
         </div>
       );
