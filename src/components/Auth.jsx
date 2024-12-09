@@ -34,16 +34,6 @@ function Auth() {
     setValue("repeatPassword", "");
   }, [authType]);
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  useEffect(() => {
-    setValue("email", "");
-    setValue("password", "");
-    setValue("repeatPassword", "");
-  }, [authType]);
-
   const formSubmitHandler = async (data) => {
     try {
       if (authType === "login") {

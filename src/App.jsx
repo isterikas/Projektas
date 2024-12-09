@@ -43,11 +43,11 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    getAllcontents();
-    getAllUsers();
-    getAllUserBookmarks();
-  }, []);
+  useEffect(() =>{
+    getAllcontents()
+    getAllUsers()
+    getAllUserBookmarks()
+  }, [update])
 
   return (
     <>
