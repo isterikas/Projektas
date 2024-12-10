@@ -72,11 +72,11 @@ function Auth() {
     <>
       <div className="h-screen background-dark-blue flex flex-col items-center justify-center">
         <img src={logoIcon} alt="SVG Image" className="pb-20" />
-        <div className="background-semidark-blue px-10 py-10 rounded-lg">
+        <div className="background-semidark-blue rounded-lg px-9 py-20 md:px-20 md:py-16">
           {authType === "login" ? (
-            <h1 className="text-white">Login</h1>
+            <h1 className="text-white heading-l">Login</h1>
           ) : (
-            <h1 className="text-white">Sign up</h1>
+            <h1 className="text-white heading-l">Sign up</h1>
           )}
           <form
             noValidate
