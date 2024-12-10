@@ -19,7 +19,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": true,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "b737"
     },
     {
       "contentsId": "2",
@@ -40,7 +41,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": true,
-      "latestTrending": ""
+      "latestTrending": 2,
+      "id": "a1ac"
     },
     {
       "contentsId": "3",
@@ -61,7 +63,8 @@
       "rating": "E",
       "isBookmarked": false,
       "isTrending": true,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "3b8b"
     },
     {
       "contentsId": "4",
@@ -82,7 +85,8 @@
       "rating": "18+",
       "isBookmarked": false,
       "isTrending": true,
-      "latestTrending": ""
+      "latestTrending": 1,
+      "id": "cce9"
     },
     {
       "contentsId": "5",
@@ -103,7 +107,8 @@
       "rating": "PG",
       "isBookmarked": true,
       "isTrending": true,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "d57d"
     },
     {
       "contentsId": "6",
@@ -120,7 +125,8 @@
       "rating": "E",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "cd79"
     },
     {
       "contentsId": "7",
@@ -137,7 +143,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "b649"
     },
     {
       "contentsId": "8",
@@ -154,7 +161,8 @@
       "rating": "18+",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "25c7"
     },
     {
       "contentsId": "9",
@@ -171,7 +179,8 @@
       "rating": "E",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "0afa"
     },
     {
       "contentsId": "10",
@@ -188,7 +197,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "61af"
     },
     {
       "contentsId": "11",
@@ -205,7 +215,8 @@
       "rating": "18+",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "e086"
     },
     {
       "contentsId": "12",
@@ -222,7 +233,8 @@
       "rating": "E",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 1,
+      "id": "c4aa"
     },
     {
       "contentsId": "13",
@@ -239,7 +251,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "06d9"
     },
     {
       "contentsId": "14",
@@ -256,7 +269,8 @@
       "rating": "E",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "731b"
     },
     {
       "contentsId": "15",
@@ -273,7 +287,8 @@
       "rating": "PG",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "afd5"
     },
     {
       "contentsId": "16",
@@ -290,7 +305,8 @@
       "rating": "18+",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "73b6"
     },
     {
       "contentsId": "17",
@@ -307,7 +323,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 1,
+      "id": "7e27"
     },
     {
       "contentsId": "18",
@@ -324,7 +341,8 @@
       "rating": "PG",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "c19b"
     },
     {
       "contentsId": "19",
@@ -341,7 +359,8 @@
       "rating": "18+",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "615d"
     },
     {
       "contentsId": "20",
@@ -358,7 +377,8 @@
       "rating": "E",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "6333"
     },
     {
       "contentsId": "21",
@@ -375,7 +395,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "fe78"
     },
     {
       "contentsId": "22",
@@ -392,7 +413,8 @@
       "rating": "E",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "41b4"
     },
     {
       "contentsId": "23",
@@ -409,7 +431,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "bc75"
     },
     {
       "contentsId": "24",
@@ -426,7 +449,8 @@
       "rating": "E",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "7939"
     },
     {
       "contentsId": "25",
@@ -443,7 +467,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "e4b6"
     },
     {
       "contentsId": "26",
@@ -460,7 +485,8 @@
       "rating": "PG",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "88c5"
     },
     {
       "contentsId": "27",
@@ -477,7 +503,8 @@
       "rating": "18+",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "2c31"
     },
     {
       "contentsId": "28",
@@ -494,7 +521,8 @@
       "rating": "18+",
       "isBookmarked": false,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 0,
+      "id": "a345"
     },
     {
       "contentsId": "29",
@@ -511,7 +539,8 @@
       "rating": "PG",
       "isBookmarked": true,
       "isTrending": false,
-      "latestTrending": ""
+      "latestTrending": 2,
+      "id": "4432"
     }
   ],
   "users": [
@@ -519,33 +548,53 @@
       "id": "ec1d",
       "userName": "pavel.gusev431@gmail.com",
       "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe"
+    },
+    {
+      "id": "50bf",
+      "userName": "audrius.adomavicius@stud.techin.lt",
+      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8"
+    },
+    {
+      "id": "f1fb",
+      "userName": "kartoska@gmail.com",
+      "userPassword": "8226e9937f02d464ebf7f35aabf0e6bef7ed982179b5e6d2308ecbb910076952"
     }
   ],
   "userBookmarks": [
     {
-      "id": "9f6d",
-      "contentsId": [5, 12, 28, 7, 19],
-      "activity": ""
+      "id": "0486",
+      "contentsId": "17",
+      "userId": "50bf"
     },
     {
-      "id": "8847",
-      "contentsId": [3, 8, 22, 14],
-      "activity": 4
+      "id": "3fab",
+      "contentsId": "4",
+      "userId": "50bf"
     },
     {
-      "id": "c6c4",
-      "contentsId": [4, 25, 18, 9, 13, 27],
-      "activity": ""
+      "id": "72bf",
+      "contentsId": "2",
+      "userId": "50bf"
     },
     {
-      "id": "d56a",
-      "contentsId": [1, 11, 29, 6, 15, 23],
-      "activity": 6
+      "id": "8493",
+      "contentsId": "12",
+      "userId": "50bf"
     },
     {
-      "id": "0c59",
-      "contentsId": [2, 10, 20, 16, 24],
-      "activity": ""
+      "id": "5216",
+      "contentsId": "29",
+      "userId": "ec1d"
+    },
+    {
+      "id": "8439",
+      "contentsId": "29",
+      "userId": "ec1d"
+    },
+    {
+      "id": "3fab",
+      "contentsId": "2",
+      "userId": "ec1d"
     }
   ]
 }

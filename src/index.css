@@ -2,82 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-form.nosubmit {
-  border: none;
-  padding: 0;
-}
-
-input.nosubmit {
-  width: 260px;
-  border: 2px solid #555;
-  display: block;
-  padding: 9px 4px 9px 40px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
-    no-repeat 13px center;
-}
-
 @layer components {
   .heading-l {
     font-family: "Outfit";
     font-size: 32px;
     font-weight: 300;
   }
+
   .heading-m {
     font-family: "Outfit";
     font-size: 24px;
     font-weight: 300;
   }
+
   .heading-s {
     font-family: "Outfit";
     font-size: 24px;
     font-weight: 500;
   }
+
   .heading-xs {
     font-family: "Outfit";
     font-size: 18px;
     font-weight: 500;
   }
+
   .body-m {
     font-family: "Outfit";
     font-size: 15px;
     font-weight: 300;
   }
+
   .body-s {
     font-family: "Outfit";
     font-size: 13px;
     font-weight: 300;
     opacity: 0.75;
   }
+
   .background-red {
     background-color: #fc4747;
   }
+
   .text-red {
     color: #fc4747;
   }
+
   .background-dark-blue {
     background-color: #10141e;
+    grid-column: 2;
   }
+
   .text-dark-blue {
     color: #10141e;
   }
+
   .background-greyish-blue {
     background-color: #5a698f;
   }
+
   .text-greyish-blue {
     color: #5a698f;
   }
+
   .background-semidark-blue {
     background-color: #161d2f;
   }
+
   .text-semidark-blue {
     color: #161d2f;
   }
+
   .btn {
     background-color: #fc4747;
     color: #ffffff;
   }
+
   .btn:hover {
     background-color: #ffffff;
     color: #161d2f;
   }
+  form.nosubmit {
+    border: none;
+    padding: 0;
+  }
+
+  .content-heading{
+font-size: 20px;
+font-family: "Outfit";
+font-weight: 400;
+margin-left: 16px
+}
+
+@media (min-width: 768px){
+  .content-heading{@apply heading-l;
+  margin-left: 25px}
+
+
+  }
+
+  input.nosubmit {
+    width: 100%;
+    border: none;
+    outline: none;
+    display: block;
+    padding: 9px 4px 9px 56px;
+    font-size: 16px;
+    background: transparent url("./assets/icons/icon-search.svg") no-repeat 13px
+      center;
+    background-size: 24px 24px;
+    @media (min-width: 768px) {
+      background-size: 32px 32px;
+      padding: 9px 4px 9px 64px;
+      font-size: 24px;
+    }
+  }
+}
+
+
+
+.bookmark-icon {
+  top: 10%;
+  left: 18rem;
+  z-index: 99;;
+}
+.movie-icon {
+  font-size: 4px;
+
 }
