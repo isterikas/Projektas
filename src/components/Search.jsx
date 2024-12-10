@@ -42,14 +42,21 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
     .map((item) => {
       return (
         <div key={item.contentsId}>
-          <Card item={item} key={item.contentsId} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
+          <Card
+            item={item}
+            key={item.contentsId}
+            update={update}
+            setUpdate={setUpdate}
+            userBookmarks={userBookmarks}
+            loggedIn={loggedIn}
+          />
         </div>
       );
     });
 
   return (
     <>
-      <form className="nosubmit background-dark-blue">
+      <form className="nosubmit background-dark-blue items-center">
         <input
           onChange={handleSearch}
           className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
@@ -68,8 +75,10 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
             {`'${searchQuery}'`}
           </h1>
         )}
-        <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {filteredArray}
+        <div className="py-4 px-2 mx-auto lg:py-10 lg:px-2">
+          <div className="grid grid-cols-2 space-y-8 lg:grid md:grid-cols-3 lg:grid-cols-4 sm:gap-6 xl:gap-4 lg:space-y-0">
+            {filteredArray}
+          </div>
         </div>
       </div>
     </>
