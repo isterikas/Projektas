@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
-import movieIcon from "../assets/icons/icon-nav-movies.svg"
+import movieIcon from "../assets/icons/icon-nav-movies.svg";
 
-function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
+function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
   const [checked, setChecked] = useState(false);
@@ -35,6 +35,10 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
     }
   };
 
+  //window magic
+  
+  //end of window magic
+
   return (
     <div className="shadow m-3 ">
       <div className="relative ">
@@ -45,7 +49,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
         ) : (
           ""
         )}
-        <img className="rounded-xl bottom-5" src={"src" + thumbnail.regular.small.slice(1)} alt="#" />
+        {{width} < 1024 ? (<img className="rounded-xl bottom-5" src={"src" + thumbnail.regular.small.slice(1)} alt="#" />) : (<img className="rounded-xl bottom-5" src={"src" + thumbnail.regular.large.slice(1)} alt="#" />)}
       </div>
 
       <div className="flex mt-3 gap-2 relative">
