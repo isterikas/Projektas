@@ -1,4 +1,3 @@
-import { useOutletContext } from "react-router";
 import Search from "./Search";
 
 // Atsitiktine tvarka maišome masyvą. Kol kas naudoju kai useris neprisijungęs
@@ -11,8 +10,7 @@ function shuffleArray(array) {
   return array;
 }
 
-function Recommended({ loggedIn }) {
-  const { contents } = useOutletContext();
+function Recommended({ contents, update, setUpdate, loggedIn, userBookmarks }) {
 
   let shuffledContents = contents;
 
@@ -27,7 +25,7 @@ function Recommended({ loggedIn }) {
   return (
     // sutvarkyti, Search for movies or TV series, perkelti po navbar
     <>
-      <Search array={shuffledContents} />
+      <Search array={shuffledContents} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
     </>
   );
 }

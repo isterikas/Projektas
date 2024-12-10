@@ -7,7 +7,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
   const location = useLocation();
 
   const handleSearch = (e) => {
-    const value = e.target.value;
+    const value = (e.target.value).trim();
     setSearchParams(value ? { search: value } : {});
   };
 
