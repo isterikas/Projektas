@@ -4,7 +4,7 @@ import { useOutletContext } from "react-router";
 import { useEffect } from "react";
 
 function Homepage() {
-  const { contents, loggedIn, setAuthType } = useOutletContext();
+  const { contents, loggedIn, setAuthType, update, setUpdate, userBookmarks } = useOutletContext();
 
   const pageBack = () => {
     if (!loggedIn) setAuthType("");
@@ -17,7 +17,7 @@ function Homepage() {
   return (
     <>
       <Trending contents={contents} />
-      <Recommended />
+      <Recommended contents={contents} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn}/>
     </>
   );
 }

@@ -10,10 +10,11 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
 
   const setStateChecked = async () => {
     const thisBookmark = await userBookmarks.find(
-      (bookmark) => bookmark.userId == loggedIn && bookmark.contentsId == contentsId
+      (bookmark) =>
+        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) setChecked(true);
-  }
+  };
 
   useEffect(() => {
     setStateChecked();
@@ -22,7 +23,8 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
   const toggleBookmark = () => {
     setUpdate(update + 1);
     const thisBookmark = userBookmarks.find(
-      (bookmark) => bookmark.userId == loggedIn && bookmark.contentsId == contentsId
+      (bookmark) =>
+        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) {
       deleteBookmark(thisBookmark.id);
@@ -43,7 +45,6 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
         ) : (
           ""
         )}
-
         <img className="rounded-xl bottom-5" src={"src" + thumbnail.regular.small.slice(1)} alt="#" />
       </div>
 
@@ -56,7 +57,6 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
         <p className="body-s text-white"> {rating}</p>
       </div>
       <h1 className="heading-xs text-white"> {title}</h1>
-
     </div>
   );
 }
