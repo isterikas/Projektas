@@ -49,10 +49,10 @@ const UserIcon = (props) => {
         </p>
       </div>
       {isOpen && (
-        <div
+        <button
           className="fixed inset-0 bg-black opacity-50"
           onClick={() => setIsOpen(false)}
-        ></div>
+        ></button>
       )}
     </div>
   );
