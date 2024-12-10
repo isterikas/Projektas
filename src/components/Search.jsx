@@ -1,7 +1,7 @@
 import Card from "./Card.jsx";
 import { useLocation, useSearchParams } from "react-router";
 
-function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
+function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const location = useLocation();
@@ -49,6 +49,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
             setUpdate={setUpdate}
             userBookmarks={userBookmarks}
             loggedIn={loggedIn}
+            width={width}
           />
         </div>
       );
@@ -76,7 +77,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
               {`'${searchQuery}'`}
             </h1>
           )}
-          <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
             {filteredArray}
           </div>
         </div>

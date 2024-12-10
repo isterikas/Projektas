@@ -10,3 +10,5 @@ export const getOne = async (id, resource) => {
   const response = await axios.get(`${url(resource)}/${id}`);
   return response.data;
 };
+
+

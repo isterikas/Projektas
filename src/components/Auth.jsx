@@ -19,9 +19,9 @@ function Auth() {
   const [error, setError] = useState("");
   const [users, setUsers] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     setAuthType("login");
-  },[])
+  }, []);
 
   const fetchUsers = async () => {
     const fetchedUsers = await getAllData("users");
@@ -65,22 +65,18 @@ function Auth() {
         alert(`New account ${data.email} was created successfully.`);
       }
     } catch (error) {
-      setError(error?.message)
+      setError(error?.message);
     }
   };
   return (
     <>
-      <div className="h-screen background-dark-blue flex flex-col items-center justify-center h-screen">
-        <img 
-        src={logoIcon} 
-        alt="SVG Image"
-        className="pb-20"
-        />
-        <div className="background-semidark-blue px-10 py-10 rounded-lg">
+      <div className="h-screen background-dark-blue flex flex-col items-center justify-center">
+        <img src={logoIcon} alt="SVG Image" className="pb-20" />
+        <div className="background-semidark-blue rounded-lg px-9 py-20 md:px-20 md:py-16">
           {authType === "login" ? (
-            <h1 className="text-white">Login</h1>
+            <h1 className="text-white heading-l">Login</h1>
           ) : (
-            <h1 className="text-white">Sign up</h1>
+            <h1 className="text-white heading-l">Sign up</h1>
           )}
           <form
             noValidate
@@ -97,7 +93,9 @@ function Auth() {
                 },
               })}
               placeholder="Email address"
-              className={`background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${errors.email?"border-red-600":"border-white"}`}
+              className={`background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
+                errors.email ? "border-red-600" : "border-white"
+              }`}
             />
             <span className="text-red ">{errors.email?.message}</span>
             <input
@@ -130,7 +128,9 @@ function Auth() {
                 },
               })}
               placeholder="Password"
-              className={`background-semidark-blue text-white border-t-0  border-r-0  border-l-0 focus:border-white ${errors.email?"border-red-600":"border-white"}`}
+              className={`background-semidark-blue text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
+                errors.email ? "border-red-600" : "border-white"
+              }`}
             />
             <span className="text-red">{errors.password?.message}</span>
             {authType === "signup" ? (
@@ -148,21 +148,30 @@ function Auth() {
                   },
                 })}
                 placeholder="Repeat Password"
-                className={`background-semidark-blue text-white border-t-0  border-r-0  border-l-0 focus:border-white ${errors.email?"border-red-600":"border-white"}`}
+                className={`background-semidark-blue text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
+                  errors.email ? "border-red-600" : "border-white"
+                }`}
               />
             ) : (
               ""
             )}
             <span className="text-red">{errors.repeatPassword?.message}</span>
-            <input
+            <button
               type="submit"
-              className="background-red text-white rounded-md mt-10 px-5 py-3"
-            />
+              className="background-red  text-white rounded-md mt-10 px-5 py-3 hover:bg-white hover:text-black"
+            >
+              {authType == "signup"
+                ? "Create an account"
+                : "Login to your account"}
+            </button>
           </form>
           {authType == "signup" ? (
             <div className="text-white text-center pt-10">
               Already have an account?{" "}
-              <button onClick={() => setAuthType("login")} className="text-red">
+              <button
+                onClick={() => setAuthType("login")}
+                className="text-red "
+              >
                 Log in
               </button>
             </div>
