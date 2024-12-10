@@ -1,5 +1,3 @@
-
-// import { useOutletContext } from "react-router";
 import Search from "./Search";
 
 // Atsitiktine tvarka maišome masyvą. Kol kas naudoju kai useris neprisijungęs

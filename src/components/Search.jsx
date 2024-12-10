@@ -42,34 +42,43 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
     .map((item) => {
       return (
         <div key={item.contentsId}>
-          <Card item={item} key={item.contentsId} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
+          <Card
+            item={item}
+            key={item.contentsId}
+            update={update}
+            setUpdate={setUpdate}
+            userBookmarks={userBookmarks}
+            loggedIn={loggedIn}
+          />
         </div>
       );
     });
 
   return (
     <>
-      <form className="nosubmit background-dark-blue">
-        <input
-          onChange={handleSearch}
-          className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
-          type="search"
-          placeholder={getPlaceholder()}
-        />
-      </form>
+      <div className="w-full">
+        <form className="nosubmit background-dark-blue">
+          <input
+            onChange={handleSearch}
+            className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
+            type="search"
+            placeholder={getPlaceholder()}
+          />
+        </form>
 
-      <div className="background-dark-blue">
-        {searchParams == "" ? (
-          <h1 className="content-heading text-white">{getTitle()}</h1>
-        ) : (
-          <h1 className="content-heading text-white">
-            Found {filteredArray.length}
-            {filteredArray.length === 1 ? " result" : " results"} for{" "}
-            {`'${searchQuery}'`}
-          </h1>
-        )}
-        <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {filteredArray}
+        <div className="background-dark-blue">
+          {searchParams == "" ? (
+            <h1 className="content-heading text-white">{getTitle()}</h1>
+          ) : (
+            <h1 className="content-heading text-white">
+              Found {filteredArray.length}
+              {filteredArray.length === 1 ? " result" : " results"} for{" "}
+              {`'${searchQuery}'`}
+            </h1>
+          )}
+          <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {filteredArray}
+          </div>
         </div>
       </div>
     </>

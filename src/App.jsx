@@ -43,40 +43,49 @@ export default function App() {
     }
   };
 
-  useEffect(() =>{
-    getAllcontents()
-    getAllUsers()
-    getAllUserBookmarks()
-  }, [update])
+  const pageBack = () => {
+    if (!loggedIn) setAuthType("");
+  };
+
+  useEffect(() => {
+    getAllcontents();
+    getAllUsers();
+    getAllUserBookmarks();
+  }, [update]);
 
   return (
-    <>
-      <NavBar
-        authType={authType}
-        setAuthType={setAuthType}
-        loggedIn={loggedIn}
-        setLoggedIn={setLoggedIn}
-      />
-      {!error ? (
-        <Outlet
-          context={{
-            authType,
-            setAuthType,
-            loggedIn,
-            setLoggedIn,
-            contents,
-            setContents,
-            users,
-            setUsers,
-            userBookmarks,
-            setUserBookmarks,
-            update,
-            setUpdate,
-          }}
+    <div className="lg:flex">
+      <div className="md:m-[24px] lg:m-[32px]">
+        <NavBar
+          authType={authType}
+          setAuthType={setAuthType}
+          loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
         />
-      ) : (
-        <p>{error}</p>
-      )}
-    </>
+      </div>
+      <div>
+        {!error ? (
+          <Outlet
+            context={{
+              authType,
+              setAuthType,
+              loggedIn,
+              setLoggedIn,
+              contents,
+              setContents,
+              users,
+              setUsers,
+              userBookmarks,
+              setUserBookmarks,
+              update,
+              setUpdate,
+              pageBack,
+            }}
+          />
+        ) : (
+          <p>{error}</p>
+        )}
+      </div>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 // import { NavLink } from "react-router";
 
 function TrendingCard({ slide }) {
-  const { thumbnail, title, year, category, rating, contentsId } = slide;
+  const { thumbnail, title, year, category, rating } = slide;
   console.log(thumbnail);
 
   return (

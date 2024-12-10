@@ -1,9 +1,8 @@
 import { useState } from "react";
 import logoIcon from "../assets/icons/logo.svg";
-import NavBarIcons from "./navbar-components/icons-navbar";
-// import homeLogo from "../assets/icons/icon-nav-home.svg";
-
-import HamburgerMenu from "./navbar-components/icon-navbarHamburger";
+import NavBarIcons from "./navbar-components/navbar-active-icons";
+import HamburgerMenu from "./navbar-components/navbar-hamburger-icon";
+import UserIcon from "./navbar-components/user-icon.jsx";
 
 function NavBar(props) {
   const { authType, setAuthType, loggedIn, setLoggedIn } = props;
@@ -17,15 +16,15 @@ function NavBar(props) {
       {authType ? (
         ""
       ) : (
-        <nav className="flex justify-between p-[2rem] border bg-[#161D2F] text-white rounded-[10px]">
-          <div>
+        <nav className="flex justify-between bg-[#161D2F] h-[56px] md:h-[72px] lg:w-[96px] lg:h-[960px] items-center px-[16px] md:px-[24px] lg:px-0  md:rounded-[10px] lg:rounded-[20px] lg:flex-col">
+          <div className="lg:mt-[32px]">
             <img
               src={logoIcon}
               alt="SVG Image"
               className="w-[25px] h-[20px] md:w-[32px] md:h-[26px]"
             />
           </div>
-          <div className="flex">
+          <div className="lg:h-[70%]">
             <NavBarIcons
               isHomeLogo={isHomeLogo}
               setIsHomeLogo={setIsHomeLogo}
@@ -37,7 +36,7 @@ function NavBar(props) {
               setIsBookmarksLogo={setIsBookmarksLogo}
             />
           </div>
-          <div className="text-right">
+          <div className="lg:mb-[32px]">
             {!loggedIn ? (
               <div>
                 <HamburgerMenu
@@ -46,7 +45,9 @@ function NavBar(props) {
                 />
               </div>
             ) : (
-              <div>ShowIcon</div>
+              <div>
+                <UserIcon setLoggedIn={setLoggedIn} />
+              </div>
             )}
           </div>
         </nav>
