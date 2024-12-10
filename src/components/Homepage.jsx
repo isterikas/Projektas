@@ -4,9 +4,16 @@ import { useOutletContext } from "react-router";
 import { useEffect } from "react";
 
 function Homepage() {
-  const { contents, loggedIn, update, setUpdate, userBookmarks, pageBack } = useOutletContext();
-
- 
+  const {
+    contents,
+    loggedIn,
+    setAuthType,
+    update,
+    setUpdate,
+    userBookmarks,
+    pageBack,
+    width,
+  } = useOutletContext();
 
   useEffect(() => {
     pageBack();
@@ -14,8 +21,15 @@ function Homepage() {
 
   return (
     <>
-      <Trending contents={contents} />
-      <Recommended contents={contents} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn}/>
+      <Trending contents={contents} width={width} />
+      <Recommended
+        contents={contents}
+        update={update}
+        setUpdate={setUpdate}
+        userBookmarks={userBookmarks}
+        loggedIn={loggedIn}
+        width={width}
+      />
     </>
   );
 }

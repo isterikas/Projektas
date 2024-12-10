@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router";
+
 import Search from "./Search";
 
 // kazkur iskelti
@@ -26,6 +26,7 @@ function shuffleArray(array) {
 }
 
 function Recommended({ contents, update, setUpdate, loggedIn, userBookmarks }) {
+
   let shuffledContents = contents;
 
   // Kai vartotojas neprisijungęs || nežinomas
@@ -39,13 +40,7 @@ function Recommended({ contents, update, setUpdate, loggedIn, userBookmarks }) {
   return (
     // sutvarkyti, Search for movies or TV series, perkelti po navbar
     <>
-      <Search
-        array={shuffledContents}
-        update={update}
-        setUpdate={setUpdate}
-        userBookmarks={userBookmarks}
-        loggedIn={loggedIn}
-      />
+      <Search array={shuffledContents} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
     </>
   );
 }
