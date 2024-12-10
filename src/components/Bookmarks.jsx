@@ -3,7 +3,7 @@ import Search from "./Search";
 import { useEffect } from "react";
 
 function Bookmarks() {
-  const { contents, userBookmarks, loggedIn, update, setUpdate, pageBack } = useOutletContext();
+  const { contents, userBookmarks, loggedIn, update, setUpdate, pageBack, width } = useOutletContext();
 
   const allBookmarks = contents.filter((content) => {
     const isBookmarked = userBookmarks.find(
@@ -19,7 +19,7 @@ function Bookmarks() {
 
   return (
     <>
-      <Search array={allBookmarks} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn}/>
+      <Search array={allBookmarks} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} width={width}/>
     </>
   );
 }

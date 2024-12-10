@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import TrendingCard from "./TrendingCard";
-function Trending({ contents }) {
+function Trending({ contents, width }) {
   return (
     <>
       <h2 className=" background-dark-blue text-white">Trending</h2>
@@ -11,7 +11,6 @@ function Trending({ contents }) {
         spaceBetween={40}
         breakpoints={{
           1024:{
-            with: 1024,
             slidesPerView: 2.5
           }
         }}
@@ -29,11 +28,10 @@ function Trending({ contents }) {
         {contents.map((slide) => {
           if (slide.isTrending) {
             return (
-              <SwiperSlide key={slide.contentsId}>
+              <SwiperSlide key={slide.contentsId} className="w-auto">
                 <img
                   src={"src" + slide.thumbnail.trending.large.slice(1)}
                   alt="Film in trend"
-                  className="rounded-lg"
                 />
                 <div className="relative bottom-24 left-16">
                   <TrendingCard slide={slide} />

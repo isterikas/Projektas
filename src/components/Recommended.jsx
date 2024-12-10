@@ -10,7 +10,7 @@ function shuffleArray(array) {
   return array;
 }
 
-function Recommended({ contents, update, setUpdate, loggedIn, userBookmarks }) {
+function Recommended({ contents, update, setUpdate, loggedIn, userBookmarks, width }) {
 
   let shuffledContents = contents;
 
@@ -25,7 +25,7 @@ function Recommended({ contents, update, setUpdate, loggedIn, userBookmarks }) {
   return (
     // sutvarkyti, Search for movies or TV series, perkelti po navbar
     <>
-      <Search array={shuffledContents} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
+      <Search array={shuffledContents} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} width={width} />
     </>
   );
 }

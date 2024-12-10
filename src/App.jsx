@@ -53,9 +53,17 @@ export default function App() {
     getAllUserBookmarks();
   }, [update]);
 
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="lg:flex">
-      <div className="md:m-[24px] lg:m-[32px]">
+    <div className="background-dark-blue">
+      <div className="md:m-[24px] lg:m-[32px] lg:absolute background-dark-blue">
         <NavBar
           authType={authType}
           setAuthType={setAuthType}
@@ -63,7 +71,7 @@ export default function App() {
           setLoggedIn={setLoggedIn}
         />
       </div>
-      <div>
+      <div className="lg:pl-40 background-dark-blue">
         {!error ? (
           <Outlet
             context={{
@@ -80,6 +88,7 @@ export default function App() {
               update,
               setUpdate,
               pageBack,
+              width
             }}
           />
         ) : (

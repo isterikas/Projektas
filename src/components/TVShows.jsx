@@ -3,7 +3,7 @@ import Search from "./Search";
 import { useEffect } from "react";
 
 function TVShows() {
-  const { contents, update, setUpdate, userBookmarks, loggedIn, pageBack } =
+  const { contents, update, setUpdate, userBookmarks, loggedIn, pageBack, width } =
     useOutletContext();
 
   const allTvshows = contents.filter(
@@ -22,6 +22,7 @@ function TVShows() {
         setUpdate={setUpdate}
         userBookmarks={userBookmarks}
         loggedIn={loggedIn}
+        width={width}
       />
     </>
   );
