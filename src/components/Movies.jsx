@@ -3,7 +3,8 @@ import Search from "./Search";
 import { useEffect } from "react";
 
 function Movies() {
-  const { contents, pageBack } = useOutletContext();
+  const { contents, update, setUpdate, userBookmarks, loggedIn, pageBack } =
+    useOutletContext();
   const movies = contents.filter((show) => show.category === "Movie");
 
   useEffect(() => {
@@ -12,7 +13,13 @@ function Movies() {
 
   return (
     <>
-      <Search array={movies} />
+      <Search
+        array={movies}
+        update={update}
+        setUpdate={setUpdate}
+        userBookmarks={userBookmarks}
+        loggedIn={loggedIn}
+      />
     </>
   );
 }

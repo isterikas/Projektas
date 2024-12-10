@@ -11,3 +11,8 @@ export const deleteAccount = async (id) => {
   const response = await axios.delete(`${url("users")}/${id}`);
   return response.data;
 };
+
+export const deleteBookmark = async (id) => {
+  const response = await axios.delete(`${url("userBookmarks")}/${id}`);
+  return response;
+}

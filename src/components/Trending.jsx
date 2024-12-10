@@ -1,10 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import TrendingCard from "./TrendingCard";
 function Trending({ contents }) {
   return (
     <>
-      <h2>Trending</h2>
+      <h2 className=" background-dark-blue text-white">Trending</h2>
       <Swiper
         slidesPerView={1.5}
         spaceBetween={10}
@@ -17,7 +18,7 @@ function Trending({ contents }) {
         pagination={{
           clickable: true,
         }}
-        className="mySwiper"
+        className="mySwiper background-dark-blue"
       >
         {contents.map((slide) => {
           if (slide.isTrending) {
@@ -28,6 +29,9 @@ function Trending({ contents }) {
                   alt="Film in trend"
                   className="rounded-lg"
                 />
+                <div className="relative bottom-20 left-7">
+                  <TrendingCard slide={slide} />
+                </div>
               </SwiperSlide>
             );
           }

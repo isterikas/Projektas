@@ -51,7 +51,7 @@ export default function App() {
     getAllcontents();
     getAllUsers();
     getAllUserBookmarks();
-  }, []);
+  }, [update]);
 
   return (
     <div className="lg:flex">

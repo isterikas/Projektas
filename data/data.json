@@ -492,77 +492,66 @@
       "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe"
     },
     {
-      "id": "c68c",
-      "userName": "edgaraslaptevas5@gmail.com",
-      "userPassword": "813c6c07eca42ae9b8a05643af559fa007bca7216936ed2e7d91d10429817909"
+      "id": "50bf",
+      "userName": "audrius.adomavicius@stud.techin.lt",
+      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8"
     },
     {
-      "id": "4781",
-      "userName": "edgaraslaptevas1@gmail.com",
-      "userPassword": "499e8216720226c34e6968122f6bb576e2bdf1a397749afcc4880f17e6ff2deb"
-    },
-    {
-      "id": "0c39",
-      "userName": "edgaraslaptevas88@gmail.com",
-      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206"
+      "id": "f1fb",
+      "userName": "kartoska@gmail.com",
+      "userPassword": "8226e9937f02d464ebf7f35aabf0e6bef7ed982179b5e6d2308ecbb910076952"
     }
   ],
   "userBookmarks": [
     {
-      "userId": "1",
-      "contentsId": [
-        5,
-        12,
-        28,
-        7,
-        19
-      ],
-      "id": "9f6d"
+      "id": "06fd",
+      "contentsId": "2",
+      "userId": "ec1d"
     },
     {
-      "userId": "2",
-      "contentsId": [
-        3,
-        8,
-        22,
-        14
-      ],
-      "id": "8847"
+      "id": "8bbf",
+      "contentsId": "14",
+      "userId": "ec1d"
     },
     {
-      "userId": "3",
-      "contentsId": [
-        4,
-        25,
-        18,
-        9,
-        13,
-        27
-      ],
-      "id": "c6c4"
+      "id": "914d",
+      "contentsId": "13",
+      "userId": "ec1d"
     },
     {
-      "userId": "4",
-      "contentsId": [
-        1,
-        11,
-        29,
-        6,
-        15,
-        23
-      ],
-      "id": "d56a"
+      "id": "34d0",
+      "contentsId": "11",
+      "userId": "ec1d"
     },
     {
-      "userId": "5",
-      "contentsId": [
-        2,
-        10,
-        20,
-        16,
-        24
-      ],
-      "id": "0c59"
+      "id": "84e7",
+      "contentsId": "1",
+      "userId": "ec1d"
+    },
+    {
+      "id": "a5ad",
+      "contentsId": "4",
+      "userId": "ec1d"
+    },
+    {
+      "id": "0486",
+      "contentsId": "17",
+      "userId": "50bf"
+    },
+    {
+      "id": "3fab",
+      "contentsId": "4",
+      "userId": "50bf"
+    },
+    {
+      "id": "72bf",
+      "contentsId": "2",
+      "userId": "50bf"
+    },
+    {
+      "id": "8493",
+      "contentsId": "12",
+      "userId": "50bf"
     }
   ]
 }

@@ -1,4 +1,3 @@
-
 import { useOutletContext } from "react-router";
 import Search from "./Search";
 

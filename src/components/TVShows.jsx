@@ -3,7 +3,8 @@ import Search from "./Search";
 import { useEffect } from "react";
 
 function TVShows() {
-  const { contents, pageBack } = useOutletContext();
+  const { contents, update, setUpdate, userBookmarks, loggedIn, pageBack } =
+    useOutletContext();
 
   const allTvshows = contents.filter(
     (content) => content.category === "TV Series"
@@ -15,7 +16,13 @@ function TVShows() {
 
   return (
     <>
-      <Search array={allTvshows} />
+      <Search
+        array={allTvshows}
+        update={update}
+        setUpdate={setUpdate}
+        userBookmarks={userBookmarks}
+        loggedIn={loggedIn}
+      />
     </>
   );
 }
