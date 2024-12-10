@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router";
 import Search from "./Search";
 
 function Bookmarks() {
-  const { contents, userBookmarks, loggedIn } = useOutletContext();
+  const { contents, userBookmarks, loggedIn, update, setUpdate } = useOutletContext();
 
   const allBookmarks = contents.filter(
     (content) => {
@@ -13,7 +13,7 @@ function Bookmarks() {
 
   return (
     <>
-      <Search array={allBookmarks} />
+      <Search array={allBookmarks} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn}/>
     </>
   );
 }
