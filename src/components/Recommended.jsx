@@ -1,4 +1,19 @@
+
 import Search from "./Search";
+
+// kazkur iskelti
+import { updateTrending } from "./helpers/updateTrending";
+
+const testUpdateTrending = async () => {
+  try {
+    await updateTrending();
+    console.log("Test update completed successfully.");
+  } catch (error) {
+    console.error("Test update failed:", error);
+  }
+};
+
+testUpdateTrending();
 
 // Atsitiktine tvarka maišome masyvą. Kol kas naudoju kai useris neprisijungęs
 // (vėliau kai neprisijungęs || neturi bookmarks || papildyti jai neužtenka rekomendacijų)
