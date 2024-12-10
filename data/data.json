@@ -18,7 +18,8 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": true
+      "isTrending": true,
+      "latestTrending": ""
     },
     {
       "contentsId": "2",
@@ -38,7 +39,8 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": true
+      "isTrending": true,
+      "latestTrending": ""
     },
     {
       "contentsId": "3",
@@ -58,7 +60,8 @@
       "category": "TV Series",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": true
+      "isTrending": true,
+      "latestTrending": ""
     },
     {
       "contentsId": "4",
@@ -78,7 +81,8 @@
       "category": "Movie",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": true
+      "isTrending": true,
+      "latestTrending": ""
     },
     {
       "contentsId": "5",
@@ -98,7 +102,8 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": true,
-      "isTrending": true
+      "isTrending": true,
+      "latestTrending": ""
     },
     {
       "contentsId": "6",
@@ -114,7 +119,8 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "7",
@@ -130,7 +136,8 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "8",
@@ -146,7 +153,8 @@
       "category": "Movie",
       "rating": "18+",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "9",
@@ -162,7 +170,8 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "10",
@@ -178,7 +187,8 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "11",
@@ -194,7 +204,8 @@
       "category": "TV Series",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "12",
@@ -210,7 +221,8 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "13",
@@ -226,7 +238,8 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "14",
@@ -242,7 +255,8 @@
       "category": "TV Series",
       "rating": "E",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "15",
@@ -258,7 +272,8 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "16",
@@ -274,7 +289,8 @@
       "category": "TV Series",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "17",
@@ -290,7 +306,8 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "18",
@@ -306,7 +323,8 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "19",
@@ -322,7 +340,8 @@
       "category": "Movie",
       "rating": "18+",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "20",
@@ -338,7 +357,8 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "21",
@@ -354,7 +374,8 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "22",
@@ -370,7 +391,8 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "23",
@@ -386,7 +408,8 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "24",
@@ -402,7 +425,8 @@
       "category": "TV Series",
       "rating": "E",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "25",
@@ -418,7 +442,8 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "26",
@@ -434,7 +459,8 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "27",
@@ -450,7 +476,8 @@
       "category": "Movie",
       "rating": "18+",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "28",
@@ -466,7 +493,8 @@
       "category": "TV Series",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     },
     {
       "contentsId": "29",
@@ -482,7 +510,8 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "latestTrending": ""
     }
   ],
   "users": [
@@ -494,29 +523,29 @@
   ],
   "userBookmarks": [
     {
-      "userId": "1",
+      "id": "9f6d",
       "contentsId": [5, 12, 28, 7, 19],
-      "id": "9f6d"
+      "activity": ""
     },
     {
-      "userId": "2",
+      "id": "8847",
       "contentsId": [3, 8, 22, 14],
-      "id": "8847"
+      "activity": 4
     },
     {
-      "userId": "3",
+      "id": "c6c4",
       "contentsId": [4, 25, 18, 9, 13, 27],
-      "id": "c6c4"
+      "activity": ""
     },
     {
-      "userId": "4",
+      "id": "d56a",
       "contentsId": [1, 11, 29, 6, 15, 23],
-      "id": "d56a"
+      "activity": 6
     },
     {
-      "userId": "5",
+      "id": "0c59",
       "contentsId": [2, 10, 20, 16, 24],
-      "id": "0c59"
+      "activity": ""
     }
   ]
 }

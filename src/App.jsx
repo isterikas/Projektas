@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { getAllData } from "./components/helpers/get.js";
 
+
 export default function App() {
   const [authType, setAuthType] = useState("");
   const [loggedIn, setLoggedIn] = useState("");
