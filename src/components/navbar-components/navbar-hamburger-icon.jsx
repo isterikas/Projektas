@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 
 function HamburgerMenu(props) {
   const { setAuthType, setLoggedIn } = props;
@@ -38,7 +38,7 @@ function HamburgerMenu(props) {
           isOpen ? "block" : "hidden"
         } bg-[#5A698F] absolute left-[-200%] md:left-[-75%] lg:top-[-400%] rounded-md w-[5rem] text-center mt-2 z-[999] shadow-2xl shadow-red-500 border-[1px] border-red-400`}
       >
-        <NavLink to="/authorization">
+        <Link to="/authorization">
           <p
             type="button"
             onClick={login}
@@ -46,8 +46,8 @@ function HamburgerMenu(props) {
           >
             Log In
           </p>
-        </NavLink>
-        <NavLink to="/authorization">
+        </Link>
+        <Link to="/authorization">
           <p
             type="button"
             onClick={sigin}
@@ -55,7 +55,7 @@ function HamburgerMenu(props) {
           >
             Sign up
           </p>
-        </NavLink>
+        </Link>
       </div>
       {isOpen && (
         <div
