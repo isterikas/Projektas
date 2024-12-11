@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
-// import bookmarkIcon from "../assets/icons/icon-circle-bookmark-empty.svg";
+import PlayIcon from "../assets/icons/icon-play.svg";
 
-function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
+function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
   const [checked, setChecked] = useState(false);
@@ -57,11 +57,20 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn }) {
           ""
         )}
         <div className="">
+          {{ width } < 1024 ? (
           <img
-            className="rounded-lg bottom-5 mx-auto"
+            className="rounded-xl bottom-5"
             src={"src" + thumbnail.regular.small.slice(1)}
             alt="#"
+            
           />
+        ) : (
+          <img
+            className="rounded-xl bottom-5"
+            src={"src" + thumbnail.regular.large.slice(1)}
+            alt="#"
+          />
+        )}
 
           <div className="flex mt-3 gap-2 relative ">
             <p className="body-s text-white"> {year}</p>

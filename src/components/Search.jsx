@@ -1,13 +1,13 @@
 import Card from "./Card.jsx";
 import { useLocation, useSearchParams } from "react-router";
 
-function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
+function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const location = useLocation();
 
   const handleSearch = (e) => {
-    const value = e.target.value;
+    const value = (e.target.value).trim();
     setSearchParams(value ? { search: value } : {});
   };
 
@@ -49,6 +49,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
             setUpdate={setUpdate}
             userBookmarks={userBookmarks}
             loggedIn={loggedIn}
+            width={width}
           />
         </div>
       );
@@ -56,27 +57,27 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks }) {
 
   return (
     <>
-      <form className="nosubmit background-dark-blue items-center">
-        <input
-          onChange={handleSearch}
-          className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
-          type="search"
-          placeholder={getPlaceholder()}
-        />
-      </form>
+      <div className="w-full">
+        <form className="nosubmit background-dark-blue">
+          <input
+            onChange={handleSearch}
+            className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
+            type="search"
+            placeholder={getPlaceholder()}
+          />
+        </form>
 
-      <div className="background-dark-blue">
-        {searchParams == "" ? (
-          <h1 className="content-heading text-white">{getTitle()}</h1>
-        ) : (
-          <h1 className="content-heading text-white">
-            Found {filteredArray.length}
-            {filteredArray.length === 1 ? " result" : " results"} for{" "}
-            {`'${searchQuery}'`}
-          </h1>
-        )}
-        <div className="py-4 px-2 mx-auto lg:py-10 lg:px-2">
-          <div className="grid grid-cols-2 space-y-8 lg:grid md:grid-cols-3 lg:grid-cols-4 sm:gap-6 xl:gap-4 lg:space-y-0">
+        <div className="background-dark-blue">
+          {searchParams == "" ? (
+            <h1 className="content-heading text-white">{getTitle()}</h1>
+          ) : (
+            <h1 className="content-heading text-white">
+              Found {filteredArray.length}
+              {filteredArray.length === 1 ? " result" : " results"} for{" "}
+              {`'${searchQuery}'`}
+            </h1>
+          )}
+          <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
             {filteredArray}
           </div>
         </div>
