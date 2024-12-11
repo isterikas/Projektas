@@ -13,14 +13,16 @@ function Movies() {
 
   return (
     <>
-      <Search
-        array={movies}
-        update={update}
-        setUpdate={setUpdate}
-        userBookmarks={userBookmarks}
-        loggedIn={loggedIn}
-        width={width}
-      />
+      <div className="lg:pl-40">
+        <Search
+          array={movies}
+          update={update}
+          setUpdate={setUpdate}
+          userBookmarks={userBookmarks}
+          loggedIn={loggedIn}
+          width={width}
+        />
+      </div>
     </>
   );
 }
