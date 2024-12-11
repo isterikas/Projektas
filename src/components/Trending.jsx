@@ -61,7 +61,7 @@ function Trending({
       >
         {contents.map((slide) => {
           if (slide.isTrending) {
-            setStateChecked(slide.contentsId)
+            setStateChecked(slide.contentsId);
             return (
               <SwiperSlide key={slide.contentsId} className="">
                 <div className="absolute bottom-4 left-16">
@@ -76,7 +76,7 @@ function Trending({
                 <div className="relative">
                   {loggedIn ? (
                     <button
-                      onClick={()=>toggleBookmark(slide.contentsId)}
+                      onClick={() => toggleBookmark(slide.contentsId)}
                       className="text-white z-50 absolute right-0 top-0 w-6 h-6 bookmark-icon"
                     >
                       <img
@@ -109,12 +109,12 @@ function Trending({
                   className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs
                 "
                 >
-                  <p className="flex justify-center">
+                  <div className="flex justify-center">
                     <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
                       <img src={PlayIcon} alt="#" />
                       <p>Play</p>
                     </div>
-                  </p>
+                  </div>
                 </div>
               </SwiperSlide>
             );
