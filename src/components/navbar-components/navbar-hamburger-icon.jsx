@@ -25,11 +25,11 @@ function HamburgerMenu(props) {
       {/* Hamburger Icon */}
       <button
         onClick={toggleMenu}
-        className="flex flex-col w-[24px] h-[20px] md:w-[32px] md:h-[26px] justify-around group "
+        className="flex flex-col w-[24px] h-[20px] md:w-[32px] md:h-[24px] justify-around group md:justify-around "
       >
-        <span className="block w-full h-[4px] bg-white group-hover:bg-red-500 transition duration-500"></span>
-        <span className="block w-full h-[4px] bg-white group-hover:bg-red-500 transition duration-500"></span>
-        <span className="block w-full h-[4px] bg-white group-hover:bg-red-500 transition duration-500"></span>
+        <span className="block w-full h-[3px] md:h-[4px] bg-white group-hover:bg-red-500 transition duration-500 shadow-md shadow-white rounded-sm"></span>
+        <span className="block w-full h-[3px] md:h-[4px] bg-white group-hover:bg-red-500 transition duration-500 shadow-md shadow-white rounded-sm"></span>
+        <span className="block w-full h-[3px] md:h-[4px] bg-white group-hover:bg-red-500 transition duration-500 shadow-md shadow-white rounded-sm"></span>
       </button>
 
       {/* Dropdown Menu */}
@@ -53,7 +53,7 @@ function HamburgerMenu(props) {
             onClick={sigin}
             className="text-white block p-2 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold hover:border-t-red-500 hover:border-t-[1px]"
           >
-            Sign up
+            Sign Up
           </p>
         </Link>
       </div>

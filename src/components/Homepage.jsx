@@ -21,7 +21,14 @@ function Homepage() {
 
   return (
     <>
-      <Trending contents={contents} width={width} />
+      <Trending
+        contents={contents}
+        width={width}
+        update={update}
+        setUpdate={setUpdate}
+        userBookmarks={userBookmarks}
+        loggedIn={loggedIn}
+      />
       <Recommended
         contents={contents}
         update={update}

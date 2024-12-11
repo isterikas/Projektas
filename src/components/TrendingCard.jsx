@@ -4,47 +4,11 @@ import { postData } from "./helpers/post.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 
 function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn}) {
-  const {title, year, category, rating, contentsId } = slide;
+  const {title, year, category, rating } = slide;
 
-  const [checked, setChecked] = useState(false);
-
-  const setStateChecked = async () => {
-    const thisBookmark = await userBookmarks.find(
-      (bookmark) =>
-        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
-    );
-    if (thisBookmark) setChecked(true);
-  };
-
-  useEffect(() => {
-    setStateChecked();
-  }, []);
-
-  const toggleBookmark = () => {
-    setUpdate(update + 1);
-    const thisBookmark = userBookmarks.find(
-      (bookmark) =>
-        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
-    );
-    if (thisBookmark) {
-      deleteBookmark(thisBookmark.id);
-      setChecked(false);
-    } else {
-      setChecked(true);
-      postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
-    }
-  };
   return (
     <div className="shadow m-3 ">
-      <div className="relative ">
-        {loggedIn ? (
-          <button onClick={toggleBookmark} className="text-white absolute  bookmark-icon">
-            <img src={checked ? "src/assets/icons/icon-bookmark-full.svg" : "src/assets/icons/icon-bookmark-empty.svg"} alt="" />
-          </button>
-        ) : (
-          ""
-        )}
-      </div>
+      
       <div className="flex mt-3 gap-2 relative">
         <p className="body-s text-white"> {year}</p>
         <p className="body-s  text-white ">.</p>
@@ -54,6 +18,7 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn}) {
         <p className="body-s text-white"> {rating}</p>
       </div>
       <h1 className="heading-xs text-white"> {title}</h1>
+      
     </div>
   );
 }
