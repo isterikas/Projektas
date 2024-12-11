@@ -2,10 +2,11 @@ import { Outlet } from "react-router";
 import NavBar from "./components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { getAllData } from "./components/helpers/get.js";
+import { usePersistState } from '@printy/react-persist-state';
 
 export default function App() {
   const [authType, setAuthType] = useState("");
-  const [loggedIn, setLoggedIn] = useState("");
+  const [loggedIn, setLoggedIn] = usePersistState("0", "")
 
   const [contents, setContents] = useState([]);
   const [update, setUpdate] = useState(0);
