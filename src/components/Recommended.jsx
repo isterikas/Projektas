@@ -1,5 +1,4 @@
-
-import Search from "./Search";
+import Card from "./Card";
 
 // kazkur iskelti
 import { updateTrending } from "./helpers/updateTrending";
@@ -25,8 +24,14 @@ function shuffleArray(array) {
   return array;
 }
 
-function Recommended({ contents, update, setUpdate, loggedIn, userBookmarks }) {
-
+function Recommended({
+  contents,
+  update,
+  setUpdate,
+  loggedIn,
+  userBookmarks,
+  width,
+}) {
   let shuffledContents = contents;
 
   // Kai vartotojas neprisijungęs || nežinomas
@@ -37,10 +42,29 @@ function Recommended({ contents, update, setUpdate, loggedIn, userBookmarks }) {
   // Kai vartotojas buvo neaktyvus (nepazymėjo naujų bookmark)
 
   // Kai vartotojas buvo aktyvus (pažymėjo naujus bookmark)
+
+  // sutvarkyti, Search for movies or TV series, perkelti po navbar
   return (
-    // sutvarkyti, Search for movies or TV series, perkelti po navbar
     <>
-      <Search array={shuffledContents} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} />
+      <h2 className=" background-dark-blue text-white heading-l">
+        Recommended for you
+      </h2>
+      <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
+        {" "}
+        {shuffledContents.map((item) => (
+          <div key={item.contentsId}>
+            {" "}
+            <Card
+              item={item}
+              update={update}
+              setUpdate={setUpdate}
+              userBookmarks={userBookmarks}
+              loggedIn={loggedIn}
+              width={width}
+            />{" "}
+          </div>
+        ))}{" "}
+      </div>
     </>
   );
 }

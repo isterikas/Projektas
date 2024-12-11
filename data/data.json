@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "6",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "12",
@@ -547,46 +547,27 @@
     {
       "id": "ec1d",
       "userName": "pavel.gusev431@gmail.com",
-      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
-      "TV-PG": "",
-      "TV-18+": "",
-      "TV-E": "",
-      "Mov-PG": "",
-      "Mov-18+": "",
-      "Mov-E": ""
+      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe"
     },
     {
       "id": "50bf",
       "userName": "audrius.adomavicius@stud.techin.lt",
-      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8",
-      "TV-PG": "",
-      "TV-18+": "",
-      "TV-E": "",
-      "Mov-PG": "",
-      "Mov-18+": "",
-      "Mov-E": ""
+      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8"
     },
     {
       "id": "f1fb",
       "userName": "kartoska@gmail.com",
-      "userPassword": "8226e9937f02d464ebf7f35aabf0e6bef7ed982179b5e6d2308ecbb910076952",
-      "TV-PG": "",
-      "TV-18+": "",
-      "TV-E": "",
-      "Mov-PG": "",
-      "Mov-18+": "",
-      "Mov-E": ""
+      "userPassword": "8226e9937f02d464ebf7f35aabf0e6bef7ed982179b5e6d2308ecbb910076952"
     },
     {
       "id": "e319",
       "userName": "edgaraslaptevas88@gmail.com",
-      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
-      "TV-PG": "",
-      "TV-18+": "",
-      "TV-E": "",
-      "Mov-PG": "",
-      "Mov-18+": "",
-      "Mov-E": ""
+      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206"
+    },
+    {
+      "id": "df0a",
+      "userName": "henryk.umbrasewicz@odnoklassniki.ru",
+      "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed"
     }
   ],
   "userBookmarks": [
