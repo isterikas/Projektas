@@ -3,7 +3,6 @@ import { useLocation, useSearchParams } from "react-router";
 import { InputMask } from "@react-input/mask";
 
 function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
-function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const location = useLocation();
@@ -33,15 +32,6 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
     .map((item) => {
       return (
         <div key={item.contentsId}>
-          <Card
-            item={item}
-            key={item.contentsId}
-            update={update}
-            setUpdate={setUpdate}
-            userBookmarks={userBookmarks}
-            loggedIn={loggedIn}
-            width={width}
-          />
           <Card
             item={item}
             key={item.contentsId}
