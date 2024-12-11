@@ -547,12 +547,24 @@
     {
       "id": "ec1d",
       "userName": "pavel.gusev431@gmail.com",
-      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe"
+      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
+      "TV-PG": "",
+      "TV-18+": "",
+      "TV-E": "",
+      "Mov-PG": "",
+      "Mov-18+": "",
+      "Mov-E": ""
     },
     {
       "id": "50bf",
       "userName": "audrius.adomavicius@stud.techin.lt",
-      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8"
+      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8",
+      "TV-PG": "",
+      "TV-18+": "",
+      "TV-E": "",
+      "Mov-PG": "",
+      "Mov-18+": "",
+      "Mov-E": ""
     },
     {
       "id": "f1fb",
@@ -568,6 +580,24 @@
       "id": "df0a",
       "userName": "henryk.umbrasewicz@odnoklassniki.ru",
       "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed"
+      "userPassword": "8226e9937f02d464ebf7f35aabf0e6bef7ed982179b5e6d2308ecbb910076952",
+      "TV-PG": "",
+      "TV-18+": "",
+      "TV-E": "",
+      "Mov-PG": "",
+      "Mov-18+": "",
+      "Mov-E": ""
+    },
+    {
+      "id": "e319",
+      "userName": "edgaraslaptevas88@gmail.com",
+      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
+      "TV-PG": "",
+      "TV-18+": "",
+      "TV-E": "",
+      "Mov-PG": "",
+      "Mov-18+": "",
+      "Mov-E": ""
     }
   ],
   "userBookmarks": [
@@ -620,6 +650,26 @@
       "id": "6ba7",
       "contentsId": "5",
       "userId": "df0a"
+    },
+    {
+      "id": "5216",
+      "contentsId": "29",
+      "userId": "ec1d"
+    },
+    {
+      "id": "af69",
+      "contentsId": "9",
+      "userId": "ec1d"
+    },
+    {
+      "id": "0c2e",
+      "contentsId": "8",
+      "userId": "ec1d"
+    },
+    {
+      "id": "ae3d",
+      "contentsId": "2",
+      "userId": "ec1d"
     }
   ]
 }

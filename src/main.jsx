@@ -11,6 +11,8 @@ import Movies from "./components/Movies.jsx";
 import TVShows from "./components/TVShows.jsx";
 import Bookmarks from "./components/Bookmarks.jsx";
 
+
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>

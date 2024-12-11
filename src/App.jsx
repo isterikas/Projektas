@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { getAllData } from "./components/helpers/get.js";
 
+
 export default function App() {
   const [authType, setAuthType] = useState("");
   const [loggedIn, setLoggedIn] = useState("");
@@ -43,40 +44,58 @@ export default function App() {
     }
   };
 
-  useEffect(() =>{
-    getAllcontents()
-    getAllUsers()
-    getAllUserBookmarks()
-  }, [update])
+  const pageBack = () => {
+    if (!loggedIn) setAuthType("");
+  };
+
+  useEffect(() => {
+    getAllcontents();
+    getAllUsers();
+    getAllUserBookmarks();
+  }, [update]);
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <>
-      <NavBar
-        authType={authType}
-        setAuthType={setAuthType}
-        loggedIn={loggedIn}
-        setLoggedIn={setLoggedIn}
-      />
-      {!error ? (
-        <Outlet
-          context={{
-            authType,
-            setAuthType,
-            loggedIn,
-            setLoggedIn,
-            contents,
-            setContents,
-            users,
-            setUsers,
-            userBookmarks,
-            setUserBookmarks,
-            update,
-            setUpdate,
-          }}
+    <div className="background-dark-blue">
+      <div className="md:m-[24px] lg:m-[32px] lg:absolute background-dark-blue">
+        <NavBar
+          authType={authType}
+          setAuthType={setAuthType}
+          loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
         />
-      ) : (
-        <p>{error}</p>
-      )}
-    </>
+      </div>
+      <div className="lg:pl-40 background-dark-blue">
+        {!error ? (
+          <Outlet
+            context={{
+              authType,
+              setAuthType,
+              loggedIn,
+              setLoggedIn,
+              contents,
+              setContents,
+              users,
+              setUsers,
+              userBookmarks,
+              setUserBookmarks,
+              update,
+              setUpdate,
+              pageBack,
+              width
+            }}
+          />
+        ) : (
+          <p>{error}</p>
+        )}
+      </div>
+    </div>
   );
 }
