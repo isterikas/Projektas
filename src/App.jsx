@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import NavBar from "./components/NavBar.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect,  } from "react";
 import { getAllData } from "./components/helpers/get.js";
 
 
@@ -72,7 +72,7 @@ export default function App() {
           setLoggedIn={setLoggedIn}
         />
       </div>
-      <div className="lg:pl-40 background-dark-blue">
+      <div className="background-dark-blue">
         {!error ? (
           <Outlet
             context={{

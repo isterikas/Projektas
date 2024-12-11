@@ -56,7 +56,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
         ) : (
           ""
         )}
-
+        
         <div className="relative">
           <div>
             {{ width } < 1024 ? (
