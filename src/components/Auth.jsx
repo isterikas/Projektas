@@ -6,6 +6,7 @@ import { postData } from "./helpers/post.js";
 import { sha1 } from "js-sha1";
 import { sha256 } from "js-sha256";
 import logoIcon from "../assets/icons/logo.svg";
+
 function Auth() {
   const {
     register,
@@ -18,10 +19,6 @@ function Auth() {
   const { authType, setAuthType, setLoggedIn } = useOutletContext();
   const [error, setError] = useState("");
   const [users, setUsers] = useState([]);
-
-  // useEffect(() => {
-  //   setAuthType("login");
-  // }, []);
 
   const fetchUsers = async () => {
     const fetchedUsers = await getAllData("users");
@@ -68,7 +65,6 @@ function Auth() {
       setError(error?.message);
     }
   };
-
 
   return (
     <>
