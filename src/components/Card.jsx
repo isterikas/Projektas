@@ -18,7 +18,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   };
 
   useEffect(() => {
-    setStateChecked();
+    setStateChecked(true);
   }, []);
 
   const toggleBookmark = () => {
@@ -38,11 +38,11 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
 
   return (
     <div className="shadow m-3 ">
-      <div className="relative ">
+      <div className="relative">
         {loggedIn ? (
           <button
             onClick={toggleBookmark}
-            className="text-white absolute hover:bg-slate-100 bookmark-icon"
+            className="absolute text-white hover:bg-slate-100 bookmark-icon"
           >
             <img
               src={
@@ -58,7 +58,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
         )}
         
         <div className="relative">
-          <div className="">
+          <div>
             {{ width } < 1024 ? (
               <img
                 className="rounded-xl bottom-5"
