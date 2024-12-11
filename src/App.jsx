@@ -3,7 +3,6 @@ import NavBar from "./components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { getAllData } from "./components/helpers/get.js";
 
-
 export default function App() {
   const [authType, setAuthType] = useState("");
   const [loggedIn, setLoggedIn] = useState("");
@@ -62,6 +61,8 @@ export default function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const loggedUser = users.find((user) => user.id === loggedIn);
+
   return (
     <div className="background-dark-blue">
       <div className="md:m-[24px] lg:m-[32px] lg:absolute background-dark-blue">
@@ -89,7 +90,8 @@ export default function App() {
               update,
               setUpdate,
               pageBack,
-              width
+              width,
+              loggedUser,
             }}
           />
         ) : (

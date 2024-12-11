@@ -68,6 +68,8 @@ function Auth() {
       setError(error?.message);
     }
   };
+
+
   return (
     <>
       <div className="h-screen background-dark-blue flex flex-col items-center justify-center">

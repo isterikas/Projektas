@@ -10,12 +10,12 @@ function HamburgerMenu(props) {
     setIsOpen(!isOpen);
   };
 
-  const sigin = () => {
+  const signUp = () => {
     setAuthType("signup");
     setLoggedIn("");
   };
 
-  const login = () => {
+  const logIn = () => {
     setAuthType("login");
     setLoggedIn("");
   };
@@ -40,17 +40,15 @@ function HamburgerMenu(props) {
       >
         <Link to="/authorization">
           <p
-            type="button"
-            onClick={login}
-            className="text-white block px-2 py-3 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold hover:border-b-red-500 hover:border-b-[1px]"
+            onClick={logIn}
+            className="text-white block p-2 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold hover:border-b-red-500 hover:border-b-[1px]"
           >
             Log In
           </p>
         </Link>
         <Link to="/authorization">
           <p
-            type="button"
-            onClick={sigin}
+            onClick={signUp}
             className="text-white block p-2 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold hover:border-t-red-500 hover:border-t-[1px]"
           >
             Sign Up
