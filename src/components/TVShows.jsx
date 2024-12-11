@@ -16,14 +16,16 @@ function TVShows() {
 
   return (
     <>
-      <Search
-        array={allTvshows}
-        update={update}
-        setUpdate={setUpdate}
-        userBookmarks={userBookmarks}
-        loggedIn={loggedIn}
-        width={width}
-      />
+      <div className="lg:pl-40">
+        <Search
+          array={allTvshows}
+          update={update}
+          setUpdate={setUpdate}
+          userBookmarks={userBookmarks}
+          loggedIn={loggedIn}
+          width={width}
+        />
+      </div>
     </>
   );
 }
