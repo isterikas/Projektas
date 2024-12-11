@@ -22,13 +22,13 @@ const UserIcon = (props) => {
 
   return (
     <div className="relative">
-      <img
+      <img 
         src={faviconIcon}
         alt="faviconIcon"
         type="button"
         onClick={toggleMenu}
-        className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40px] lg:h-[40px] rounded-full"
-      />{" "}
+        className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40px] lg:h-[40px] rounded-full cursor-pointer"
+      />
       <div
         className={`${
           isOpen ? "block" : "hidden"
@@ -41,12 +41,12 @@ const UserIcon = (props) => {
         >
           Account
         </p>
-        <p
+        <button
           type="button"
           onClick={logOut}
-          className="text-white block px-2 py-3 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold  hover:border-t-red-500 hover:border-t-[1px]"
+          className="text-white block px-2 py-3 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold  hover:border-t-red-500 hover:border-t-[1px] w-full"
         >Log Out
-        </p>
+        </button>
       </div>
       {isOpen && (
         <button

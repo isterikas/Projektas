@@ -1,9 +1,42 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { useState } from "react";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import TrendingCard from "./TrendingCard";
-function Trending({ contents, width }) {
+function Trending({
+  contents,
+  width,
+  update,
+  setUpdate,
+  userBookmarks,
+  loggedIn,
+}) {
+  const [checked, setChecked] = useState(false);
+
+  const setStateChecked = async (contentsId) => {
+    const thisBookmark = await userBookmarks.find(
+      (bookmark) =>
+        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
+    );
+    if (thisBookmark) setChecked(true);
+  };
+
+  const toggleBookmark = (contentsId) => {
+    setUpdate(update + 1);
+    const thisBookmark = userBookmarks.find(
+      (bookmark) =>
+        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
+    );
+    if (thisBookmark) {
+      deleteBookmark(thisBookmark.id);
+      setChecked(false);
+    } else {
+      setChecked(true);
+      postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
+    }
+  };
+
   return (
     <>
       <h2 className=" background-dark-blue text-white heading-l">Trending</h2>
@@ -28,10 +61,36 @@ function Trending({ contents, width }) {
       >
         {contents.map((slide) => {
           if (slide.isTrending) {
+            setStateChecked(slide.contentsId)
             return (
               <SwiperSlide key={slide.contentsId} className="">
                 <div className="absolute bottom-4 left-16">
-                  <TrendingCard slide={slide} />
+                  <TrendingCard
+                    slide={slide}
+                    update={update}
+                    setUpdate={setUpdate}
+                    userBookmarks={userBookmarks}
+                    loggedIn={loggedIn}
+                  />
+                </div>
+                <div className="relative">
+                  {loggedIn ? (
+                    <button
+                      onClick={()=>toggleBookmark(slide.contentsId)}
+                      className="text-white z-50 absolute right-0 top-0 w-6 h-6 bookmark-icon"
+                    >
+                      <img
+                        src={
+                          checked
+                            ? "../assets/icons/icon-bookmark-full.svg"
+                            : "../assets/icons/icon-bookmark-empty.svg"
+                        }
+                        alt=""
+                      />
+                    </button>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div>
                   {width >= 1024 ? (
