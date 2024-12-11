@@ -47,7 +47,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full ">
         <form className="nosubmit background-dark-blue">
           <InputMask
             onChange={handleSearch}
