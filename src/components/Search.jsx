@@ -6,8 +6,9 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const location = useLocation();
-  
+
   const handleSearch = (e) => {
+    e.preventDefault();
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
   };
@@ -51,6 +52,9 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
         <form className="nosubmit background-dark-blue">
           <InputMask
             onChange={handleSearch}
+            onKeyDown={(e) => {
+              e.key === "Enter" ? e.preventDefault() : "";
+            }}
             className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
             type="search"
             placeholder={locationInfo().placeholder}
