@@ -17,7 +17,7 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
 
   useEffect(() => {
     setStateChecked(contentsId);
-  }, []);
+  }, [update]);
 
   const toggleBookmark = () => {
     setUpdate(update + 1);
@@ -58,7 +58,7 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
       </div>
       <h1 className="heading-xs text-white"> {title}</h1>
 </div>
-      <div className="absolute top-2 right-2 md:top-4 md:right-7 lg:top-5 lg:right-6">
+      <div className="absolute top-2 right-2 md:top-4 md:right-7 lg:top-4 lg:right-4">
         {loggedIn ? (
           <button onClick={toggleBookmark} className="bookmark-icon">
             <img

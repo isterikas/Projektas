@@ -71,7 +71,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
               {`'${searchQuery}'`}
             </h1>
           )}
-          <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
+          <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {filteredArray}
           </div>
         </div>

@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "2",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 10
+      "latestTrending": 9
     },
     {
       "contentsId": "5",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "6",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "12",
@@ -624,46 +624,6 @@
     {
       "id": "eea8",
       "contentsId": "a1ac",
-      "userId": "f1fb"
-    },
-    {
-      "id": "2b5e",
-      "contentsId": "4",
-      "userId": "f1fb"
-    },
-    {
-      "id": "1b69",
-      "contentsId": "4",
-      "userId": "f1fb"
-    },
-    {
-      "id": "142c",
-      "contentsId": "4",
-      "userId": "f1fb"
-    },
-    {
-      "id": "ee42",
-      "contentsId": "4",
-      "userId": "f1fb"
-    },
-    {
-      "id": "97c2",
-      "contentsId": "4",
-      "userId": "f1fb"
-    },
-    {
-      "id": "4a62",
-      "contentsId": "4",
-      "userId": "f1fb"
-    },
-    {
-      "id": "db5d",
-      "contentsId": "4",
-      "userId": "f1fb"
-    },
-    {
-      "id": "8af1",
-      "contentsId": "4",
       "userId": "f1fb"
     }
   ]
