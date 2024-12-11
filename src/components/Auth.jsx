@@ -19,9 +19,9 @@ function Auth() {
   const [error, setError] = useState("");
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    setAuthType("login");
-  }, []);
+  // useEffect(() => {
+  //   setAuthType("login");
+  // }, []);
 
   const fetchUsers = async () => {
     const fetchedUsers = await getAllData("users");

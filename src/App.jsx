@@ -5,7 +5,7 @@ import { getAllData } from "./components/helpers/get.js";
 import { usePersistState } from '@printy/react-persist-state';
 
 export default function App() {
-  const [authType, setAuthType] = useState("");
+  const [authType, setAuthType] = usePersistState("", "login");
   const [loggedIn, setLoggedIn] = usePersistState("0", "")
 
   const [contents, setContents] = useState([]);
