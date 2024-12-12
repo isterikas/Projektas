@@ -570,7 +570,7 @@
       "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed"
     },
     {
-<<<<<<< HEAD
+
       "id": "3382",
       "userName": "lorddogs345@gmail.com",
       "userPassword": "7dd4ad91d9c65302b3bc74d43fb17e846bd24fe84db12b82b480b5fb0c4a4cae"
@@ -579,7 +579,8 @@
       "id": "0ca7",
       "userName": "artur.demianenko@stud.techin.lt",
       "userPassword": "163be3c0f7860285e6a585bb2d0af6cbe363aea639d544586bffac51134e2735"
-=======
+    },
+    {
       "id": "6ee9",
       "userName": "antanas@gmail.com",
       "userPassword": "cf1488f6db5521b496eebe35dbe5ff3a384aa3597dbc778b282c3594247da1ca"
@@ -588,7 +589,7 @@
       "id": "55d0",
       "userName": "kust@gmail.com",
       "userPassword": "36a3d63c40fde1c662062dabb1173c48452b41c9e1de6400307c745705c84969"
->>>>>>> origin/main
+
     }
   ],
   "userBookmarks": [
