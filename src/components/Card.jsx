@@ -3,11 +3,14 @@ import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import PlayIcon from "../assets/icons/icon-play.svg";
+import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
+import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx"
 
 function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
   const [checked, setChecked] = useState(false);
+  const [hover, hovered] = useState();
 
   const setStateChecked = async () => {
     const thisBookmark = await userBookmarks.find(
@@ -19,7 +22,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
 
   useEffect(() => {
     setStateChecked(true);
-  }, []);
+  }, [update]);
 
   const toggleBookmark = () => {
     setUpdate(update + 1);
@@ -37,28 +40,39 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   };
 
   return (
-    <div className="shadow m-3 ">
-      <div className="relative">
+
+
+    <div className="shadow m-3 relative">
+      <div className=" ">
+
+
         {loggedIn ? (
-          <button
-            onClick={toggleBookmark}
-            className="absolute text-white hover:bg-slate-100 bookmark-icon"
-          >
-            <img
-              src={
-                checked
-                  ? "src/assets/icons/icon-circle-bookmark-full.svg"
-                  : "src/assets/icons/icon-circle-bookmark-empty.svg"
-              }
-              alt=""
-            />
-          </button>
+        <button
+          onClick={toggleBookmark}
+          className="text-white absolute   bookmark-icon "
+        >
+       
+          <div className="relative ">
+
+  {checked 
+          
+             ? <div className="icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full group "><BookmarkEmpty /></div> 
+       
+
+            :  < div className="icon-bg  bg-slate-500 w-8 h-8  group  hover:bg-white  rounded-full  "> <BookmarkFull /></div>
+               }
+      </div>
+
+
+
+
+    </button>
         ) : (
           ""
         )}
 
         <div className="relative">
-          <div>
+          <div className="">
             {{ width } < 1024 ? (
               <img
                 className="rounded-xl bottom-5"
@@ -110,8 +124,8 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
           </div>
           <h1 className="heading-xs text-white"> {title}</h1>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 
