@@ -89,8 +89,8 @@ export default function App() {
               update,
               setUpdate,
               search,
-              setSearch
-              width,
+              setSearch,
+              width
             }}
           />
         ) : (

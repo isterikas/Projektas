@@ -5,13 +5,12 @@ import { InputMask } from "@react-input/mask";
 function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
-  const pattern = /^[A-Za-z]+$/
-const valid = pattern.test(searchQuery)
+  const pattern = /^[A-Za-z]+$/;
+  const valid = pattern.test(searchQuery);
 
-if (searchQuery && !valid){
-  throw new Error
-}
-
+  if (searchQuery && !valid) {
+    throw new Error();
+  }
 
   const location = useLocation();
   const { search, setSearch } = useOutletContext();
@@ -20,13 +19,9 @@ if (searchQuery && !valid){
     e.preventDefault();
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
-   setSearch(value);
-   console.log(searchQuery);
-   
-    
+    setSearch(value);
+    console.log(searchQuery);
   };
-
-
 
   const locationInfo = () => {
     switch (location.pathname) {
@@ -91,7 +86,11 @@ if (searchQuery && !valid){
             </h1>
           )}
           <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
-            {location.pathname === "/" || location.pathname === "/bookmarks"? search? filteredArray : "" : filteredArray}
+            {location.pathname === "/" || location.pathname === "/bookmarks"
+              ? search
+                ? filteredArray
+                : ""
+              : filteredArray}
           </div>
         </div>
       </div>

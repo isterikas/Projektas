@@ -12,8 +12,6 @@ function Trending({
   userBookmarks,
   loggedIn,
 }) {
-  
-
   return (
     <>
       <h2 className=" text-white heading-l relative left-7">Trending</h2>
@@ -81,7 +79,6 @@ function Trending({
                       loggedIn={loggedIn}
                     />
                   </div>
-      
                 </div>
               </SwiperSlide>
             );
