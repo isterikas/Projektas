@@ -7,10 +7,10 @@ function ErrorPage() {
 
   return (
     <>
-      <div className="flex flex-col items-center">
-        <h1 className="heading-l text-black">Something went wrong</h1>
+      <div className="flex flex-col justify-center items-center background-semidark-blue h-dvh">
+        <h1 className="heading-l text-white">Something went wrong</h1>
         <button
-          className="bg-red-700"
+          className="btn body-m p-2 my-5 rounded"
           onClick={() => {
             navigate("/");
             resetBoundary();
