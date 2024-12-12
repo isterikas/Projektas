@@ -23,7 +23,9 @@ function Homepage() {
 
   return (
     <>
+    <div className="lg:pl-40">
     <Search array={contents}/>
+    
     {search? "" : 
       <Trending
         contents={contents}
@@ -41,7 +43,7 @@ function Homepage() {
         userBookmarks={userBookmarks}
         loggedIn={loggedIn}
         width={width}
-      />}
+      />}</div>
     </>
   );
 }
