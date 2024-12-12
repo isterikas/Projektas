@@ -45,17 +45,17 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
         {loggedIn ? (
           <button
             onClick={toggleBookmark}
-            className="text-white absolute   bookmark-icon "
+            className="text-white absolute bookmark-icon "
           >
             <div className="relative ">
               {checked ? (
                 <div className="icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full group ">
-                  <BookmarkEmpty />
+                  <BookmarkFull />
                 </div>
               ) : (
                 <div className="icon-bg  bg-slate-500 w-8 h-8  group  hover:bg-white  rounded-full  ">
                   {" "}
-                  <BookmarkFull />
+                  <BookmarkEmpty />
                 </div>
               )}
             </div>
