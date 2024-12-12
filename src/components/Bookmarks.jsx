@@ -1,9 +1,8 @@
 import { useOutletContext } from "react-router";
 import Search from "./Search";
-import { useEffect } from "react";
 
 function Bookmarks() {
-  const { contents, userBookmarks, loggedIn, update, setUpdate, pageBack, width } = useOutletContext();
+  const { contents, userBookmarks, loggedIn, update, setUpdate, width } = useOutletContext();
 
   const allBookmarks = contents.filter((content) => {
     const isBookmarked = userBookmarks.find(
@@ -13,13 +12,11 @@ function Bookmarks() {
     return isBookmarked;
   });
 
-  useEffect(() => {
-    pageBack();
-  }, []);
-
   return (
     <>
-      <Search array={allBookmarks} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} width={width}/>
+      <div className="lg:pl-40">
+        <Search array={allBookmarks} update={update} setUpdate={setUpdate} userBookmarks={userBookmarks} loggedIn={loggedIn} width={width}/>
+      </div>
     </>
   );
 }

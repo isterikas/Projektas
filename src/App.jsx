@@ -2,11 +2,12 @@ import { Outlet } from "react-router";
 import NavBar from "./components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { getAllData } from "./components/helpers/get.js";
-
+import { usePersistState } from "@printy/react-persist-state";
 
 export default function App() {
-  const [authType, setAuthType] = useState("");
-  const [loggedIn, setLoggedIn] = useState("");
+  const [authType, setAuthType] = usePersistState("login", "auth-type");
+  const [loggedIn, setLoggedIn] = usePersistState("", "userid");
+
 
   const [contents, setContents] = useState([]);
   const [update, setUpdate] = useState(0);
@@ -44,15 +45,14 @@ export default function App() {
     }
   };
 
-  const pageBack = () => {
-    if (!loggedIn) setAuthType("");
-  };
 
   useEffect(() => {
     getAllcontents();
     getAllUsers();
     getAllUserBookmarks();
   }, [update]);
+
+ 
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -63,7 +63,7 @@ export default function App() {
   }, []);
 
   return (
-    <div >
+    <div>
       <div className=" lg:m-[32px] lg:absolute background-dark-blue">
         <NavBar
           authType={authType}
@@ -72,7 +72,7 @@ export default function App() {
           setLoggedIn={setLoggedIn}
         />
       </div>
-      <div className="lg:pl-40 background-dark-blue">
+      <div className="background-dark-blue">
         {!error ? (
           <Outlet
             context={{
@@ -88,8 +88,7 @@ export default function App() {
               setUserBookmarks,
               update,
               setUpdate,
-              pageBack,
-              width
+              width,
             }}
           />
         ) : (
