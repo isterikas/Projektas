@@ -11,6 +11,7 @@ function HamburgerMenu(props) {
   };
 
   const signUp = () => {
+    console.log("A")
     setAuthType("signup");
     setLoggedIn("");
   };

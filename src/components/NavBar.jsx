@@ -1,14 +1,15 @@
+import { useLocation } from "react-router";
 import LogoIcon from "./navbar-components/logo-icon.jsx";
 import NavBarIcons from "./navbar-components/navbar-active-icons";
 import HamburgerMenu from "./navbar-components/navbar-hamburger-icon";
 import UserIcon from "./navbar-components/user-icon.jsx";
 
 function NavBar(props) {
-  const { authType, setAuthType, loggedIn, setLoggedIn } = props;
-
+  const { setAuthType, loggedIn, setLoggedIn } = props;
+  const location = useLocation();
   return (
     <>
-      {authType ? (
+      {location.pathname == "/authorization" || location.pathname == "/authorization/" ? (
         ""
       ) : (
         <nav className="flex justify-between bg-[#161D2F] h-[56px] md:h-[72px] lg:w-[96px] lg:h-[960px] items-center px-[16px] md:px-[24px] lg:px-0  md:rounded-[10px] lg:rounded-[20px] lg:flex-col">

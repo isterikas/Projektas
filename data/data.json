@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "6",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "8",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "11",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "12",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "13",
@@ -252,7 +252,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "06d9",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "14",
@@ -270,7 +270,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "731b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "15",
@@ -288,7 +288,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "afd5",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "16",
@@ -306,7 +306,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "73b6",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "17",
@@ -562,12 +562,23 @@
     {
       "id": "e319",
       "userName": "edgaraslaptevas88@gmail.com",
-      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206"
+      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
+      "image": {
+        "handle": {},
+        "path": "./grid3.png",
+        "relativePath": "./grid3.png"
+      }
     },
     {
       "id": "df0a",
       "userName": "henryk.umbrasewicz@odnoklassniki.ru",
       "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed"
+    },
+    {
+      "id": "771d",
+      "userName": "edgaraslaptevas58@gmail.com",
+      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
+      "image": ""
     }
   ],
   "userBookmarks": [
@@ -625,6 +636,56 @@
       "id": "eea8",
       "contentsId": "a1ac",
       "userId": "f1fb"
+    },
+    {
+      "id": "786c",
+      "contentsId": "5",
+      "userId": "e319"
+    },
+    {
+      "id": "3d13",
+      "contentsId": "7",
+      "userId": "e319"
+    },
+    {
+      "id": "58c2",
+      "contentsId": "10",
+      "userId": "e319"
+    },
+    {
+      "id": "784c",
+      "contentsId": "16",
+      "userId": "e319"
+    },
+    {
+      "id": "dac2",
+      "contentsId": "13",
+      "userId": "e319"
+    },
+    {
+      "id": "170c",
+      "contentsId": "3",
+      "userId": "e319"
+    },
+    {
+      "id": "7fe7",
+      "contentsId": "11",
+      "userId": "e319"
+    },
+    {
+      "id": "32ab",
+      "contentsId": "12",
+      "userId": "e319"
+    },
+    {
+      "id": "4809",
+      "contentsId": "15",
+      "userId": "e319"
+    },
+    {
+      "id": "c400",
+      "contentsId": "14",
+      "userId": "e319"
     }
   ]
 }
