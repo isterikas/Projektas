@@ -19,7 +19,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
 
   useEffect(() => {
     setStateChecked(true);
-  }, []);
+  }, [update]);
 
   const toggleBookmark = () => {
     setUpdate(update + 1);
@@ -37,32 +37,36 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   };
 
   return (
-    <div className="shadow m-3 ">
-      <div className="relative">
-        {loggedIn ? (
-          <button
-            onClick={toggleBookmark}
-            className="absolute text-white hover:bg-slate-100 bookmark-icon"
-          >
-            <img
-              src={
-                checked
-                  ? "src/assets/icons/icon-circle-bookmark-full.svg"
-                  : "src/assets/icons/icon-circle-bookmark-empty.svg"
-              }
-              alt=""
-            />
-          </button>
-        ) : (
-          ""
-        )}
-        
+    <div className="shadow m-3 relative">
+      
+        <div className="z-50 absolute top-1 right-1 md:top-5 md:right-5 lg:top-3 lg:right-4 ">
+          {loggedIn ? (
+            <button onClick={toggleBookmark} className="bookmark-icon">
+              <img
+                src={
+                  checked
+                    ? "src/assets/icons/icon-circle-bookmark-full.svg"
+                    : "src/assets/icons/icon-circle-bookmark-empty.svg"
+                }
+                alt=""
+              />
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
         <div className="relative">
           <div>
             {{ width } < 1024 ? (
               <img
                 className="rounded-xl bottom-5"
                 src={"src" + thumbnail.regular.small.slice(1)}
+                alt="#"
+              />
+            ) : {width} < 768 ? (
+              <img
+                className="rounded-xl bottom-5"
+                src={"src" + thumbnail.regular.medium.slice(1)}
                 alt="#"
               />
             ) : (
@@ -87,7 +91,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
           </div>
         </div>
 
-        <div>
+        <div className="relative">
           <div className="flex mt-3 gap-2 relative ">
             <p className="body-s text-white"> {year}</p>
             <img
@@ -110,7 +114,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
           </div>
           <h1 className="heading-xs text-white"> {title}</h1>
         </div>
-      </div>
+      
     </div>
   );
 }
