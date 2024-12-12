@@ -108,7 +108,7 @@ function Auth() {
                 },
               })}
               placeholder="Email address"
-              className={`background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
+              className={`focus:ring-0 autofill:!bg-white background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
                 errors.email ? "border-red-600" : "border-white"
               }`}
             />
@@ -147,7 +147,7 @@ function Auth() {
                 },
               })}
               placeholder="Password"
-              className={`background-semidark-blue text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
+              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
                 errors.email ? "border-red-600" : "border-white"
               }`}
             />
@@ -170,7 +170,7 @@ function Auth() {
                   },
                 })}
                 placeholder="Repeat Password"
-                className={`background-semidark-blue text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
+                className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
                   errors.email ? "border-red-600" : "border-white"
                 }`}
               />
