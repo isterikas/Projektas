@@ -2,6 +2,7 @@ import Recommended from "./Recommended";
 import Trending from "./Trending";
 import { useOutletContext } from "react-router";
 import { useEffect } from "react";
+import Search from "./Search";
 
 function Homepage() {
   const {
@@ -13,6 +14,7 @@ function Homepage() {
     userBookmarks,
     pageBack,
     width,
+    search
   } = useOutletContext();
 
   useEffect(() => {
@@ -21,6 +23,8 @@ function Homepage() {
 
   return (
     <>
+    <Search array={contents}/>
+    {search? "" : 
       <Trending
         contents={contents}
         width={width}
@@ -28,7 +32,8 @@ function Homepage() {
         setUpdate={setUpdate}
         userBookmarks={userBookmarks}
         loggedIn={loggedIn}
-      />
+      />}
+      {search? "" : 
       <Recommended
         contents={contents}
         update={update}
@@ -36,7 +41,7 @@ function Homepage() {
         userBookmarks={userBookmarks}
         loggedIn={loggedIn}
         width={width}
-      />
+      />}
     </>
   );
 }

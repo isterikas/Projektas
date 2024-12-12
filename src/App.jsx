@@ -7,7 +7,7 @@ import { getAllData } from "./components/helpers/get.js";
 export default function App() {
   const [authType, setAuthType] = useState("");
   const [loggedIn, setLoggedIn] = useState("");
-
+  const [search, setSearch] = useState("")
   const [contents, setContents] = useState([]);
   const [update, setUpdate] = useState(0);
   const [users, setUsers] = useState([]);
@@ -89,7 +89,9 @@ export default function App() {
               update,
               setUpdate,
               pageBack,
-              width
+              width,
+              search,
+              setSearch
             }}
           />
         ) : (
