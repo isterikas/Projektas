@@ -1,5 +1,6 @@
 import Card from "./Card.jsx";
 import { useLocation, useSearchParams } from "react-router";
+import { InputMask } from "@react-input/mask";
 
 function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -7,31 +8,21 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const location = useLocation();
 
   const handleSearch = (e) => {
-    const value = (e.target.value).trim();
+    e.preventDefault();
+    const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
   };
 
-  const getPlaceholder = () => {
+  const locationInfo = () => {
     switch (location.pathname) {
       case "/movies":
-        return "Search for movies";
+        return { placeholder: "Search for movies", header: "Movies" };
       case "/tvseries":
-        return "Search for TV Series";
+        return { placeholder: "Search for TV Series", header: "TV Series" };
       case "/bookmarks":
-        return "Search for bookmarked shows";
+        return { placeholder: "Search for bookmarked shows", header: "" };
       default:
-        return "Search for movies or TV series";
-    }
-  };
-
-  const getTitle = () => {
-    switch (location.pathname) {
-      case "/movies":
-        return "Movies";
-      case "/tvseries":
-        return "TV Series";
-      default:
-        return "Bookmarked shows";
+        return { placeholder: "Search for movies or TV series", header: "" };
     }
   };
 
@@ -57,19 +48,26 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full ">
         <form className="nosubmit background-dark-blue">
-          <input
+          <InputMask
             onChange={handleSearch}
+            onKeyDown={(e) => {
+              e.key === "Enter" ? e.preventDefault() : "";
+            }}
             className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
             type="search"
-            placeholder={getPlaceholder()}
+            placeholder={locationInfo().placeholder}
+            mask="______________________________"
+            replacement={{ _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-\s]/ }}
           />
         </form>
 
         <div className="background-dark-blue">
           {searchParams == "" ? (
-            <h1 className="content-heading text-white">{getTitle()}</h1>
+            <h1 className="content-heading text-white">
+              {locationInfo().header}
+            </h1>
           ) : (
             <h1 className="content-heading text-white">
               Found {filteredArray.length}
@@ -77,7 +75,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
               {`'${searchQuery}'`}
             </h1>
           )}
-          <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
+          <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {filteredArray}
           </div>
         </div>

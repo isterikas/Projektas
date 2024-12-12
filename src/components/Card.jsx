@@ -21,8 +21,8 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   };
 
   useEffect(() => {
-    setStateChecked();
-  }, []);
+    setStateChecked(true);
+  }, [update]);
 
   const toggleBookmark = () => {
     setUpdate(update + 1);
