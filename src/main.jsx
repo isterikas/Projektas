@@ -10,6 +10,7 @@ import Homepage from "./components/Homepage.jsx";
 import Movies from "./components/Movies.jsx";
 import TVShows from "./components/TVShows.jsx";
 import Bookmarks from "./components/Bookmarks.jsx";
+import UserAccount from "./components/UserAccount.jsx";
 
 
 
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/movies" element={<Movies />} />
           <Route path="/tvseries" element={<TVShows />} />
           <Route path="/bookmarks" element={<Bookmarks />} />
+          <Route path="/account" element={<UserAccount />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
