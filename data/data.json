@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "2",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "4",
@@ -126,7 +126,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "cd79",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "7",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "10",
@@ -522,7 +522,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "a345",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "29",
@@ -579,6 +579,11 @@
       "userName": "edgaraslaptevas58@gmail.com",
       "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
       "image": ""
+    },
+    {
+      "id": "6f3d",
+      "userName": "stariy.bog@gmail.com",
+      "userPassword": "15d700792af3c28349a60739bb1bcfb600b2b89f60253a1939702bc15c4a08e8"
     }
   ],
   "userBookmarks": [
@@ -590,11 +595,6 @@
     {
       "id": "3fab",
       "contentsId": "4",
-      "userId": "50bf"
-    },
-    {
-      "id": "72bf",
-      "contentsId": "2",
       "userId": "50bf"
     },
     {
