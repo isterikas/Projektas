@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "3",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -126,7 +126,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "cd79",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "7",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "10",
@@ -522,7 +522,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "a345",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "29",
@@ -545,34 +545,10 @@
   ],
   "users": [
     {
-      "id": "ec1d",
-      "userName": "pavel.gusev431@gmail.com",
-      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe"
-    },
-    {
-      "id": "50bf",
-      "userName": "audrius.adomavicius@stud.techin.lt",
-      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8"
-    },
-    {
-      "id": "f1fb",
-      "userName": "kartoska@gmail.com",
-      "userPassword": "8226e9937f02d464ebf7f35aabf0e6bef7ed982179b5e6d2308ecbb910076952"
-    },
-    {
       "id": "e319",
       "userName": "edgaraslaptevas88@gmail.com",
       "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
-      "image": {
-        "handle": {},
-        "path": "./grid3.png",
-        "relativePath": "./grid3.png"
-      }
-    },
-    {
-      "id": "df0a",
-      "userName": "henryk.umbrasewicz@odnoklassniki.ru",
-      "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed"
+      "image": "/uploads/1734036942521.png"
     },
     {
       "id": "771d",

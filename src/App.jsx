@@ -62,6 +62,7 @@ export default function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
   return (
     <div>
       <div className=" lg:m-[32px] lg:absolute background-dark-blue">
