@@ -3,7 +3,8 @@ import Search from "./Search";
 import Card from "./Card";
 
 function Bookmarks() {
-  const { contents, userBookmarks, loggedIn, update, setUpdate, width } = useOutletContext();
+  const { contents, userBookmarks, loggedIn, update, setUpdate, width } =
+    useOutletContext();
 
   const allBookmarks = contents.filter((content) => {
     const isBookmarked = userBookmarks.find(
@@ -12,7 +13,6 @@ function Bookmarks() {
     );
     return isBookmarked;
   });
-
 
   // const bookmarkedContent = (cat) => {
   //   const filtercond = cat
@@ -45,16 +45,17 @@ function Bookmarks() {
 
   return (
     <>
-      <Search
-        array={allBookmarks}
-        update={update}
-        setUpdate={setUpdate}
-        userBookmarks={userBookmarks}
-        loggedIn={loggedIn}
-        width={width}
-      />
+      <div className="lg:pl-40">
+        <Search
+          array={allBookmarks}
+          update={update}
+          setUpdate={setUpdate}
+          userBookmarks={userBookmarks}
+          loggedIn={loggedIn}
+          width={width}
+        />
 
-      {/* {loggedIn ? (
+        {/* {loggedIn ? (
         search? "" :
         <>
           <h1 className="content-heading text-white">Bookmarked shows</h1>
@@ -69,6 +70,7 @@ function Bookmarks() {
       ) : (
         <h1 className="heading-l text-white">Please log in to use bookmark functionality</h1>
       )} */}
+      </div>
     </>
   );
 }
