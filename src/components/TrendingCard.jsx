@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
-
+import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
+import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx"
 function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
   const { contentsId, title, year, category, rating } = slide;
   const [checked, setChecked] = useState(false);
@@ -60,15 +61,22 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
       </div>
       <div className="absolute top-2 right-2 md:top-4 md:right-7 lg:top-4 lg:right-4">
         {loggedIn ? (
-          <button onClick={toggleBookmark} className="bookmark-icon">
-            <img
-              src={
-                checked
-                  ? "src/assets/icons/icon-circle-bookmark-full.svg"
-                  : "src/assets/icons/icon-circle-bookmark-empty.svg"
-              }
-              alt=""
-            />
+          <button
+            onClick={toggleBookmark}
+            className="text-white absolute   bookmark-icon "
+          >
+            <div className="relative ">
+              {checked ? (
+                <div className="icon-bg  bg-slate-500 bg-opacity-50  w-8 h-8  group   hover:bg-white  rounded-full group ">
+                  <BookmarkFull />
+                </div>
+              ) : (
+                <div className="icon-bg  bg-slate-500 bg-opacity-50 w-8 h-8  group  hover:bg-white  rounded-full  ">
+                  {" "}
+                  <BookmarkEmpty />
+                </div>
+              )}
+            </div>
           </button>
         ) : (
           ""

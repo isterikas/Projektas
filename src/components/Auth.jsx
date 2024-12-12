@@ -117,7 +117,7 @@ function Auth() {
               {...register("password", {
                 required: "This field is required",
                 pattern: {
-                  value: /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-]+$/,
+                  value: authType === "signup" ? /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-]+$/ : /^.$/,
                   message:
                     authType === "signup"
                       ? "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-"
@@ -128,20 +128,17 @@ function Auth() {
                   if (error === "Incorrect email or password") setError("");
                 },
                 minLength: {
-                  value: 8,
-                  message:
-                    authType === "signup"
-                      ? "Password must be at least 8 characters long"
-                      : "",
+                  value: authType === "signup" ? 8 : 0,
+                  message: "Password must be at least 8 characters long",
                 },
                 validate: (value) => {
                   return (
-                    (/.*[A-Z].*/.test(value) &&
+                    (authType === "signup" && /.*[A-Z].*/.test(value) &&
                       /.*[0-9].*/.test(value) &&
                       /.*[$&+,:;=?@#|'<>.^*()%!-].*/.test(value)) ||
                     (authType === "signup"
                       ? "Password must contain at least 1 capital letter, 1 number and 1 special character"
-                      : "")
+                      : true)
                   );
                 },
               })}
@@ -191,7 +188,9 @@ function Auth() {
               Already have an account?{" "}
               <button
                 onClick={() => {
+                  setError("");
                   setAuthType("login");
+                  clearErrors();
                 }}
                 className="text-red "
               >
@@ -205,6 +204,7 @@ function Auth() {
                 onClick={() => {
                   setError("");
                   setAuthType("signup");
+                  clearErrors();
                 }}
                 className="text-red"
               >
@@ -212,7 +212,7 @@ function Auth() {
               </button>
             </div>
           )}
-          <span className="text-red-600 font-sm">{error}</span>
+          <span className="text-red-500 font-sm">{error}</span>
         </div>
       </div>
     </>

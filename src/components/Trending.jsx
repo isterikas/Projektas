@@ -61,12 +61,12 @@ function Trending({
                         )}
                       </div>
                       <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs">
-                        <p className="flex justify-center">
+                        <div className="flex justify-center">
                           <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
                             <img src={PlayIcon} alt="#" />
                             <p>Play</p>
                           </div>
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </div>
