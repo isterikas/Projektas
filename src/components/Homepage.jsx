@@ -1,6 +1,7 @@
 import Recommended from "./Recommended";
 import Trending from "./Trending";
 import { useOutletContext } from "react-router";
+import Search from "./Search";
 
 function Homepage() {
   const {
@@ -10,28 +11,32 @@ function Homepage() {
     setUpdate,
     userBookmarks,
     width,
+    search
   } = useOutletContext();
 
   return (
     <>
-      <div className="lg:pl-40">
-        <Trending
-          contents={contents}
-          width={width}
-          update={update}
-          setUpdate={setUpdate}
-          userBookmarks={userBookmarks}
-          loggedIn={loggedIn}
-        />
-        <Recommended
-          contents={contents}
-          update={update}
-          setUpdate={setUpdate}
-          userBookmarks={userBookmarks}
-          loggedIn={loggedIn}
-          width={width}
-        />
-      </div>
+    <div className="lg:pl-40">
+    <Search array={contents}/>
+    
+    {search? "" : 
+      <Trending
+        contents={contents}
+        width={width}
+        update={update}
+        setUpdate={setUpdate}
+        userBookmarks={userBookmarks}
+        loggedIn={loggedIn}
+      />}
+      {search? "" : 
+      <Recommended
+        contents={contents}
+        update={update}
+        setUpdate={setUpdate}
+        userBookmarks={userBookmarks}
+        loggedIn={loggedIn}
+        width={width}
+      />}</div>
     </>
   );
 }
