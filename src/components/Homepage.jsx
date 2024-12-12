@@ -1,25 +1,18 @@
 import Recommended from "./Recommended";
 import Trending from "./Trending";
 import { useOutletContext } from "react-router";
-import { useEffect } from "react";
 import Search from "./Search";
 
 function Homepage() {
   const {
     contents,
     loggedIn,
-    setAuthType,
     update,
     setUpdate,
     userBookmarks,
-    pageBack,
     width,
     search
   } = useOutletContext();
-
-  useEffect(() => {
-    pageBack();
-  }, []);
 
   return (
     <>

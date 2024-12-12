@@ -12,6 +12,7 @@ import TVShows from "./components/TVShows.jsx";
 import Bookmarks from "./components/Bookmarks.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import { ErrorBoundary } from "react-error-boundary";
+import UserAccount from "./components/UserAccount.jsx";
 
 
 
@@ -28,6 +29,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/movies" element={<Movies />} />
           <Route path="/tvseries" element={<TVShows />} />
           <Route path="/bookmarks" element={<Bookmarks />} />
+          <Route path="/account" element={<UserAccount />} />
         </Route>
         <Route path="*" element={<NotFound />} />
         

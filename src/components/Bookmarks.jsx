@@ -1,19 +1,9 @@
 import { useOutletContext } from "react-router";
 import Search from "./Search";
-import { useEffect } from "react";
 import Card from "./Card";
 
 function Bookmarks() {
-  const {
-    contents,
-    userBookmarks,
-    loggedIn,
-    update,
-    setUpdate,
-    pageBack,
-    width,
-    search,
-  } = useOutletContext();
+  const { contents, userBookmarks, loggedIn, update, setUpdate, width } = useOutletContext();
 
   const allBookmarks = contents.filter((content) => {
     const isBookmarked = userBookmarks.find(
@@ -23,9 +13,6 @@ function Bookmarks() {
     return isBookmarked;
   });
 
-  useEffect(() => {
-    pageBack();
-  }, []);
 
   // const bookmarkedContent = (cat) => {
   //   const filtercond = cat

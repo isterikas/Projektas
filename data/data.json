@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 3
+      "latestTrending": 2
     },
     {
       "contentsId": "3",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "4",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "5",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "12",
@@ -568,6 +568,16 @@
       "id": "df0a",
       "userName": "henryk.umbrasewicz@odnoklassniki.ru",
       "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed"
+    },
+    {
+      "id": "6ee9",
+      "userName": "antanas@gmail.com",
+      "userPassword": "cf1488f6db5521b496eebe35dbe5ff3a384aa3597dbc778b282c3594247da1ca"
+    },
+    {
+      "id": "55d0",
+      "userName": "kust@gmail.com",
+      "userPassword": "36a3d63c40fde1c662062dabb1173c48452b41c9e1de6400307c745705c84969"
     }
   ],
   "userBookmarks": [
