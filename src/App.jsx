@@ -89,7 +89,7 @@ export default function App() {
               update,
               setUpdate,
               search,
-              setSearch
+              setSearch,
               width,
             }}
           />

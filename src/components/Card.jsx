@@ -4,7 +4,7 @@ import { postData } from "./helpers/post.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
-import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx"
+import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
 
 function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
@@ -40,33 +40,26 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   };
 
   return (
-
-
     <div className="shadow m-3 relative">
       <div className=" ">
-
-
         {loggedIn ? (
-        <button
-          onClick={toggleBookmark}
-          className="text-white absolute   bookmark-icon "
-        >
-       
-          <div className="relative ">
-
-  {checked 
-          
-             ? <div className="icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full group "><BookmarkEmpty /></div> 
-       
-
-            :  < div className="icon-bg  bg-slate-500 w-8 h-8  group  hover:bg-white  rounded-full  "> <BookmarkFull /></div>
-               }
-      </div>
-
-
-
-
-    </button>
+          <button
+            onClick={toggleBookmark}
+            className="text-white absolute   bookmark-icon "
+          >
+            <div className="relative ">
+              {checked ? (
+                <div className="icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full group ">
+                  <BookmarkEmpty />
+                </div>
+              ) : (
+                <div className="icon-bg  bg-slate-500 w-8 h-8  group  hover:bg-white  rounded-full  ">
+                  {" "}
+                  <BookmarkFull />
+                </div>
+              )}
+            </div>
+          </button>
         ) : (
           ""
         )}
@@ -92,12 +85,12 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
             className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs
                 "
           >
-            <p className="flex justify-center">
+            <div className="flex justify-center">
               <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
                 <img src={PlayIcon} alt="#" />
                 <p>Play</p>
               </div>
-            </p>
+            </div>
           </div>
         </div>
 
@@ -124,8 +117,8 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
           </div>
           <h1 className="heading-xs text-white"> {title}</h1>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 }
 
