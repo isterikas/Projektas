@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "2",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 0
+      "latestTrending": 2
     },
     {
       "contentsId": "4",
@@ -126,7 +126,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "cd79",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "7",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "10",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "11",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "12",
@@ -252,7 +252,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "06d9",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "14",
@@ -270,7 +270,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "731b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "15",
@@ -522,7 +522,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "a345",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "29",
@@ -570,6 +570,7 @@
       "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed"
     },
     {
+<<<<<<< HEAD
       "id": "3382",
       "userName": "lorddogs345@gmail.com",
       "userPassword": "7dd4ad91d9c65302b3bc74d43fb17e846bd24fe84db12b82b480b5fb0c4a4cae"
@@ -593,6 +594,11 @@
       "id": "61b4",
       "userName": "usertester@gmail.com",
       "userPassword": "163be3c0f7860285e6a585bb2d0af6cbe363aea639d544586bffac51134e2735"
+=======
+      "id": "6f3d",
+      "userName": "stariy.bog@gmail.com",
+      "userPassword": "15d700792af3c28349a60739bb1bcfb600b2b89f60253a1939702bc15c4a08e8"
+>>>>>>> origin/main
     }
   ],
   "userBookmarks": [
@@ -604,11 +610,6 @@
     {
       "id": "3fab",
       "contentsId": "4",
-      "userId": "50bf"
-    },
-    {
-      "id": "72bf",
-      "contentsId": "2",
       "userId": "50bf"
     },
     {
