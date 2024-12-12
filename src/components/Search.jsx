@@ -51,7 +51,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
         <form className="nosubmit background-dark-blue">
           <InputMask
             onChange={handleSearch}
-            className="nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
+            className="focus:ring-0 nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
             type="search"
             placeholder={locationInfo().placeholder}
             mask="______________________________"
