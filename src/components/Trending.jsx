@@ -16,7 +16,7 @@ function Trending({
 
   return (
     <>
-      <h2 className=" text-white heading-l">Trending</h2>
+      <h2 className=" text-white heading-l relative left-7">Trending</h2>
       <Swiper
         slidesPerView={1.5}
         spaceBetween={40}
@@ -40,7 +40,7 @@ function Trending({
           if (slide.isTrending) {
             return (
               <SwiperSlide key={slide.contentsId}>
-                <div className="relative left-5  rounded-lg">
+                <div className="relative left-7  rounded-lg">
                   <div>
                     <div>
                       <div>
