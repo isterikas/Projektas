@@ -6,7 +6,6 @@ function Movies() {
     useOutletContext();
   const movies = contents.filter((show) => show.category === "Movie");
 
-
   return (
     <>
       <div className="lg:pl-40">

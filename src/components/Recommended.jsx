@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import { updateTrending } from "./helpers/updateTrending";
+
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -30,22 +30,13 @@ function Recommended({
       setShuffledContents(contents);
       console.log("Contents (logged in):", contents);
     }
-    const initTrending = async () => {
-      try {
-        await updateTrending();
-        console.log("Initial trending update completed successfully.");
-      } catch (error) {
-        console.error("Initial trending update failed:", error);
-      }
-    };
-
-    initTrending();
+    
   }, [contents, loggedIn]); // Priklausomybės nuo contents ir loggedIn
 
   return (
     <div>
       <div className="grid items-end justify-start h-16">
-        <h2 className="background-dark-blue text-white heading-l">
+        <h2 className="background-dark-blue text-white heading-l ml-5">
           Recommended for you
         </h2>
       </div>

@@ -1,17 +1,30 @@
 import Card from "./Card.jsx";
-import { useLocation, useSearchParams } from "react-router";
+import { useLocation, useOutletContext, useSearchParams } from "react-router";
 import { InputMask } from "@react-input/mask";
 
 function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
+  const pattern = /^[a-zA-Z0-9 ]*$/;
+  const valid = pattern.test(searchQuery);
+
+  if (searchQuery && !valid) {
+    throw new Error();
+  }
   const location = useLocation();
+  const { setSearch } = useOutletContext();
 
   const handleSearch = (e) => {
     e.preventDefault();
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
+    if (value) {
+      return true;
+    } else {
+      return false;
+    }
   };
+  handleSearch ? setSearch(searchQuery) : setSearch("");
 
   const locationInfo = () => {
     switch (location.pathname) {
@@ -48,7 +61,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 
   return (
     <>
-      <div className="w-full ">
+      <div className="w-full min-h-fit">
         <form className="nosubmit background-dark-blue">
           <InputMask
             onChange={handleSearch}
@@ -58,13 +71,14 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             className="focus:ring-0 nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
             type="search"
             placeholder={locationInfo().placeholder}
-            mask="______________________________"
+            mask={"______________________________"}
             replacement={{ _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-\s]/ }}
+            defaultValue={handleSearch ? searchQuery : ""}
           />
         </form>
 
         <div className="background-dark-blue">
-          {searchParams == "" ? (
+          {searchQuery == "" ? (
             <h1 className="content-heading text-white">
               {locationInfo().header}
             </h1>
@@ -75,8 +89,12 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
               {`'${searchQuery}'`}
             </h1>
           )}
-          <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {filteredArray}
+          <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
+            {location.pathname === "/" || location.pathname === "/bookmarks"
+              ? searchQuery
+                ? filteredArray
+                : ""
+              : filteredArray}
           </div>
         </div>
       </div>
@@ -85,3 +103,4 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 }
 
 export default Search;
+

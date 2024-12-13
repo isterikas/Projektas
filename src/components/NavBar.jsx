@@ -9,10 +9,11 @@ function NavBar(props) {
   const location = useLocation();
   return (
     <>
-      {location.pathname == "/authorization" || location.pathname == "/authorization/" ? (
+      {location.pathname == "/authorization" ||
+      location.pathname == "/authorization/" ? (
         ""
       ) : (
-        <nav className="flex justify-between bg-[#161D2F] h-[56px] md:h-[72px] lg:w-[96px] lg:h-[960px] items-center px-[16px] md:px-[24px] lg:px-0  md:rounded-[10px] lg:rounded-[20px] lg:flex-col">
+        <nav className="flex justify-between bg-[#161D2F] h-[56px] md:h-[72px] lg:w-[96px] lg:h-[55rem] items-center px-[16px] md:px-[24px] lg:px-0  md:rounded-[10px] lg:rounded-[20px] lg:flex-col">
           <div className="lg:mt-[32px]">
             <LogoIcon />
           </div>

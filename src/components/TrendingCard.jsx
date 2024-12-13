@@ -3,36 +3,44 @@ import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
-import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx"
+import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
 function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
   const { contentsId, title, year, category, rating } = slide;
   const [checked, setChecked] = useState(false);
 
-  const setStateChecked = async (contentsId) => {
-    const thisBookmark = await userBookmarks.find(
+  const setStateChecked = () => {
+    const thisBookmark = userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) setChecked(true);
+    else setChecked(false);
   };
 
   useEffect(() => {
-    setStateChecked(contentsId);
+    setStateChecked();
+  }, []);
+  useEffect(() => {
+    setStateChecked();
   }, [update]);
 
-  const toggleBookmark = () => {
+  const toggleBookmark = async () => {
     setUpdate(update + 1);
     const thisBookmark = userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) {
-      deleteBookmark(thisBookmark.contentsId);
-      setChecked(false);
+      await deleteBookmark(thisBookmark.id);
+      setStateChecked();
     } else {
-      setChecked(true);
-      postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
+      setStateChecked();
+      await postData(
+        { contentsId: contentsId, userId: loggedIn },
+        "userBookmarks"
+      );
     }
+    setUpdate(update + 1);
   };
   return (
     <div>
@@ -62,7 +70,7 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
       <div className="absolute top-2 right-2 md:top-4 md:right-7 lg:top-4 lg:right-4">
         {loggedIn ? (
           <button
-            onClick={toggleBookmark}
+            onClick={async (e) => await toggleBookmark()}
             className="text-white absolute   bookmark-icon "
           >
             <div className="relative ">
