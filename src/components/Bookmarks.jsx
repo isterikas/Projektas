@@ -22,6 +22,7 @@ function Bookmarks() {
   });
 
   const bookmarkedContent = (cat) => {
+    let result2;
     const result = allBookmarks.filter((content) => content.category === cat);
     if (result.length === 0 && loggedIn) {
       return (
@@ -30,7 +31,7 @@ function Bookmarks() {
         </p>
       );
     } else {
-      result.map((item) => {
+      result2 = result.map((item) => {
         return (
           <div key={item.contentsId}>
             <Card
@@ -45,7 +46,7 @@ function Bookmarks() {
           </div>
         );
       });
-      return result;
+      return result2;
     }
   };
 
@@ -71,7 +72,7 @@ function Bookmarks() {
             </div>
             <h1 className="content-heading text-white">Bookmarked movies</h1>
             <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
-              {bookmarkedContent("Movies")}
+              {bookmarkedContent("Movie")}
             </div>
           </>
         )}

@@ -10,7 +10,6 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
   const [checked, setChecked] = useState(false);
-  const [hover, hovered] = useState();
 
   const setStateChecked = async () => {
     const thisBookmark = await userBookmarks.find(
@@ -18,25 +17,27 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) setChecked(true);
+    else setChecked(false);
   };
 
   useEffect(() => {
-    setStateChecked(true);
+    setStateChecked();
   }, [update]);
 
-  const toggleBookmark = () => {
+  const toggleBookmark = async () => {
     setUpdate(update + 1);
     const thisBookmark = userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) {
-      deleteBookmark(thisBookmark.id);
+      await deleteBookmark(thisBookmark.id);
       setChecked(false);
     } else {
       setChecked(true);
-      postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
+      await postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
     }
+    setUpdate(update + 1);
   };
 
   return (
@@ -44,7 +45,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
       <div className=" ">
         {loggedIn ? (
           <button
-            onClick={toggleBookmark}
+            onClick={(e)=>toggleBookmark()}
             className="text-white absolute bookmark-icon "
           >
             <div className="relative ">
