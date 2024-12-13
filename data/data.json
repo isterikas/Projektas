@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 9
+      "latestTrending": 1
     },
     {
       "contentsId": "5",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "10",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "11",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "12",
@@ -252,7 +252,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "06d9",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "14",
@@ -270,7 +270,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "731b",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "15",
@@ -360,7 +360,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "615d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "20",
@@ -522,7 +522,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "a345",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "29",
@@ -573,6 +573,11 @@
       "id": "6f3d",
       "userName": "stariy.bog@gmail.com",
       "userPassword": "15d700792af3c28349a60739bb1bcfb600b2b89f60253a1939702bc15c4a08e8"
+    },
+    {
+      "id": "b7b0",
+      "userName": "audriusad@gmail.com",
+      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8"
     }
   ],
   "userBookmarks": [
@@ -625,6 +630,26 @@
       "id": "eea8",
       "contentsId": "a1ac",
       "userId": "f1fb"
+    },
+    {
+      "id": "55b3",
+      "contentsId": "3",
+      "userId": "b7b0"
+    },
+    {
+      "id": "2850",
+      "contentsId": "6",
+      "userId": "b7b0"
+    },
+    {
+      "id": "378c",
+      "contentsId": "19",
+      "userId": "b7b0"
+    },
+    {
+      "id": "1260",
+      "contentsId": "1",
+      "userId": "b7b0"
     }
   ]
 }

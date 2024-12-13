@@ -56,10 +56,13 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
 
   {checked 
           
-             ? <div className="icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full group "><BookmarkEmpty /></div> 
+             ?  < div className="icon-bg  bg-slate-500 w-8 h-8  group  hover:bg-white  rounded-full  "> <BookmarkFull /></div>
+             
+             
+             : <div className="icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full group "><BookmarkEmpty /></div> 
        
 
-            :  < div className="icon-bg  bg-slate-500 w-8 h-8  group  hover:bg-white  rounded-full  "> <BookmarkFull /></div>
+            
                }
       </div>
 
