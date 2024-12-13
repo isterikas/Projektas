@@ -12,11 +12,9 @@ function Trending({
   userBookmarks,
   loggedIn,
 }) {
-  
-
   return (
     <>
-      <h2 className=" text-white heading-l">Trending</h2>
+      <h2 className=" text-white heading-l relative left-7">Trending</h2>
       <Swiper
         slidesPerView={1.5}
         spaceBetween={40}
@@ -40,7 +38,7 @@ function Trending({
           if (slide.isTrending) {
             return (
               <SwiperSlide key={slide.contentsId}>
-                <div className="relative left-5  rounded-lg">
+                <div className="relative left-7  rounded-lg">
                   <div>
                     <div>
                       <div>
@@ -63,12 +61,12 @@ function Trending({
                         )}
                       </div>
                       <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs">
-                        <p className="flex justify-center">
+                        <div className="flex justify-center">
                           <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
                             <img src={PlayIcon} alt="#" />
                             <p>Play</p>
                           </div>
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -81,7 +79,6 @@ function Trending({
                       loggedIn={loggedIn}
                     />
                   </div>
-      
                 </div>
               </SwiperSlide>
             );
