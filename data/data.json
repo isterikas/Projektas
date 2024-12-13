@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "12",
@@ -360,7 +360,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "615d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "20",
