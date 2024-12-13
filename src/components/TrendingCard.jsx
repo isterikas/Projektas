@@ -14,6 +14,7 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) setChecked(true);
+    else setChecked(false);
   };
 
   useEffect(() => {

@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 2
+      "latestTrending": 3
     },
     {
       "contentsId": "3",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 2
+      "latestTrending": 3
     },
     {
       "contentsId": "5",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "8",
@@ -252,7 +252,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "06d9",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "14",
@@ -414,7 +414,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "41b4",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "23",
@@ -504,7 +504,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "2c31",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "28",
@@ -540,7 +540,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "4432",
-      "latestTrending": 1
+      "latestTrending": 0
     }
   ],
   "users": [
@@ -608,11 +608,6 @@
       "userId": "50bf"
     },
     {
-      "id": "5216",
-      "contentsId": "29",
-      "userId": "ec1d"
-    },
-    {
       "id": "ea4c",
       "contentsId": "11",
       "userId": "df0a"
@@ -648,28 +643,33 @@
       "userId": "f1fb"
     },
     {
-      "id": "227d",
+      "id": "8fc2",
+      "contentsId": "2",
+      "userId": "ec1d"
+    },
+    {
+      "id": "2791",
       "contentsId": "3",
       "userId": "ec1d"
     },
     {
-      "id": "c67f",
+      "id": "7377",
       "contentsId": "5",
       "userId": "ec1d"
     },
     {
-      "id": "e079",
-      "contentsId": "13",
+      "id": "3a9e",
+      "contentsId": "7",
       "userId": "ec1d"
     },
     {
-      "id": "1409",
-      "contentsId": "27",
+      "id": "f4bd",
+      "contentsId": "4",
       "userId": "ec1d"
     },
     {
-      "id": "dafc",
-      "contentsId": "22",
+      "id": "a50e",
+      "contentsId": "1",
       "userId": "ec1d"
     }
   ]
