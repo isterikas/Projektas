@@ -98,7 +98,7 @@ function Auth() {
                 required: "This field is required",
                 pattern: {
                   value:
-                    /^[a-zA-Z0-9][a-zA-Z0-9\.]{4,28}[a-zA-Z0-9]@[a-z]([a-z]{1,5}\.){1,3}[a-z]{2,5}$/,
+                    /^[a-zA-Z0-9][a-zA-Z0-9\.]{4,28}[a-zA-Z0-9]@[a-z]([a-z]{1,15}\.){1,3}[a-z]{2,5}$/,
                   message: "Invalid email adress format",
                 },
                 onChange: (e) => {
