@@ -5,23 +5,27 @@ import { InputMask } from "@react-input/mask";
 function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
-  const pattern = /^[A-Za-z0-9]+$/
-  const valid = pattern.test(searchQuery)
+  const pattern = /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-\s]{,30}$/;
+  const valid = pattern.test(searchQuery);
 
   if (searchQuery && !valid) {
     throw new Error();
   }
 
   const location = useLocation();
-  const { search, setSearch } = useOutletContext();
+  const { setSearch } = useOutletContext();
 
   const handleSearch = (e) => {
     e.preventDefault();
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
-    setSearch(value);
-    console.log(searchQuery);
+    if (value) {
+      return true;
+    } else {
+      return false;
+    }
   };
+  handleSearch ? setSearch(searchQuery) : setSearch("");
 
   const locationInfo = () => {
     switch (location.pathname) {
@@ -70,11 +74,12 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             placeholder={locationInfo().placeholder}
             mask={"______________________________"}
             replacement={{ _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-\s]/ }}
+            defaultValue={handleSearch ? searchQuery : ""}
           />
         </form>
 
         <div className="background-dark-blue">
-          {searchParams == "" ? (
+          {searchQuery == "" ? (
             <h1 className="content-heading text-white">
               {locationInfo().header}
             </h1>
@@ -87,7 +92,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
           )}
           <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
             {location.pathname === "/" || location.pathname === "/bookmarks"
-              ? search
+              ? searchQuery
                 ? filteredArray
                 : ""
               : filteredArray}
