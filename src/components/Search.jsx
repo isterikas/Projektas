@@ -5,7 +5,7 @@ import { InputMask } from "@react-input/mask";
 function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
-  const pattern = /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-\s]{,30}$/;
+  const pattern = /^[a-zA-Z0-9 ]{,30}$/;
   const valid = pattern.test(searchQuery);
 
   if (searchQuery && !valid) {

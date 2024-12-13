@@ -8,7 +8,7 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
   const { contentsId, title, year, category, rating } = slide;
   const [checked, setChecked] = useState(false);
 
-  const setStateChecked = async (contentsId) => {
+  const setStateChecked = async () => {
     const thisBookmark = await userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
@@ -17,22 +17,23 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
   };
 
   useEffect(() => {
-    setStateChecked(contentsId);
+    setStateChecked();
   }, [update]);
 
-  const toggleBookmark = () => {
+  const toggleBookmark = async () => {
     setUpdate(update + 1);
     const thisBookmark = userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) {
-      deleteBookmark(thisBookmark.contentsId);
+      await deleteBookmark(thisBookmark.id);
       setChecked(false);
     } else {
       setChecked(true);
-      postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
+      await postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
     }
+    setUpdate(update + 1);
   };
   return (
     <div>
@@ -62,7 +63,7 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
       <div className="absolute top-2 right-2 md:top-4 md:right-7 lg:top-4 lg:right-4">
         {loggedIn ? (
           <button
-            onClick={toggleBookmark}
+            onClick={(e)=>toggleBookmark()}
             className="text-white absolute   bookmark-icon "
           >
             <div className="relative ">

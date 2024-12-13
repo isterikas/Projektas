@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 3
+      "latestTrending": 2
     },
     {
       "contentsId": "3",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "4",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "6",
@@ -162,7 +162,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "25c7",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "9",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "10",
@@ -252,7 +252,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "06d9",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "14",
@@ -414,7 +414,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "41b4",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "23",
@@ -504,7 +504,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "2c31",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "28",
@@ -613,21 +613,6 @@
       "userId": "ec1d"
     },
     {
-      "id": "af69",
-      "contentsId": "9",
-      "userId": "ec1d"
-    },
-    {
-      "id": "0c2e",
-      "contentsId": "8",
-      "userId": "ec1d"
-    },
-    {
-      "id": "ae3d",
-      "contentsId": "2",
-      "userId": "ec1d"
-    },
-    {
       "id": "ea4c",
       "contentsId": "11",
       "userId": "df0a"
@@ -661,6 +646,31 @@
       "id": "eea8",
       "contentsId": "a1ac",
       "userId": "f1fb"
+    },
+    {
+      "id": "227d",
+      "contentsId": "3",
+      "userId": "ec1d"
+    },
+    {
+      "id": "c67f",
+      "contentsId": "5",
+      "userId": "ec1d"
+    },
+    {
+      "id": "e079",
+      "contentsId": "13",
+      "userId": "ec1d"
+    },
+    {
+      "id": "1409",
+      "contentsId": "27",
+      "userId": "ec1d"
+    },
+    {
+      "id": "dafc",
+      "contentsId": "22",
+      "userId": "ec1d"
     }
   ]
 }

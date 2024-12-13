@@ -117,7 +117,7 @@ function Auth() {
               {...register("password", {
                 required: "This field is required",
                 pattern: {
-                  value: authType === "signup" ? /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-]+$/ : /^.$/,
+                  value: /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-]+$/,
                   message:
                     authType === "signup"
                       ? "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-"
