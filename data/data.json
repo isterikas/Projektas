@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 2
+      "latestTrending": 3
     },
     {
       "contentsId": "2",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "6",
@@ -126,7 +126,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "cd79",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "7",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "8",
@@ -378,7 +378,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "6333",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "21",
@@ -396,7 +396,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "fe78",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "22",
@@ -486,7 +486,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "88c5",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "27",
@@ -522,7 +522,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "a345",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "29",
@@ -540,7 +540,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "4432",
-      "latestTrending": 0
+      "latestTrending": 2
     }
   ],
   "users": [
@@ -584,6 +584,15 @@
       "userName": "name.surname@mail.com",
       "userPassword": "dd5ad1cfc713442b97319a501aa6b8cc3e2c3f8a4148246a1e67a9a7e7a0cfe5",
       "image": ""
+    },
+    {
+      "id": "7695",
+      "userName": "anna.2013vo04pa@gmail.com",
+      "userPassword": "f6d643d7280f97ead70a04297fd6c8cb5477f16a99e1998c9090c4cfe9c8d75a",
+      "image": {
+        "path": "./Designer.jpeg",
+        "relativePath": "./Designer.jpeg"
+      }
     }
   ],
   "userBookmarks": [
@@ -653,11 +662,6 @@
       "userId": "ec1d"
     },
     {
-      "id": "db83",
-      "contentsId": "3",
-      "userId": "ec1d"
-    },
-    {
       "id": "a493",
       "contentsId": "4",
       "userId": "ec1d"
@@ -671,6 +675,51 @@
       "id": "df5c",
       "contentsId": "7",
       "userId": "ec1d"
+    },
+    {
+      "id": "85c9",
+      "contentsId": "3",
+      "userId": "ec1d"
+    },
+    {
+      "id": "1341",
+      "contentsId": "21",
+      "userId": "7695"
+    },
+    {
+      "id": "b23f",
+      "contentsId": "28",
+      "userId": "7695"
+    },
+    {
+      "id": "5a88",
+      "contentsId": "26",
+      "userId": "7695"
+    },
+    {
+      "id": "b738",
+      "contentsId": "1",
+      "userId": "7695"
+    },
+    {
+      "id": "dd30",
+      "contentsId": "6",
+      "userId": "7695"
+    },
+    {
+      "id": "6b39",
+      "contentsId": "20",
+      "userId": "7695"
+    },
+    {
+      "id": "99c9",
+      "contentsId": "29",
+      "userId": "7695"
+    },
+    {
+      "id": "3428",
+      "contentsId": "29",
+      "userId": "7695"
     }
   ]
 }
