@@ -6,10 +6,10 @@ import Search from "./Search";
 function Homepage() {
   const {
     contents,
+    userBookmarks,
     loggedIn,
     update,
     setUpdate,
-    userBookmarks,
     width,
     search,
   } = useOutletContext();
@@ -17,7 +17,14 @@ function Homepage() {
   return (
     <>
       <div className="lg:pl-40">
-        <Search array={contents} />
+        <Search
+          array={contents}
+          update={update}
+          setUpdate={setUpdate}
+          userBookmarks={userBookmarks}
+          loggedIn={loggedIn}
+          width={width}
+        />
 
         {search ? (
           ""

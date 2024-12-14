@@ -43,7 +43,7 @@ const NavBarIcons = ({loggedIn}) => {
         to="/bookmarks"
         className={({ isActive }) =>
           isActive
-            ? "fill-white transition duration-500 hover:animate-pulse w-[16px] h-[16px] md:w-[20px] md:h-[20px]"
+            ? "fill-white transition duration-500 hover:animate-pulse w-[14px] h-[16px] md:w-[17px] md:h-[20px]"
             : "fill-[#5A698F] hover:fill-red-500 hover:shadow-2xl hover:shadow-red-500 transition duration-500 w-[14px] h-[16px] md:w-[17px] md:h-[20px]"
         }
       >

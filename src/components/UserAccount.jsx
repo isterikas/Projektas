@@ -20,13 +20,11 @@ const UserAccount = () => {
     console.log(thisUser);
   };
 
-  useEffect(() => {
-    console.log(loggedIn);
-
-    if (loggedIn) findUser();
-    // if (!loggedIn)
-    //     navigate("/")
-  }, [loggedIn]);
+  useEffect(()=>{
+    if(window.performance) {
+      if(performance.navigation.type != 1 && !loggedIn) navigate("/");
+    }
+  },[])
 
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];

@@ -1,6 +1,7 @@
-import { useOutletContext } from "react-router";
+import { useNavigate, useOutletContext } from "react-router";
 import Search from "./Search";
 import Card from "./Card";
+import { useEffect } from "react";
 
 function Bookmarks() {
   const {
@@ -12,6 +13,14 @@ function Bookmarks() {
     width,
     search,
   } = useOutletContext();
+
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(window.performance) {
+      if(performance.navigation.type != 1 && !loggedIn) navigate("/");
+    }
+  },[])
 
   const allBookmarks = contents.filter((content) => {
     const isBookmarked = userBookmarks.find(
