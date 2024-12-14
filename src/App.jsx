@@ -65,7 +65,7 @@ export default function App() {
 
   return (
     <div>
-      <div className=" lg:m-[32px] lg:absolute background-dark-blue">
+      <div className="md:m-[24px] lg:m-[32px] lg:absolute">
         <NavBar
           authType={authType}
           setAuthType={setAuthType}

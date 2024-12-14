@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "4",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "6",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "8",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "11",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "12",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "13",
@@ -270,7 +270,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "731b",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "15",
@@ -614,21 +614,6 @@
       "userId": "f1fb"
     },
     {
-      "id": "786c",
-      "contentsId": "5",
-      "userId": "e319"
-    },
-    {
-      "id": "3d13",
-      "contentsId": "7",
-      "userId": "e319"
-    },
-    {
-      "id": "58c2",
-      "contentsId": "10",
-      "userId": "e319"
-    },
-    {
       "id": "784c",
       "contentsId": "16",
       "userId": "e319"
@@ -639,28 +624,8 @@
       "userId": "e319"
     },
     {
-      "id": "170c",
-      "contentsId": "3",
-      "userId": "e319"
-    },
-    {
-      "id": "7fe7",
-      "contentsId": "11",
-      "userId": "e319"
-    },
-    {
-      "id": "32ab",
-      "contentsId": "12",
-      "userId": "e319"
-    },
-    {
-      "id": "4809",
+      "id": "6629",
       "contentsId": "15",
-      "userId": "e319"
-    },
-    {
-      "id": "c400",
-      "contentsId": "14",
       "userId": "e319"
     }
   ]

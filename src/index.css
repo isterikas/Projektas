@@ -132,8 +132,8 @@ margin-left: 16px
 }
 
 .profile-image-large {
-  width: 15rem;
-  height: 15rem;
+  width: 13rem;
+  height: 13rem;
   border-radius: 50%;
   border:2px solid #ef4444
 }
@@ -159,3 +159,10 @@ margin-left: 16px
   100% { transform: rotate(360deg); }
 }
 
+.expanding-navbar {
+  background-color: #161D2F;
+  border-radius: 20px;
+  width: 96px;
+  height: 90vh; 
+  transition: height 0.1s ease-in-out; 
+}

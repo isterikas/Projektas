@@ -14,7 +14,7 @@ const UserIcon = (props) => {
     setIsOpen(!isOpen);
   };
 
-  const logOut = () => {
+  const handleLogOut = () => {
     setTimeout(() => {
       setLoggedIn(false);
       navigate("/");
@@ -41,7 +41,7 @@ const UserIcon = (props) => {
         </Link>
         <button
           type="button"
-          onClick={logOut}
+          onClick={handleLogOut}
           className="text-white block px-2 py-3 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold  hover:border-t-red-500 hover:border-t-[1px] w-full"
         >
           Log Out

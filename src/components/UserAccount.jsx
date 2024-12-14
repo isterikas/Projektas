@@ -98,8 +98,8 @@ const UserAccount = () => {
   );
 
   return (
-    <div className="backgroud-dark-blue mt-[5rem] ms-[10rem] relative">
-      <div className="flex flex-col items-center p-10">
+    <div className="backgroud-dark-blue relative">
+      <div className="flex flex-col items-center p-[3rem]">
         <div>{profileImage}</div>
         {profileImage ? (
           <p className="text-white">Profile image</p>
@@ -110,7 +110,7 @@ const UserAccount = () => {
         )}
         <p className="text-4xl p-2 text-white">{loggedUser?.userName}</p>
       </div>
-      <div className="absolute bottom-0 right-2">
+      <div className="absolute bottom-0 right-5">
         <div className={`${!isUploaded ? "hidden" : "block"}`}>
           <div
             {...getRootProps()}
