@@ -97,18 +97,20 @@ function Auth() {
               {...register("email", {
                 required: "This field is required",
                 validate: (value) => {
-                  return (
-                    (/^[A-Za-z0-9\.\-]{1,64}@[A-Za-z0-9\.\-]{1,255}$/.test(
-                      value
-                    ) &&
-                      /^[A-Za-z0-9]([A-Za-z0-9]+[\.\-]*)*[A-Za-z0-9]@.*$/.test(
+                  return authType === "signup"
+                    ? (/^[A-Za-z0-9\.\-]{1,64}@[A-Za-z0-9\.\-]{1,255}$/.test(
                         value
                       ) &&
-                      /^.*@([A-Za-z0-9]{2,63}[\.\-])+[A-Za-z]{2,}$/.test(
-                        value
-                      )) ||
-                    "Invalid email address format"
-                  );
+                        /^[A-Za-z0-9]([A-Za-z0-9]+[\.\-]*)*[A-Za-z0-9]@.*$/.test(
+                          value
+                        ) &&
+                        /^.*@([A-Za-z0-9]{2,63}[\.\-])+[A-Za-z]{2,}$/.test(
+                          value
+                        )) ||
+                        (authType === "signup"
+                          ? "Invalid email address format"
+                          : "")
+                    : true;
                 },
                 onChange: (e) => {
                   setError("");
@@ -162,7 +164,7 @@ function Auth() {
                 {...register("repeatPassword", {
                   required: {
                     value: authType === "signup",
-                    message: "Please repeat your password",
+                    message: "This field is required",
                   },
                   validate: (value) => {
                     return (
