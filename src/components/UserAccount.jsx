@@ -2,19 +2,20 @@ import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router";
 import { useDropzone } from "react-dropzone";
 import { patchData } from "./helpers/update";
+import { postImage } from "./helpers/post";
 
 const UserAccount = () => {
-  const { users, loggedIn } = useOutletContext();
+  const { users, loggedIn, error, setError } = useOutletContext();
   const [userImage, setUserImage] = useState(null);
   const [loggedUser, setLoggedUser] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [uploadSuccess, setUploadSuccess] = useState(false);
-  const [upload, setUpload] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isUploadSuccess, setIsUploadSuccess] = useState(false);
+  const [isUploaded, setIsUploaded] = useState(false);
 
   const findUser = () => {
     const thisUser = users.find((user) => user.id === loggedIn);
     setLoggedUser(thisUser);
-    setLoading(false);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -23,9 +24,19 @@ const UserAccount = () => {
     }
   }, [loggedIn]);
 
+  const timedClosure = () => {
+    if (isUploadSuccess && !isLoading)
+      setTimeout(() => {
+        setIsUploaded((prev) => !prev);
+      }, 2000);
+  };
+
+  useEffect(() => {
+    timedClosure();
+  }, [isUploadSuccess]);
+
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
-
     const validTypes = ["image/jpeg", "image/png", "image/jpg"];
     if (!validTypes.includes(file.type)) {
       alert("Please upload a JPEG or PNG image.");
@@ -48,24 +59,20 @@ const UserAccount = () => {
     try {
       const formData = new FormData();
       formData.append("image", file);
-
-      const response = await fetch("http://localhost:5000/upload", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await response.json();
-
-      if (data.success) {
-        const imagePath = data.imagePath;
-
+      const imageData = await postImage(formData);
+      if (imageData.success) {
+        const imagePath = imageData.imagePath;
         await patchData("users", loggedUser?.id, { image: imagePath });
         setLoggedUser((prev) => ({ ...prev, image: imagePath }));
-        setUploadSuccess(true);
+        setIsUploadSuccess(true);
+        setTimeout(() => {
+          setUserImage(null);
+        }, 2000);
       } else {
-        console.error("Error uploading image:", data.message);
+        setError("Error uploading image:", imageData.message);
       }
     } catch (error) {
-      console.error("Error uploading image:", error);
+      setError("Error uploading imageo:", error.message);
     }
   };
 
@@ -78,7 +85,7 @@ const UserAccount = () => {
     maxFiles: 1,
   });
 
-  if (loading) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 
@@ -91,43 +98,49 @@ const UserAccount = () => {
   );
 
   return (
-    <div className="bg-yellow-200 mt-[5rem] ms-[10rem] relative">
-      <div className="flex flex-col items-center">
+    <div className="backgroud-dark-blue mt-[5rem] ms-[10rem] relative">
+      <div className="flex flex-col items-center p-10">
         <div>{profileImage}</div>
-        {profileImage ? <p>Profile image</p> : <p>No image uploaded yet</p>}
-        <p className="text-4xl p-2">{loggedUser?.userName}</p>
+        {profileImage ? (
+          <p className="text-white">Profile image</p>
+        ) : error ? (
+          <p className="text-3xl text-red-500">{error}</p>
+        ) : (
+          <p className="text-white">No image uploaded yet</p>
+        )}
+        <p className="text-4xl p-2 text-white">{loggedUser?.userName}</p>
       </div>
       <div className="absolute bottom-0 right-2">
-          <div className={`${!upload ? "hidden" : "block"}` }>
-            <div
-              {...getRootProps()}
-              className="bg-slate-300 p-5 w-[10rem] h-[10rem] border-2 border-dashed border-red-500"
-            >
-              <input {...getInputProps()} />
-              {!userImage ? (
-                <p className="text-center">
-                  Drag & drop an image here, or click to select an image
-                </p>
-              ) : loading ? (
-                <div className="text-center">
-                  <p>Uploading...</p>
-                  <div className="spinner"></div>
-                </div>
-              ) : (
-                uploadSuccess &&
-                !loading && (
-                  <p className="text-red-500 text-center">Upload Successful!</p>
-                )
-              )}
-            </div>
-          </div>
-          <button
-            onClick={() => setUpload(!upload)}
-            type="button"
-            className="w-[10rem] text-xs bg-gray-300 mt-2 rounded"
+        <div className={`${!isUploaded ? "hidden" : "block"}`}>
+          <div
+            {...getRootProps()}
+            className="bg-slate-300 p-5 w-[10rem] h-[10rem] border-2 border-dashed border-red-500"
           >
-            Change or upload your image & click to close
-          </button>
+            <input {...getInputProps()} />
+            {!userImage ? (
+              <p className="text-center text-red-500">
+                Drag & drop an image here, or click to select an image
+              </p>
+            ) : isLoading ? (
+              <div className="text-center">
+                <p>Uploading...</p>
+                <div className="spinner"></div>
+              </div>
+            ) : (
+              isUploadSuccess &&
+              !isLoading && (
+                <p className="text-red-500 text-center">Upload Successful!</p>
+              )
+            )}
+          </div>
+        </div>
+        <button
+          onClick={() => setIsUploaded(!isUploaded)}
+          type="button"
+          className="w-[10rem] text-xs bg-slate-300 mt-2 rounded p-1"
+        >
+          Change or upload your image & click to close
+        </button>
       </div>
     </div>
   );
