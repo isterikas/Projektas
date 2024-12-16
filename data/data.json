@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 2
+      "latestTrending": 0
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 2
+      "latestTrending": 0
     },
     {
       "contentsId": "3",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 6
+      "latestTrending": 0
     },
     {
       "contentsId": "4",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 2
+      "latestTrending": 0
     },
     {
       "contentsId": "5",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 6
+      "latestTrending": 0
     },
     {
       "contentsId": "6",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 5
+      "latestTrending": 0
     },
     {
       "contentsId": "8",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "10",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "11",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 2
+      "latestTrending": 0
     },
     {
       "contentsId": "13",
@@ -324,7 +324,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "7e27",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "18",
@@ -543,8 +543,6 @@
       "latestTrending": 0
     }
   ],
-  "users": [
-  ],
-  "userBookmarks": [
-  ]
+  "users": [],
+  "userBookmarks": []
 }
