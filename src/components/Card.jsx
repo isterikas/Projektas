@@ -36,7 +36,10 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
       setChecked(!checked);
     } else {
       setChecked(!checked);
-      await postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
+      await postData(
+        { contentsId: contentsId, userId: loggedIn },
+        "userBookmarks"
+      );
     }
     setUpdate(update + 1);
   };

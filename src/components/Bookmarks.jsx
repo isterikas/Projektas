@@ -16,11 +16,11 @@ function Bookmarks() {
 
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    if(window.performance) {
-      if(performance.navigation.type != 1 && !loggedIn) navigate("/");
+  useEffect(() => {
+    if (window.performance) {
+      if (performance.navigation.type != 1 && !loggedIn) navigate("/");
     }
-  },[])
+  }, []);
 
   const allBookmarks = contents.filter((content) => {
     const isBookmarked = userBookmarks.find(
