@@ -171,7 +171,6 @@ function Auth() {
             <span className="text-red">{errors.password?.message}</span>
             {authType === "signup" ? (
               <>
-                <label className="hidden-labels">E-mail address</label>
                 <input
                   aria-label="Repeat password"
                   type="password"
