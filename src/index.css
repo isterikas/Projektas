@@ -102,8 +102,10 @@
   }
 
   input.nosubmit {
-    width: 100%;
-    border: none;
+    width: 95%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     outline: none;
     display: block;
     padding: 9px 4px 9px 56px;
@@ -116,6 +118,13 @@
       padding: 9px 4px 9px 64px;
       font-size: 24px;
     }
+  }
+
+  input.nosubmit:focus-visible {
+    border-bottom: 1px solid #5a698f;
+  }
+  input.nosubmit:not(:focus) {
+    border-bottom: 0px;
   }
 }
 
