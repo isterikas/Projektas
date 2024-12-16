@@ -1,19 +1,28 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useOutletContext } from "react-router";
+import { useOutletContext } from "react-router";
 import { useDropzone } from "react-dropzone";
 import { patchData } from "./helpers/update";
 import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
-
+import { useNavigate } from "react-router";
+import LogoIcon from "./navbar-components/logo-icon";
+import { deleteAccount } from "./helpers/delete";
 
 const UserAccount = () => {
-
-  const { isLoading, setLoggedUser, error, setError, loggedUser, loggedIn } =
-    useOutletContext();
+  const {
+    isLoading,
+    setLoggedUser,
+    error,
+    setError,
+    loggedUser,
+    loggedIn,
+    setLoggedIn,
+  } = useOutletContext();
   const [userImage, setUserImage] = useState(null);
   const [isUploadSuccess, setIsUploadSuccess] = useState(false);
-  const [isUploaded, setIsUploaded] = useState(false);
-  const [selectedProfileColor, setSelectedProfileColor] = usePersistState(
+  const [isUploader, setIsUploader] = useState(false);
+  const [isColorChanger, setIsColorChanger] = useState(false);
+  const [selectedThemeColor, setSelectedThemeColor] = usePersistState(
     "#10141e",
     "selectedProfileColor"
   );
@@ -22,18 +31,18 @@ const UserAccount = () => {
     "selectedTextColor"
   );
 
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    if(window.performance) {
-      if(performance.navigation.type != 1 && !loggedIn) navigate("/");
+  useEffect(() => {
+    if (window.performance) {
+      if (performance.navigation.type != 1 && !loggedIn) navigate("/");
     }
-  },[])
+  }, []);
 
   const timedClosure = () => {
     if (isUploadSuccess && !isLoading)
       setTimeout(() => {
-        setIsUploaded((prev) => !prev);
+        setIsUploader((prev) => !prev);
       }, 2000);
   };
 
@@ -43,7 +52,7 @@ const navigate = useNavigate()
 
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
-  const validTypes = ["image/jpeg", "image/png", "image/jpg"];
+    const validTypes = ["image/jpeg", "image/png", "image/jpg"];
     if (!validTypes.includes(file.type)) {
       alert("Please upload a JPEG or PNG image.");
       return;
@@ -78,7 +87,7 @@ const navigate = useNavigate()
         setError("Error uploading image:", imageData.message);
       }
     } catch (error) {
-      setError("Error uploading image:", error.message);
+      setError("Error uploading imageo:", error.message);
     }
   };
 
@@ -95,10 +104,16 @@ const navigate = useNavigate()
     return (
       <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
         <p>Loading...</p>
-        <div className="spinner"></div>
+        <div className="w-10 h-10 border-4 border-t-4 border-solid border-gray-300 border-t-blue-500 rounded-full animate-spin-around"></div>
       </div>
     );
   }
+
+  const getFormattedDate = (timestamp) => {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString();
+  };
+  const formattedDate = getFormattedDate(loggedUser.created);
 
   const profileImage = loggedUser?.image ? (
     <img
@@ -109,14 +124,33 @@ const navigate = useNavigate()
     />
   ) : null;
 
-  const getFormattedDate = (timestamp) => {
-    const date = new Date(timestamp);
-    return date.toLocaleDateString();
+  const handleDelete = async () => {
+    await deleteAccount(loggedUser?.id);
+    try {
+      window.localStorage.clear();
+      setLoggedIn("");
+      setLoggedUser(null);
+      navigate("/")
+    } catch (error) {
+      window.alert("Error deleting account:", error.message);
+    }
   };
-  const formattedDate = getFormattedDate(loggedUser.created);
 
   return (
-    <div style={{ backgroundColor: selectedProfileColor }} className="relative p-4">
+    <div
+      style={{ backgroundColor: selectedThemeColor }}
+      className="relative p-4"
+    >
+      <div className="flex items-center justify-between pb-4 md:px-[2rem] lg:px-[4rem]">
+        <LogoIcon />
+        <button
+          type="button"
+          style={{ background: selectedTextColor, color: selectedThemeColor }}
+          className="rounded p-2 text-xs"
+        >
+          To Homepage!
+        </button>
+      </div>
       <div className="flex flex-col items-center">
         <div>{profileImage}</div>
         {profileImage ? (
@@ -124,13 +158,13 @@ const navigate = useNavigate()
         ) : error ? (
           <p className="text-3xl text-red-500">{error}</p>
         ) : (
-          <p className="text-red-500 font-semibold text-[1.5rem]">
+          <p className="text-white font-semibold text-[1rem]">
             No image uploaded yet!
           </p>
         )}
         <p
           style={{ color: selectedTextColor }}
-          className="text-[1.5rem] md:text-[2.5rem] lg:text-[3rem] font-semibold "
+          className="text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-semibold "
         >
           {loggedUser?.userName}
         </p>
@@ -140,15 +174,15 @@ const navigate = useNavigate()
         >{`Member since: ${formattedDate}`}</p>
       </div>
       <div className="absolute bottom-0 right-[15rem]">
-        <div className={`${!isUploaded ? "hidden" : "block"}`}>
+        <div className={`${!isUploader ? "hidden" : "block"}`}>
           <div
             {...getRootProps()}
-            className="bg-slate-300 p-5 w-[10rem] h-[10rem] border-2 border-dashed border-red-500"
+            className="bg-slate-300 p-5 w-[10rem] h-[10rem] border-2 border-dashed border-red-500 rounded"
           >
             <input {...getInputProps()} />
             {!userImage ? (
               <p className="text-center text-red-500">
-                Drag & drop an image here, or click to select an image
+                Drag & drop an image here, or Click to select an image
               </p>
             ) : isLoading ? (
               <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
@@ -164,49 +198,78 @@ const navigate = useNavigate()
           </div>
         </div>
         <button
-          onClick={() => setIsUploaded(!isUploaded)}
+          onClick={() => setIsUploader(!isUploader)}
           type="button"
           className="w-[10rem] text-xs bg-slate-300 mt-2 rounded p-1"
         >
-          Change or upload your image & click to close
+          Change or Upload your image & Click to close
         </button>
       </div>
 
-      <div className="flex flex-col">
-        <div className="mt-2">
-          <label className="text-white p-1" >Select Profile Theme Color:</label>
-          <input
-            type="color"
-            value={selectedProfileColor}
-            onChange={(e) => {
-              setSelectedProfileColor(e.target.value);
-            }}
-            className="p-2 bg-slate-300"
-          />
+      <div className="absolute bottom-0 right-[10rem]">
+        <div
+          className={`${
+            !isColorChanger ? "hidden" : "block"
+          } flex flex-col bg-slate-300 rounded w-[10rem] h-[10rem] border-2 border-dashed border-red-500`}
+        >
+          <div className="mt-1">
+            <label style={{ color: selectedThemeColor }} className="p-1">
+              Select Theme Color:
+            </label>
+            <input
+              type="color"
+              value={selectedThemeColor}
+              onChange={(e) => {
+                setSelectedThemeColor(e.target.value);
+              }}
+              className="p-2 bg-white"
+            />
+          </div>
+          <div className="mt-2">
+            <label style={{ color: selectedTextColor }} className="p-1">
+              Select Text Color:
+            </label>
+            <input
+              type="color"
+              value={selectedTextColor}
+              onChange={(e) => {
+                setSelectedTextColor(e.target.value);
+              }}
+              className="p-2 bg-white"
+            />
+          </div>
+          <div className="mt-2">
+            <button
+              className="text-red-500 w-[9.8rem] p-[0.3rem] rounded text-xs bg-[#10141e]"
+              type="button"
+              onClick={() => {
+                setSelectedTextColor("#ef4444");
+                setSelectedThemeColor("#10141e");
+              }}
+            >
+              Click to set Default Colors
+            </button>
+          </div>
         </div>
-        <div className="mt-2">
-          <label className="text-white p-1">Select Text Color:</label>
-          <input
-            type="color"
-            value={selectedTextColor}
-            onChange={(e) => {
-              setSelectedTextColor(e.target.value);
-            }}
-            className="p-2 bg-slate-300"
-          />
-        </div>
-        <div className="mt-2">
-          <button   style = {{background: selectedTextColor}} className="text-white p-2 w-[10rem] rounded text-xs"
-            type="button"
-            onClick={() => {
-              setSelectedTextColor("#ef4444");
-              setSelectedProfileColor("#10141e");
-            }}
-          >
-            Click to Set Default Colors
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => {
+            setIsColorChanger(!isColorChanger);
+          }}
+          className="text-xs bg-slate-300 w-[10rem] rounded mt-2 p-1"
+        >
+          Change your 'Theme or Text' Colors & Click to close
+        </button>
       </div>
+      <hr className=" md:mx-[2rem] lg:mx-[4rem] border-2 border-red-500" />
+      <button
+        type="submit"
+        onClick={handleDelete}
+        className="bg-green-500 text-white"
+      >
+        Delete Account
+      </button>
+      <p className="text-white text-4xl">Labas</p>
     </div>
   );
 };

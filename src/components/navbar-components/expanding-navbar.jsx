@@ -4,19 +4,16 @@ import HamburgerMenu from "./navbar-hamburger-icon";
 import UserIcon from "./user-icon";
 import NavBarIcons from "./navbar-active-icons";
 
-const ExpandingDiv = (props) => {
-  const { setAuthType, loggedIn, setLoggedIn } = props;
+const ExpandingNavbar = (props) => {
+  const { setAuthType, loggedIn, setLoggedIn, loggedUser } = props;
 
   useEffect(() => {
-    // Function to handle scroll and update height
     const handleScroll = () => {
         const expandingDiv = document.querySelector('.expanding-navbar');;
       const scrollPosition = window.scrollY;
 
-      // Increase height based on the scroll position
-      const newHeight = 90 + scrollPosition / 15; // This controls the speed of expansion
+      const newHeight = 90 + scrollPosition / 15; 
 
-      // Set the new height, with a max height limit
       expandingDiv.style.height = `${Math.min(newHeight, 137)}vh`;
     };
 
@@ -48,11 +45,11 @@ const ExpandingDiv = (props) => {
           </div>
         ) : (
           <div>
-            <UserIcon setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+            <UserIcon setLoggedIn={setLoggedIn} loggedIn={loggedIn} loggedUser={loggedUser} />
           </div>
         )}
       </div>
     </nav>
   );
 };
-export default ExpandingDiv;
+export default ExpandingNavbar;

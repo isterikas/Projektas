@@ -58,7 +58,6 @@ export default function App() {
   const findUser = async () => {
     if (loggedIn && users.length > 0) {
       const thisUser = users.find((user) => user.id === loggedIn)
-
       setLoggedUser(thisUser);
       setIsLoading(false);
 
@@ -69,12 +68,10 @@ export default function App() {
     getAllcontents();
     getAllUserBookmarks();
     getAllUsers();
-  }, [update]);
-
-  useEffect(() => {
     if (loggedIn) 
       findUser();
-  }, [loggedIn, users]);
+  }, [update, loggedIn, users]);
+
 
   return (
     <div className="inset-0 background-dark-blue h-dvh">
@@ -84,6 +81,7 @@ export default function App() {
           setAuthType={setAuthType}
           loggedIn={loggedIn}
           setLoggedIn={setLoggedIn}
+          loggedUser={loggedUser}
         />
       </div>
       <div className="background-dark-blue">
