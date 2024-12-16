@@ -87,18 +87,18 @@
     padding: 0;
   }
 
-  .content-heading{
-font-size: 20px;
-font-family: "Outfit";
-font-weight: 400;
-margin-left: 16px
-}
+  .content-heading {
+    font-size: 20px;
+    font-family: "Outfit";
+    font-weight: 400;
+    margin-left: 16px;
+  }
 
-@media (min-width: 768px){
-  .content-heading{@apply heading-l;
-  margin-left: 25px}
-
-
+  @media (min-width: 768px) {
+    .content-heading {
+      @apply heading-l;
+      margin-left: 25px;
+    }
   }
 
   input.nosubmit {
@@ -119,8 +119,6 @@ margin-left: 16px
   }
 }
 
-
-
 .bookmark-icon {
   top: 12%;
   right: 10%;
@@ -128,41 +126,48 @@ margin-left: 16px
 }
 .movie-icon {
   font-size: 4px;
-
-}
-
-.profile-image-large {
-  width: 13rem;
-  height: 13rem;
-  border-radius: 50%;
-  border:2px solid #ef4444
 }
 
 .profile-image-small {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border:1px solid #ef4444
+  border: 1px solid #ef4444;
 }
 
 .spinner {
   border: 4px solid #f3f3f3;
   border-top: 4px solid #3498db;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .expanding-navbar {
-  background-color: #161D2F;
+  background-color: #161d2f;
   border-radius: 20px;
   width: 96px;
-  height: 90vh; 
-  transition: height 0.1s ease-in-out; 
+  height: 90vh;
+  transition: height 0.1s ease-in-out;
+}
+
+@layer utilities {
+  .profile-image-large {
+    @apply rounded-[20px] shadow-white w-[10rem] h-[7rem] md:w-[13rem] md:h-[10rem] lg:w-[19rem] lg:h-[16rem];
+  }
+
+  .expanding-navbar {
+    @apply  lg:w-[96px] lg:h-[960px] lg:flex-col lg:px-0 lg:rounded-[20px] transition-all duration-100 ease-in-out;
+    transition-property: height;
+  }
 }

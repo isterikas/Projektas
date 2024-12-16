@@ -17,8 +17,7 @@ function Auth() {
     formState: { errors },
   } = useForm({ reValidateMode: "onSubmit" });
   const navigate = useNavigate();
-  const { authType, setAuthType, setLoggedIn } =
-    useOutletContext();
+  const { authType, setAuthType, setLoggedIn } = useOutletContext();
   const [error, setError] = useState("");
   const [users, setUsers] = useState([]);
 
@@ -60,13 +59,14 @@ function Auth() {
             userName: data.email,
             userPassword: sha256(sha1(data.password)),
             image: "",
+            created: new Date().toISOString()
           },
           "users"
         );
         const fetchedUsers = await getAllData("users");
         setUsers(fetchedUsers);
         setAuthType("login");
-        
+
         alert(`New account ${data.email} was created successfully.`);
       }
     } catch (error) {
@@ -193,7 +193,6 @@ function Auth() {
               <button
                 onClick={() => {
                   setAuthType("login");
-                  
                 }}
                 className="text-red "
               >
@@ -207,7 +206,6 @@ function Auth() {
                 onClick={() => {
                   setError("");
                   setAuthType("signup");
-                  
                 }}
                 className="text-red"
               >

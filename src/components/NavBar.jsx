@@ -6,9 +6,9 @@ import UserIcon from "./navbar-components/user-icon.jsx";
 import ExpandingDiv from "./navbar-components/expanding-div.jsx";
 
 function NavBar(props) {
-  const { setAuthType, loggedIn, setLoggedIn } = props;
+  const { setAuthType, loggedIn, setLoggedIn, loggedUser } = props;
   const location = useLocation();
-
+  
   return (
     <>
       {location.pathname == "/authorization" ||
@@ -18,8 +18,7 @@ function NavBar(props) {
         ""
       ) : (
         <div>
-          <nav className="flex justify-between items-center bg-[#161D2F] px-[16px] h-[56px] md:h-[72px] md:px-[24px] md:rounded-[10px] 
-          // lg:w-[96px] lg:h-[960px] lg:flex-col lg:px-0 lg:rounded-[20px] lg:hidden
+          <nav className="flex justify-between items-center bg-[#161D2F] px-[16px] h-[56px] md:h-[72px] md:px-[24px] md:rounded-[10px] lg:hidden
           ">
             <div className="lg:mt-[32px]">
               <LogoIcon />
@@ -38,7 +37,7 @@ function NavBar(props) {
                 </div>
               ) : (
                 <div>
-                  <UserIcon setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+                  <UserIcon setLoggedIn={setLoggedIn} loggedIn={loggedIn} loggedUser={loggedUser}/>
                 </div>
               )}
             </div>

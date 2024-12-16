@@ -3,26 +3,22 @@ import { useOutletContext } from "react-router";
 import { useDropzone } from "react-dropzone";
 import { patchData } from "./helpers/update";
 import { postImage } from "./helpers/post";
+import { usePersistState } from "@printy/react-persist-state";
 
 const UserAccount = () => {
-  const { users, loggedIn, error, setError } = useOutletContext();
+  const { isLoading, setLoggedUser, error, setError, loggedUser } =
+    useOutletContext();
   const [userImage, setUserImage] = useState(null);
-  const [loggedUser, setLoggedUser] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
   const [isUploadSuccess, setIsUploadSuccess] = useState(false);
   const [isUploaded, setIsUploaded] = useState(false);
-
-  const findUser = () => {
-    const thisUser = users.find((user) => user.id === loggedIn);
-    setLoggedUser(thisUser);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    if (loggedIn) {
-      findUser();
-    }
-  }, [loggedIn]);
+  const [selectedProfileColor, setSelectedProfileColor] = usePersistState(
+    "#10141e",
+    "selectedProfileColor"
+  );
+  const [selectedTextColor, setSelectedTextColor] = usePersistState(
+    "#ef4444",
+    "selectedTextColor"
+  );
 
   const timedClosure = () => {
     if (isUploadSuccess && !isLoading)
@@ -86,31 +82,54 @@ const UserAccount = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
+        <p>Loading...</p>
+        <div className="spinner"></div>
+      </div>
+    );
   }
 
-  const profileImage = (
+  const profileImage = loggedUser?.image ? (
     <img
       src={`http://localhost:5000${loggedUser.image}`}
       alt="Profile-image"
       className="profile-image-large"
+      style={{ border: `2px solid ${selectedTextColor}` }}
     />
-  );
+  ) : null;
+
+  const getFormattedDate = (timestamp) => {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString();
+  };
+  const formattedDate = getFormattedDate(loggedUser.created);
 
   return (
-    <div className="backgroud-dark-blue relative">
-      <div className="flex flex-col items-center p-[3rem]">
+    <div style={{ backgroundColor: selectedProfileColor }} className="relative p-4">
+      <div className="flex flex-col items-center">
         <div>{profileImage}</div>
         {profileImage ? (
-          <p className="text-white">Profile image</p>
+          <p className="text-slate-300">Profile image</p>
         ) : error ? (
           <p className="text-3xl text-red-500">{error}</p>
         ) : (
-          <p className="text-white">No image uploaded yet</p>
+          <p className="text-red-500 font-semibold text-[1.5rem]">
+            No image uploaded yet!
+          </p>
         )}
-        <p className="text-4xl p-2 text-white">{loggedUser?.userName}</p>
+        <p
+          style={{ color: selectedTextColor }}
+          className="text-[1.5rem] md:text-[2.5rem] lg:text-[3rem] font-semibold "
+        >
+          {loggedUser?.userName}
+        </p>
+        <p
+          style={{ color: selectedTextColor }}
+          className="font-semibold opacity-70"
+        >{`Member since: ${formattedDate}`}</p>
       </div>
-      <div className="absolute bottom-0 right-5">
+      <div className="absolute bottom-0 right-[15rem]">
         <div className={`${!isUploaded ? "hidden" : "block"}`}>
           <div
             {...getRootProps()}
@@ -122,14 +141,14 @@ const UserAccount = () => {
                 Drag & drop an image here, or click to select an image
               </p>
             ) : isLoading ? (
-              <div className="text-center">
+              <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
                 <p>Uploading...</p>
                 <div className="spinner"></div>
               </div>
             ) : (
               isUploadSuccess &&
               !isLoading && (
-                <p className="text-red-500 text-center">Upload Successful!</p>
+                <p className="text-green-500 text-center">Upload Successful!</p>
               )
             )}
           </div>
@@ -141,6 +160,42 @@ const UserAccount = () => {
         >
           Change or upload your image & click to close
         </button>
+      </div>
+
+      <div className="flex flex-col">
+        <div className="mt-2">
+          <label className="text-white p-1" >Select Profile Theme Color:</label>
+          <input
+            type="color"
+            value={selectedProfileColor}
+            onChange={(e) => {
+              setSelectedProfileColor(e.target.value);
+            }}
+            className="p-2 bg-slate-300"
+          />
+        </div>
+        <div className="mt-2">
+          <label className="text-white p-1">Select Text Color:</label>
+          <input
+            type="color"
+            value={selectedTextColor}
+            onChange={(e) => {
+              setSelectedTextColor(e.target.value);
+            }}
+            className="p-2 bg-slate-300"
+          />
+        </div>
+        <div className="mt-2">
+          <button   style = {{background: selectedTextColor}} className="text-white p-2 w-[10rem] rounded text-xs"
+            type="button"
+            onClick={() => {
+              setSelectedTextColor("#ef4444");
+              setSelectedProfileColor("#10141e");
+            }}
+          >
+            Click to Set Default Colors
+          </button>
+        </div>
       </div>
     </div>
   );

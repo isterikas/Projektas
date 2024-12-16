@@ -14,7 +14,7 @@ const ExpandingDiv = (props) => {
       const scrollPosition = window.scrollY;
 
       // Increase height based on the scroll position
-      const newHeight = 100 + scrollPosition / 10; // This controls the speed of expansion
+      const newHeight = 90 + scrollPosition / 15; // This controls the speed of expansion
 
       // Set the new height, with a max height limit
       expandingDiv.style.height = `${Math.min(newHeight, 137)}vh`;
