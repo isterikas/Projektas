@@ -59,6 +59,7 @@ function Auth() {
             userName: data.email,
             userPassword: sha256(sha1(data.password)),
             image: "",
+            created: new Date().toISOString()
           },
           "users"
         );
