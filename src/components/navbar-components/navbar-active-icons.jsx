@@ -1,10 +1,11 @@
 import { NavLink } from "react-router";
 
-const NavBarIcons = ({loggedIn}) => {
+const NavBarIcons = ({ loggedIn }) => {
   return (
     <div className="flex justify-between w-[134px] h-[16px] md:w-[173px] md:h-[20px] lg:w-[20px] lg:h-[200px] lg:flex-col">
       <NavLink
         to="/"
+        aria-label="Homepage"
         className={({ isActive }) =>
           isActive
             ? "fill-white transition duration-500 hover:animate-pulse w-[16px] h-[16px] md:w-[20px] md:h-[20px]"
@@ -17,6 +18,7 @@ const NavBarIcons = ({loggedIn}) => {
       </NavLink>
       <NavLink
         to="/movies"
+        aria-label="Movies"
         className={({ isActive }) =>
           isActive
             ? "fill-white transition duration-500 hover:animate-pulse w-[16px] h-[16px] md:w-[20px] md:h-[20px]"
@@ -29,6 +31,7 @@ const NavBarIcons = ({loggedIn}) => {
       </NavLink>
       <NavLink
         to="/tvseries"
+        aria-label="TV Series"
         className={({ isActive }) =>
           isActive
             ? "fill-white transition duration-500 hover:animate-pulse w-[16px] h-[16px] md:w-[20px] md:h-[20px]"
@@ -39,18 +42,23 @@ const NavBarIcons = ({loggedIn}) => {
           <path d="M20 4.481H9.08l2.7-3.278L10.22 0 7 3.909 3.78.029 2.22 1.203l2.7 3.278H0V20h20V4.481Zm-8 13.58H2V6.42h10v11.64Zm5-3.88h-2v-1.94h2v1.94Zm0-3.88h-2V8.36h2v1.94Z" />
         </svg>
       </NavLink>
-      {loggedIn?<NavLink
-        to="/bookmarks"
-        className={({ isActive }) =>
-          isActive
-            ? "fill-white transition duration-500 hover:animate-pulse w-[14px] h-[16px] md:w-[17px] md:h-[20px]"
-            : "fill-[#5A698F] hover:fill-red-500 hover:shadow-2xl hover:shadow-red-500 transition duration-500 w-[14px] h-[16px] md:w-[17px] md:h-[20px]"
-        }
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 20">
-          <path d="M15.387 0c.202 0 .396.04.581.119.291.115.522.295.694.542.172.247.258.52.258.82v17.038c0 .3-.086.573-.258.82a1.49 1.49 0 0 1-.694.542 1.49 1.49 0 0 1-.581.106c-.423 0-.79-.141-1.098-.423L8.46 13.959l-5.83 5.605c-.317.29-.682.436-1.097.436-.202 0-.396-.04-.581-.119a1.49 1.49 0 0 1-.694-.542A1.402 1.402 0 0 1 0 18.52V1.481c0-.3.086-.573.258-.82A1.49 1.49 0 0 1 .952.119C1.137.039 1.33 0 1.533 0h13.854Z" />
-        </svg>
-      </NavLink>:""}
+      {loggedIn ? (
+        <NavLink
+          to="/bookmarks"
+          aria-label="Bookmarks"
+          className={({ isActive }) =>
+            isActive
+              ? "fill-white transition duration-500 hover:animate-pulse w-[14px] h-[16px] md:w-[17px] md:h-[20px]"
+              : "fill-[#5A698F] hover:fill-red-500 hover:shadow-2xl hover:shadow-red-500 transition duration-500 w-[14px] h-[16px] md:w-[17px] md:h-[20px]"
+          }
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 20">
+            <path d="M15.387 0c.202 0 .396.04.581.119.291.115.522.295.694.542.172.247.258.52.258.82v17.038c0 .3-.086.573-.258.82a1.49 1.49 0 0 1-.694.542 1.49 1.49 0 0 1-.581.106c-.423 0-.79-.141-1.098-.423L8.46 13.959l-5.83 5.605c-.317.29-.682.436-1.097.436-.202 0-.396-.04-.581-.119a1.49 1.49 0 0 1-.694-.542A1.402 1.402 0 0 1 0 18.52V1.481c0-.3.086-.573.258-.82A1.49 1.49 0 0 1 .952.119C1.137.039 1.33 0 1.533 0h13.854Z" />
+          </svg>
+        </NavLink>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

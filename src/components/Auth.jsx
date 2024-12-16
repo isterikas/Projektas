@@ -97,6 +97,7 @@ function Auth() {
             className="flex flex-col mx-[24px] gap-y-[6px] md:px-[10px]"
           >
             <input
+              aria-label="E-mail address"
               type="text"
               {...register("email", {
                 required: "This field is required",
@@ -128,6 +129,7 @@ function Auth() {
             />
             <span className="text-red ">{errors.email?.message}</span>
             <input
+              aria-label="Password"
               type="password"
               {...register("password", {
                 required: "This field is required",
@@ -163,27 +165,30 @@ function Auth() {
             />
             <span className="text-red">{errors.password?.message}</span>
             {authType === "signup" ? (
-              <input
-                type="password"
-                {...register("repeatPassword", {
-                  required: {
-                    value: authType === "signup",
-                    message: "This field is required",
-                  },
-                  validate: (value) => {
-                    return (
-                      value === watch("password") || "Passwords must match"
-                    );
-                  },
-                  onChange: (e) => {
-                    clearErrors("repeatPassword");
-                  },
-                })}
-                placeholder="Repeat Password"
-                className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
-                  errors.email ? "border-red-600" : "border-[#5a698f]"
-                }`}
-              />
+              <>
+                <input
+                  aria-label="Repeat password"
+                  type="password"
+                  {...register("repeatPassword", {
+                    required: {
+                      value: authType === "signup",
+                      message: "This field is required",
+                    },
+                    validate: (value) => {
+                      return (
+                        value === watch("password") || "Passwords must match"
+                      );
+                    },
+                    onChange: (e) => {
+                      clearErrors("repeatPassword");
+                    },
+                  })}
+                  placeholder="Repeat Password"
+                  className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
+                    errors.email ? "border-red-600" : "border-[#5a698f]"
+                  }`}
+                />
+              </>
             ) : (
               ""
             )}
