@@ -82,7 +82,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 
         <div className="background-dark-blue">
           {searchQuery == "" ? (
-            locationInfo.header() ? (
+            locationInfo().header ? (
               <h1 className="content-heading text-white">
                 {locationInfo().header}
               </h1>
