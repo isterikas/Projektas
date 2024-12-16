@@ -6,8 +6,8 @@ import { usePersistState } from "@printy/react-persist-state";
 
 export default function App() {
   const [search, setSearch] = useState("");
-  const [authType, setAuthType] = usePersistState("login", "auth-type");
-  const [loggedIn, setLoggedIn] = usePersistState("", "userId");
+  const [authType, setAuthType] = usePersistState("login", "authType");
+  const [loggedIn, setLoggedIn] = usePersistState("", "loggedIn");
 
   const [contents, setContents] = useState([]);
   const [update, setUpdate] = useState(0);
@@ -15,7 +15,7 @@ export default function App() {
   const [userBookmarks, setUserBookmarks] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [loggedUser, setLoggedUser] = usePersistState("", "logInsjhdfgUser");
+  const [loggedUser, setLoggedUser] = usePersistState({}, "loggedUser");
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -56,10 +56,12 @@ export default function App() {
   };
 
   const findUser = async () => {
-    if (loggedIn) {
-      const thisUser = users.find((user) => user.id == loggedIn);
+    if (loggedIn && users.length > 0) {
+      const thisUser = users.find((user) => user.id === loggedIn)
+
       setLoggedUser(thisUser);
       setIsLoading(false);
+
     }
   };
 
@@ -67,13 +69,12 @@ export default function App() {
     getAllcontents();
     getAllUserBookmarks();
     getAllUsers();
-  }, []);
+  }, [update]);
 
   useEffect(() => {
-    if (loggedIn) {
+    if (loggedIn) 
       findUser();
-    }
-  }, [loggedIn, update]);
+  }, [loggedIn, users]);
 
   return (
     <div className="inset-0 background-dark-blue h-dvh">
