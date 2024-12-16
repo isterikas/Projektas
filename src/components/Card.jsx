@@ -9,6 +9,7 @@ import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
 function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
+  const [thisBookmark, setThisBookmark] = useState({});
   const [checked, setChecked] = useState(false);
 
   const setStateChecked = () => {
@@ -22,9 +23,6 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
 
   useEffect(() => {
     setStateChecked();
-  }, []);
-  useEffect(() => {
-    setStateChecked();
   }, [update]);
 
   const toggleBookmark = async () => {
@@ -35,9 +33,9 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
     );
     if (thisBookmark) {
       await deleteBookmark(thisBookmark.id);
-      setStateChecked();
+      setChecked(!checked);
     } else {
-      setStateChecked();
+      setChecked(!checked);
       await postData({ contentsId: contentsId, userId: loggedIn }, "userBookmarks");
     }
     setUpdate(update + 1);
