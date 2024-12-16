@@ -51,7 +51,6 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             key={item.contentsId}
             update={update}
             setUpdate={setUpdate}
-            userBookmarks={userBookmarks}
             loggedIn={loggedIn}
             width={width}
           />

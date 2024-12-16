@@ -75,7 +75,6 @@ function Trending({
                       slide={slide}
                       update={update}
                       setUpdate={setUpdate}
-                      userBookmarks={userBookmarks}
                       loggedIn={loggedIn}
                     />
                   </div>

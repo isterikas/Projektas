@@ -48,7 +48,6 @@ function Recommended({
               item={item}
               update={update}
               setUpdate={setUpdate}
-              userBookmarks={userBookmarks}
               loggedIn={loggedIn}
               width={width}
             />
