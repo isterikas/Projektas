@@ -24,7 +24,6 @@ function Card({ item, setUpdate, update, loggedIn, width }) {
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) setChecked(true);
-    else setChecked(false);
   };
 
   useEffect(() => {

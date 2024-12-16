@@ -59,7 +59,7 @@ function Auth() {
             userName: data.email,
             userPassword: sha256(sha1(data.password)),
             image: "",
-            created: new Date().toISOString()
+            created: new Date().toISOString(),
           },
           "users"
         );
@@ -83,15 +83,18 @@ function Auth() {
         />
         <div className="background-semidark-blue rounded-lg mx-[24px] my-[40px]">
           {authType === "login" ? (
-            <h1 className="text-white heading-l pt-10 relative left-4 md:px-[10px]">Login</h1>
+            <h1 className="text-white heading-l pt-10 relative left-4 md:px-[10px]">
+              Login
+            </h1>
           ) : (
-            <h1 className="text-white heading-l pt-5 relative left-4 md:px-[10px]">Sign up</h1>
+            <h1 className="text-white heading-l pt-5 relative left-4 md:px-[10px]">
+              Sign up
+            </h1>
           )}
           <form
             noValidate
             onSubmit={handleSubmit(formSubmitHandler)}
             className="flex flex-col mx-[24px] gap-y-[6px] md:px-[10px]"
-            
           >
             <input
               type="text"
@@ -196,9 +199,7 @@ function Auth() {
           </form>
           {authType == "signup" ? (
             <div className="body-m text-white mx-[53.25px] my-[20px] flex flex-row space-x-[9px]">
-              <div>
-              Already have an account?{" "}
-</div>
+              <div>Already have an account? </div>
               <button
                 onClick={() => {
                   setError("");
@@ -210,13 +211,9 @@ function Auth() {
                 Login
               </button>
             </div>
-
-            
           ) : (
             <div className="body-m text-white mx-[52px] my-[20px] flex flex-row space-x-[9px]">
-              <div>
-              Don't have an account?{" "}
-              </div>
+              <div>Don't have an account? </div>
               <button
                 onClick={() => {
                   setError("");

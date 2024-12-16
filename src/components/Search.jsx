@@ -19,12 +19,13 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
     if (value) {
+      setSearch(searchQuery)
       return true;
     } else {
+      setSearch("");
       return false;
     }
   };
-  handleSearch ? setSearch(searchQuery) : setSearch("");
 
   const locationInfo = () => {
     switch (location.pathname) {

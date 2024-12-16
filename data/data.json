@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "2",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -675,6 +675,16 @@
       "id": "95f4",
       "contentsId": "10",
       "userId": "df0a"
+    },
+    {
+      "id": "1af5",
+      "contentsId": "3",
+      "userId": "e1f3"
+    },
+    {
+      "id": "2a11",
+      "contentsId": "1",
+      "userId": "e1f3"
     }
   ]
 }

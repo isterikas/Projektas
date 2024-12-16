@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
+import { getAllData } from "./helpers/get.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
 import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
 function TrendingCard({ slide, setUpdate, update, loggedIn }) {
-  const { title, year, category, rating, contentsId } = slide;
-
+  const { contentsId, title, year, category, rating } = slide;
   const [checked, setChecked] = useState(false);
+
   const [userBookmarks, setUserBookmarks] = useState([]);
 
   const getAllUserBookmarks = async () => {
@@ -21,7 +22,6 @@ function TrendingCard({ slide, setUpdate, update, loggedIn }) {
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) setChecked(true);
-    else setChecked(false);
   };
 
   useEffect(() => {
