@@ -76,6 +76,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
               _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-ąčęėįšųūžĄČĘĖĮŠŲŪŽ\s]/,
             }}
             defaultValue={handleSearch ? searchQuery : ""}
+            aria-label="search field"
           />
         </form>
 

@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 3
+      "latestTrending": 6
     },
     {
       "contentsId": "4",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 1
+      "latestTrending": 6
     },
     {
       "contentsId": "6",
@@ -126,7 +126,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "cd79",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "7",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 1
+      "latestTrending": 5
     },
     {
       "contentsId": "8",
@@ -584,13 +584,6 @@
       "userName": "name.surname@mail.com",
       "userPassword": "dd5ad1cfc713442b97319a501aa6b8cc3e2c3f8a4148246a1e67a9a7e7a0cfe5",
       "image": ""
-    },
-    {
-      "id": "5511",
-      "userName": "edgaraslaptevas88@gmail.com",
-      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
-      "image": "",
-      "created": "2024-12-16T10:30:25.821Z"
     }
   ],
   "userBookmarks": [
@@ -622,11 +615,6 @@
     {
       "id": "9052",
       "contentsId": "1",
-      "userId": "df0a"
-    },
-    {
-      "id": "82fb",
-      "contentsId": "2",
       "userId": "df0a"
     },
     {
@@ -675,11 +663,6 @@
       "userId": "df0a"
     },
     {
-      "id": "e2fa",
-      "contentsId": "6",
-      "userId": "df0a"
-    },
-    {
       "id": "95f4",
       "contentsId": "10",
       "userId": "df0a"
@@ -692,6 +675,71 @@
     {
       "id": "2d3f",
       "contentsId": "3",
+      "userId": "df0a"
+    },
+    {
+      "id": "1f01",
+      "contentsId": "3",
+      "userId": "df0a"
+    },
+    {
+      "id": "7451",
+      "contentsId": "7",
+      "userId": "df0a"
+    },
+    {
+      "id": "1491",
+      "contentsId": "3",
+      "userId": "df0a"
+    },
+    {
+      "id": "5a2d",
+      "contentsId": "7",
+      "userId": "df0a"
+    },
+    {
+      "id": "b425",
+      "contentsId": "3",
+      "userId": "df0a"
+    },
+    {
+      "id": "30a0",
+      "contentsId": "7",
+      "userId": "df0a"
+    },
+    {
+      "id": "ecf2",
+      "contentsId": "5",
+      "userId": "df0a"
+    },
+    {
+      "id": "a31a",
+      "contentsId": "5",
+      "userId": "df0a"
+    },
+    {
+      "id": "aeb7",
+      "contentsId": "5",
+      "userId": "df0a"
+    },
+    {
+      "id": "bcb6",
+      "contentsId": "5",
+      "userId": "df0a"
+    },
+    {
+      "id": "3955",
+      "contentsId": "5",
+      "userId": "df0a"
+    },
+    {
+      "id": "2583",
+      "contentsId": "7",
+      "userId": "df0a"
+    },
+    {
+      "id": "c3b4",
+      "contentsId": "2",
       "userId": "df0a"
     }
   ]
