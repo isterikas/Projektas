@@ -68,11 +68,13 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             onKeyDown={(e) => {
               e.key === "Enter" ? e.preventDefault() : "";
             }}
-            className="focus:ring-0 nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
+            className="focus:ring-0 cursor-pointer nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
             type="search"
             placeholder={locationInfo().placeholder}
             mask={"______________________________"}
-            replacement={{ _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-ąčęėįšųūžĄČĘĖĮŠŲŪŽ\s]/ }}
+            replacement={{
+              _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-ąčęėįšųūžĄČĘĖĮŠŲŪŽ\s]/,
+            }}
             defaultValue={handleSearch ? searchQuery : ""}
           />
         </form>
@@ -103,4 +105,3 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 }
 
 export default Search;
-
