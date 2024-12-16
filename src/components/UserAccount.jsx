@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import { useOutletContext } from "react-router";
+import { useNavigate, useOutletContext } from "react-router";
 import { useDropzone } from "react-dropzone";
 import { patchData } from "./helpers/update";
 import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
 
+
 const UserAccount = () => {
 
-  const { isLoading, setLoggedUser, error, setError, loggedUser } =
+  const { isLoading, setLoggedUser, error, setError, loggedUser, loggedIn } =
     useOutletContext();
   const [userImage, setUserImage] = useState(null);
   const [isUploadSuccess, setIsUploadSuccess] = useState(false);
@@ -20,6 +21,8 @@ const UserAccount = () => {
     "#ef4444",
     "selectedTextColor"
   );
+
+const navigate = useNavigate()
 
   useEffect(()=>{
     if(window.performance) {
@@ -75,7 +78,7 @@ const UserAccount = () => {
         setError("Error uploading image:", imageData.message);
       }
     } catch (error) {
-      setError("Error uploading imageo:", error.message);
+      setError("Error uploading image:", error.message);
     }
   };
 

@@ -6,8 +6,8 @@ import { usePersistState } from "@printy/react-persist-state";
 
 export default function App() {
   const [search, setSearch] = useState("");
-  const [authType, setAuthType] = usePersistState("login", "auth-type");
-  const [loggedIn, setLoggedIn] = usePersistState("", "userId");
+  const [authType, setAuthType] = usePersistState("login", "authType");
+  const [loggedIn, setLoggedIn] = usePersistState("", "loggedIn");
 
   const [contents, setContents] = useState([]);
   const [update, setUpdate] = useState(0);
@@ -61,9 +61,6 @@ export default function App() {
       console.log()
 
       setLoggedUser(thisUser);
-
-
-
       setIsLoading(false);
 
     }
@@ -73,10 +70,12 @@ export default function App() {
     getAllcontents();
     getAllUserBookmarks();
     getAllUsers();
-    if (loggedIn) {
+  }, [update]);
+
+  useEffect(() => {
+    if (loggedIn) 
       findUser();
-    }
-  }, [loggedIn, update]);
+  }, [loggedIn, users]);
 
   return (
     <div className="inset-0 background-dark-blue h-dvh">
