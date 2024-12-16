@@ -6,7 +6,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const pattern = /^[a-zA-Z0-9 ąčęėįšųūžĄČĘĖĮŠŲŪŽ]*$/;
-  const valid = pattern.test(searchQuery);
+  const valid = pattern.test(searchQuery) && searchQuery.length < 30;
 
   if (searchQuery && !valid) {
     throw new Error();
@@ -68,7 +68,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             onKeyDown={(e) => {
               e.key === "Enter" ? e.preventDefault() : "";
             }}
-            className="focus:ring-0 cursor-pointer nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
+            className="focus:ring-0 cursor-pointer nosubmit caret-[#FC4747] text-white heading-m mx-3"
             type="search"
             placeholder={locationInfo().placeholder}
             mask={"______________________________"}
@@ -81,9 +81,13 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 
         <div className="background-dark-blue">
           {searchQuery == "" ? (
-            <h1 className="content-heading text-white">
-              {locationInfo().header}
-            </h1>
+            locationInfo.header ? (
+              <h1 className="content-heading text-white">
+                {locationInfo().header}
+              </h1>
+            ) : (
+              ""
+            )
           ) : (
             <h1 className="content-heading text-white">
               Found {filteredArray.length}
