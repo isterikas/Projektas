@@ -97,10 +97,21 @@ function Auth() {
               type="text"
               {...register("email", {
                 required: "This field is required",
-                pattern: {
-                  value:
-                    /^[a-zA-Z0-9][a-zA-Z0-9\.]{4,28}[a-zA-Z0-9]@[a-z]([a-z]{1,15}\.){1,3}[a-z]{2,5}$/,
-                  message: "Invalid email adress format",
+                validate: (value) => {
+                  return authType === "signup"
+                    ? (/^[A-Za-z0-9\.\-]{1,64}@[A-Za-z0-9\.\-]{1,255}$/.test(
+                        value
+                      ) &&
+                        /^[A-Za-z0-9]([A-Za-z0-9]+[\.\-]*)*[A-Za-z0-9]@.*$/.test(
+                          value
+                        ) &&
+                        /^.*@([A-Za-z0-9]{2,63}[\.\-])+[A-Za-z]{2,}$/.test(
+                          value
+                        )) ||
+                        (authType === "signup"
+                          ? "Invalid email address format"
+                          : "")
+                    : true;
                 },
                 onChange: (e) => {
                   setError("");
@@ -120,23 +131,22 @@ function Auth() {
                 pattern: {
                   value: /^[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-]+$/,
                   message:
-                    authType === "signup"
-                      ? "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-"
-                      : "",
+                    "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-",
                 },
                 onChange: (e) => {
                   clearErrors("password");
                   if (error === "Incorrect email or password") setError("");
                 },
                 minLength: {
-                  value: authType === "signup" ? 8 : 0,
+                  value: 8,
                   message: "Password must be at least 8 characters long",
                 },
                 validate: (value) => {
                   return (
-                    (authType === "signup" && /.*[A-Z].*/.test(value) &&
-                      /.*[0-9].*/.test(value) &&
-                      /.*[$&+,:;=?@#|'<>.^*()%!-].*/.test(value)) ||
+                    (authType === "signup" &&
+                      /^.*[A-Z].*$/.test(value) &&
+                      /^.*[0-9].*$/.test(value) &&
+                      /^.*[$&+,:;=?@#|'<>.^*()%!-].*$/.test(value)) ||
                     (authType === "signup"
                       ? "Password must contain at least 1 capital letter, 1 number and 1 special character"
                       : true)
@@ -155,7 +165,7 @@ function Auth() {
                 {...register("repeatPassword", {
                   required: {
                     value: authType === "signup",
-                    message: "Please repeat your password",
+                    message: "This field is required",
                   },
                   validate: (value) => {
                     return (

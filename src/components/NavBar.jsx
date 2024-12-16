@@ -18,7 +18,7 @@ function NavBar(props) {
             <LogoIcon />
           </div>
           <div className="lg:h-[70%]">
-            <NavBarIcons />
+            <NavBarIcons loggedIn={loggedIn}/>
           </div>
           <div className="lg:mb-[32px]">
             {!loggedIn ? (

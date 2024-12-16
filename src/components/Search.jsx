@@ -5,7 +5,7 @@ import { InputMask } from "@react-input/mask";
 function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
-  const pattern = /^[a-zA-Z0-9 ]*$/;
+  const pattern = /^[a-zA-Z0-9 ąčęėįšųūžĄČĘĖĮŠŲŪŽ]*$/;
   const valid = pattern.test(searchQuery);
 
   if (searchQuery && !valid) {
@@ -72,7 +72,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             type="search"
             placeholder={locationInfo().placeholder}
             mask={"______________________________"}
-            replacement={{ _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-\s]/ }}
+            replacement={{ _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-ąčęėįšųūžĄČĘĖĮŠŲŪŽ\s]/ }}
             defaultValue={handleSearch ? searchQuery : ""}
           />
         </form>
