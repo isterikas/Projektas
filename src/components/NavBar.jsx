@@ -14,7 +14,9 @@ function NavBar(props) {
       {location.pathname == "/authorization" ||
       location.pathname == "/authorization/" ||
       location.pathname == "/account" ||
-      location.pathname == "/account/" ? (
+      location.pathname == "/account/" ||
+      location.pathname == "/account/deleted" ||
+      location.pathname == "/account/deleted/" ? (
         ""
       ) : (
         <div>

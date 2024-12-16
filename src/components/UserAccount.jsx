@@ -130,7 +130,7 @@ const UserAccount = () => {
       window.localStorage.clear();
       setLoggedIn("");
       setLoggedUser(null);
-      navigate("/")
+      navigate("/account/deleted")
     } catch (error) {
       window.alert("Error deleting account:", error.message);
     }

@@ -13,6 +13,7 @@ import Bookmarks from "./components/Bookmarks.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import { ErrorBoundary } from "react-error-boundary";
 import UserAccount from "./components/UserAccount.jsx";
+import AccountDeleted from "./components/AccountDeleted.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/tvseries" element={<TVShows />} />
             <Route path="/bookmarks" element={<Bookmarks />} />
             <Route path="/account" element={<UserAccount />} />
+            <Route path="/account/deleted" element={<AccountDeleted />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
