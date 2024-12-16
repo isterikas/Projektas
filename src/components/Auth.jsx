@@ -65,8 +65,10 @@ function Auth() {
         );
         const fetchedUsers = await getAllData("users");
         setUsers(fetchedUsers);
-        setAuthType("login");
-
+        const createdUser = fetchedUsers.find((user) => user.userName === data.email);
+        setLoggedIn(createdUser.id);
+        setAuthType("");
+        navigate("/");
         alert(`New account ${data.email} was created successfully.`);
       }
     } catch (error) {
@@ -80,11 +82,11 @@ function Auth() {
         <img
           src={logoIcon}
           alt="SVG Image"
-          className="pb-10 animate-spin-slowerY"
+          className="pb-10 mt-[65px] animate-spin-slowerY"
         />
         <div className="background-semidark-blue rounded-lg mx-[24px] my-[40px]">
           {authType === "login" ? (
-            <h1 className="text-white heading-l pt-5 relative left-4 md:px-[10px]">Login</h1>
+            <h1 className="text-white heading-l pt-10 relative left-4 md:px-[10px]">Login</h1>
           ) : (
             <h1 className="text-white heading-l pt-5 relative left-4 md:px-[10px]">Sign up</h1>
           )}
