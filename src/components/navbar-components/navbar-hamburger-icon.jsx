@@ -10,17 +10,6 @@ function HamburgerMenu(props) {
     setIsOpen(!isOpen);
   };
 
-  const signUp = () => {
-    console.log("A")
-    setAuthType("signup");
-    setLoggedIn("");
-  };
-
-  const logIn = () => {
-    setAuthType("login");
-    setLoggedIn("");
-  };
-
   return (
     <div className="relative ">
       {/* Hamburger Icon */}
@@ -41,7 +30,10 @@ function HamburgerMenu(props) {
       >
         <Link to="/authorization">
           <p
-            onClick={logIn}
+            onClick={() => {
+              setAuthType("login");
+              setLoggedIn("");
+            }}
             className="text-white block p-2 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold hover:border-b-red-500 hover:border-b-[1px]"
           >
             Log In
@@ -49,7 +41,10 @@ function HamburgerMenu(props) {
         </Link>
         <Link to="/authorization">
           <p
-            onClick={signUp}
+            onClick={() => {
+              setAuthType("signup");
+              setLoggedIn("");
+            }}
             className="text-white block p-2 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold hover:border-t-red-500 hover:border-t-[1px]"
           >
             Sign Up
