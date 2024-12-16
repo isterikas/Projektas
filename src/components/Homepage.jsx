@@ -17,7 +17,7 @@ function Homepage() {
   const initTrending = async () => {
     try {
       await updateTrending();
-      console.log("Initial trending update completed successfully.");
+      // console.log("Initial trending update completed successfully.");
     } catch (error) {
       console.error("Initial trending update failed:", error);
     }

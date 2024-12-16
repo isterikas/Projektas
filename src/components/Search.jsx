@@ -19,12 +19,13 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
     if (value) {
+      setSearch(searchQuery)
       return true;
     } else {
+      setSearch("");
       return false;
     }
   };
-  handleSearch ? setSearch(searchQuery) : setSearch("");
 
   const locationInfo = () => {
     switch (location.pathname) {
@@ -51,7 +52,6 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             key={item.contentsId}
             update={update}
             setUpdate={setUpdate}
-            userBookmarks={userBookmarks}
             loggedIn={loggedIn}
             width={width}
           />
@@ -82,7 +82,7 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 
         <div className="background-dark-blue">
           {searchQuery == "" ? (
-            locationInfo.header ? (
+            locationInfo.header() ? (
               <h1 className="content-heading text-white">
                 {locationInfo().header}
               </h1>

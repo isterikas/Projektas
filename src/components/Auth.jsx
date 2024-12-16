@@ -54,7 +54,7 @@ function Auth() {
             throw new Error("This email address is already registered");
           }
         });
-        await postData(
+        const createdUser = await postData(
           {
             userName: data.email,
             userPassword: sha256(sha1(data.password)),
@@ -62,11 +62,6 @@ function Auth() {
             created: new Date().toISOString(),
           },
           "users"
-        );
-        const fetchedUsers = await getAllData("users");
-        setUsers(fetchedUsers);
-        const createdUser = fetchedUsers.find(
-          (user) => user.userName === data.email
         );
         setLoggedIn(createdUser.id);
         setAuthType("");

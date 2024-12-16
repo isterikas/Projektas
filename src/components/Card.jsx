@@ -1,41 +1,48 @@
 import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
+import { getAllData } from "./helpers/get.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
 import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
 
-function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
+function Card({ item, setUpdate, update, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
-  const [thisBookmark, setThisBookmark] = useState({});
   const [checked, setChecked] = useState(false);
+  const [userBookmarks, setUserBookmarks] = useState([]);
 
-  const setStateChecked = () => {
+  const getAllUserBookmarks = async () => {
+    const userBookmarks = await getAllData("userBookmarks");
+    setUserBookmarks(userBookmarks);
+  };
+
+  const getThisBookmark = () => {
     const thisBookmark = userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) setChecked(true);
-    else setChecked(false);
   };
 
   useEffect(() => {
-    setStateChecked();
-  }, [update]);
+    getAllUserBookmarks();
+    getThisBookmark();
+  }, []);
 
   const toggleBookmark = async () => {
-    setUpdate(update + 1);
+    const bookmarks = await getAllData("userBookmarks");
+    setUserBookmarks(bookmarks);
     const thisBookmark = userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
     if (thisBookmark) {
       await deleteBookmark(thisBookmark.id);
-      setChecked(!checked);
+      setChecked(false);
     } else {
-      setChecked(!checked);
+      setChecked(true);
       await postData(
         { contentsId: contentsId, userId: loggedIn },
         "userBookmarks"
