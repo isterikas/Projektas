@@ -75,22 +75,23 @@ function Auth() {
 
   return (
     <>
-      <div className="h-screen background-dark-blue flex flex-col items-center justify-center">
+      <div className="h-screen background-dark-blue flex flex-col items-center justify-center md:relative md:bottom-40 lg:relative lg:bottom-0">
         <img
           src={logoIcon}
           alt="SVG Image"
-          className="pb-20 animate-spin-slowerY"
+          className="pb-10 animate-spin-slowerY"
         />
-        <div className="background-semidark-blue rounded-lg px-9 py-20 md:px-20 md:py-16">
+        <div className="background-semidark-blue rounded-lg mx-[24px] my-[40px]">
           {authType === "login" ? (
-            <h1 className="text-white heading-l">Login</h1>
+            <h1 className="text-white heading-l pt-5 relative left-4 md:px-[10px]">Login</h1>
           ) : (
-            <h1 className="text-white heading-l">Sign up</h1>
+            <h1 className="text-white heading-l pt-5 relative left-4 md:px-[10px]">Sign up</h1>
           )}
           <form
             noValidate
             onSubmit={handleSubmit(formSubmitHandler)}
-            className="flex flex-col "
+            className="flex flex-col mx-[24px] gap-y-[6px] md:px-[10px]"
+            
           >
             <input
               type="text"
@@ -118,8 +119,8 @@ function Auth() {
                 },
               })}
               placeholder="Email address"
-              className={`focus:ring-0 autofill:!bg-white background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
-                errors.email ? "border-red-600" : "border-white"
+              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 border-[#5a698f] focus:border-white ${
+                errors.email ? "border-red-600" : "border-[#5a698f]"
               }`}
             />
             <span className="text-red ">{errors.email?.message}</span>
@@ -153,8 +154,8 @@ function Auth() {
                 },
               })}
               placeholder="Password"
-              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
-                errors.email ? "border-red-600" : "border-white"
+              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
+                errors.email ? "border-red-600" : "border-[#5a698f]"
               }`}
             />
             <span className="text-red">{errors.password?.message}</span>
@@ -176,8 +177,8 @@ function Auth() {
                   },
                 })}
                 placeholder="Repeat Password"
-                className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 focus:border-white ${
-                  errors.email ? "border-red-600" : "border-white"
+                className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
+                  errors.email ? "border-red-600" : "border-[#5a698f]"
                 }`}
               />
             ) : (
@@ -186,7 +187,7 @@ function Auth() {
             <span className="text-red">{errors.repeatPassword?.message}</span>
             <button
               type="submit"
-              className="background-red  text-white rounded-md mt-10 px-5 py-3 hover:bg-white hover:text-black"
+              className="background-red  text-white rounded-md mt-5 px-[60px] py-[12px] hover:bg-white hover:text-black"
             >
               {authType == "signup"
                 ? "Create an account"
@@ -194,29 +195,35 @@ function Auth() {
             </button>
           </form>
           {authType == "signup" ? (
-            <div className="text-white text-center pt-10">
+            <div className="body-m text-white mx-[53.25px] my-[20px] flex flex-row space-x-[9px]">
+              <div>
               Already have an account?{" "}
+</div>
               <button
                 onClick={() => {
                   setError("");
                   setAuthType("login");
                   clearErrors();
                 }}
-                className="text-red "
+                className=" text-red body-m"
               >
-                Log in
+                Login
               </button>
             </div>
+
+            
           ) : (
-            <div className="text-white text-center pt-10">
-              Don't have an account yet?{" "}
+            <div className="body-m text-white mx-[52px] my-[20px] flex flex-row space-x-[9px]">
+              <div>
+              Don't have an account?{" "}
+              </div>
               <button
                 onClick={() => {
                   setError("");
                   setAuthType("signup");
                   clearErrors();
                 }}
-                className="text-red"
+                className="text-red  body-m"
               >
                 Sign up
               </button>
