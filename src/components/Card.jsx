@@ -116,7 +116,7 @@ function Card({ item, userBookmarks, setUpdate, update, loggedIn, width }) {
             />
             <p className="body-s text-white"> {rating}</p>
           </div>
-          <h1 className="heading-xs text-white"> {title}</h1>
+          <h2 className="heading-xs text-white"> {title}</h2>
         </div>
       </div>
     </div>

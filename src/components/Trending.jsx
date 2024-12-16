@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { useState } from "react";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import TrendingCard from "./TrendingCard";
 function Trending({
@@ -40,7 +39,7 @@ function Trending({
               <SwiperSlide key={slide.contentsId}>
                 <div className="relative left-7  rounded-lg">
                   <div>
-                    <div>
+                    
                       <div>
                         {width >= 768 ? (
                           <img
@@ -68,7 +67,7 @@ function Trending({
                           </div>
                         </div>
                       </div>
-                    </div>
+                    
                   </div>
                   <div>
                     <TrendingCard
