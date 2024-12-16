@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 0
+      "latestTrending": 2
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 1
+      "latestTrending": 3
     },
     {
       "contentsId": "3",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 1
+      "latestTrending": 3
     },
     {
       "contentsId": "5",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "6",
@@ -126,7 +126,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "cd79",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "7",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "8",
@@ -162,7 +162,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "25c7",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "9",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "11",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "13",
@@ -252,7 +252,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "06d9",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "14",
@@ -288,7 +288,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "afd5",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "16",
@@ -306,7 +306,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "73b6",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "17",
@@ -540,7 +540,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "4432",
-      "latestTrending": 1
+      "latestTrending": 0
     }
   ],
   "users": [
@@ -548,25 +548,28 @@
       "id": "e319",
       "userName": "edgaraslaptevas88@gmail.com",
       "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
-      "image": "/uploads/1734336066480.png"
+      "image": "/uploads/1734337375286.png"
     },
     {
-      "id": "771d",
-      "userName": "edgaraslaptevas58@gmail.com",
-      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
+      "id": "df0a",
+      "userName": "henryk.umbrasewicz@odnoklassniki.ru",
+      "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed"
+    },
+    {
+      "id": "6ee9",
+      "userName": "antanas@gmail.com",
+      "userPassword": "cf1488f6db5521b496eebe35dbe5ff3a384aa3597dbc778b282c3594247da1ca"
+    },
+    {
+      "id": "55d0",
+      "userName": "kust@gmail.com",
+      "userPassword": "36a3d63c40fde1c662062dabb1173c48452b41c9e1de6400307c745705c84969"
+    },
+    {
+      "id": "ca68",
+      "userName": "name.surname@mail.com",
+      "userPassword": "dd5ad1cfc713442b97319a501aa6b8cc3e2c3f8a4148246a1e67a9a7e7a0cfe5",
       "image": ""
-    },
-    {
-      "id": "6f3d",
-      "userName": "stariy.bog@gmail.com",
-      "userPassword": "15d700792af3c28349a60739bb1bcfb600b2b89f60253a1939702bc15c4a08e8"
-    },
-    {
-      "id": "1401",
-      "userName": "edgaraslaptevas38@gmail.com",
-      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
-      "image": "/uploads/1734335179473.png",
-      "created": "2024-12-15T15:37:37.455Z"
     }
   ],
   "userBookmarks": [
@@ -581,39 +584,29 @@
       "userId": "50bf"
     },
     {
+      "id": "72bf",
+      "contentsId": "2",
+      "userId": "50bf"
+    },
+    {
       "id": "8493",
       "contentsId": "12",
       "userId": "50bf"
     },
     {
-      "id": "5216",
-      "contentsId": "29",
-      "userId": "ec1d"
+      "id": "3a81",
+      "contentsId": "4",
+      "userId": "df0a"
     },
     {
-      "id": "af69",
-      "contentsId": "9",
-      "userId": "ec1d"
+      "id": "9052",
+      "contentsId": "1",
+      "userId": "df0a"
     },
     {
-      "id": "0c2e",
-      "contentsId": "8",
-      "userId": "ec1d"
-    },
-    {
-      "id": "ae3d",
+      "id": "82fb",
       "contentsId": "2",
-      "userId": "ec1d"
-    },
-    {
-      "id": "2885",
-      "contentsId": "3b8b",
-      "userId": "f1fb"
-    },
-    {
-      "id": "fb90",
-      "contentsId": "b737",
-      "userId": "f1fb"
+      "userId": "df0a"
     },
     {
       "id": "eea8",
@@ -621,19 +614,54 @@
       "userId": "f1fb"
     },
     {
-      "id": "784c",
-      "contentsId": "16",
-      "userId": "e319"
+      "id": "0e17",
+      "contentsId": "1",
+      "userId": "ec1d"
     },
     {
-      "id": "dac2",
-      "contentsId": "13",
-      "userId": "e319"
+      "id": "306b",
+      "contentsId": "2",
+      "userId": "ec1d"
     },
     {
-      "id": "6629",
-      "contentsId": "15",
-      "userId": "e319"
+      "id": "db83",
+      "contentsId": "3",
+      "userId": "ec1d"
+    },
+    {
+      "id": "a493",
+      "contentsId": "4",
+      "userId": "ec1d"
+    },
+    {
+      "id": "7a03",
+      "contentsId": "5",
+      "userId": "ec1d"
+    },
+    {
+      "id": "df5c",
+      "contentsId": "7",
+      "userId": "ec1d"
+    },
+    {
+      "id": "bd60",
+      "contentsId": "9",
+      "userId": "df0a"
+    },
+    {
+      "id": "f92c",
+      "contentsId": "12",
+      "userId": "df0a"
+    },
+    {
+      "id": "e2fa",
+      "contentsId": "6",
+      "userId": "df0a"
+    },
+    {
+      "id": "95f4",
+      "contentsId": "10",
+      "userId": "df0a"
     }
   ]
 }

@@ -6,6 +6,7 @@ import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
 
 const UserAccount = () => {
+
   const { isLoading, setLoggedUser, error, setError, loggedUser } =
     useOutletContext();
   const [userImage, setUserImage] = useState(null);
@@ -20,6 +21,12 @@ const UserAccount = () => {
     "selectedTextColor"
   );
 
+  useEffect(()=>{
+    if(window.performance) {
+      if(performance.navigation.type != 1 && !loggedIn) navigate("/");
+    }
+  },[])
+
   const timedClosure = () => {
     if (isUploadSuccess && !isLoading)
       setTimeout(() => {
@@ -33,7 +40,7 @@ const UserAccount = () => {
 
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
-    const validTypes = ["image/jpeg", "image/png", "image/jpg"];
+  const validTypes = ["image/jpeg", "image/png", "image/jpg"];
     if (!validTypes.includes(file.type)) {
       alert("Please upload a JPEG or PNG image.");
       return;

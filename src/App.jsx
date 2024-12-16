@@ -5,6 +5,7 @@ import { getAllData } from "./components/helpers/get.js";
 import { usePersistState } from "@printy/react-persist-state";
 
 export default function App() {
+  const [search, setSearch] = useState("");
   const [authType, setAuthType] = usePersistState("login", "auth-type");
   const [loggedIn, setLoggedIn] = usePersistState("", "userId");
 
@@ -80,8 +81,8 @@ export default function App() {
   }, [loggedIn, update,]); 
 
   return (
-    <div>
-      <div className="md:m-[24px] lg:m-[32px] lg:absolute">
+    <div className="inset-0 background-dark-blue h-dvh">
+      <div className=" lg:m-[32px] lg:absolute background-dark-blue">
         <NavBar
           authType={authType}
           setAuthType={setAuthType}
@@ -109,6 +110,8 @@ export default function App() {
               loggedUser,
               setLoggedUser,
               isLoading,
+              search,
+              setSearch,
             }}
           />
         ) : (
