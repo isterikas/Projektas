@@ -35,7 +35,7 @@ const ExpandingDiv = (props) => {
         <LogoIcon />
       </div>
       <div className="lg:h-[70%] mt-[50px]">
-        <NavBarIcons />
+        <NavBarIcons loggedIn={loggedIn}/>
       </div>
       <div className="lg:mb-[32px]">
         {!loggedIn ? (

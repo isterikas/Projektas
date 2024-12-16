@@ -57,8 +57,7 @@ export default function App() {
 
   const findUser = async () => {
     if (loggedIn && users.length > 0) {
-      const thisUser = users.find((user) => user.id === loggedIn);
-      console.log()
+      const thisUser = users.find((user) => user.id === loggedIn)
 
       setLoggedUser(thisUser);
       setIsLoading(false);
@@ -109,6 +108,8 @@ export default function App() {
               isLoading,
               search,
               setSearch,
+              error,
+              setError,
             }}
           />
         ) : (

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router";
 
 const UserIcon = (props) => {
-  const { setLoggedIn, loggedIn, loggedUser } = props;
+  const { setLoggedIn, loggedIn } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 

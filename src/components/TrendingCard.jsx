@@ -19,9 +19,6 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
 
   useEffect(() => {
     setStateChecked();
-  }, []);
-  useEffect(() => {
-    setStateChecked();
   }, [update]);
 
   const toggleBookmark = async () => {
@@ -32,9 +29,9 @@ function TrendingCard({ slide, userBookmarks, setUpdate, update, loggedIn }) {
     );
     if (thisBookmark) {
       await deleteBookmark(thisBookmark.id);
-      setStateChecked();
+      setChecked(!checked);
     } else {
-      setStateChecked();
+      setChecked(!checked);
       await postData(
         { contentsId: contentsId, userId: loggedIn },
         "userBookmarks"
