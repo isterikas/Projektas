@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router";
 
 const UserIcon = (props) => {
-  const { setLoggedIn, loggedUser } = props;
+  const { setLoggedIn, loggedIn, loggedUser } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,9 +23,9 @@ const UserIcon = (props) => {
 
   return (
     <div className="relative">
-      {loggedUser ? <img
-        src={loggedUser?.image}
-        alt="faviconIcon"
+      {loggedIn ? <img
+        // src={`http://localhost:5000${loggedUser.image}`}
+        alt="userImage"
         onClick={toggleMenu}
         className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40px] lg:h-[40px] rounded-full cursor-pointer"
       /> : <img

@@ -15,7 +15,7 @@ export default function App() {
   const [userBookmarks, setUserBookmarks] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [loggedUser, setLoggedUser] = usePersistState({},"loggedUser");
+  const [loggedUser, setLoggedUser] = usePersistState({}, "loggedUser");
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -55,20 +55,17 @@ export default function App() {
     }
   };
 
-  
   const findUser = async () => {
     if (loggedIn && users.length > 0) {
       const thisUser = users.find((user) => user.id === loggedIn);
-      console.log(
+      console.log()
+
+      setLoggedUser(thisUser);
 
 
-        
-      )
-    
-        setLoggedUser(thisUser);
-     
-    
-      setIsLoading(false); 
+
+      setIsLoading(false);
+
     }
   };
 
@@ -76,9 +73,10 @@ export default function App() {
     getAllcontents();
     getAllUserBookmarks();
     getAllUsers();
-    if(loggedIn) {
-    findUser();}
-  }, [loggedIn, update,]); 
+    if (loggedIn) {
+      findUser();
+    }
+  }, [loggedIn, update]);
 
   return (
     <div className="inset-0 background-dark-blue h-dvh">
