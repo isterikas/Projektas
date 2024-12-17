@@ -75,26 +75,26 @@ function Auth() {
 
   return (
     <>
-      <div className="h-screen background-dark-blue flex flex-col items-center justify-center md:relative md:bottom-40 lg:relative lg:bottom-0">
+      <div className="h-screen background-dark-blue flex flex-col items-center justify-center md:relative md:bottom-40  lg:relative lg:bottom-0">
         <img
           src={logoIcon}
           alt="SVG Image"
           className="pb-10 mt-[65px] animate-spin-slowerY"
         />
-        <div className="background-semidark-blue rounded-lg mx-[24px] my-[40px]">
+        <div className="background-semidark-blue pb-5 w-[25rem] rounded-lg mx-[24px] my-[40px]">
           {authType === "login" ? (
-            <h1 className="text-white heading-l pt-10 relative left-4 md:px-[10px]">
+            <h1 className="text-white heading-l pt-7  relative left-6 md:px-[10px]">
               Login
             </h1>
           ) : (
-            <h1 className="text-white heading-l pt-5 relative left-4 md:px-[10px]">
+            <h1 className="text-white heading-l pt-7 relative left-6 md:px-[10px]">
               Sign up
             </h1>
           )}
           <form
             noValidate
             onSubmit={handleSubmit(formSubmitHandler)}
-            className="flex flex-col mx-[24px] gap-y-[6px] md:px-[10px]"
+            className="flex flex-col mx-[24px] gap-y-[6px]  md:pt-[34px] md:pb-[10px] md:mx-[38px]"
           >
             <input
               aria-label="E-mail address"
@@ -123,12 +123,13 @@ function Auth() {
                 },
               })}
               placeholder="Email address"
-              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0  border-l-0 border-[#5a698f] focus:border-white ${
+              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0  border-r-0 md:mb-2 border-l-0 border-[#5a698f] focus:border-white ${
                 errors.email ? "border-red-600" : "border-[#5a698f]"
               }`}
             />
             <span className="text-red ">{errors.email?.message}</span>
             <input
+        
               aria-label="Password"
               type="password"
               {...register("password", {
@@ -139,8 +140,9 @@ function Auth() {
                     "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-",
                 },
                 onChange: (e) => {
+                  
                   clearErrors("password");
-                  if (error === "Incorrect email or password") setError("");
+                  if (error  === "Incorrect email or password") setError("");
                 },
                 minLength: {
                   value: 8,
@@ -159,7 +161,7 @@ function Auth() {
                 },
               })}
               placeholder="Password"
-              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
+              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 mb-1 border-[#5a698f] focus:border-white ${
                 errors.email ? "border-red-600" : "border-[#5a698f]"
               }`}
             />
@@ -195,7 +197,7 @@ function Auth() {
             <span className="text-red">{errors.repeatPassword?.message}</span>
             <button
               type="submit"
-              className="background-red  text-white rounded-md mt-5 px-[60px] py-[12px] hover:bg-white hover:text-black"
+              className="background-red  text-white rounded-md mt-5 mb-5 px-[8px] py-[12px] hover:bg-white hover:text-black"
             >
               {authType == "signup"
                 ? "Create an account"
@@ -203,7 +205,7 @@ function Auth() {
             </button>
           </form>
           {authType == "signup" ? (
-            <div className="body-m text-white mx-[53.25px] my-[20px] flex flex-row space-x-[9px]">
+            <div className="body-m text-white mx-[53.25px] ms:mt-2  lg:pl-10 lg:mt-2 mb-8 flex flex-row space-x-[9px]">
               <div>Already have an account? </div>
               <button
                 onClick={() => {
@@ -217,7 +219,7 @@ function Auth() {
               </button>
             </div>
           ) : (
-            <div className="body-m text-white mx-[52px] my-[20px] flex flex-row space-x-[9px]">
+            <div className="body-m text-white mx-[40px] pl-10  mb-4 flex flex-row space-x-[9px]">
               <div>Don't have an account? </div>
               <button
                 onClick={() => {
@@ -231,7 +233,7 @@ function Auth() {
               </button>
             </div>
           )}
-          <span className="text-red-500 font-sm">{error}</span>
+          <span className="text-red-500 mx-20  font-sm">{error}</span>
         </div>
       </div>
     </>
