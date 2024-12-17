@@ -6,9 +6,9 @@ import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
 import { useNavigate } from "react-router";
 import LogoUserIcon from "./user-account-components.jsx/logo-user-icon";
-import { deleteAccount } from "./helpers/delete";
 import ColorChanger from "./user-account-components.jsx/color-changer";
 import PhotoUploader from "./user-account-components.jsx/photo-uploader";
+import DeleteAccount from "./user-account-components.jsx/delete-account";
 
 const UserAccount = () => {
   const {
@@ -92,6 +92,8 @@ const UserAccount = () => {
     maxFiles: 1,
   });
 
+ 
+
   if (isLoading) {
     return (
       <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
@@ -119,22 +121,6 @@ const UserAccount = () => {
     />
   ) : null;
 
-  const handleDelete = async () => {
-    const deletion = await deleteAccount(loggedUser.id);
-    if (!deletion) {
-      return;
-    } else {
-      try {
-        window.localStorage.clear();
-        setLoggedIn("");
-        setLoggedUser(null);
-        navigate("/account/deleted");
-      } catch (error) {
-        window.alert("Error deleting account:", error.message);
-      }
-    }
-  };
-
   return (
     <div>
       <div
@@ -157,7 +143,7 @@ const UserAccount = () => {
                 boxShadow: ` 0 1px 10px 0 ${selectedTextColor}`,
                 border: `1px solid ${selectedTextColor}`,
               }}
-              className="rounded p-1 text-[10px]  md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px]  w-[100px] md:w-[120px] "
+              className="rounded p-1 text-[10px]  md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px]  w-[100px] md:w-[120px]"
             >
               User Menu
             </button>
@@ -165,7 +151,9 @@ const UserAccount = () => {
               <div className="absolute top-[2.5rem]">
                 <button
                   type="button"
-                  onClick={() => {navigate("/")}}
+                  onClick={() => {
+                    navigate("/");
+                  }}
                   style={{
                     background: selectedThemeColor,
                     color: selectedTextColor,
@@ -174,7 +162,7 @@ const UserAccount = () => {
                   }}
                   className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] w-[100px] md:w-[120px]"
                 >
-                Homepage
+                  Homepage
                 </button>
                 <PhotoUploader
                   getRootProps={getRootProps}
@@ -208,32 +196,34 @@ const UserAccount = () => {
           ) : error ? (
             <p className="text-3xl text-red-500">{error}</p>
           ) : (
-            <p className="text-white font-semibold text-[1rem]">
+            <p className="text-white font-semibold animate-bounce text-[12px] md:text-[16px] lg:text-[20px]">
               No image uploaded yet!
             </p>
           )}
           <p
             style={{ color: selectedTextColor }}
-            className="text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-semibold "
+            className="text-[20px] md:text-[2rem] lg:text-[2.5rem] font-semibold "
           >
             {loggedUser?.userName}
           </p>
           <p
             style={{ color: selectedTextColor }}
-            className="font-semibold "
+            className="font-semibold text-[13px] md:text-[18px] lg:text-[23px]"
           >{`Member since: ${formattedDate}`}</p>
         </div>
-        <div>
-          <hr style={{border: `2px solid ${selectedTextColor}`}}
-           className="md:mx-[2rem] lg:mx-[4rem]" />
-          <button
-            type="submit"
-            onClick={handleDelete}
-            className="bg-green-500 text-white"
-          >
-            Delete Account
-          </button>
+
+        <hr
+          style={{ border: `2px solid ${selectedTextColor}` }}
+          className=" my-4 md:mx-[2rem] lg:mx-[4rem] "
+        />
+        <div className="flex justify-between">
           <p className="text-white text-4xl">Labas</p>
+          <DeleteAccount
+            loggedUser={loggedUser}
+            setLoggedUser={setLoggedUser}
+            setLoggedIn={setLoggedIn}
+            navigate={navigate}
+          />
         </div>
       </div>
     </div>
