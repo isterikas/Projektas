@@ -5,9 +5,10 @@ import { patchData } from "./helpers/update";
 import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
 import { useNavigate } from "react-router";
-import LogoIcon from "./navbar-components/logo-icon";
+import LogoUserIcon from "./user-account-components.jsx/logo-user-icon";
 import { deleteAccount } from "./helpers/delete";
 import ColorChanger from "./user-account-components.jsx/color-changer";
+import PhotoUploader from "./user-account-components.jsx/photo-uploader";
 
 const UserAccount = () => {
   const {
@@ -21,8 +22,9 @@ const UserAccount = () => {
   } = useOutletContext();
   const [userImage, setUserImage] = useState(null);
   const [isUploadSuccess, setIsUploadSuccess] = useState(false);
-  const [isUploader, setIsUploader] = useState(false);
   const [isColorChanger, setIsColorChanger] = useState(false);
+  const [isPhotoUploader, setIsPhotoUploader] = useState(false);
+  const [isUserMenu, setIsUserMenu] = useState(false);
   const [selectedThemeColor, setSelectedThemeColor] = usePersistState(
     "#10141e",
     "selectedProfileColor"
@@ -39,17 +41,6 @@ const UserAccount = () => {
       if (performance.navigation.type != 1 && !loggedIn) navigate("/");
     }
   }, []);
-
-  const timedClosure = () => {
-    if (isUploadSuccess && !isLoading)
-      setTimeout(() => {
-        setIsUploader((prev) => !prev);
-      }, 2000);
-  };
-
-  useEffect(() => {
-    timedClosure();
-  }, [isUploadSuccess]);
 
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
@@ -121,7 +112,10 @@ const UserAccount = () => {
       src={`http://localhost:5000${loggedUser.image}`}
       alt="Profile-image"
       className="profile-image-large"
-      style={{ border: `2px solid ${selectedTextColor}` }}
+      style={{
+        border: `2px solid ${selectedTextColor}`,
+        boxShadow: ` 0 1px 25px 0 ${selectedTextColor}`,
+      }}
     />
   ) : null;
 
@@ -142,154 +136,105 @@ const UserAccount = () => {
   };
 
   return (
-    <div
-      style={{ backgroundColor: selectedThemeColor }}
-      className="relative p-2 lg:p-4"
-    >
-      <div className="flex items-center justify-between lg:px-[4rem]">
-        <LogoIcon />
-        <div className="flex flex-col">
-          <button
-            type="button"
-            style={{ background: selectedTextColor, color: selectedThemeColor }}
-            className="rounded p-1 text-[10px]  md:text-xs h-[2rem] ms-[10.25rem] border-[1px]"
-          >
-            User Menu
-          </button>
-          <button
-            type="button"
-            style={{ background: selectedTextColor, color: selectedThemeColor }}
-            className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[10.25rem] border-[1px]"
-          >
-            To Homepage!
-          </button>
-          <ColorChanger/>
-        </div>
-      </div>
-      <div className="flex flex-col items-center">
-        <div>{profileImage}</div>
-        {profileImage ? (
-          <p className="text-slate-300">Profile image</p>
-        ) : error ? (
-          <p className="text-3xl text-red-500">{error}</p>
-        ) : (
-          <p className="text-white font-semibold text-[1rem]">
-            No image uploaded yet!
-          </p>
-        )}
-        <p
-          style={{ color: selectedTextColor }}
-          className="text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-semibold "
-        >
-          {loggedUser?.userName}
-        </p>
-        <p
-          style={{ color: selectedTextColor }}
-          className="font-semibold opacity-70"
-        >{`Member since: ${formattedDate}`}</p>
-      </div>
-      <div className="absolute bottom-0 right-[15rem]">
-        <div className={`${!isUploader ? "hidden" : "block"}`}>
-          <div
-            {...getRootProps()}
-            className="bg-slate-300 p-5 w-[10rem] h-[10rem] border-2 border-dashed border-red-500 rounded"
-          >
-            <input {...getInputProps()} />
-            {!userImage ? (
-              <p className="text-center text-red-500">
-                Drag & drop an image here, or Click to select an image
-              </p>
-            ) : isLoading ? (
-              <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
-                <p>Uploading...</p>
-                <div className="spinner"></div>
+    <div>
+      <div
+        style={{ backgroundColor: selectedThemeColor }}
+        className="relative p-4 m-4 border-2 rounded-2xl border-blue-900"
+      >
+        <div className="flex items-center justify-between mb-4 md:mx-[2rem] lg:mx-[4rem]">
+          <LogoUserIcon selectedTextColor={selectedTextColor} />
+          <div className="flex flex-col relative">
+            <button
+              type="button"
+              onClick={() => {
+                setIsUserMenu(!isUserMenu);
+                setIsColorChanger(false);
+                setIsPhotoUploader(false);
+              }}
+              style={{
+                background: selectedThemeColor,
+                color: selectedTextColor,
+                boxShadow: ` 0 1px 10px 0 ${selectedTextColor}`,
+                border: `1px solid ${selectedTextColor}`,
+              }}
+              className="rounded p-1 text-[10px]  md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px]  w-[100px] md:w-[120px] "
+            >
+              User Menu
+            </button>
+            {isUserMenu && (
+              <div className="absolute top-[2.5rem]">
+                <button
+                  type="button"
+                  onClick={() => {navigate("/")}}
+                  style={{
+                    background: selectedThemeColor,
+                    color: selectedTextColor,
+                    boxShadow: ` 0 1px 3px 0 ${selectedTextColor}`,
+                    border: `1px solid ${selectedTextColor}`,
+                  }}
+                  className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] w-[100px] md:w-[120px]"
+                >
+                Homepage
+                </button>
+                <PhotoUploader
+                  getRootProps={getRootProps}
+                  getInputProps={getInputProps}
+                  userImage={userImage}
+                  isLoading={isLoading}
+                  isUploadSuccess={isUploadSuccess}
+                  selectedTextColor={selectedTextColor}
+                  selectedThemeColor={selectedThemeColor}
+                  isPhotoUploader={isPhotoUploader}
+                  setIsPhotoUploader={setIsPhotoUploader}
+                  setIsColorChanger={setIsColorChanger}
+                />
+                <ColorChanger
+                  selectedTextColor={selectedTextColor}
+                  setSelectedTextColor={setSelectedTextColor}
+                  selectedThemeColor={selectedThemeColor}
+                  setSelectedThemeColor={setSelectedThemeColor}
+                  isColorChanger={isColorChanger}
+                  setIsColorChanger={setIsColorChanger}
+                  setIsPhotoUploader={setIsPhotoUploader}
+                />
               </div>
-            ) : (
-              isUploadSuccess &&
-              !isLoading && (
-                <p className="text-green-500 text-center">Upload Successful!</p>
-              )
             )}
           </div>
         </div>
-        <button
-          onClick={() => setIsUploader(!isUploader)}
-          type="button"
-          className="w-[10rem] text-xs bg-slate-300 mt-2 rounded p-1"
-        >
-          Change or Upload your image & Click to close
-        </button>
-      </div>
-      {/* <ColorChanger/> */}
-{/* 
-      <div className="absolute bottom-0 right-[50rem] flex gap-1">
-        <div>
-          <div
-            className={`${
-              !isColorChanger ? "hidden" : "block"
-            } flex flex-col bg-slate-300 rounded w-[10rem] h-[10rem] border-2 border-dashed border-red-500`}
+        <div className="flex flex-col items-center">
+          <div>{profileImage}</div>
+          {profileImage ? (
+            <p className="text-slate-300">Profile image</p>
+          ) : error ? (
+            <p className="text-3xl text-red-500">{error}</p>
+          ) : (
+            <p className="text-white font-semibold text-[1rem]">
+              No image uploaded yet!
+            </p>
+          )}
+          <p
+            style={{ color: selectedTextColor }}
+            className="text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-semibold "
           >
-            <div className="mt-1">
-              <label style={{ color: selectedThemeColor }} className="p-1">
-                Select Theme Color:
-              </label>
-              <input
-                type="color"
-                value={selectedThemeColor}
-                onChange={(e) => {
-                  setSelectedThemeColor(e.target.value);
-                }}
-                className="p-2 bg-white"
-              />
-            </div>
-            <div className="mt-2">
-              <label style={{ color: selectedTextColor }} className="p-1">
-                Select Text Color:
-              </label>
-              <input
-                type="color"
-                value={selectedTextColor}
-                onChange={(e) => {
-                  setSelectedTextColor(e.target.value);
-                }}
-                className="p-2 bg-white"
-              />
-            </div>
-            <div className="mt-2">
-              <button
-                className="text-red-500 w-[9.8rem] p-[0.3rem] rounded text-xs bg-[#10141e]"
-                type="button"
-                onClick={() => {
-                  setSelectedTextColor("#ef4444");
-                  setSelectedThemeColor("#10141e");
-                }}
-              >
-                Click to set Default Colors
-              </button>
-            </div>
-          </div>
+            {loggedUser?.userName}
+          </p>
+          <p
+            style={{ color: selectedTextColor }}
+            className="font-semibold "
+          >{`Member since: ${formattedDate}`}</p>
         </div>
-        <button
-          type="button"
-          onClick={() => {
-            setIsColorChanger(!isColorChanger);
-          }}
-          style={{ background: selectedTextColor, color: selectedThemeColor }}
-          className="rounded p-2 text-xs h-[2rem]"
-        >
-          Change your Colors
-        </button>
-      </div> */}
-      <div>
-        <hr className=" md:mx-[2rem] lg:mx-[4rem] border-2 border-red-500" />
-        <button
-          type="submit"
-          onClick={handleDelete}
-          className="bg-green-500 text-white"
-        >
-          Delete Account
-        </button>
-        <p className="text-white text-4xl">Labas</p>
+        <div>
+          <hr style={{border: `2px solid ${selectedTextColor}`}}
+           className="md:mx-[2rem] lg:mx-[4rem]" />
+          <button
+            type="submit"
+            onClick={handleDelete}
+            className="bg-green-500 text-white"
+          >
+            Delete Account
+          </button>
+          <p className="text-white text-4xl">Labas</p>
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import LogoIcon from "./logo-icon";
 import HamburgerMenu from "./navbar-hamburger-icon";
 import UserIcon from "./user-icon";
 import NavBarIcons from "./navbar-active-icons";
+import LogoIcon from "./logo-icon";
 
 const ExpandingNavbar = (props) => {
   const { setAuthType, loggedIn, setLoggedIn, loggedUser } = props;

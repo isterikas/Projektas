@@ -1,16 +1,8 @@
-import { usePersistState } from "@printy/react-persist-state";
-import { useState } from "react";
 
-const ColorChanger = () => {
-  const [isColorChanger, setIsColorChanger] = useState(false);
-  const [selectedThemeColor, setSelectedThemeColor] = usePersistState(
-    "#10141e",
-    "selectedProfileColor"
-  );
-  const [selectedTextColor, setSelectedTextColor] = usePersistState(
-    "#ef4444",
-    "selectedTextColor"
-  );
+
+const ColorChanger = (props) => {
+  
+  const {selectedThemeColor, setSelectedThemeColor, selectedTextColor, setSelectedTextColor, setIsColorChanger, isColorChanger, setIsPhotoUploader} = props
 
   return (
     <div className="relative">
@@ -18,10 +10,10 @@ const ColorChanger = () => {
         <div
           className={`${
             !isColorChanger ? "hidden" : "block"
-          } flex flex-col bg-slate-300 rounded w-[10rem] h-[10rem] border-2 border-dashed border-red-500 justify-around`}
+          } flex flex-col bg-slate-300 rounded w-[7rem] md:w-[8rem] lg:w-[9rem] border-2 border-dashed border-red-500`}
         >
           <div >
-            <label style={{ color: selectedThemeColor }} className="p-1 text-xs md:text-sm lg:text-base">
+            <label style={{ color: selectedThemeColor }} className="p-1 text-[10px] md:text-xs lg:text-sm">
               Select Theme Color:
             </label>
             <input
@@ -34,7 +26,7 @@ const ColorChanger = () => {
             />
           </div>
           <div >
-            <label style={{ color: selectedTextColor }} className="p-1 text-xs md:text-sm lg:text-base">
+            <label style={{ color: selectedTextColor }} className="p-1 text-[10px] md:text-xs lg:text-sm">
               Select Text Color:<br/>    
             </label>
             <input
@@ -46,28 +38,34 @@ const ColorChanger = () => {
               className="p-2 bg-white"
             />
           </div>
+          
           <div>
             <button
-              className="text-red-500 w-[9.8rem] p-[0.3rem] rounded text-[10px] md:text-xs bg-[#10141e]"
+              className="text-red-500 mt-1 w-full p-[0.3rem] rounded text-[10px] md:text-xs bg-[#10141e]"
               type="button"
               onClick={() => {
                 setSelectedTextColor("#ef4444");
                 setSelectedThemeColor("#10141e");
               }}
             >
-              Click to set Default Colors
+              Set Default Colors
             </button>
           </div>
         </div>
       </div>
-
       <button
         type="button"
         onClick={() => {
-          setIsColorChanger(!isColorChanger);
+          setIsColorChanger(!isColorChanger)
+          setIsPhotoUploader(false);
         }}
-        style={{ background: selectedTextColor, color: selectedThemeColor }}
-        className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[10.25rem] border-[1px]"
+        style={{
+            background: selectedThemeColor,
+            color: selectedTextColor,
+            boxShadow: ` 0 1px 3px 0 ${selectedTextColor}`,
+            border: `1px solid ${selectedTextColor}`,
+          }}
+        className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[100px] md:w-[120px]"
       >
         Change your Colors
       </button>

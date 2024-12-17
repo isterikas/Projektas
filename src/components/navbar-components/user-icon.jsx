@@ -23,6 +23,7 @@ const UserIcon = (props) => {
         src={`http://localhost:5000${loggedUser.image}`}
         alt="userImage"
         onClick={() => {setIsMenuOpen(!isMenuOpen)}}
+        style={{boxShadow: `0 0 5px 0 #ef4444`}}
         className={`${!isMenuOpen ? "profile-image-small cursor-pointer" : "profile-image-small"}`}
       /> : <img
         src={faviconIcon}

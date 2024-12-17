@@ -143,15 +143,16 @@
   width: 96px;
   height: 90vh;
   transition: height 0.1s ease-in-out;
+  
 }
 
 @layer utilities {
   .profile-image-large {
-    @apply rounded-[20px] shadow-white w-[9rem] h-[7rem] md:w-[12rem] md:h-[10rem] lg:w-[15rem] lg:h-[13rem];
+    @apply rounded-[20px]  w-[9rem] h-[7rem] md:w-[12rem] md:h-[10rem] lg:w-[15rem] lg:h-[13rem];
   }
 
   .profile-image-small {
-    @apply border-[1px] border-red-500 rounded-full w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40px] lg:h-[40px]
+    @apply border-[1px] border-red-500 rounded-full w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40px] lg:h-[40px] shadow-red-500
   }
 
 input[type="search"]::-webkit-search-decoration,
