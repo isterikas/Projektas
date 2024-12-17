@@ -2,7 +2,7 @@ import Card from "./Card.jsx";
 import { useLocation, useOutletContext, useSearchParams } from "react-router";
 import { InputMask } from "@react-input/mask";
 
-function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
+function Search({ array, update, setUpdate, loggedIn, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const pattern = /^[a-zA-Z0-9 ąčęėįšųūžĄČĘĖĮŠŲŪŽ]*$/;
