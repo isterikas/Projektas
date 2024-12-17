@@ -7,6 +7,7 @@ import { usePersistState } from "@printy/react-persist-state";
 import { useNavigate } from "react-router";
 import LogoIcon from "./navbar-components/logo-icon";
 import { deleteAccount } from "./helpers/delete";
+import ColorChanger from "./user-account-components.jsx/color-changer";
 
 const UserAccount = () => {
   const {
@@ -125,31 +126,45 @@ const UserAccount = () => {
   ) : null;
 
   const handleDelete = async () => {
-    await deleteAccount(loggedUser?.id);
-    try {
-      window.localStorage.clear();
-      setLoggedIn("");
-      setLoggedUser(null);
-      navigate("/account/deleted")
-    } catch (error) {
-      window.alert("Error deleting account:", error.message);
+    const deletion = await deleteAccount(loggedUser.id);
+    if (!deletion) {
+      return;
+    } else {
+      try {
+        window.localStorage.clear();
+        setLoggedIn("");
+        setLoggedUser(null);
+        navigate("/account/deleted");
+      } catch (error) {
+        window.alert("Error deleting account:", error.message);
+      }
     }
   };
 
   return (
     <div
       style={{ backgroundColor: selectedThemeColor }}
-      className="relative p-4"
+      className="relative p-2 lg:p-4"
     >
-      <div className="flex items-center justify-between pb-4 md:px-[2rem] lg:px-[4rem]">
+      <div className="flex items-center justify-between lg:px-[4rem]">
         <LogoIcon />
-        <button
-          type="button"
-          style={{ background: selectedTextColor, color: selectedThemeColor }}
-          className="rounded p-2 text-xs"
-        >
-          To Homepage!
-        </button>
+        <div className="flex flex-col">
+          <button
+            type="button"
+            style={{ background: selectedTextColor, color: selectedThemeColor }}
+            className="rounded p-1 text-[10px]  md:text-xs h-[2rem] ms-[10.25rem] border-[1px]"
+          >
+            User Menu
+          </button>
+          <button
+            type="button"
+            style={{ background: selectedTextColor, color: selectedThemeColor }}
+            className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[10.25rem] border-[1px]"
+          >
+            To Homepage!
+          </button>
+          <ColorChanger/>
+        </div>
       </div>
       <div className="flex flex-col items-center">
         <div>{profileImage}</div>
@@ -205,50 +220,53 @@ const UserAccount = () => {
           Change or Upload your image & Click to close
         </button>
       </div>
-
-      <div className="absolute bottom-0 right-[10rem]">
-        <div
-          className={`${
-            !isColorChanger ? "hidden" : "block"
-          } flex flex-col bg-slate-300 rounded w-[10rem] h-[10rem] border-2 border-dashed border-red-500`}
-        >
-          <div className="mt-1">
-            <label style={{ color: selectedThemeColor }} className="p-1">
-              Select Theme Color:
-            </label>
-            <input
-              type="color"
-              value={selectedThemeColor}
-              onChange={(e) => {
-                setSelectedThemeColor(e.target.value);
-              }}
-              className="p-2 bg-white"
-            />
-          </div>
-          <div className="mt-2">
-            <label style={{ color: selectedTextColor }} className="p-1">
-              Select Text Color:
-            </label>
-            <input
-              type="color"
-              value={selectedTextColor}
-              onChange={(e) => {
-                setSelectedTextColor(e.target.value);
-              }}
-              className="p-2 bg-white"
-            />
-          </div>
-          <div className="mt-2">
-            <button
-              className="text-red-500 w-[9.8rem] p-[0.3rem] rounded text-xs bg-[#10141e]"
-              type="button"
-              onClick={() => {
-                setSelectedTextColor("#ef4444");
-                setSelectedThemeColor("#10141e");
-              }}
-            >
-              Click to set Default Colors
-            </button>
+      {/* <ColorChanger/> */}
+{/* 
+      <div className="absolute bottom-0 right-[50rem] flex gap-1">
+        <div>
+          <div
+            className={`${
+              !isColorChanger ? "hidden" : "block"
+            } flex flex-col bg-slate-300 rounded w-[10rem] h-[10rem] border-2 border-dashed border-red-500`}
+          >
+            <div className="mt-1">
+              <label style={{ color: selectedThemeColor }} className="p-1">
+                Select Theme Color:
+              </label>
+              <input
+                type="color"
+                value={selectedThemeColor}
+                onChange={(e) => {
+                  setSelectedThemeColor(e.target.value);
+                }}
+                className="p-2 bg-white"
+              />
+            </div>
+            <div className="mt-2">
+              <label style={{ color: selectedTextColor }} className="p-1">
+                Select Text Color:
+              </label>
+              <input
+                type="color"
+                value={selectedTextColor}
+                onChange={(e) => {
+                  setSelectedTextColor(e.target.value);
+                }}
+                className="p-2 bg-white"
+              />
+            </div>
+            <div className="mt-2">
+              <button
+                className="text-red-500 w-[9.8rem] p-[0.3rem] rounded text-xs bg-[#10141e]"
+                type="button"
+                onClick={() => {
+                  setSelectedTextColor("#ef4444");
+                  setSelectedThemeColor("#10141e");
+                }}
+              >
+                Click to set Default Colors
+              </button>
+            </div>
           </div>
         </div>
         <button
@@ -256,20 +274,23 @@ const UserAccount = () => {
           onClick={() => {
             setIsColorChanger(!isColorChanger);
           }}
-          className="text-xs bg-slate-300 w-[10rem] rounded mt-2 p-1"
+          style={{ background: selectedTextColor, color: selectedThemeColor }}
+          className="rounded p-2 text-xs h-[2rem]"
         >
-          Change your 'Theme or Text' Colors & Click to close
+          Change your Colors
         </button>
+      </div> */}
+      <div>
+        <hr className=" md:mx-[2rem] lg:mx-[4rem] border-2 border-red-500" />
+        <button
+          type="submit"
+          onClick={handleDelete}
+          className="bg-green-500 text-white"
+        >
+          Delete Account
+        </button>
+        <p className="text-white text-4xl">Labas</p>
       </div>
-      <hr className=" md:mx-[2rem] lg:mx-[4rem] border-2 border-red-500" />
-      <button
-        type="submit"
-        onClick={handleDelete}
-        className="bg-green-500 text-white"
-      >
-        Delete Account
-      </button>
-      <p className="text-white text-4xl">Labas</p>
     </div>
   );
 };

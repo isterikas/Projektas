@@ -21,18 +21,17 @@ function Recommended({
   const [shuffledContents, setShuffledContents] = useState([]);
 
   useEffect(() => {
-    console.log("Contents on load:", contents);
+    // console.log("Contents on load:", contents);
     if (!loggedIn) {
       const shuffled = shuffleArray([...contents]);
       setShuffledContents(shuffled);
-      console.log("Shuffled contents:", shuffled);
+      // console.log("Shuffled contents:", shuffled);
     } else {
       setShuffledContents(contents);
-      console.log("Contents (logged in):", contents);
+      // console.log("Contents (logged in):", contents);
     }
     
   }, [contents, loggedIn]); // Priklausomybės nuo contents ir loggedIn
-
   return (
     <div>
       <div className="grid items-end justify-start h-16">
