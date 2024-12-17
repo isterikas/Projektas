@@ -4,6 +4,7 @@ import { useDropzone } from "react-dropzone";
 import { patchData } from "./helpers/update";
 import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
+import Loading from "./Loading";
 
 
 const UserAccount = () => {
@@ -93,10 +94,7 @@ const navigate = useNavigate()
 
   if (isLoading) {
     return (
-      <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
-        <p>Loading...</p>
-        <div className="spinner"></div>
-      </div>
+<Loading/>
     );
   }
 
