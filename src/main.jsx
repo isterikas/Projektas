@@ -1,18 +1,18 @@
-import { StrictMode } from "react";
+import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { ErrorBoundary } from "react-error-boundary";
 import "./index.css";
 import App from "./App.jsx";
-import { Routes, Route } from "react-router";
-import NotFound from "./components/NotFound.jsx";
-import Auth from "./components/Auth.jsx";
 import Homepage from "./components/Homepage.jsx";
-import Movies from "./components/Movies.jsx";
-import TVShows from "./components/TVShows.jsx";
-import Bookmarks from "./components/Bookmarks.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
-import { ErrorBoundary } from "react-error-boundary";
-import UserAccount from "./components/UserAccount.jsx";
+import Loading from "./components/Loading.jsx";
+const LazyAuth = lazy(() => import("./components/Auth.jsx"));
+const LazyMovies = lazy(() => import("./components/Movies.jsx"));
+const LazyTVShows = lazy(() => import("./components/TVShows.jsx"));
+const LazyBookmarks = lazy(() => import("./components/Bookmarks.jsx"));
+const LazyNotFound = lazy(() => import("./components/NotFound.jsx"));
+const LazyUserAccount = lazy(() => import("./components/UserAccount.jsx"));
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -21,13 +21,55 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<Homepage />} />
-            <Route path="/authorization" element={<Auth />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/tvseries" element={<TVShows />} />
-            <Route path="/bookmarks" element={<Bookmarks />} />
-            <Route path="/account" element={<UserAccount />} />
+            <Route
+              path="/authorization"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <LazyAuth />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/movies"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <LazyMovies />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/tvseries"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <LazyTVShows />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/bookmarks"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <LazyBookmarks />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/account"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <LazyUserAccount />
+                </Suspense>
+              }
+            />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<Loading />}>
+                <LazyNotFound />
+              </Suspense>
+            }
+          />
         </Routes>
       </ErrorBoundary>
     </BrowserRouter>
