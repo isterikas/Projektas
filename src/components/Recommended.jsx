@@ -131,9 +131,7 @@ function Recommended({
   return (
     <div>
       <div className="grid items-end justify-start h-16">
-        <h2 className="background-dark-blue text-white heading-l ml-5">
-          Recommended for you
-        </h2>
+        <h2 className="content-heading text-white">Recommended for you</h2>
       </div>
 
       <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
