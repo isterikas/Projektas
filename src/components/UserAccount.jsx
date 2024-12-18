@@ -21,6 +21,8 @@ const UserAccount = () => {
     "selectedTextColor"
   );
 
+  const [showModal, setShowModal] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -206,6 +208,26 @@ const UserAccount = () => {
           </button>
         </div>
       </div>
+      <div
+        className={
+          showModal ? "fixed inset-0 bg-gray-500/75 transition-opacity" : ""
+        }
+      ></div>
+      <button
+        className="text-white p-2 bg-red-900 rounded-md"
+        onClick={() => setShowModal(true)}
+      >
+        Change Password
+      </button>
+      {showModal ? (
+        <PasswordChange
+          showModal={showModal}
+          setShowModal={setShowModal}
+          loggedIn={loggedIn}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };
