@@ -9,6 +9,7 @@ import LogoUserIcon from "./user-account-components.jsx/logo-user-icon";
 import ColorChanger from "./user-account-components.jsx/color-changer";
 import PhotoUploader from "./user-account-components.jsx/photo-uploader";
 import Loading from "./Loading";
+import PasswordChange from "./PasswordChange";
 import UserOptions from "./user-account-components.jsx/user-options";
 
 const UserAccount = () => {
@@ -34,6 +35,7 @@ const UserAccount = () => {
     "#ef4444",
     "selectedTextColor"
   );
+  const [showModal, setShowModal] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [isHovered, setIsHovered] = useState(false)
   const navigate = useNavigate();
@@ -240,6 +242,26 @@ const UserAccount = () => {
           />
         </div>
       </div>
+      <div
+        className={
+          showModal ? "fixed inset-0 bg-gray-500/75 transition-opacity" : ""
+        }
+      ></div>
+      <button
+        className="text-white p-2 bg-red-900 rounded-md"
+        onClick={() => setShowModal(true)}
+      >
+        Change Password
+      </button>
+      {showModal ? (
+        <PasswordChange
+          showModal={showModal}
+          setShowModal={setShowModal}
+          loggedIn={loggedIn}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

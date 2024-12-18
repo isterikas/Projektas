@@ -74,6 +74,7 @@ function Bookmarks() {
           ""
         ) : (
           <>
+          <div className="w-full min-h-fit">
             <h2 className="content-heading text-white">Bookmarked shows</h2>
             <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
               {bookmarkedContent("TV Series")}
@@ -81,6 +82,7 @@ function Bookmarks() {
             <h2 className="content-heading text-white">Bookmarked movies</h2>
             <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
               {bookmarkedContent("Movie")}
+            </div>
             </div>
           </>
         )}

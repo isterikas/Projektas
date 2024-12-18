@@ -94,10 +94,32 @@
     margin-left: 16px;
   }
 
+  .content-text {
+    font-size: 14px;
+    font-family: "Outfit";
+    font-weight: 400;
+    margin-left: 16px;
+  }
+
   @media (min-width: 768px) {
     .content-heading {
       @apply heading-l;
       margin-left: 25px;
+    }
+    .content-text {
+      font-size: 16px;
+      font-family: "Outfit";
+      font-weight: 400;
+      margin-left: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .content-text {
+      font-size: 18px;
+      font-family: "Outfit";
+      font-weight: 400;
+      margin-left: 16px;
     }
   }
 

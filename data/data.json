@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 3
+      "latestTrending": 1
     },
     {
       "contentsId": "3",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 3
+      "latestTrending": 1
     },
     {
       "contentsId": "5",
@@ -162,7 +162,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "25c7",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "9",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "11",
@@ -216,7 +216,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e086",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "12",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "13",
@@ -252,7 +252,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "06d9",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "14",
@@ -288,7 +288,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "afd5",
-      "latestTrending": 2
+      "latestTrending": 1
     },
     {
       "contentsId": "16",
@@ -306,7 +306,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "73b6",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "17",
@@ -342,7 +342,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "c19b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "19",
@@ -360,7 +360,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "615d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "20",
@@ -378,7 +378,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "6333",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "21",
@@ -414,7 +414,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "41b4",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "23",
@@ -432,7 +432,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "bc75",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "24",
@@ -450,7 +450,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "7939",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "25",
@@ -468,7 +468,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "e4b6",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "26",
@@ -504,7 +504,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "2c31",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "28",
@@ -540,7 +540,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "4432",
-      "latestTrending": 3
+      "latestTrending": 1
     }
   ],
   "users": [
@@ -550,148 +550,160 @@
       "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
       "image": "/uploads/1734505357616.png",
       "created": "2024-12-17T20:35:56.596Z"
+    },
+    {
+      "id": "ce30",
+      "userName": "henryk.umbrasewicz@odnoklassniki.ru",
+      "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed",
+      "image": "/uploads/1734510011642.JPG",
+      "created": "2024-12-18T07:54:47.360Z"
     }
   ],
   "userBookmarks": [
     {
-      "id": "0486",
-      "contentsId": "17",
-      "userId": "50bf"
-    },
-    {
-      "id": "3fab",
-      "contentsId": "4",
-      "userId": "50bf"
-    },
-    {
-      "id": "72bf",
-      "contentsId": "2",
-      "userId": "50bf"
-    },
-    {
-      "id": "8493",
-      "contentsId": "12",
-      "userId": "50bf"
-    },
-    {
-      "id": "3a81",
-      "contentsId": "4",
-      "userId": "df0a"
-    },
-    {
-      "id": "9052",
-      "contentsId": "1",
-      "userId": "df0a"
-    },
-    {
-      "id": "82fb",
-      "contentsId": "2",
-      "userId": "df0a"
-    },
-    {
-      "id": "eea8",
-      "contentsId": "a1ac",
-      "userId": "f1fb"
-    },
-    {
-      "id": "0e17",
-      "contentsId": "1",
-      "userId": "ec1d"
-    },
-    {
-      "id": "306b",
-      "contentsId": "2",
-      "userId": "ec1d"
-    },
-    {
-      "id": "db83",
+      "id": "8221",
       "contentsId": "3",
-      "userId": "ec1d"
+      "userId": "ce30"
     },
     {
-      "id": "a493",
-      "contentsId": "4",
-      "userId": "ec1d"
+      "id": "f67d",
+      "contentsId": "17",
+      "userId": "ce30"
     },
     {
-      "id": "7a03",
-      "contentsId": "5",
-      "userId": "ec1d"
+      "id": "4e36",
+      "contentsId": "18",
+      "userId": "ce30"
     },
     {
-      "id": "df5c",
-      "contentsId": "7",
-      "userId": "ec1d"
+      "id": "7961",
+      "contentsId": "29",
+      "userId": "ce30"
     },
     {
-      "id": "bd60",
-      "contentsId": "9",
-      "userId": "df0a"
-    },
-    {
-      "id": "f92c",
+      "id": "abb1",
       "contentsId": "12",
-      "userId": "df0a"
+      "userId": "ce30"
     },
     {
-      "id": "e2fa",
+      "id": "b886",
+      "contentsId": "20",
+      "userId": "ce30"
+    },
+    {
+      "id": "68aa",
+      "contentsId": "22",
+      "userId": "ce30"
+    },
+    {
+      "id": "671a",
+      "contentsId": "19",
+      "userId": "ce30"
+    },
+    {
+      "id": "c9af",
       "contentsId": "6",
-      "userId": "df0a"
+      "userId": "ce30"
     },
     {
-      "id": "95f4",
-      "contentsId": "10",
-      "userId": "df0a"
+      "id": "44d9",
+      "contentsId": "9",
+      "userId": "ce30"
     },
     {
-      "id": "cc0b",
-      "contentsId": "10",
-      "userId": "e419"
+      "id": "5478",
+      "contentsId": "1",
+      "userId": "ce30"
     },
     {
-      "id": "14fe",
-      "contentsId": "21",
-      "userId": "e419"
+      "id": "63e2",
+      "contentsId": "2",
+      "userId": "ce30"
     },
     {
-      "id": "8ecc",
+      "id": "60e8",
       "contentsId": "15",
-      "userId": "e419"
+      "userId": "ce30"
     },
     {
-      "id": "6ae1",
-      "contentsId": "26",
-      "userId": "e419"
+      "id": "179f",
+      "contentsId": "4",
+      "userId": "ce30"
     },
     {
-      "id": "4250",
-      "contentsId": "29",
-      "userId": "e419"
+      "id": "13d7",
+      "contentsId": "8",
+      "userId": "ce30"
     },
     {
-      "id": "f9e3",
-      "contentsId": "15",
-      "userId": "e419"
+      "id": "6c3d",
+      "contentsId": "27",
+      "userId": "ce30"
     },
     {
-      "id": "36c8",
-      "contentsId": "28",
-      "userId": "e419"
-    },
-    {
-      "id": "1b57",
-      "contentsId": "29",
-      "userId": "e419"
-    },
-    {
-      "id": "1496",
+      "id": "c995",
       "contentsId": "14",
-      "userId": "e419"
+      "userId": "ce30"
     },
     {
-      "id": "b00f",
-      "contentsId": "29",
-      "userId": "e419"
+      "id": "7664",
+      "contentsId": "24",
+      "userId": "ce30"
+    },
+    {
+      "id": "d848",
+      "contentsId": "5",
+      "userId": "ce30"
+    },
+    {
+      "id": "c9c9",
+      "contentsId": "7",
+      "userId": "ce30"
+    },
+    {
+      "id": "692c",
+      "contentsId": "10",
+      "userId": "ce30"
+    },
+    {
+      "id": "ffa0",
+      "contentsId": "13",
+      "userId": "ce30"
+    },
+    {
+      "id": "e34d",
+      "contentsId": "21",
+      "userId": "ce30"
+    },
+    {
+      "id": "bccf",
+      "contentsId": "23",
+      "userId": "ce30"
+    },
+    {
+      "id": "cf04",
+      "contentsId": "25",
+      "userId": "ce30"
+    },
+    {
+      "id": "dec9",
+      "contentsId": "26",
+      "userId": "ce30"
+    },
+    {
+      "id": "219b",
+      "contentsId": "11",
+      "userId": "ce30"
+    },
+    {
+      "id": "c841",
+      "contentsId": "16",
+      "userId": "ce30"
+    },
+    {
+      "id": "cd32",
+      "contentsId": "28",
+      "userId": "ce30"
     }
   ]
 }
