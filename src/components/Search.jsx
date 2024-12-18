@@ -19,7 +19,7 @@ function Search({ array, update, setUpdate, loggedIn, width }) {
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
     if (value) {
-      setSearch(searchQuery)
+      setSearch(searchQuery);
       return true;
     } else {
       setSearch("");

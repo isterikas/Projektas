@@ -8,7 +8,6 @@ function Trending({
   width,
   update,
   setUpdate,
-  userBookmarks,
   loggedIn,
 }) {
   return (

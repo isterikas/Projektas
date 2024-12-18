@@ -6,9 +6,7 @@ import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
 import Loading from "./Loading";
 
-
 const UserAccount = () => {
-
   const { isLoading, setLoggedUser, error, setError, loggedUser, loggedIn } =
     useOutletContext();
   const [userImage, setUserImage] = useState(null);
@@ -23,13 +21,13 @@ const UserAccount = () => {
     "selectedTextColor"
   );
 
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    if(window.performance) {
-      if(performance.navigation.type != 1 && !loggedIn) navigate("/");
+  useEffect(() => {
+    if (window.performance) {
+      if (performance.navigation.type != 1 && !loggedIn) navigate("/");
     }
-  },[])
+  }, []);
 
   const timedClosure = () => {
     if (isUploadSuccess && !isLoading)
@@ -44,7 +42,7 @@ const navigate = useNavigate()
 
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
-  const validTypes = ["image/jpeg", "image/png", "image/jpg"];
+    const validTypes = ["image/jpeg", "image/png", "image/jpg"];
     if (!validTypes.includes(file.type)) {
       alert("Please upload a JPEG or PNG image.");
       return;
@@ -93,9 +91,7 @@ const navigate = useNavigate()
   });
 
   if (isLoading) {
-    return (
-<Loading/>
-    );
+    return <Loading />;
   }
 
   const profileImage = loggedUser?.image ? (
@@ -114,7 +110,10 @@ const navigate = useNavigate()
   const formattedDate = getFormattedDate(loggedUser.created);
 
   return (
-    <div style={{ backgroundColor: selectedProfileColor }} className="relative p-4">
+    <div
+      style={{ backgroundColor: selectedProfileColor }}
+      className="relative p-4"
+    >
       <div className="flex flex-col items-center">
         <div>{profileImage}</div>
         {profileImage ? (
@@ -172,7 +171,7 @@ const navigate = useNavigate()
 
       <div className="flex flex-col">
         <div className="mt-2">
-          <label className="text-white p-1" >Select Profile Theme Color:</label>
+          <label className="text-white p-1">Select Profile Theme Color:</label>
           <input
             type="color"
             value={selectedProfileColor}
@@ -194,7 +193,9 @@ const navigate = useNavigate()
           />
         </div>
         <div className="mt-2">
-          <button   style = {{background: selectedTextColor}} className="text-white p-2 w-[10rem] rounded text-xs"
+          <button
+            style={{ background: selectedTextColor }}
+            className="text-white p-2 w-[10rem] rounded text-xs"
             type="button"
             onClick={() => {
               setSelectedTextColor("#ef4444");

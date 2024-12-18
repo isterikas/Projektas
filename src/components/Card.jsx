@@ -9,7 +9,6 @@ import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
 
 function Card({ item, setUpdate, update, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
-
   const [checked, setChecked] = useState(false);
   const [userBookmarks, setUserBookmarks] = useState([]);
 
@@ -56,7 +55,7 @@ function Card({ item, setUpdate, update, loggedIn, width }) {
       <div className=" ">
         {loggedIn ? (
           <button
-            onClick={async (e) => await toggleBookmark()}
+            onClick={async () => await toggleBookmark()}
             className="text-white absolute bookmark-icon "
           >
             <div className="relative ">
@@ -77,7 +76,7 @@ function Card({ item, setUpdate, update, loggedIn, width }) {
 
         <div className="relative">
           <div className="">
-            {{ width } < 1024 ? (
+            { width  < 1024 ? (
               <img
                 className="rounded-xl bottom-5"
                 src={"src" + thumbnail.regular.small.slice(1)}

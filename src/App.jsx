@@ -8,7 +8,6 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [authType, setAuthType] = usePersistState("login", "authType");
   const [loggedIn, setLoggedIn] = usePersistState("", "loggedIn");
-
   const [contents, setContents] = useState([]);
   const [update, setUpdate] = useState(0);
   const [users, setUsers] = useState([]);
@@ -16,7 +15,6 @@ export default function App() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [loggedUser, setLoggedUser] = usePersistState({}, "loggedUser");
-
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -57,11 +55,10 @@ export default function App() {
 
   const findUser = async () => {
     if (loggedIn && users.length > 0) {
-      const thisUser = users.find((user) => user.id === loggedIn)
+      const thisUser = users.find((user) => user.id === loggedIn);
 
       setLoggedUser(thisUser);
       setIsLoading(false);
-
     }
   };
 
@@ -72,8 +69,7 @@ export default function App() {
   }, [update]);
 
   useEffect(() => {
-    if (loggedIn) 
-      findUser();
+    if (loggedIn) findUser();
   }, [loggedIn, users]);
 
   return (
