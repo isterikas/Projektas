@@ -5,6 +5,7 @@ import { patchData } from "./helpers/update";
 import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
 import Loading from "./Loading";
+import PasswordChange from "./PasswordChange";
 
 const UserAccount = () => {
   const { isLoading, setLoggedUser, error, setError, loggedUser, loggedIn } =

@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "3",
@@ -557,7 +557,25 @@
       "userPassword": "36a3d63c40fde1c662062dabb1173c48452b41c9e1de6400307c745705c84969",
       "image": "",
       "created": "2024-12-18T07:50:14.443Z"
+    },
+    {
+      "id": "5898",
+      "userName": "pavel.gusev431@gmail.com",
+      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
+      "image": "",
+      "created": "2024-12-18T11:33:25.653Z"
     }
   ],
-  "userBookmarks": []
+  "userBookmarks": [
+    {
+      "id": "5567",
+      "contentsId": "1",
+      "userId": "4b57"
+    },
+    {
+      "id": "933c",
+      "contentsId": "2",
+      "userId": "4b57"
+    }
+  ]
 }
