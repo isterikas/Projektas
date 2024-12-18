@@ -9,14 +9,11 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [authType, setAuthType] = usePersistState("login", "authType");
   const [loggedIn, setLoggedIn] = usePersistState("", "loggedIn");
-
   const [update, setUpdate] = useState(0);
   const [users, setUsers] = useState([]);
-  // const [userBookmarks, setUserBookmarks] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [loggedUser, setLoggedUser] = usePersistState({}, "loggedUser");
-
   const [width, setWidth] = useState(window.innerWidth);
 
   const [updatesOfTrending, setUpdatesOfTrending] = useState(0);
@@ -27,26 +24,6 @@ export default function App() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  // const getAllcontents = async () => {
-  //   try {
-  //     const contents = await getAllData("contents");
-  //     setContents(contents);
-  //     setError("");
-  //   } catch (error) {
-  //     setError(error.message);
-  //   }
-  // };
-
-  // const getAllUserBookmarks = async () => {
-  //   try {
-  //     const userBookmarks = await getAllData("userBookmarks");
-  //     setUserBookmarks(userBookmarks);
-  //     setError("");
-  //   } catch (error) {
-  //     setError(error.message);
-  //   }
-  // };
 
   const getAllUsers = async () => {
     try {
@@ -68,8 +45,6 @@ export default function App() {
   };
 
   useEffect(() => {
-    // getAllcontents();
-    // getAllUserBookmarks();
     getAllUsers();
   }, [update]);
 

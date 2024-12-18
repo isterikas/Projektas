@@ -8,6 +8,6 @@ export const postData = async (data, resource) => {
 };
 
 export const postImage = async (data) => {
-  let reponse = await axios.post("http://localhost:5000/upload", data)
-  return reponse.data
-}
+  let reponse = await axios.post("http://localhost:5000/upload", data);
+  return reponse.data;
+};

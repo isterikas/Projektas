@@ -63,14 +63,14 @@ function TrendingCard({ slide, userBookmarks, loggedIn }) {
             <div className="relative ">
               {thisBookmark ? (
                 <button
-                  onClick={async (e) => await unsetBookmark()}
+                  onClick={async () => await unsetBookmark()}
                   className="icon-bg  bg-slate-500 bg-opacity-50  w-8 h-8  group   hover:bg-white  rounded-full group "
                 >
                   <BookmarkFull />
                 </button>
               ) : (
                 <button
-                  onClick={async (e) => await setBookmark()}
+                  onClick={async () => await setBookmark()}
                   className="icon-bg  bg-slate-500 bg-opacity-50 w-8 h-8  group  hover:bg-white  rounded-full  "
                 >
                   <BookmarkEmpty />

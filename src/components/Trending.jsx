@@ -3,14 +3,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import TrendingCard from "./TrendingCard";
-function Trending({
-  contents,
-  width,
-  update,
-  setUpdate,
-  userBookmarks,
-  loggedIn,
-}) {
+function Trending({ contents, width, update, setUpdate, loggedIn }) {
   return (
     <>
       <h2 className=" text-white heading-l left-7">Trending</h2>

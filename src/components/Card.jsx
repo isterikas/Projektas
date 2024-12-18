@@ -41,14 +41,14 @@ function Card({ item, userBookmarks, loggedIn, width }) {
             <div className="relative top-1/10 right-1/10">
               {thisBookmark ? (
                 <button
-                  onClick={async (e) => await unsetBookmark()}
+                  onClick={async () => await unsetBookmark()}
                   className="icon-bg bg-slate-500 bg-opacity-50 w-8 h-8 hover:bg-white rounded-full group"
                 >
                   <BookmarkFull />
                 </button>
               ) : (
                 <button
-                  onClick={async (e) => await setBookmark()}
+                  onClick={async () => await setBookmark()}
                   className="icon-bg bg-slate-500 bg-opacity-50 w-8 h-8 hover:bg-white rounded-full group"
                 >
                   <BookmarkEmpty />
@@ -62,7 +62,7 @@ function Card({ item, userBookmarks, loggedIn, width }) {
 
         <div className="relative">
           <div className="">
-            {{ width } < 1024 ? (
+            {width < 1024 ? (
               <img
                 className="rounded-xl bottom-5"
                 src={"src" + thumbnail.regular.small.slice(1)}

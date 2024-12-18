@@ -15,7 +15,6 @@ const getUserBookmarks = (loggedIn, userBookmarks) => {
   return userBookmarks.filter((bookmark) => bookmark.userId === loggedIn);
 };
 
-
 function Recommended({ contents, update, setUpdate, loggedIn, width }) {
   const [shuffledContents, setShuffledContents] = useState([]);
   const { userBookmarks } = useOutletContext();

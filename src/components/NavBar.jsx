@@ -8,7 +8,7 @@ import ExpandingDiv from "./navbar-components/expanding-div.jsx";
 function NavBar(props) {
   const { setAuthType, loggedIn, setLoggedIn, loggedUser } = props;
   const location = useLocation();
-  
+
   return (
     <>
       {location.pathname == "/authorization" ||
@@ -18,13 +18,15 @@ function NavBar(props) {
         ""
       ) : (
         <div>
-          <nav className="flex justify-between items-center bg-[#161D2F] px-[16px] h-[56px] md:h-[72px] md:px-[24px] md:rounded-[10px] lg:hidden
-          ">
+          <nav
+            className="flex justify-between items-center bg-[#161D2F] px-[16px] h-[56px] md:h-[72px] md:px-[24px] md:rounded-[10px] lg:hidden
+          "
+          >
             <div className="lg:mt-[32px]">
               <LogoIcon />
             </div>
             <div className="lg:h-[70%]">
-              <NavBarIcons loggedIn={loggedIn}/>
+              <NavBarIcons loggedIn={loggedIn} />
             </div>
             <div className="lg:mb-[32px]">
               {!loggedIn ? (
@@ -37,7 +39,11 @@ function NavBar(props) {
                 </div>
               ) : (
                 <div>
-                  <UserIcon setLoggedIn={setLoggedIn} loggedIn={loggedIn} loggedUser={loggedUser}/>
+                  <UserIcon
+                    setLoggedIn={setLoggedIn}
+                    loggedIn={loggedIn}
+                    loggedUser={loggedUser}
+                  />
                 </div>
               )}
             </div>
