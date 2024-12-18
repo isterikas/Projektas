@@ -1,12 +1,12 @@
-import { getAllData } from "./get";
-import { patchData } from "./update";
+import { useEffect } from "react";
+import { contents, userBookmarks } from "../../../data/data.json";
+import { patchData } from "./update.js";
 
-async function updateContents(contents) {
+const updateContents = async (contents) => {
   try {
     const patchPromises = contents.map((content) => {
       return patchData("contents", content.id.toString(), content);
     });
-
     // console.log(await Promise.all(patchPromises));
     return contents;
   } catch (error) {
@@ -17,8 +17,6 @@ async function updateContents(contents) {
 
 export async function updateTrending() {
   try {
-    const contents = await getAllData("contents");
-    const userBookmarks = await getAllData("userBookmarks");
     const counts = {};
 
     userBookmarks.forEach((bookmark) => {
@@ -32,6 +30,7 @@ export async function updateTrending() {
       content.latestTrending = counts[id] || 0;
     });
 
+    
     await updateContents(contents);
 
     return contents;

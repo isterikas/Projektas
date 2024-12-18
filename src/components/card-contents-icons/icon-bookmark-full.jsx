@@ -3,7 +3,7 @@
 const
   BookmarkFull = () => {
     return (
-      <div className="bookmark-full  w-[15px] h-[15px]  absolute mt-2.5 ml-2.5 ">
+      <div className="bookmark-full  w-[15px] h-[15px]  absolute ml-2.5 ">
         <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
 
         <path   

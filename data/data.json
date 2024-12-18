@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "3",
@@ -126,7 +126,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "cd79",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "7",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "10",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "13",
@@ -288,7 +288,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "afd5",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "16",
@@ -324,7 +324,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "7e27",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "18",
@@ -342,7 +342,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "c19b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "19",
@@ -378,7 +378,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "6333",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "21",
@@ -414,7 +414,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "41b4",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "23",
@@ -540,9 +540,17 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "4432",
-      "latestTrending": 0
+      "latestTrending": 1
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "f29d",
+      "userName": "pavel.gusev431@gmail.com",
+      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
+      "image": "",
+      "created": "2024-12-17T16:34:16.103Z"
+    }
+  ],
   "userBookmarks": []
 }

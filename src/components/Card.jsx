@@ -1,76 +1,61 @@
 import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
-import { getAllData } from "./helpers/get.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
 import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
-
-function Card({ item, setUpdate, update, loggedIn, width }) {
+function Card({ item, userBookmarks, loggedIn, width }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
-  const [checked, setChecked] = useState(false);
-  const [userBookmarks, setUserBookmarks] = useState([]);
-
-  const getAllUserBookmarks = async () => {
-    const userBookmarks = await getAllData("userBookmarks");
-    setUserBookmarks(userBookmarks);
-  };
+  const [thisBookmark, setThisBookmark] = useState({});
 
   const getThisBookmark = () => {
-    const thisBookmark = userBookmarks.find(
+    const foundBookmark = userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
-    if (thisBookmark) setChecked(true);
+    setThisBookmark(foundBookmark);
   };
 
   useEffect(() => {
-    getAllUserBookmarks();
     getThisBookmark();
-  }, []);
+  }, [userBookmarks]);
 
-  const toggleBookmark = async () => {
-    const bookmarks = await getAllData("userBookmarks");
-    setUserBookmarks(bookmarks);
-    const thisBookmark = userBookmarks.find(
-      (bookmark) =>
-        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
+  const setBookmark = async () => {
+    await postData(
+      { contentsId: contentsId, userId: loggedIn },
+      "userBookmarks"
     );
-    if (thisBookmark) {
-      await deleteBookmark(thisBookmark.id);
-      setChecked(false);
-    } else {
-      setChecked(true);
-      await postData(
-        { contentsId: contentsId, userId: loggedIn },
-        "userBookmarks"
-      );
-    }
-    setUpdate(update + 1);
+  };
+
+  const unsetBookmark = async () => {
+    await deleteBookmark(thisBookmark.id);
   };
 
   return (
     <div className="shadow m-3 relative">
       <div className=" ">
         {loggedIn ? (
-          <button
-            onClick={async (e) => await toggleBookmark()}
-            className="text-white absolute bookmark-icon "
-          >
-            <div className="relative ">
-              {checked ? (
-                <div className="icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full group ">
+          <div className="text-white absolute bookmark-icon ">
+            <div className="relative top-1/10 right-1/10">
+              {thisBookmark ? (
+                <button
+                  onClick={async (e) => await unsetBookmark()}
+                  className="icon-bg bg-slate-500 bg-opacity-50 w-8 h-8 hover:bg-white rounded-full group"
+                >
                   <BookmarkFull />
-                </div>
+                </button>
               ) : (
-                <div className="icon-bg  bg-slate-500 w-8 h-8  group  hover:bg-white  rounded-full  ">
+                <button
+                  onClick={async (e) => await setBookmark()}
+                  className="icon-bg bg-slate-500 bg-opacity-50 w-8 h-8 hover:bg-white rounded-full group"
+                >
                   <BookmarkEmpty />
-                </div>
+                </button>
               )}
             </div>
-          </button>
+          </div>
         ) : (
           ""
         )}
@@ -93,7 +78,7 @@ function Card({ item, setUpdate, update, loggedIn, width }) {
           </div>
 
           <div
-            className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs
+            className="absolute rounded-xl inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs
                 "
           >
             <div className="flex justify-center">

@@ -12,7 +12,7 @@ function Search({ array, update, setUpdate, loggedIn, width }) {
     throw new Error();
   }
   const location = useLocation();
-  const { setSearch } = useOutletContext();
+  const { setSearch, userBookmarks } = useOutletContext();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -52,6 +52,7 @@ function Search({ array, update, setUpdate, loggedIn, width }) {
             key={item.contentsId}
             update={update}
             setUpdate={setUpdate}
+            userBookmarks={userBookmarks}
             loggedIn={loggedIn}
             width={width}
           />

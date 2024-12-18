@@ -1,52 +1,35 @@
 import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
-import { getAllData } from "./helpers/get.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
 import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
-function TrendingCard({ slide, setUpdate, update, loggedIn }) {
+function TrendingCard({ slide, userBookmarks, loggedIn }) {
   const { contentsId, title, year, category, rating } = slide;
-  const [checked, setChecked] = useState(false);
 
-  const [userBookmarks, setUserBookmarks] = useState([]);
-
-  const getAllUserBookmarks = async () => {
-    const userBookmarks = await getAllData("userBookmarks");
-    setUserBookmarks(userBookmarks);
-  };
+  const [thisBookmark, setThisBookmark] = useState({});
 
   const getThisBookmark = () => {
-    const thisBookmark = userBookmarks.find(
+    const foundBookmark = userBookmarks.find(
       (bookmark) =>
         bookmark.userId == loggedIn && bookmark.contentsId == contentsId
     );
-    if (thisBookmark) setChecked(true);
+    setThisBookmark(foundBookmark);
   };
 
   useEffect(() => {
-    getAllUserBookmarks();
     getThisBookmark();
-  }, []);
+  }, [userBookmarks]);
 
-  const toggleBookmark = async () => {
-    const bookmarks = await getAllData("userBookmarks");
-    setUserBookmarks(bookmarks);
-    const thisBookmark = userBookmarks.find(
-      (bookmark) =>
-        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
+  const setBookmark = async () => {
+    await postData(
+      { contentsId: contentsId, userId: loggedIn },
+      "userBookmarks"
     );
-    if (thisBookmark) {
-      await deleteBookmark(thisBookmark.id);
-      setChecked(false);
-    } else {
-      setChecked(true);
-      await postData(
-        { contentsId: contentsId, userId: loggedIn },
-        "userBookmarks"
-      );
-    }
-    setUpdate(update + 1);
+  };
+
+  const unsetBookmark = async () => {
+    await deleteBookmark(thisBookmark.id);
   };
 
   return (
@@ -76,23 +59,25 @@ function TrendingCard({ slide, setUpdate, update, loggedIn }) {
       </div>
       <div className="absolute top-2 right-2 md:top-4 md:right-7 lg:top-4 lg:right-4">
         {loggedIn ? (
-          <button
-            onClick={async (e) => await toggleBookmark()}
-            className="text-white absolute   bookmark-icon "
-          >
+          <div className="text-white absolute   bookmark-icon ">
             <div className="relative ">
-              {checked ? (
-                <div className="icon-bg  bg-slate-500 bg-opacity-50  w-8 h-8  group   hover:bg-white  rounded-full group ">
+              {thisBookmark ? (
+                <button
+                  onClick={async (e) => await unsetBookmark()}
+                  className="icon-bg  bg-slate-500 bg-opacity-50  w-8 h-8  group   hover:bg-white  rounded-full group "
+                >
                   <BookmarkFull />
-                </div>
+                </button>
               ) : (
-                <div className="icon-bg  bg-slate-500 bg-opacity-50 w-8 h-8  group  hover:bg-white  rounded-full  ">
-                  {" "}
+                <button
+                  onClick={async (e) => await setBookmark()}
+                  className="icon-bg  bg-slate-500 bg-opacity-50 w-8 h-8  group  hover:bg-white  rounded-full  "
+                >
                   <BookmarkEmpty />
-                </div>
+                </button>
               )}
             </div>
-          </button>
+          </div>
         ) : (
           ""
         )}

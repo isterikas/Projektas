@@ -1,38 +1,28 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import { getAllData } from "./helpers/get";
- 
+import { useOutletContext } from "react-router";
+
 function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
+  let newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
   }
-  return array;
+  return newArray;
 }
- 
-const getUserBookmarks = async (loggedIn) => {
-  const bookmarksData = await getAllData("userBookmarks");
-  return bookmarksData.filter((bookmark) => bookmark.userId === loggedIn);
+
+const getUserBookmarks = (loggedIn, userBookmarks) => {
+  return userBookmarks.filter((bookmark) => bookmark.userId === loggedIn);
 };
- 
-const getContents = async () => {
-  return await getAllData("contents");
-};
- 
-function Recommended({
-  contents,
-  update,
-  setUpdate,
-  loggedIn,
-  userBookmarks,
-  width,
-}) {
+
+
+function Recommended({ contents, update, setUpdate, loggedIn, width }) {
   const [shuffledContents, setShuffledContents] = useState([]);
+  const { userBookmarks } = useOutletContext();
   useEffect(() => {
     const fetchRecommendations = async () => {
-      const bookmarks = await getUserBookmarks(loggedIn);
-      const allContents = await getContents();
- 
+      const bookmarks = await getUserBookmarks(loggedIn, userBookmarks);
+
       // Jei vartotojas neturi žymių, rodyti atsitiktinai permaišytą turinį
       if (bookmarks.length === 0) {
         setShuffledContents(shuffleArray([...contents]));
@@ -40,10 +30,10 @@ function Recommended({
         const bookmarkedContentsIds = bookmarks.map(
           (bookmark) => bookmark.contentsId
         );
- 
+
         // Kombinacijų skaičiavimas pagal kategoriją ir reitingą
         const combinationCount = bookmarks.reduce((acc, bookmark) => {
-          const content = allContents.find(
+          const content = contents.find(
             (item) => item.contentsId === bookmark.contentsId
           );
           if (content) {
@@ -52,33 +42,33 @@ function Recommended({
           }
           return acc;
         }, {});
- 
+
         // Filtruoja , kad būtų tik nepažymėti klipai
-        const nonBookmarkedContents = allContents.filter(
+        const nonBookmarkedContents = contents.filter(
           (content) => !bookmarkedContentsIds.includes(content.contentsId)
         );
- 
+
         // Vartotojo kategoriju pasirinkimo skaičiavimas
         const userCategoryCounts = bookmarks.reduce((acc, bookmark) => {
-          const content = allContents.find(
+          const content = contents.find(
             (item) => item.contentsId === bookmark.contentsId
           );
           if (content) acc[content.category] = (acc[content.category] || 0) + 1;
           return acc;
         }, {});
- 
+
         // Vartotojo reitingų pasirinkimo skaičiavimas
         const userRatingCounts = bookmarks.reduce((acc, bookmark) => {
-          const content = allContents.find(
+          const content = contents.find(
             (item) => item.contentsId === bookmark.contentsId
           );
           if (content) acc[content.rating] = (acc[content.rating] || 0) + 1;
           return acc;
         }, {});
- 
+
         // Default reitingai
         const ratingPriority = { E: 1, PG: 2, "18+": 3 };
- 
+
         // Keisti reitingų prioritetus pagal vartotojo įpročius
         if (
           userRatingCounts["PG"] > userRatingCounts["18+"] &&
@@ -95,13 +85,13 @@ function Recommended({
           ratingPriority["E"] = 2;
           ratingPriority["PG"] = 3;
         }
- 
+
         // Kategorijų prioritetai pagal vartotojo įpročius
         const categoryPriority =
           userCategoryCounts["TV Series"] > userCategoryCounts["Movie"]
             ? { "TV Series": 1, Movie: 2 }
             : { Movie: 1, "TV Series": 2 };
- 
+
         // Turinio rūšiavimas pagal kombinacijų balus, kategorijų ir reitingų prioritetus
         const sortedContents = nonBookmarkedContents
           .map((content) => ({
@@ -115,19 +105,19 @@ function Recommended({
               categoryPriority[a.category] - categoryPriority[b.category] ||
               ratingPriority[a.rating] - ratingPriority[b.rating]
           );
- 
+
         setShuffledContents(sortedContents);
       }
     };
- 
+
     // Rodyti atsitiktini turinį, jei vartotojas neprisijungęs
     if (!loggedIn) {
       setShuffledContents(shuffleArray([...contents]));
     } else {
       fetchRecommendations();
     }
-  }, [contents, loggedIn]);
- 
+  }, [loggedIn]);
+
   return (
     <div>
       <div className="grid items-end justify-start h-16">
@@ -135,7 +125,7 @@ function Recommended({
           Recommended for you
         </h2>
       </div>
- 
+
       <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {shuffledContents.map((item) => (
           <div key={item.contentsId}>
@@ -153,5 +143,5 @@ function Recommended({
     </div>
   );
 }
- 
+
 export default Recommended;

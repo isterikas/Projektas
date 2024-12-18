@@ -3,21 +3,24 @@ import NavBar from "./components/NavBar.jsx";
 import { useState, useEffect } from "react";
 import { getAllData } from "./components/helpers/get.js";
 import { usePersistState } from "@printy/react-persist-state";
+import { userBookmarks, contents } from "../data/data.json";
 
 export default function App() {
   const [search, setSearch] = useState("");
   const [authType, setAuthType] = usePersistState("login", "authType");
   const [loggedIn, setLoggedIn] = usePersistState("", "loggedIn");
 
-  const [contents, setContents] = useState([]);
   const [update, setUpdate] = useState(0);
   const [users, setUsers] = useState([]);
-  const [userBookmarks, setUserBookmarks] = useState([]);
+  // const [userBookmarks, setUserBookmarks] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [loggedUser, setLoggedUser] = usePersistState({}, "loggedUser");
 
   const [width, setWidth] = useState(window.innerWidth);
+
+  const [updatesOfTrending, setUpdatesOfTrending] = useState(0);
+  const [updatesOfRecommended, setUpdatesOfRecommended] = useState(0);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -25,25 +28,25 @@ export default function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getAllcontents = async () => {
-    try {
-      const contents = await getAllData("contents");
-      setContents(contents);
-      setError("");
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  // const getAllcontents = async () => {
+  //   try {
+  //     const contents = await getAllData("contents");
+  //     setContents(contents);
+  //     setError("");
+  //   } catch (error) {
+  //     setError(error.message);
+  //   }
+  // };
 
-  const getAllUserBookmarks = async () => {
-    try {
-      const userBookmarks = await getAllData("userBookmarks");
-      setUserBookmarks(userBookmarks);
-      setError("");
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  // const getAllUserBookmarks = async () => {
+  //   try {
+  //     const userBookmarks = await getAllData("userBookmarks");
+  //     setUserBookmarks(userBookmarks);
+  //     setError("");
+  //   } catch (error) {
+  //     setError(error.message);
+  //   }
+  // };
 
   const getAllUsers = async () => {
     try {
@@ -57,23 +60,21 @@ export default function App() {
 
   const findUser = async () => {
     if (loggedIn && users.length > 0) {
-      const thisUser = users.find((user) => user.id === loggedIn)
+      const thisUser = users.find((user) => user.id === loggedIn);
 
       setLoggedUser(thisUser);
       setIsLoading(false);
-
     }
   };
 
   useEffect(() => {
-    getAllcontents();
-    getAllUserBookmarks();
+    // getAllcontents();
+    // getAllUserBookmarks();
     getAllUsers();
   }, [update]);
 
   useEffect(() => {
-    if (loggedIn) 
-      findUser();
+    if (loggedIn) findUser();
   }, [loggedIn, users]);
 
   return (
@@ -95,11 +96,9 @@ export default function App() {
               loggedIn,
               setLoggedIn,
               contents,
-              setContents,
               users,
               setUsers,
               userBookmarks,
-              setUserBookmarks,
               update,
               setUpdate,
               width,
@@ -110,6 +109,10 @@ export default function App() {
               setSearch,
               error,
               setError,
+              updatesOfRecommended,
+              updatesOfTrending,
+              setUpdatesOfRecommended,
+              setUpdatesOfTrending,
             }}
           />
         ) : (

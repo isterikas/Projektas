@@ -30,7 +30,7 @@ function Bookmarks() {
     return isBookmarked;
   });
 
-  const bookmarkedContent = (cat) => {
+  const setBookmarkedContent = (cat) => {
     let result2;
     const result = allBookmarks.filter((content) => content.category === cat);
     if (result.length === 0 && loggedIn) {
@@ -46,6 +46,7 @@ function Bookmarks() {
             <Card
               item={item}
               key={item.contentsId}
+              userBookmarks={userBookmarks}
               update={update}
               setUpdate={setUpdate}
               loggedIn={loggedIn}
@@ -57,6 +58,14 @@ function Bookmarks() {
       return result2;
     }
   };
+
+  let bookmarkedTVSeries = setBookmarkedContent("TV Series");
+  let bookmarkedMovies = setBookmarkedContent("Movie");
+
+  useEffect(()=>{
+    bookmarkedTVSeries = setBookmarkedContent("TV Series");
+    bookmarkedMovies = setBookmarkedContent("Movie");
+  },[userBookmarks]);
 
   return (
     <>
@@ -76,11 +85,11 @@ function Bookmarks() {
           <>
             <h2 className="content-heading text-white">Bookmarked shows</h2>
             <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
-              {bookmarkedContent("TV Series")}
+              {bookmarkedTVSeries}
             </div>
             <h2 className="content-heading text-white">Bookmarked movies</h2>
             <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
-              {bookmarkedContent("Movie")}
+              {bookmarkedMovies}
             </div>
           </>
         )}
