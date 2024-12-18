@@ -143,7 +143,7 @@ const UserAccount = () => {
                   color: selectedTextColor,
                   boxShadow: `0 1px 10px 0 ${selectedTextColor}`,
                   border: `1px solid ${selectedTextColor}`,
-                  background: isFocused || isHovered ? "#d1d5db" : "transparent",
+                  background: isFocused || isHovered ? "#64748b" : "transparent",
                   transition: "background 0.5s ease"
                 }}
                 
@@ -224,17 +224,19 @@ const UserAccount = () => {
           </div>
           <hr
             style={{ border: `1px solid ${selectedTextColor}` }}
-            className="my-4"
+            className="mt-4"
           />
           <div className="flex justify-between">
-            <p className="text-white text-4xl">Labas</p>
           </div>
+          <div className="text-[8rem] flex justify-center items-center">🎥</div>
           <UserOptions
-            selectedTextColor={selectedTextColor}
             loggedUser={loggedUser}
             setLoggedUser={setLoggedUser}
             setLoggedIn={setLoggedIn}
             navigate={navigate}
+            showModal={showModal}
+            setShowModal={setShowModal}
+            loggedIn={loggedIn}
           />
           <hr
             style={{ border: `2px solid ${selectedTextColor}` }}
@@ -242,26 +244,6 @@ const UserAccount = () => {
           />
         </div>
       </div>
-      <div
-        className={
-          showModal ? "fixed inset-0 bg-gray-500/75 transition-opacity" : ""
-        }
-      ></div>
-      <button
-        className="text-white p-2 bg-red-900 rounded-md"
-        onClick={() => setShowModal(true)}
-      >
-        Change Password
-      </button>
-      {showModal ? (
-        <PasswordChange
-          showModal={showModal}
-          setShowModal={setShowModal}
-          loggedIn={loggedIn}
-        />
-      ) : (
-        ""
-      )}
     </div>
   );
 };
