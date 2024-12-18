@@ -155,7 +155,7 @@ function Recommended({
             </div>
           ))
         ) : (
-          <p className="heading-m m-5 text-white">
+          <p className="content-text m-5 text-white">
             Currently there are no Movies or TV Series to recommend - come back
             later!
           </p>

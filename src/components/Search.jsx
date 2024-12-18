@@ -61,7 +61,7 @@ function Search({ array, update, setUpdate, loggedIn, width }) {
 
   return (
     <>
-      <div className="w-full min-h-fit">
+      <div className="w-full min-h-fit lg:py-3">
         <form className="nosubmit background-dark-blue">
           <InputMask
             onChange={handleSearch}
@@ -83,26 +83,27 @@ function Search({ array, update, setUpdate, loggedIn, width }) {
         <div className="background-dark-blue">
           {searchQuery == "" ? (
             locationInfo().header ? (
-              <h1 className="content-heading text-white">
+              <h1 className="content-heading text-white mt-3">
                 {locationInfo().header}
               </h1>
             ) : (
               ""
             )
           ) : (
-            <h1 className="content-heading text-white">
+            <h1 className="content-heading text-white mt-3">
               Found {filteredArray.length}
               {filteredArray.length === 1 ? " result" : " results"} for{" "}
               {`'${searchQuery}'`}
             </h1>
           )}
-          <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
-            {location.pathname === "/" || location.pathname === "/bookmarks"
-              ? searchQuery
-                ? filteredArray
-                : ""
-              : filteredArray}
-          </div>
+          {(location.pathname === "/" || location.pathname === "/bookmarks") &&
+          !searchQuery ? (
+            ""
+          ) : (
+            <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
+              {filteredArray}
+            </div>
+          )}
         </div>
       </div>
     </>
