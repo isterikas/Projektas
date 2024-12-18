@@ -8,7 +8,6 @@ import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
 function TrendingCard({ slide, setUpdate, update, loggedIn }) {
   const { contentsId, title, year, category, rating } = slide;
   const [checked, setChecked] = useState(false);
-
   const [userBookmarks, setUserBookmarks] = useState([]);
 
   const getAllUserBookmarks = async () => {
@@ -77,7 +76,7 @@ function TrendingCard({ slide, setUpdate, update, loggedIn }) {
       <div className="absolute top-2 right-2 md:top-4 md:right-7 lg:top-4 lg:right-4">
         {loggedIn ? (
           <button
-            onClick={async (e) => await toggleBookmark()}
+            onClick={async () => await toggleBookmark()}
             className="text-white absolute   bookmark-icon "
           >
             <div className="relative ">
