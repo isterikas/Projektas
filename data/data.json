@@ -543,14 +543,6 @@
       "latestTrending": 1
     }
   ],
-  "users": [
-    {
-      "id": "f29d",
-      "userName": "pavel.gusev431@gmail.com",
-      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
-      "image": "",
-      "created": "2024-12-17T16:34:16.103Z"
-    }
-  ],
+  "users": [],
   "userBookmarks": []
 }
