@@ -1,3 +1,5 @@
+import ClickOutside from "./click-outside";
+
 const ColorChanger = (props) => {
   const {
     selectedThemeColor,
@@ -9,8 +11,12 @@ const ColorChanger = (props) => {
     setIsPhotoUploader,
   } = props;
 
+  const closeColorChanger = ClickOutside(() => {
+    setIsColorChanger(false); 
+  });
+
   return (
-    <div className="relative">
+    <div ref={closeColorChanger} className="relative">
       <div className="absolute">
         <div
           className={`${

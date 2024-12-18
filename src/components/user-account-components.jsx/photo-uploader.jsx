@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import ClickOutside from "./click-outside";
 
 const PhotoUploader = (props) => {
   const {
@@ -25,8 +26,12 @@ const PhotoUploader = (props) => {
     timedClosure();
   }, [isUploadSuccess]);
 
+  const closePhotoUploader = ClickOutside(() => {
+    setIsPhotoUploader(false); 
+  });
+
   return (
-    <div className="relative">
+    <div ref={closePhotoUploader} className="relative">
       <div className="absolute">
         <div className={`${!isPhotoUploader ? "hidden" : "block"}`}>
           <div

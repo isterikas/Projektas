@@ -9,8 +9,8 @@ import LogoUserIcon from "./user-account-components.jsx/logo-user-icon";
 import ColorChanger from "./user-account-components.jsx/color-changer";
 import PhotoUploader from "./user-account-components.jsx/photo-uploader";
 import Loading from "./Loading";
-import PasswordChange from "./PasswordChange";
 import UserOptions from "./user-account-components.jsx/user-options";
+import UserMenu from "./user-account-components.jsx/user-menu/user-menu";
 
 const UserAccount = () => {
   const {
