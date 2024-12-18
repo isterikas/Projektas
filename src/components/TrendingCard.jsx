@@ -52,27 +52,27 @@ function TrendingCard({ slide, setUpdate, update, loggedIn }) {
   return (
     <div>
       <div className=" absolute bottom-4 left-4 md:bottom-8 md:left-6 lg:bottom-8 lg:left-6">
-        <div className="flex mt-3 gap-2 relative ">
-          <p className="body-s text-white"> {year}</p>
+        <div className="flex mt-3 gap-2 relative body-s text-white">
+          <p> {year}</p>
           <img
-            className="body-s"
+            className=""
             src="src/assets/icons/icon-dot.svg"
             alt="SVG Image"
           />
           <img
-            className="body-s mt-0.5 w-[15px] h-[15px]"
+            className=" mt-0.5 w-[15px] h-[15px]"
             src={movieIcon}
             alt="SVG Image"
           />
-          <p className="body-s text-white"> {category}</p>
+          <p> {category}</p>
           <img
-            className="body-s"
+            className=""
             src="src/assets/icons/icon-dot.svg"
             alt="SVG Image"
           />
-          <p className="body-s text-white"> {rating}</p>
+          <p> {rating}</p>
         </div>
-        <h1 className="heading-xs text-white"> {title}</h1>
+        <h2 className="heading-xs text-white"> {title}</h2>
       </div>
       <div className="absolute top-2 right-2 md:top-4 md:right-7 lg:top-4 lg:right-4">
         {loggedIn ? (
@@ -80,13 +80,13 @@ function TrendingCard({ slide, setUpdate, update, loggedIn }) {
             onClick={async (e) => await toggleBookmark()}
             className="text-white absolute   bookmark-icon "
           >
-            <div className="relative ">
+            <div className="relative icon-bg  bg-slate-500 bg-opacity-50  w-8 h-8  group   hover:bg-white  rounded-full">
               {checked ? (
-                <div className="icon-bg  bg-slate-500 bg-opacity-50  w-8 h-8  group   hover:bg-white  rounded-full group ">
+                <div className=" group ">
                   <BookmarkFull />
                 </div>
               ) : (
-                <div className="icon-bg  bg-slate-500 bg-opacity-50 w-8 h-8  group  hover:bg-white  rounded-full  ">
+                <div>
                   {" "}
                   <BookmarkEmpty />
                 </div>
