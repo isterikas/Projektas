@@ -2,7 +2,7 @@ import Card from "./Card.jsx";
 import { useLocation, useOutletContext, useSearchParams } from "react-router";
 import { InputMask } from "@react-input/mask";
 
-function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
+function Search({ array, update, setUpdate, loggedIn, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const pattern = /^[a-zA-Z0-9 ąčęėįšųūžĄČĘĖĮŠŲŪŽ]*$/;
@@ -19,12 +19,13 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
     if (value) {
+      setSearch(searchQuery)
       return true;
     } else {
+      setSearch("");
       return false;
     }
   };
-  handleSearch ? setSearch(searchQuery) : setSearch("");
 
   const locationInfo = () => {
     switch (location.pathname) {
@@ -51,7 +52,6 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             key={item.contentsId}
             update={update}
             setUpdate={setUpdate}
-            userBookmarks={userBookmarks}
             loggedIn={loggedIn}
             width={width}
           />
@@ -76,12 +76,13 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
               _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-ąčęėįšųūžĄČĘĖĮŠŲŪŽ\s]/,
             }}
             defaultValue={handleSearch ? searchQuery : ""}
+            aria-label="search field"
           />
         </form>
 
         <div className="background-dark-blue">
           {searchQuery == "" ? (
-            locationInfo.header ? (
+            locationInfo().header ? (
               <h1 className="content-heading text-white">
                 {locationInfo().header}
               </h1>

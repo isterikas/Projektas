@@ -9,6 +9,8 @@ import LogoUserIcon from "./user-account-components.jsx/logo-user-icon";
 import ColorChanger from "./user-account-components.jsx/color-changer";
 import PhotoUploader from "./user-account-components.jsx/photo-uploader";
 import DeleteAccount from "./user-account-components.jsx/delete-account";
+import Loading from "./Loading";
+
 
 const UserAccount = () => {
   const {
@@ -96,10 +98,7 @@ const UserAccount = () => {
 
   if (isLoading) {
     return (
-      <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
-        <p>Loading...</p>
-        <div className="w-10 h-10 border-4 border-t-4 border-solid border-gray-300 border-t-blue-500 rounded-full animate-spin-around"></div>
-      </div>
+<Loading/>
     );
   }
 

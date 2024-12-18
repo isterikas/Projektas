@@ -15,6 +15,7 @@ function HamburgerMenu(props) {
       {/* Hamburger Icon */}
       <button
         onClick={toggleMenu}
+        aria-label="Sign up/Login menu"
         className="flex flex-col w-[24px] h-[20px] md:w-[32px] md:h-[24px] justify-around group md:justify-around "
       >
         <span className="block w-full h-[3px] md:h-[4px] bg-white group-hover:bg-red-500 transition duration-500 shadow-md shadow-white rounded-sm"></span>

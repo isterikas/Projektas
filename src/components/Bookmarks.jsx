@@ -16,11 +16,11 @@ function Bookmarks() {
 
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    if(window.performance) {
-      if(performance.navigation.type != 1 && !loggedIn) navigate("/");
+  useEffect(() => {
+    if (window.performance) {
+      if (performance.navigation.type != 1 && !loggedIn) navigate("/");
     }
-  },[])
+  }, []);
 
   const allBookmarks = contents.filter((content) => {
     const isBookmarked = userBookmarks.find(
@@ -48,7 +48,6 @@ function Bookmarks() {
               key={item.contentsId}
               update={update}
               setUpdate={setUpdate}
-              userBookmarks={userBookmarks}
               loggedIn={loggedIn}
               width={width}
             />
@@ -75,11 +74,11 @@ function Bookmarks() {
           ""
         ) : (
           <>
-            <h1 className="content-heading text-white">Bookmarked shows</h1>
+            <h2 className="content-heading text-white">Bookmarked shows</h2>
             <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
               {bookmarkedContent("TV Series")}
             </div>
-            <h1 className="content-heading text-white">Bookmarked movies</h1>
+            <h2 className="content-heading text-white">Bookmarked movies</h2>
             <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
               {bookmarkedContent("Movie")}
             </div>
