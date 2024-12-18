@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 0
+      "latestTrending": 2
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 0
+      "latestTrending": 3
     },
     {
       "contentsId": "3",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 0
+      "latestTrending": 3
     },
     {
       "contentsId": "5",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "6",
@@ -126,7 +126,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "cd79",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "7",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "8",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "10",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 0
+      "latestTrending": 2
     },
     {
       "contentsId": "11",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 0
+      "latestTrending": 2
     },
     {
       "contentsId": "13",
@@ -270,7 +270,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "731b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "15",
@@ -288,7 +288,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "afd5",
-      "latestTrending": 0
+      "latestTrending": 2
     },
     {
       "contentsId": "16",
@@ -324,7 +324,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "7e27",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "18",
@@ -396,7 +396,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "fe78",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "22",
@@ -486,7 +486,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "88c5",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "27",
@@ -522,7 +522,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "a345",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "29",
@@ -540,7 +540,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "4432",
-      "latestTrending": 0
+      "latestTrending": 3
     }
   ],
   "users": [
@@ -548,7 +548,7 @@
       "id": "e419",
       "userName": "edgaraslaptevas88@gmail.com",
       "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
-      "image": "",
+      "image": "/uploads/1734505357616.png",
       "created": "2024-12-17T20:35:56.596Z"
     }
   ],
@@ -642,6 +642,56 @@
       "id": "95f4",
       "contentsId": "10",
       "userId": "df0a"
+    },
+    {
+      "id": "cc0b",
+      "contentsId": "10",
+      "userId": "e419"
+    },
+    {
+      "id": "14fe",
+      "contentsId": "21",
+      "userId": "e419"
+    },
+    {
+      "id": "8ecc",
+      "contentsId": "15",
+      "userId": "e419"
+    },
+    {
+      "id": "6ae1",
+      "contentsId": "26",
+      "userId": "e419"
+    },
+    {
+      "id": "4250",
+      "contentsId": "29",
+      "userId": "e419"
+    },
+    {
+      "id": "f9e3",
+      "contentsId": "15",
+      "userId": "e419"
+    },
+    {
+      "id": "36c8",
+      "contentsId": "28",
+      "userId": "e419"
+    },
+    {
+      "id": "1b57",
+      "contentsId": "29",
+      "userId": "e419"
+    },
+    {
+      "id": "1496",
+      "contentsId": "14",
+      "userId": "e419"
+    },
+    {
+      "id": "b00f",
+      "contentsId": "29",
+      "userId": "e419"
     }
   ]
 }

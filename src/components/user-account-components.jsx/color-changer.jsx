@@ -77,7 +77,7 @@ const ColorChanger = (props) => {
           boxShadow: ` 0 1px 3px 0 ${selectedTextColor}`,
           border: `1px solid ${selectedTextColor}`,
         }}
-        className=" absolute rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[100px] md:w-[120px]"
+        className=" absolute rounded p-1 text-[10px] md:text-xs  h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[100px] md:w-[120px]"
       >
         Change your Colors
       </button>

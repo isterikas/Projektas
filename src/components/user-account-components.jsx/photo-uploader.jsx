@@ -18,7 +18,7 @@ const PhotoUploader = (props) => {
     if (isUploadSuccess && !isLoading)
       setTimeout(() => {
         setIsPhotoUploader((prev) => !prev);
-      }, 2000);
+      }, 3000);
   };
 
   useEffect(() => {
