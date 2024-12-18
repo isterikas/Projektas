@@ -62,19 +62,19 @@ function Card({ item, userBookmarks, loggedIn, width }) {
 
         <div className="relative">
           <div className="">
-            {width < 1024 ? (
+            {/* {width < 1024 ? (
               <img
                 className="rounded-xl bottom-5"
                 src={"src" + thumbnail.regular.small.slice(1)}
                 alt="#"
               />
-            ) : (
+            ) : (  */}
               <img
                 className="rounded-xl bottom-5"
                 src={"src" + thumbnail.regular.large.slice(1)}
                 alt="#"
               />
-            )}
+            {/* )} */}
           </div>
 
           <div

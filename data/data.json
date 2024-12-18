@@ -550,7 +550,20 @@
       "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8",
       "image": "",
       "created": "2024-12-17T07:24:44.262Z"
+    },
+    {
+      "id": "1463",
+      "userName": "test@gmail.com",
+      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
+      "image": "",
+      "created": "2024-12-18T08:25:35.941Z"
     }
   ],
-  "userBookmarks": []
+  "userBookmarks": [
+    {
+      "id": "6177",
+      "contentsId": "2",
+      "userId": "1463"
+    }
+  ]
 }

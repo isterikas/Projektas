@@ -3,7 +3,7 @@ const BookmarkEmpty = () => {
     <svg
       width="12"
       height="14"
-      className="bookmark-empty  w-[15px] h-[15px]  absolute ml-2.5"
+      className="bookmark-empty  w-[15px] h-[15px] absolute bottom-3 ml-2.5"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

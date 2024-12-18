@@ -3,7 +3,9 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import TrendingCard from "./TrendingCard";
+import { useOutletContext } from "react-router";
 function Trending({ contents, width, update, setUpdate, loggedIn }) {
+  const {userBookmarks} = useOutletContext();
   return (
     <>
       <h2 className=" text-white heading-l left-7">Trending</h2>
@@ -46,7 +48,7 @@ function Trending({ contents, width, update, setUpdate, loggedIn }) {
                       />
                     )}
                   </div>
-                  <div className="absolute rounded-lg inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs">
+                  <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs">
                     <div className="flex justify-center">
                       <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
                         <img src={PlayIcon} alt="Play icon" />
