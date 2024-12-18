@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 1
+      "latestTrending": 0
     },
     {
       "contentsId": "3",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "13",
@@ -324,7 +324,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "7e27",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "18",
@@ -342,7 +342,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "c19b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "19",
@@ -360,7 +360,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "615d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "20",
@@ -378,7 +378,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "6333",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "21",
@@ -414,7 +414,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "41b4",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "23",
@@ -540,42 +540,58 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "4432",
-      "latestTrending": 0
+      "latestTrending": 1
     }
   ],
   "users": [
     {
-      "id": "dee0",
-      "userName": "audrius.adomavicius@stud.techin.lt",
-      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8",
-      "image": "",
-      "created": "2024-12-17T07:24:44.262Z"
-    },
-    {
-      "id": "2cc8",
-      "userName": "kust@gmail.com",
-      "userPassword": "36a3d63c40fde1c662062dabb1173c48452b41c9e1de6400307c745705c84969",
-      "image": "",
-      "created": "2024-12-18T07:50:14.443Z"
-    },
-    {
-      "id": "5898",
-      "userName": "pavel.gusev431@gmail.com",
-      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
-      "image": "",
-      "created": "2024-12-18T11:33:25.653Z"
+      "id": "ce30",
+      "userName": "henryk.umbrasewicz@odnoklassniki.ru",
+      "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed",
+      "image": "/uploads/1734510011642.JPG",
+      "created": "2024-12-18T07:54:47.360Z"
     }
   ],
   "userBookmarks": [
     {
-      "id": "5567",
-      "contentsId": "1",
-      "userId": "4b57"
+      "id": "8221",
+      "contentsId": "3",
+      "userId": "ce30"
     },
     {
-      "id": "933c",
-      "contentsId": "2",
-      "userId": "4b57"
+      "id": "f67d",
+      "contentsId": "17",
+      "userId": "ce30"
+    },
+    {
+      "id": "4e36",
+      "contentsId": "18",
+      "userId": "ce30"
+    },
+    {
+      "id": "7961",
+      "contentsId": "29",
+      "userId": "ce30"
+    },
+    {
+      "id": "abb1",
+      "contentsId": "12",
+      "userId": "ce30"
+    },
+    {
+      "id": "b886",
+      "contentsId": "20",
+      "userId": "ce30"
+    },
+    {
+      "id": "68aa",
+      "contentsId": "22",
+      "userId": "ce30"
+    },
+    {
+      "id": "671a",
+      "contentsId": "19",
+      "userId": "ce30"
     }
   ]
 }
