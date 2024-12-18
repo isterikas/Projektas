@@ -12,7 +12,7 @@ function Trending({
 }) {
   return (
     <>
-      <h2 className=" content-heading text-white">Trending</h2>
+      <h2 className=" content-heading text-white mb-3">Trending</h2>
       <Swiper
         slidesPerView={1.5}
         spaceBetween={40}
