@@ -58,13 +58,13 @@ function Card({ item, setUpdate, update, loggedIn, width }) {
             onClick={async () => await toggleBookmark()}
             className="text-white absolute bookmark-icon "
           >
-            <div className="relative ">
+            <div className="relative icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full">
               {checked ? (
-                <div className="icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full group ">
+                <div className="group ">
                   <BookmarkFull />
                 </div>
               ) : (
-                <div className="icon-bg  bg-slate-500 w-8 h-8  group  hover:bg-white  rounded-full  ">
+                <div>
                   <BookmarkEmpty />
                 </div>
               )}
@@ -105,25 +105,23 @@ function Card({ item, setUpdate, update, loggedIn, width }) {
         </div>
 
         <div>
-          <div className="flex mt-3 gap-2 relative ">
-            <p className="body-s text-white"> {year}</p>
+          <div className="flex mt-3 gap-2 relative body-s text-white">
+            <p> {year}</p>
             <img
-              className="body-s"
               src="src/assets/icons/icon-dot.svg"
               alt="SVG Image"
             />
             <img
-              className="body-s mt-0.5 w-[15px] h-[15px]"
+              className=" mt-0.5 w-[15px] h-[15px]"
               src={movieIcon}
               alt="SVG Image"
             />
-            <p className="body-s text-white"> {category}</p>
+            <p> {category}</p>
             <img
-              className="body-s"
               src="src/assets/icons/icon-dot.svg"
               alt="SVG Image"
             />
-            <p className="body-s text-white"> {rating}</p>
+            <p> {rating}</p>
           </div>
           <h2 className="heading-xs text-white"> {title}</h2>
         </div>
