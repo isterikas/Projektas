@@ -134,19 +134,32 @@ function Recommended({
         <h2 className="content-heading text-white">Recommended for you</h2>
       </div>
 
-      <div className="p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {shuffledContents.map((item) => (
-          <div key={item.contentsId}>
-            <Card
-              item={item}
-              update={update}
-              setUpdate={setUpdate}
-              userBookmarks={userBookmarks}
-              loggedIn={loggedIn}
-              width={width}
-            />
-          </div>
-        ))}
+      <div
+        className={
+          shuffledContents.length > 0
+            ? "p-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            : ""
+        }
+      >
+        {shuffledContents.length > 0 ? (
+          shuffledContents.map((item) => (
+            <div key={item.contentsId}>
+              <Card
+                item={item}
+                update={update}
+                setUpdate={setUpdate}
+                userBookmarks={userBookmarks}
+                loggedIn={loggedIn}
+                width={width}
+              />
+            </div>
+          ))
+        ) : (
+          <p className="heading-m m-5 text-white">
+            Currently there are no Movies or TV Series to recommend - come back
+            later!
+          </p>
+        )}
       </div>
     </div>
   );
