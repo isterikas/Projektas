@@ -117,7 +117,7 @@ const UserAccount = () => {
     <div>
       <div
         style={{ backgroundColor: selectedThemeColor }}
-        className="relative px-2 py-4 md:px-4 m-1 md:m-4 lg:m-6 border-2 rounded-2xl border-blue-900"
+        className="relative px-2 py-4 md:px-4 mx-1 md:mx-4 lg:mx-6 border-2 rounded-2xl border-blue-900"
       >
         <div className="md:mx-[1rem] lg:mx-[2rem]">
           <div className="flex items-center justify-between mb-4 ">
