@@ -13,6 +13,7 @@ const LazyTVShows = lazy(() => import("./components/TVShows.jsx"));
 const LazyBookmarks = lazy(() => import("./components/Bookmarks.jsx"));
 const LazyNotFound = lazy(() => import("./components/NotFound.jsx"));
 const LazyUserAccount = lazy(() => import("./components/UserAccount.jsx"));
+const LazyAccountDeleted = lazy(()=>import("./components/AccountDeleted.jsx"))
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -68,8 +69,8 @@ createRoot(document.getElementById("root")).render(
               <Suspense fallback={<Loading />}>
                 <LazyNotFound />
               </Suspense>
-            }
-          />
+            }/>
+          <Route path="/account/deleted" element={<Suspense fallback={<Loading />}><LazyAccountDeleted /></Suspense>}/>
         </Routes>
       </ErrorBoundary>
     </BrowserRouter>

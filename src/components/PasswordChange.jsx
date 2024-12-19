@@ -57,10 +57,10 @@ const PasswordChange = ({ showModal, setShowModal, loggedIn }) => {
         className="fixed bottom-1/2 top-1/2 rounded-xl px-8 py-4 background-dark-blue"
       >
         <div className="flex flex-col items-center font-bold text-white mb-5">
-          <button onClick={() => setShowModal(false)} className="self-end">
-            ╳
+          <button onClick={() => setShowModal(false)} className="self-end text-[1.5rem]">
+          &#x292B; 
           </button>
-          <h1 className="heading-m">Change Password</h1>
+          <h1 className="heading-s">Change Password</h1>
         </div>
 
         <form
@@ -93,7 +93,7 @@ const PasswordChange = ({ showModal, setShowModal, loggedIn }) => {
                 message:
                   "Password must only contain letters, numbers and these special characters: $&+,:;=?@#|'<>.^*()%!-",
               },
-              onChange: (e) => {
+              onChange: () => {
                 clearErrors("password");
               },
               minLength: {
@@ -123,7 +123,7 @@ const PasswordChange = ({ showModal, setShowModal, loggedIn }) => {
               validate: (value) => {
                 return value === watch("password") || "Passwords must match";
               },
-              onChange: (e) => {
+              onChange: () => {
                 clearErrors("repeatPassword");
               },
             })}
@@ -133,7 +133,7 @@ const PasswordChange = ({ showModal, setShowModal, loggedIn }) => {
             }`}
           />
           <span className="text-red">{errors.repeatPassword?.message}</span>
-          <input type="submit" className="btn btn-hover mt-2 rounded" />
+          <input type="submit" className="btn btn-hover h-[2rem] my-2 rounded" />
         </form>
         <span className="text-red-500 font-sm">{error}</span>
       </dialog>

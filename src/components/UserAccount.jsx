@@ -1,19 +1,29 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useOutletContext } from "react-router";
+import { useOutletContext } from "react-router";
 import { useDropzone } from "react-dropzone";
 import { patchData } from "./helpers/update";
 import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
+import { useNavigate } from "react-router";
+import LogoUserIcon from "./user-account-components.jsx/logo-user-icon";
 import Loading from "./Loading";
-import PasswordChange from "./PasswordChange";
+import UserOptions from "./user-account-components.jsx/user-options";
+import UserDropDownMenu from "./user-account-components.jsx/user-menu/dropdown-menu";
+import CameraIcon from "./user-account-components.jsx/camera-icon";
 
 const UserAccount = () => {
-  const { isLoading, setLoggedUser, error, setError, loggedUser, loggedIn } =
-    useOutletContext();
+  const {
+    isLoading,
+    setLoggedUser,
+    error,
+    setError,
+    loggedUser,
+    loggedIn,
+    setLoggedIn,
+  } = useOutletContext();
   const [userImage, setUserImage] = useState(null);
   const [isUploadSuccess, setIsUploadSuccess] = useState(false);
-  const [isUploaded, setIsUploaded] = useState(false);
-  const [selectedProfileColor, setSelectedProfileColor] = usePersistState(
+  const [selectedThemeColor, setSelectedThemeColor] = usePersistState(
     "#10141e",
     "selectedProfileColor"
   );
@@ -21,9 +31,8 @@ const UserAccount = () => {
     "#ef4444",
     "selectedTextColor"
   );
-
   const [showModal, setShowModal] = useState(false);
-
+  const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,17 +40,6 @@ const UserAccount = () => {
       if (performance.navigation.type != 1 && !loggedIn) navigate("/");
     }
   }, []);
-
-  const timedClosure = () => {
-    if (isUploadSuccess && !isLoading)
-      setTimeout(() => {
-        setIsUploaded((prev) => !prev);
-      }, 2000);
-  };
-
-  useEffect(() => {
-    timedClosure();
-  }, [isUploadSuccess]);
 
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
@@ -80,7 +78,7 @@ const UserAccount = () => {
         setError("Error uploading image:", imageData.message);
       }
     } catch (error) {
-      setError("Error uploading image:", error.message);
+      setError("Error uploading imageo:", error.message);
     }
   };
 
@@ -97,138 +95,102 @@ const UserAccount = () => {
     return <Loading />;
   }
 
-  const profileImage = loggedUser?.image ? (
-    <img
-      src={`http://localhost:5000${loggedUser.image}`}
-      alt="Profile-image"
-      className="profile-image-large"
-      style={{ border: `2px solid ${selectedTextColor}` }}
-    />
-  ) : null;
-
   const getFormattedDate = (timestamp) => {
     const date = new Date(timestamp);
     return date.toLocaleDateString();
   };
   const formattedDate = getFormattedDate(loggedUser.created);
 
-  return (
-    <div
-      style={{ backgroundColor: selectedProfileColor }}
-      className="relative p-4"
-    >
-      <div className="flex flex-col items-center">
-        <div>{profileImage}</div>
-        {profileImage ? (
-          <p className="text-slate-300">Profile image</p>
-        ) : error ? (
-          <p className="text-3xl text-red-500">{error}</p>
-        ) : (
-          <p className="text-red-500 font-semibold text-[1.5rem]">
-            No image uploaded yet!
-          </p>
-        )}
-        <p
-          style={{ color: selectedTextColor }}
-          className="text-[1.5rem] md:text-[2.5rem] lg:text-[3rem] font-semibold "
-        >
-          {loggedUser?.userName}
-        </p>
-        <p
-          style={{ color: selectedTextColor }}
-          className="font-semibold opacity-70"
-        >{`Member since: ${formattedDate}`}</p>
-      </div>
-      <div className="absolute bottom-0 right-[15rem]">
-        <div className={`${!isUploaded ? "hidden" : "block"}`}>
-          <div
-            {...getRootProps()}
-            className="bg-slate-300 p-5 w-[10rem] h-[10rem] border-2 border-dashed border-red-500"
-          >
-            <input {...getInputProps()} />
-            {!userImage ? (
-              <p className="text-center text-red-500">
-                Drag & drop an image here, or click to select an image
-              </p>
-            ) : isLoading ? (
-              <div className="text-white text-[3rem] flex flex-col items-center pt-[10rem] h-[100vh]">
-                <p>Uploading...</p>
-                <div className="spinner"></div>
-              </div>
-            ) : (
-              isUploadSuccess &&
-              !isLoading && (
-                <p className="text-green-500 text-center">Upload Successful!</p>
-              )
-            )}
-          </div>
-        </div>
-        <button
-          onClick={() => setIsUploaded(!isUploaded)}
-          type="button"
-          className="w-[10rem] text-xs bg-slate-300 mt-2 rounded p-1"
-        >
-          Change or upload your image & click to close
-        </button>
-      </div>
+  const profileImage = loggedUser?.image ? (
+    <img
+      src={`http://localhost:5000${loggedUser.image}`}
+      alt="Profile-image"
+      className="profile-image-large"
+      style={{
+        border: `2px solid ${selectedTextColor}`,
+        boxShadow: ` 0 1px 25px 0 ${selectedTextColor}`,
+      }}
+    />
+  ) : null;
 
-      <div className="flex flex-col">
-        <div className="mt-2">
-          <label className="text-white p-1">Select Profile Theme Color:</label>
-          <input
-            type="color"
-            value={selectedProfileColor}
-            onChange={(e) => {
-              setSelectedProfileColor(e.target.value);
-            }}
-            className="p-2 bg-slate-300"
+  return (
+    <div>
+      <div
+        style={{ backgroundColor: selectedThemeColor }}
+        className="relative px-2 py-4 md:px-4 m-1 md:m-4 lg:m-6 border-2 rounded-2xl border-blue-900"
+      >
+        <div className="md:mx-[1rem] lg:mx-[2rem]">
+          <div className="flex items-center justify-between mb-4 ">
+            <LogoUserIcon selectedTextColor={selectedTextColor} />
+            <UserDropDownMenu
+              selectedTextColor={selectedTextColor}
+              setSelectedTextColor={setSelectedTextColor}
+              selectedThemeColor={selectedThemeColor}
+              setSelectedThemeColor={setSelectedThemeColor}
+              getRootProps={getRootProps}
+              getInputProps={getInputProps}
+              userImage={userImage}
+              isLoading={isLoading}
+              isUploadSuccess={isUploadSuccess}
+              navigate={navigate}
+            />
+          </div>
+          <div className="flex flex-col items-center">
+            <div>{profileImage}</div>
+            {profileImage ? (
+              <p className="text-slate-300">Profile image</p>
+            ) : error ? (
+              <p className="text-3xl text-red-500">{error}</p>
+            ) : (
+              <p className="text-white font-semibold animate-bounce text-[12px] md:text-[16px] lg:text-[20px]">
+                No image uploaded yet!
+              </p>
+            )}
+            <p
+              style={{ color: selectedTextColor }}
+              className="text-[20px] md:text-[2rem] lg:text-[2.5rem] font-semibold "
+            >
+              {loggedUser?.userName}
+            </p>
+            <p
+              style={{ color: selectedTextColor }}
+              className="font-semibold text-[13px] md:text-[18px] lg:text-[23px]"
+            >{`Member since: ${formattedDate}`}</p>
+          </div>
+          <hr
+            style={{ border: `1px solid ${selectedTextColor}` }}
+            className="mt-4"
           />
-        </div>
-        <div className="mt-2">
-          <label className="text-white p-1">Select Text Color:</label>
-          <input
-            type="color"
-            value={selectedTextColor}
-            onChange={(e) => {
-              setSelectedTextColor(e.target.value);
-            }}
-            className="p-2 bg-slate-300"
-          />
-        </div>
-        <div className="mt-2">
-          <button
-            style={{ background: selectedTextColor }}
-            className="text-white p-2 w-[10rem] rounded text-xs"
-            type="button"
-            onClick={() => {
-              setSelectedTextColor("#ef4444");
-              setSelectedProfileColor("#10141e");
-            }}
+          <div className="flex justify-between"></div>
+          <div
+            className=" text-[6rem] md:text-[7rem] lg:text-[8rem] flex justify-center items-center ms-[7rem] md:ms-0 md:h-[210px] rounded-[5rem] w-[10rem] h-[11rem]"
+            // style={{
+            //   boxShadow: isHovered
+            //     ? `70px 35px 140px 40px #ffffff, inset -20px -5px 40px 0 #ffffff`
+            //     : "none",
+            //   transition: "box-shadow 0.3s ease",
+            // }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            Click to Set Default Colors
-          </button>
+            🎥
+          </div>
+          <UserOptions
+            loggedUser={loggedUser}
+            setLoggedUser={setLoggedUser}
+            setLoggedIn={setLoggedIn}
+            navigate={navigate}
+            showModal={showModal}
+            setShowModal={setShowModal}
+            loggedIn={loggedIn}
+          />
+          <hr
+            style={{ border: `2px solid ${selectedTextColor}` }}
+            className="my-1"
+          />
         </div>
       </div>
-      <div
-        className={
-          showModal ? "fixed inset-0 bg-gray-500/75 transition-opacity" : ""
-        }
-      ></div>
-      <button
-        className="text-white p-2 bg-red-900 rounded-md"
-        onClick={() => setShowModal(true)}
-      >
-        Change Password
-      </button>
-      {showModal ? (
-        <PasswordChange
-          showModal={showModal}
-          setShowModal={setShowModal}
-          loggedIn={loggedIn}
-        />
-      ) : (
-        ""
-      )}
+      <CameraIcon />
     </div>
   );
 };
