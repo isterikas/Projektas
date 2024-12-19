@@ -78,26 +78,26 @@ function Auth() {
 
   return (
     <>
-      <div className="h-screen background-dark-blue flex flex-col items-center justify-center md:relative md:bottom-40 lg:relative lg:bottom-0">
+      <div className="h-screen background-dark-blue flex flex-col items-center justify-center">
         <img
           src={logoIcon}
           alt="SVG Image"
-          className="pb-10 mt-[65px] animate-spin-slowerY"
+          className=" animate-spin-slowerY mt-[48px] md:mt-[10px] mb-[58.4px]"
         />
-        <div className="background-semidark-blue pb-5 w-[25rem] rounded-lg mx-[24px] my-[40px]">
+        <div className="background-semidark-blue w-[327px]  h-[420px] md:w-[400px] md:h-[418px] rounded-lg">
           {authType === "login" ? (
-            <h1 className="text-white heading-l pt-7 relative left-6 md:px-[10px]">
+            <h1 className="text-white heading-l mt-[19px] md:mt-[40px] ml-[23px] md:ml-[32px]">
               Login
             </h1>
           ) : (
-            <h1 className="text-white heading-l pt-7 relative left-6 md:px-[10px]">
-              Sign up
+            <h1 className="text-white heading-l mt-[19px]  md:mt-[40px] ml-[23px] md:ml-[32px]">
+              Sign <span className="ml-[-1.5px]">Up</span>
             </h1>
           )}
           <form
             noValidate
             onSubmit={handleSubmit(formSubmitHandler)}
-            className="flex flex-col mx-[24px] gap-y-[6px] md:pt-[34px] md:pb-[10px] md:mx-[38px]"
+            className="flex flex-col w-[279px]  h-[247px] md:w-[336px] md:h-[274] mx-[24px] md:mx-[32px] mt-[34px] md:mt-[30px] mb-[69px] gap-[12px]"
           >
             <input
               aria-label="E-mail address"
@@ -109,7 +109,7 @@ function Auth() {
                     ? (/^[A-Za-z0-9\.\-]{1,64}@[A-Za-z0-9\.\-]{1,255}$/.test(
                         value
                       ) &&
-                        /^[A-Za-z0-9]([A-Za-z0-9]+[\.\-]?)*[A-Za-z0-9]@.*$/.test(
+                        /^[A-Za-z0-9]([A-Za-z0-9]+[\.\-]*)*[A-Za-z0-9]@.*$/.test(
                           value
                         ) &&
                         /^.*@([A-Za-z0-9]{2,63}[\.\-])+[A-Za-z]{2,}$/.test(
@@ -125,8 +125,8 @@ function Auth() {
                   clearErrors("email");
                 },
               })}
-              placeholder="Email address"
-              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 md:mb-2 border-l-0 border-[#5a698f] focus:border-white ${
+              placeholder=" Email address"
+              className={`h-[37] mt-[-1px] body-m focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
                 errors.email ? "border-red-600" : "border-[#5a698f]"
               }`}
             />
@@ -161,8 +161,8 @@ function Auth() {
                   );
                 },
               })}
-              placeholder="Password"
-              className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 mb-1 border-[#5a698f] focus:border-white ${
+              placeholder=" Password"
+              className={`h-12 mt-[-11px] body-m focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
                 errors.email ? "border-red-600" : "border-[#5a698f]"
               }`}
             />
@@ -186,8 +186,8 @@ function Auth() {
                       clearErrors("repeatPassword");
                     },
                   })}
-                  placeholder="Repeat Password"
-                  className={`focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
+                  placeholder=" Repeat Password"
+                  className={`h-12 mt-[-11px] body-m focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
                     errors.email ? "border-red-600" : "border-[#5a698f]"
                   }`}
                 />
@@ -198,16 +198,16 @@ function Auth() {
             <span className="text-red">{errors.repeatPassword?.message}</span>
             <button
               type="submit"
-              className="background-red text-white rounded-md mt-5 mb-5 px-[8px] py-[12px] hover:bg-white hover:text-black"
+              className="mt-[15px] py-[13px] body-m background-red text-white rounded-md  hover:bg-white hover:text-black"
             >
               {authType == "signup"
                 ? "Create an account"
                 : "Login to your account"}
             </button>
-          </form>
+          
           {authType == "signup" ? (
-            <div className="body-m text-white mx-[53.25px] ms:mt-2 lg:pl-10 lg:mt-2 mb-8 flex flex-row space-x-[9px]">
-              <div>Already have an account? </div>
+            <div className="body-m text-white flex flex-row ml-[34px] mt-[11px] md:ml-[60px]">
+              <div className="pr-2">Alread have an account?</div>
               <button
                 onClick={() => {
                   setError("");
@@ -220,8 +220,8 @@ function Auth() {
               </button>
             </div>
           ) : (
-            <div className="body-m text-white mx-[40px] pl-10 mb-4 flex flex-row space-x-[9px]">
-              <div>Don&#39;t have an account? </div>
+            <div className="body-m text-white flex flex-row ml-[31px] mt-[-6px] md:ml-[60px]">
+              <div className="pr-2">Don&#39;t have an account? </div>
               <button
                 onClick={() => {
                   setError("");
@@ -234,7 +234,8 @@ function Auth() {
               </button>
             </div>
           )}
-          <span className="text-red-500 mx-20 font-sm">{error}</span>
+          <span className="text-red-500 font-sm">{error}</span>
+          </form>
         </div>
       </div>
     </>
