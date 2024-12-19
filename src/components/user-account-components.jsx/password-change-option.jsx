@@ -11,7 +11,7 @@ const PasswordChangeOption = (props) => {
         }
       ></div>
       <button
-        className=" flex w-full items-center gap-1 md:gap-2 h-[25px] md:h-[30px] rounded-md p-[3px] hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 text-[10px] md:text-xs"
+        className=" flex w-full items-center gap-[2px] md:gap-[4px] lg:gap-[6px] h-[25px] md:h-[30px] rounded-md p-[3px] hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 text-[10px] md:text-xs"
         onClick={() => setShowModal(true)}
       >
         <PencilIcon className="size-[14px] md:size-4 fill-white" />

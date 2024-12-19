@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { patchData } from "../helpers/update";
 import { useForm } from "react-hook-form";
+import ClickOutside from "./user-menu/click-outside";
 
 const AddProfileName = (props) => {
   const { loggedUser, isProfileNameForm, setIsProfileNameForm } = props;
@@ -20,6 +21,10 @@ const AddProfileName = (props) => {
   const [error, setError] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
   const [isSubmitName, setIsSubmitName] = useState(false);
+
+  const closeProfileNameForm = ClickOutside(() => {
+    setIsProfileNameForm(false);
+  });
 
   const handleProfileNameForm = async (data) => {
     setLoading(true);
@@ -51,7 +56,7 @@ const AddProfileName = (props) => {
 
   if (isProfileNameForm)
     return (
-      <form onSubmit={handleSubmit(handleProfileNameForm)} noValidate>
+      <form onSubmit={handleSubmit(handleProfileNameForm)} noValidate ref={closeProfileNameForm}>
         <div className="flex flex-col gap-[2px]">
           <label
             htmlFor="profileName"
@@ -78,7 +83,7 @@ const AddProfileName = (props) => {
           <button
             type="submit"
             disabled={loading}
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-slate-600 hover:bg-slate-500 h-[25px] md:h-[30px] text-[10px] md:text-xs font-semibold text-gray-300  w-[65px] md:w-[85px] lg:w-[105px] border-[1px]"
+            className="bnt-options"
           >
             {loading ? "Submitting..." : "Submit"}
           </button>

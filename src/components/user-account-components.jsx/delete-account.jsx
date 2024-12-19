@@ -3,14 +3,7 @@ import { TrashIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 
 const DeleteAccount = (props) => {
-  const {
-    loggedUser,
-    setLoggedUser,
-    setLoggedIn,
-    navigate,
-    showModal,
-    setShowModal,
-  } = props;
+  const { loggedUser, setLoggedUser, setLoggedIn, navigate } = props;
   const [isDeleteRequest, setDeleteRequest] = useState(false);
 
   const handleDelete = async () => {
@@ -37,7 +30,7 @@ const DeleteAccount = (props) => {
       <button
         type="submit"
         onClick={handleDelete}
-        className="flex w-full items-center h-[25px] md:h-[30px] gap-1 md:gap-2 rounded-md p-[3px] text-[10px] md:text-xs hover:bg-black focus:bg-black"
+        className="btn-options-delete"
       >
         <TrashIcon className="size-[14px] md:size-4 fill-red-500" />
         Delete Account

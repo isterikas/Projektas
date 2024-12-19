@@ -1,7 +1,6 @@
 import { useState } from "react";
 import PhotoUploader from "./photo-uploader";
 import ColorChanger from "./color-changer";
-import { useEffect } from "react";
 import { Bars3Icon, HomeIcon } from "@heroicons/react/16/solid";
 
 const UserDropDownMenu = (props) => {
@@ -19,19 +18,8 @@ const UserDropDownMenu = (props) => {
   } = props;
 
   const [isUserMenu, setIsUserMenu] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const [isColorChanger, setIsColorChanger] = useState(false);
   const [isPhotoUploader, setIsPhotoUploader] = useState(false);
-
-  const closeMenu = () => {
-    if (isUserMenu) {
-      setIsFocused(true);
-    } else setIsFocused(false);
-  };
-  useEffect(() => {
-    closeMenu;
-  }, []);
 
   return (
     <div className="flex flex-col relative">
@@ -42,18 +30,13 @@ const UserDropDownMenu = (props) => {
           setIsColorChanger(false);
           setIsPhotoUploader(false);
         }}
-        // onFocus={() => setIsFocused(true)}
-        // onBlur={() => setIsFocused(false)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         style={{
           color: selectedTextColor,
           boxShadow: `0 1px 10px 0 ${selectedTextColor}`,
           border: `1px solid ${selectedTextColor}`,
-          background: isFocused || isHovered ? "#64748b" : "transparent",
           transition: "background 0.5s ease",
         }}
-        className=" flex items-center rounded p-[3px] gap-1 md:gap-2 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px]"
+        className=" btn-user-menu"
       >
         <Bars3Icon
           style={{ fill: selectedTextColor }}
@@ -79,7 +62,7 @@ const UserDropDownMenu = (props) => {
                 border: `1px solid ${selectedTextColor}`,
                 transition: "background 0.5s ease",
               }}
-              className=" flex items-center rounded p-[3px] gap-1 md:gap-2 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
+              className=" bnt-user-menu-group"
             >
               <HomeIcon
                 style={{ fill: selectedTextColor }}

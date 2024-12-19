@@ -172,15 +172,16 @@ const UserAccount = () => {
             style={{ border: `1px solid ${selectedTextColor}` }}
             className="m-3 md:m-4 lg:m-5"
           />
-
-          <div className="flex ms-[5px] md:ms-[125px] lg:ms-[150px]">
-            <AddProfileName
-              loggedUser={loggedUser}
-              isProfileNameForm={isProfileNameForm}
-              setIsProfileNameForm={setIsProfileNameForm}
-            />
+          <div className="grid grid-cols-2 ms-[5px] md:ms-[125px] lg:ms-[150px]">
+            <div className="grid grid-cols-1 ">
+              <AddProfileName
+                loggedUser={loggedUser}
+                isProfileNameForm={isProfileNameForm}
+                setIsProfileNameForm={setIsProfileNameForm}
+              />
+            </div>
             <div
-              className=" text-[5rem] md:text-[6rem] lg:text-[7rem] flex justify-center items-center ms-[5px] md:ms-[80px] lg:ms-[110px] "
+              className=" text-[5rem] md:text-[6rem] lg:text-[7rem] grid grid-cols-1"
               // style={{
               //   boxShadow: isHovered
               //     ? `70px 35px 140px 40px #ffffff, inset -20px -5px 40px 0 #ffffff`

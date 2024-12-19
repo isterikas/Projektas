@@ -84,7 +84,7 @@ const ColorChanger = (props) => {
           border: `1px solid ${selectedTextColor}`,
           transition: "background 0.5s ease",
         }}
-        className="flex items-center rounded p-[3px] gap-1 md:gap-2 text-[10px] md:text-xs  h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
+        className="absolute bnt-user-menu-group"
       >
         <SwatchIcon
           style={{ fill: selectedTextColor }}
