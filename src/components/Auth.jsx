@@ -79,16 +79,16 @@ function Auth() {
         <img
           src={logoIcon}
           alt="SVG Image"
-          className="animate-spin-slowerY mt-[48px] md:mt-[10px] mb-[58.4px]"
+          className=" animate-spin-slowerY mt-[48px] md:mt-[10px] mb-[58.4px]"
         />
         <div className="background-semidark-blue w-[327px]  h-[420px] md:w-[400px] md:h-[418px] rounded-lg">
           {authType === "login" ? (
-            <h1 className="text-white heading-l mt-[19px]  md:mt-[40px] ml-[23px] md:ml-[32px]">
+            <h1 className="text-white heading-l mt-[19px] md:mt-[40px] ml-[23px] md:ml-[32px]">
               Login
             </h1>
           ) : (
-            <h1 className="text-white heading-l mt-[19px] md:mt-[40px] ml-[23px] md:ml-[32px]">
-              Sign up
+            <h1 className="text-white heading-l mt-[19px]  md:mt-[40px] ml-[23px] md:ml-[32px]">
+              Sign <span className="ml-[-1.5px]">Up</span>
             </h1>
           )}
           <form
@@ -106,7 +106,7 @@ function Auth() {
                     ? (/^[A-Za-z0-9\.\-]{1,64}@[A-Za-z0-9\.\-]{1,255}$/.test(
                         value
                       ) &&
-                        /^[A-Za-z0-9]([A-Za-z0-9]+[\.\-]?)*[A-Za-z0-9]@.*$/.test(
+                        /^[A-Za-z0-9]([A-Za-z0-9]+[\.\-]*)*[A-Za-z0-9]@.*$/.test(
                           value
                         ) &&
                         /^.*@([A-Za-z0-9]{2,63}[\.\-])+[A-Za-z]{2,}$/.test(
@@ -122,7 +122,7 @@ function Auth() {
                   clearErrors("email");
                 },
               })}
-              placeholder="Email address"
+              placeholder=" Email address"
               className={`h-[37] mt-[-1px] body-m focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
                 errors.email ? "border-red-600" : "border-[#5a698f]"
               }`}
@@ -158,7 +158,7 @@ function Auth() {
                   );
                 },
               })}
-              placeholder="Password"
+              placeholder=" Password"
               className={`h-12 mt-[-11px] body-m focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
                 errors.email ? "border-red-600" : "border-[#5a698f]"
               }`}
@@ -183,7 +183,7 @@ function Auth() {
                       clearErrors("repeatPassword");
                     },
                   })}
-                  placeholder="Repeat Password"
+                  placeholder=" Repeat Password"
                   className={`h-12 mt-[-11px] body-m focus:ring-0 background-semidark-blue caret-[#FC4747] text-white border-t-0 border-r-0 border-l-0 border-[#5a698f] focus:border-white ${
                     errors.email ? "border-red-600" : "border-[#5a698f]"
                   }`}
@@ -201,10 +201,10 @@ function Auth() {
                 ? "Create an account"
                 : "Login to your account"}
             </button>
-          </form>
+          
           {authType == "signup" ? (
             <div className="body-m text-white flex flex-row ml-[34px] mt-[11px] md:ml-[60px]">
-              <div className="pr-2">Already have an account? </div>
+              <div className="pr-2">Alread have an account?</div>
               <button
                 onClick={() => {
                   setError("");
@@ -217,7 +217,7 @@ function Auth() {
               </button>
             </div>
           ) : (
-            <div  className="body-m text-white flex flex-row ml-[31px] mt-[-6px] md:ml-[60px]">
+            <div className="body-m text-white flex flex-row ml-[31px] mt-[-6px] md:ml-[60px]">
               <div className="pr-2">Don&#39;t have an account? </div>
               <button
                 onClick={() => {
@@ -231,7 +231,8 @@ function Auth() {
               </button>
             </div>
           )}
-          <span className="text-red-500 mx-20 font-sm">{error}</span>
+          <span className="text-red-500 font-sm">{error}</span>
+          </form>
         </div>
       </div>
     </>

@@ -56,20 +56,17 @@ const PasswordChange = ({ showModal, setShowModal, loggedIn }) => {
         open={showModal}
         className="fixed bottom-1/2 top-1/2 rounded-xl w-[327px] h-[420px] md:w-[400px] md:h-[418px]  background-semidark-blue"
       >
-        <div className="flex flex-col items-center font-bold text-white mb-5">
-          <button
-            onClick={() => setShowModal(false)}
-            className="self-end text-[1.5rem]"
-          >
-            &#x292B;
+        <div className="flex flex-col items-center font-bold text-white mt-5">
+          <button onClick={() => setShowModal(false)} className="self-end text-[1.5rem] mr-5 mt-[-10px]">
+          &#x292B; 
           </button>
-          <h1 className="heading-s">Change Password</h1>
+          <h1 className="heading-s mt-5">Change Password</h1>
         </div>
 
         <form
           noValidate
           onSubmit={handleSubmit(formSubmitHandler)}
-          className="flex flex-col"
+          className="flex flex-col mx-[48px] mt-[40px] mb-[45px] md:mx-[64px] md:mt-[60px] md:mb-[32px]"
         >
           <input
             aria-label="Old password"
@@ -136,10 +133,7 @@ const PasswordChange = ({ showModal, setShowModal, loggedIn }) => {
             }`}
           />
           <span className="text-red">{errors.repeatPassword?.message}</span>
-          <input
-            type="submit"
-            className="btn btn-hover h-[2rem] my-2 rounded"
-          />
+          <input type="submit" className="btn btn-hover h-[2rem] my-2 rounded" />
         </form>
         <span className="text-red-500 font-sm">{error}</span>
       </dialog>
