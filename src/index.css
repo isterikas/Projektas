@@ -94,16 +94,40 @@
     margin-left: 16px;
   }
 
+  .content-text {
+    font-size: 14px;
+    font-family: "Outfit";
+    font-weight: 400;
+    margin-left: 16px;
+  }
+
   @media (min-width: 768px) {
     .content-heading {
       @apply heading-l;
       margin-left: 25px;
     }
+    .content-text {
+      font-size: 16px;
+      font-family: "Outfit";
+      font-weight: 400;
+      margin-left: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .content-text {
+      font-size: 18px;
+      font-family: "Outfit";
+      font-weight: 400;
+      margin-left: 16px;
+    }
   }
 
   input.nosubmit {
-    width: 100%;
-    border: none;
+    width: 95%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     outline: none;
     display: block;
     padding: 9px 4px 9px 56px;
@@ -117,6 +141,13 @@
       font-size: 24px;
     }
   }
+
+  input.nosubmit:focus-visible {
+    border-bottom: 1px solid #5a698f;
+  }
+  input.nosubmit:not(:focus) {
+    border-bottom: 1px solid #10141e;
+  }
 }
 
 .bookmark-icon {
@@ -127,9 +158,29 @@
 .movie-icon {
   font-size: 4px;
 }
+
+.expanding-navbar {
+  background-color: #161d2f;
+  border-radius: 20px;
+  width: 96px;
+  height: 90vh;
+  transition: height 0.1s ease-in-out;
+  
+}
+
+@layer utilities {
+  .profile-image-large {
+    @apply rounded-[20px]  w-[9rem] h-[7rem] md:w-[12rem] md:h-[10rem] lg:w-[15rem] lg:h-[13rem];
+  }
+
+  .profile-image-small {
+    @apply border-[1px] border-red-500 rounded-full w-[24px] h-[24px] md:w-[32px] md:h-[32px] lg:w-[40px] lg:h-[40px] shadow-red-500
+  }
+
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
 }

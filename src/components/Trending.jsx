@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { useState } from "react";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import TrendingCard from "./TrendingCard";
 function Trending({
@@ -9,12 +8,11 @@ function Trending({
   width,
   update,
   setUpdate,
-  userBookmarks,
   loggedIn,
 }) {
   return (
     <>
-      <h2 className=" text-white heading-l relative left-7">Trending</h2>
+      <h2 className=" content-heading text-white mb-3">Trending</h2>
       <Swiper
         slidesPerView={1.5}
         spaceBetween={40}
@@ -38,47 +36,37 @@ function Trending({
           if (slide.isTrending) {
             return (
               <SwiperSlide key={slide.contentsId}>
-                <div className="relative left-7  rounded-lg">
+                <div className="relative left-7 rounded-lg">
                   <div>
-                    <div>
-                      <div>
-                        {width >= 768 ? (
-                          <img
-                            src={
-                              "src" + slide.thumbnail.trending.large.slice(1)
-                            }
-                            alt="Film in trend"
-                            className="rounded-lg"
-                          />
-                        ) : (
-                          <img
-                            src={
-                              "src" + slide.thumbnail.trending.small.slice(1)
-                            }
-                            alt="Film in trend"
-                            className="rounded-lg"
-                          />
-                        )}
-                      </div>
-                      <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs">
-                        <div className="flex justify-center">
-                          <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
-                            <img src={PlayIcon} alt="#" />
-                            <p>Play</p>
-                          </div>
-                        </div>
+                    {width >= 768 ? (
+                      <img
+                        src={"src" + slide.thumbnail.trending.large.slice(1)}
+                        alt="Trending piece of content"
+                        className="rounded-lg"
+                      />
+                    ) : (
+                      <img
+                        src={"src" + slide.thumbnail.trending.small.slice(1)}
+                        alt="Trending piece of content"
+                        className="rounded-lg"
+                      />
+                    )}
+                  </div>
+                  <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs">
+                    <div className="flex justify-center">
+                      <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
+                        <img src={PlayIcon} alt="Play icon" />
+                        <p>Play</p>
                       </div>
                     </div>
                   </div>
-                  <div>
-                    <TrendingCard
-                      slide={slide}
-                      update={update}
-                      setUpdate={setUpdate}
-                      userBookmarks={userBookmarks}
-                      loggedIn={loggedIn}
-                    />
-                  </div>
+
+                  <TrendingCard
+                    slide={slide}
+                    update={update}
+                    setUpdate={setUpdate}
+                    loggedIn={loggedIn}
+                  />
                 </div>
               </SwiperSlide>
             );

@@ -2,11 +2,11 @@ import Card from "./Card.jsx";
 import { useLocation, useOutletContext, useSearchParams } from "react-router";
 import { InputMask } from "@react-input/mask";
 
-function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
+function Search({ array, update, setUpdate, loggedIn, width }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
-  const pattern = /^[a-zA-Z0-9 ]*$/;
-  const valid = pattern.test(searchQuery);
+  const pattern = /^[a-zA-Z0-9 ąčęėįšųūžĄČĘĖĮŠŲŪŽ]*$/;
+  const valid = pattern.test(searchQuery) && searchQuery.length < 30;
 
   if (searchQuery && !valid) {
     throw new Error();
@@ -19,12 +19,13 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
     const value = e.target.value.trim();
     setSearchParams(value ? { search: value } : {});
     if (value) {
+      setSearch(searchQuery);
       return true;
     } else {
+      setSearch("");
       return false;
     }
   };
-  handleSearch ? setSearch(searchQuery) : setSearch("");
 
   const locationInfo = () => {
     switch (location.pathname) {
@@ -51,7 +52,6 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
             key={item.contentsId}
             update={update}
             setUpdate={setUpdate}
-            userBookmarks={userBookmarks}
             loggedIn={loggedIn}
             width={width}
           />
@@ -61,41 +61,49 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 
   return (
     <>
-      <div className="w-full min-h-fit">
+      <div className="w-full min-h-fit lg:py-3">
         <form className="nosubmit background-dark-blue">
           <InputMask
             onChange={handleSearch}
             onKeyDown={(e) => {
               e.key === "Enter" ? e.preventDefault() : "";
             }}
-            className="focus:ring-0 nosubmit rounded caret-[#FC4747] text-white heading-m border-b border-white focus:border-b-2"
+            className="focus:ring-0 cursor-pointer nosubmit caret-[#FC4747] text-white heading-m mx-3"
             type="search"
             placeholder={locationInfo().placeholder}
             mask={"______________________________"}
-            replacement={{ _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-\s]/ }}
+            replacement={{
+              _: /[A-Za-z0-9$&+,:;=?@#|'<>.^*()%!-ąčęėįšųūžĄČĘĖĮŠŲŪŽ\s]/,
+            }}
             defaultValue={handleSearch ? searchQuery : ""}
+            aria-label="search field"
           />
         </form>
 
         <div className="background-dark-blue">
           {searchQuery == "" ? (
-            <h1 className="content-heading text-white">
-              {locationInfo().header}
-            </h1>
+            locationInfo().header ? (
+              <h1 className="content-heading text-white mt-3">
+                {locationInfo().header}
+              </h1>
+            ) : (
+              ""
+            )
           ) : (
-            <h1 className="content-heading text-white">
+            <h1 className="content-heading text-white mt-3">
               Found {filteredArray.length}
               {filteredArray.length === 1 ? " result" : " results"} for{" "}
               {`'${searchQuery}'`}
             </h1>
           )}
-          <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
-            {location.pathname === "/" || location.pathname === "/bookmarks"
-              ? searchQuery
-                ? filteredArray
-                : ""
-              : filteredArray}
-          </div>
+          {(location.pathname === "/" || location.pathname === "/bookmarks") &&
+          !searchQuery ? (
+            ""
+          ) : (
+            <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
+              {filteredArray}
+            </div>
+          )}
         </div>
       </div>
     </>
@@ -103,4 +111,3 @@ function Search({ array, update, setUpdate, loggedIn, userBookmarks, width }) {
 }
 
 export default Search;
-
