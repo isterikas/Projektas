@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
-import { getAllData } from "./helpers/get.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import PlayIcon from "../assets/icons/icon-play.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
 import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
 
-function Card({ item, setUpdate, update, loggedIn, width, isBookmarked }) {
+function Card({ item, setUpdate, update, loggedIn, isBookmarked }) {
   const { thumbnail, title, year, category, rating, contentsId } = item;
 
   const toggleBookmark = async () => {
@@ -30,7 +28,7 @@ function Card({ item, setUpdate, update, loggedIn, width, isBookmarked }) {
             onClick={async () => await toggleBookmark()}
             className="text-white absolute bookmark-icon "
           >
-            <div className="relative icon-bg  bg-slate-500 w-8 h-8  group   hover:bg-white  rounded-full">
+            <div className="relative icon-bg bg-slate-500 w-8 h-8 group hover:bg-white rounded-full">
               {isBookmarked ? (
                 <div className="group ">
                   <BookmarkFull />
@@ -60,7 +58,7 @@ function Card({ item, setUpdate, update, loggedIn, width, isBookmarked }) {
                 "
           >
             <div className="flex justify-center">
-              <div className="rounded-[100px]  bg-white bg-opacity-25 flex gap-[19px] p-3">
+              <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
                 <img src={PlayIcon} alt="#" />
                 <p>Play</p>
               </div>

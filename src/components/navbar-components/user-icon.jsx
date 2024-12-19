@@ -44,14 +44,14 @@ const UserIcon = (props) => {
         <button
           type="button"
           onClick={handleLogOut}
-          className="text-white block px-2 py-3 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold  hover:border-t-red-500 hover:border-t-[1px] w-full"
+          className="text-white block px-2 py-3 hover:bg-gray-200 hover:text-[#161D2F] rounded-md font-semibold hover:border-t-red-500 hover:border-t-[1px] w-full"
         >
           Log Out
         </button>
       </div>
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black  opacity-50"
+          className="fixed inset-0 bg-black opacity-50"
           onClick={() => setIsMenuOpen(false)}
         ></div>
       )}

@@ -47,8 +47,7 @@ function Search({ array, update, setUpdate, loggedIn, width, userBookmarks }) {
     .map((item) => {
       const isBookmarked = userBookmarks.find(
         (bookmark) =>
-          bookmark.contentsId == item.contentsId &&
-          bookmark.userId == loggedIn
+          bookmark.contentsId == item.contentsId && bookmark.userId == loggedIn
       );
       return (
         <div key={item.contentsId}>

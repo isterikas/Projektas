@@ -545,39 +545,14 @@
   ],
   "users": [
     {
-      "id": "0e71",
-      "userName": "audriusad@gmail.com",
-      "userPassword": "1d0a9ad5b7e53b1ce402e9cb7903cf8d5ebaac3c06b22cb5703f4b8df87dfef8",
-      "image": ""
-    },
-    {
-      "id": "e419",
-      "userName": "edgaraslaptevas88@gmail.com",
-      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
-      "image": "/uploads/1734557715326.png",
-      "created": "2024-12-17T20:35:56.596Z"
-    },
-    {
       "id": "ce30",
       "userName": "henryk.umbrasewicz@odnoklassniki.ru",
       "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed",
-      "image": "/uploads/1734510011642.JPG",
+      "image": "/uploads/1734594211118.png",
       "created": "2024-12-18T07:54:47.360Z"
-    },
-    {
-      "id": "0fb6",
-      "userName": "pavel.gusev431@gmail.com",
-      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
-      "image": "/uploads/1734592398894.png",
-      "created": "2024-12-19T07:12:05.933Z"
     }
   ],
   "userBookmarks": [
-    {
-      "id": "8221",
-      "contentsId": "3",
-      "userId": "ce30"
-    },
     {
       "id": "f67d",
       "contentsId": "17",
@@ -591,11 +566,6 @@
     {
       "id": "7961",
       "contentsId": "29",
-      "userId": "ce30"
-    },
-    {
-      "id": "abb1",
-      "contentsId": "12",
       "userId": "ce30"
     },
     {
@@ -619,33 +589,8 @@
       "userId": "ce30"
     },
     {
-      "id": "44d9",
-      "contentsId": "9",
-      "userId": "ce30"
-    },
-    {
-      "id": "5478",
-      "contentsId": "1",
-      "userId": "ce30"
-    },
-    {
-      "id": "63e2",
-      "contentsId": "2",
-      "userId": "ce30"
-    },
-    {
       "id": "60e8",
       "contentsId": "15",
-      "userId": "ce30"
-    },
-    {
-      "id": "179f",
-      "contentsId": "4",
-      "userId": "ce30"
-    },
-    {
-      "id": "13d7",
-      "contentsId": "8",
       "userId": "ce30"
     },
     {
@@ -654,68 +599,103 @@
       "userId": "ce30"
     },
     {
-      "id": "c995",
-      "contentsId": "14",
+      "id": "cd32",
+      "contentsId": "28",
       "userId": "ce30"
     },
     {
-      "id": "7664",
-      "contentsId": "24",
-      "userId": "ce30"
-    },
-    {
-      "id": "d848",
-      "contentsId": "5",
-      "userId": "ce30"
-    },
-    {
-      "id": "c9c9",
-      "contentsId": "7",
-      "userId": "ce30"
-    },
-    {
-      "id": "692c",
-      "contentsId": "10",
-      "userId": "ce30"
-    },
-    {
-      "id": "ffa0",
-      "contentsId": "13",
-      "userId": "ce30"
-    },
-    {
-      "id": "e34d",
-      "contentsId": "21",
-      "userId": "ce30"
-    },
-    {
-      "id": "bccf",
-      "contentsId": "23",
-      "userId": "ce30"
-    },
-    {
-      "id": "cf04",
-      "contentsId": "25",
-      "userId": "ce30"
-    },
-    {
-      "id": "dec9",
-      "contentsId": "26",
-      "userId": "ce30"
-    },
-    {
-      "id": "219b",
+      "id": "459d",
       "contentsId": "11",
       "userId": "ce30"
     },
     {
-      "id": "c841",
+      "id": "be17",
+      "contentsId": "13",
+      "userId": "ce30"
+    },
+    {
+      "id": "173e",
+      "contentsId": "1",
+      "userId": "ce30"
+    },
+    {
+      "id": "dcca",
+      "contentsId": "23",
+      "userId": "ce30"
+    },
+    {
+      "id": "d1a2",
+      "contentsId": "25",
+      "userId": "ce30"
+    },
+    {
+      "id": "1ece",
+      "contentsId": "8",
+      "userId": "ce30"
+    },
+    {
+      "id": "1cc9",
+      "contentsId": "2",
+      "userId": "ce30"
+    },
+    {
+      "id": "0f4c",
+      "contentsId": "21",
+      "userId": "ce30"
+    },
+    {
+      "id": "e2a6",
+      "contentsId": "4",
+      "userId": "ce30"
+    },
+    {
+      "id": "3384",
+      "contentsId": "10",
+      "userId": "ce30"
+    },
+    {
+      "id": "0254",
+      "contentsId": "26",
+      "userId": "ce30"
+    },
+    {
+      "id": "c1a6",
+      "contentsId": "9",
+      "userId": "ce30"
+    },
+    {
+      "id": "b24d",
+      "contentsId": "12",
+      "userId": "ce30"
+    },
+    {
+      "id": "0d73",
       "contentsId": "16",
       "userId": "ce30"
     },
     {
-      "id": "cd32",
-      "contentsId": "28",
+      "id": "be44",
+      "contentsId": "14",
+      "userId": "ce30"
+    },
+    {
+      "id": "8963",
+      "contentsId": "24",
+      "userId": "ce30"
+    },
+    {
+      "id": "c1bd",
+      "contentsId": "5",
+      "userId": "ce30"
+    },
+    {
+      "id": "37cb",
+      "contentsId": "7",
+      "userId": "ce30"
+    },
+    {
+      "id": "a93f",
+      "contentsId": "3",
       "userId": "ce30"
     }
   ]

@@ -9,7 +9,7 @@ function Trending({
   update,
   setUpdate,
   loggedIn,
-  userBookmarks
+  userBookmarks,
 }) {
   return (
     <>
