@@ -6,7 +6,7 @@ import UserIcon from "./navbar-components/user-icon.jsx";
 import ExpandingNavbar from "./navbar-components/expanding-navbar.jsx";
 
 function NavBar(props) {
-  const { setAuthType, loggedIn, setLoggedIn, loggedUser } = props;
+  const { setAuthType, loggedIn, setLoggedIn, loggedUser, setLoggedUser } = props;
   const location = useLocation();
 
   return (
@@ -45,6 +45,7 @@ function NavBar(props) {
                     setLoggedIn={setLoggedIn}
                     loggedIn={loggedIn}
                     loggedUser={loggedUser}
+                    setLoggedUser={setLoggedUser}
                   />
                 </div>
               )}

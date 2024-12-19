@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router";
 
 const UserIcon = (props) => {
-  const { setLoggedIn, loggedUser } = props;
+  const { setLoggedIn, loggedUser, setLoggedUser } = props;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -13,6 +13,7 @@ const UserIcon = (props) => {
   const handleLogOut = () => {
     setTimeout(() => {
       setLoggedIn(false);
+      setLoggedUser("");
       navigate("/");
     }, 1000);
   };
