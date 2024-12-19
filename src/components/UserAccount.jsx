@@ -6,11 +6,10 @@ import { postImage } from "./helpers/post";
 import { usePersistState } from "@printy/react-persist-state";
 import { useNavigate } from "react-router";
 import LogoUserIcon from "./user-account-components.jsx/logo-user-icon";
-import ColorChanger from "./user-account-components.jsx/color-changer";
-import PhotoUploader from "./user-account-components.jsx/photo-uploader";
 import Loading from "./Loading";
 import UserOptions from "./user-account-components.jsx/user-options";
-import UserMenu from "./user-account-components.jsx/user-menu/user-menu";
+import UserDropDownMenu from "./user-account-components.jsx/user-menu/dropdown-menu";
+import CameraIcon from "./user-account-components.jsx/camera-icon";
 
 const UserAccount = () => {
   const {
@@ -24,9 +23,6 @@ const UserAccount = () => {
   } = useOutletContext();
   const [userImage, setUserImage] = useState(null);
   const [isUploadSuccess, setIsUploadSuccess] = useState(false);
-  const [isColorChanger, setIsColorChanger] = useState(false);
-  const [isPhotoUploader, setIsPhotoUploader] = useState(false);
-  const [isUserMenu, setIsUserMenu] = useState(false);
   const [selectedThemeColor, setSelectedThemeColor] = usePersistState(
     "#10141e",
     "selectedProfileColor"
@@ -36,8 +32,7 @@ const UserAccount = () => {
     "selectedTextColor"
   );
   const [showModal, setShowModal] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -122,83 +117,23 @@ const UserAccount = () => {
     <div>
       <div
         style={{ backgroundColor: selectedThemeColor }}
-        className="relative p-4 m-4 border-2 rounded-2xl border-blue-900"
+        className="relative px-2 py-4 md:px-4 m-1 md:m-4 lg:m-6 border-2 rounded-2xl border-blue-900"
       >
         <div className="md:mx-[1rem] lg:mx-[2rem]">
           <div className="flex items-center justify-between mb-4 ">
             <LogoUserIcon selectedTextColor={selectedTextColor} />
-            <div className="flex flex-col relative">
-              <button
-                type="button"
-                onClick={() => {
-                  setIsUserMenu(!isUserMenu);
-                  setIsColorChanger(false);
-                  setIsPhotoUploader(false);
-                }}
-                onFocus={() => setIsFocused(true)}
-                onBlur={() => setIsFocused(false)}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                style={{
-                  color: selectedTextColor,
-                  boxShadow: `0 1px 10px 0 ${selectedTextColor}`,
-                  border: `1px solid ${selectedTextColor}`,
-                  background: isFocused || isHovered ? "#64748b" : "transparent",
-                  transition: "background 0.5s ease"
-                }}
-                
-                className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px]  w-[100px] md:w-[120px] "
-              >
-                User Menu
-              </button>
-              <div
-                className={`absolute top-[2.5rem] w-[100px] md:w-[120px] ${
-                  isUserMenu
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-4"
-                } transition-all duration-300 ease-in-out`}
-              >
-                {isUserMenu && (
-                  <div>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        navigate("/");
-                      }}
-                      style={{
-                        color: selectedTextColor,
-                        boxShadow: ` 0 1px 3px 0 ${selectedTextColor}`,
-                        border: `1px solid ${selectedTextColor}`,
-                      }}
-                      className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] w-[100px] md:w-[120px]"
-                    >
-                      Homepage
-                    </button>
-                    <PhotoUploader
-                      getRootProps={getRootProps}
-                      getInputProps={getInputProps}
-                      userImage={userImage}
-                      isLoading={isLoading}
-                      isUploadSuccess={isUploadSuccess}
-                      selectedTextColor={selectedTextColor}
-                      selectedThemeColor={selectedThemeColor}
-                      isPhotoUploader={isPhotoUploader}
-                      setIsPhotoUploader={setIsPhotoUploader}
-                      setIsColorChanger={setIsColorChanger}
-                    />
-                    <ColorChanger
-                      selectedTextColor={selectedTextColor}
-                      setSelectedTextColor={setSelectedTextColor}
-                      selectedThemeColor={selectedThemeColor}
-                      setSelectedThemeColor={setSelectedThemeColor}
-                      isColorChanger={isColorChanger}
-                      setIsColorChanger={setIsColorChanger}
-                      setIsPhotoUploader={setIsPhotoUploader}
-                    />
-                  </div>
-                )}
-              </div>
-            </div>
+            <UserDropDownMenu
+              selectedTextColor={selectedTextColor}
+              setSelectedTextColor={setSelectedTextColor}
+              selectedThemeColor={selectedThemeColor}
+              setSelectedThemeColor={setSelectedThemeColor}
+              getRootProps={getRootProps}
+              getInputProps={getInputProps}
+              userImage={userImage}
+              isLoading={isLoading}
+              isUploadSuccess={isUploadSuccess}
+              navigate={navigate}
+            />
           </div>
           <div className="flex flex-col items-center">
             <div>{profileImage}</div>
@@ -226,9 +161,20 @@ const UserAccount = () => {
             style={{ border: `1px solid ${selectedTextColor}` }}
             className="mt-4"
           />
-          <div className="flex justify-between">
+          <div className="flex justify-between"></div>
+          <div
+            className=" text-[6rem] md:text-[7rem] lg:text-[8rem] flex justify-center items-center ms-[7rem] md:ms-0 md:h-[210px] rounded-[5rem] w-[10rem] h-[11rem]"
+            // style={{
+            //   boxShadow: isHovered
+            //     ? `70px 35px 140px 40px #ffffff, inset -20px -5px 40px 0 #ffffff`
+            //     : "none",
+            //   transition: "box-shadow 0.3s ease",
+            // }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            🎥
           </div>
-          <div className="text-[8rem] flex justify-center items-center">🎥</div>
           <UserOptions
             loggedUser={loggedUser}
             setLoggedUser={setLoggedUser}
@@ -244,6 +190,7 @@ const UserAccount = () => {
           />
         </div>
       </div>
+      <CameraIcon />
     </div>
   );
 };

@@ -45,7 +45,7 @@ const UserOptions = (props) => {
           <MenuItem>
             <button className="group flex w-full items-center  gap-1 md:gap-2 h-[2rem] rounded-md p-[3px] text-[10px] md:text-xs  hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 "> 
               <UserPlusIcon className="size-[14px] md:size-4 fill-white" />
-              Add your Name
+              Add Profile Name
             </button>
           </MenuItem>
           <MenuItem>
@@ -56,7 +56,7 @@ const UserOptions = (props) => {
             <button className=" flex w-full items-center gap-1 md:gap-2 h-[2rem] rounded-md p-[3px] text-[10px] md:text-xs  hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 "
             onClick={handleLogOut}>
               <ArrowLeftIcon className="size-[14px] md:size-4 fill-white" />
-              Log out
+              Log Out
             </button>
           </MenuItem>
           <MenuItem>

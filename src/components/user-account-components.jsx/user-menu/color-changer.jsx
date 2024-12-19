@@ -78,14 +78,14 @@ const ColorChanger = (props) => {
           setIsPhotoUploader(false);
         }}
         style={{
-          background: selectedThemeColor,
           color: selectedTextColor,
           boxShadow: ` 0 1px 3px 0 ${selectedTextColor}`,
           border: `1px solid ${selectedTextColor}`,
+          transition: "background 0.5s ease",
         }}
-        className=" absolute rounded p-1 text-[10px] md:text-xs  h-[2rem] ms-[7.5rem] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[100px] md:w-[120px]"
+        className=" rounded p-1 text-[10px] md:text-xs  h-[2rem] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
       >
-        Change your Colors
+        Change Colors
       </button>
     </div>
   );

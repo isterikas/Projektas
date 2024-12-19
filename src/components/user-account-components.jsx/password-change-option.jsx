@@ -7,7 +7,7 @@ const PasswordChangeOption = (props) => {
     <div>
       <div
         className={
-          showModal ? "fixed inset-0 bg-gray-500/30 transition-opacity" : ""
+          showModal ? "fixed inset-0 bg-gray-500/50 transition-opacity" : ""
         }
       ></div>
       <button
