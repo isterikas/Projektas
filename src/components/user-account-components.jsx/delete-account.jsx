@@ -1,14 +1,20 @@
 import { deleteAccount } from "../helpers/delete";
-import {TrashIcon,} from '@heroicons/react/16/solid'
+import { TrashIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 
 const DeleteAccount = (props) => {
-
-    const {loggedUser, setLoggedUser, setLoggedIn, navigate, showModal, setShowModal } = props
-const [isDeleteRequest, setDeleteRequest] = useState(false)
+  const {
+    loggedUser,
+    setLoggedUser,
+    setLoggedIn,
+    navigate,
+    showModal,
+    setShowModal,
+  } = props;
+  const [isDeleteRequest, setDeleteRequest] = useState(false);
 
   const handleDelete = async () => {
-    setDeleteRequest(true)
+    setDeleteRequest(true);
     const deletion = await deleteAccount(loggedUser.id);
     if (!deletion) {
       return;
@@ -18,7 +24,7 @@ const [isDeleteRequest, setDeleteRequest] = useState(false)
         setLoggedIn("");
         setLoggedUser(null);
         setTimeout(() => {
-            navigate("/account/deleted");
+          navigate("/account/deleted");
         }, 1000);
       } catch (error) {
         window.alert("Error deleting account:", error.message);
@@ -43,8 +49,6 @@ const [isDeleteRequest, setDeleteRequest] = useState(false)
         ></div>
       )}
     </div>
-    
-    
   );
 };
 

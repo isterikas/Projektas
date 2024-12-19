@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import ClickOutside from "./click-outside";
+import { ArrowUpOnSquareIcon } from "@heroicons/react/24/solid";
 
 const PhotoUploader = (props) => {
   const {
@@ -26,7 +27,7 @@ const PhotoUploader = (props) => {
   }, [isUploadSuccess]);
 
   const closePhotoUploader = ClickOutside(() => {
-    setIsPhotoUploader(false); 
+    setIsPhotoUploader(false);
   });
 
   return (
@@ -50,7 +51,9 @@ const PhotoUploader = (props) => {
             ) : (
               isUploadSuccess &&
               !isLoading && (
-                <p className="text-green-500 text-center text-[10px] md:text-xs lg:text-sm">Upload Successful!</p>
+                <p className="text-green-500 text-center text-[10px] md:text-xs lg:text-sm">
+                  Upload Successful!
+                </p>
               )
             )}
           </div>
@@ -63,13 +66,17 @@ const PhotoUploader = (props) => {
         }}
         type="button"
         style={{
-            color: selectedTextColor,
-            boxShadow: ` 0 1px 3px 0 ${selectedTextColor}`,
-            border: `1px solid ${selectedTextColor}`,
-            transition: "background 0.5s ease",
-          }}
-        className="rounded p-1 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
+          color: selectedTextColor,
+          boxShadow: ` 0 1px 3px 0 ${selectedTextColor}`,
+          border: `1px solid ${selectedTextColor}`,
+          transition: "background 0.5s ease",
+        }}
+        className="flex items-center rounded p-[3px] gap-1 md:gap-2 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
       >
+        <ArrowUpOnSquareIcon
+          style={{ fill: selectedTextColor }}
+          className="size-[14px] md:size-4 "
+        />
         Upload Image
       </button>
     </div>

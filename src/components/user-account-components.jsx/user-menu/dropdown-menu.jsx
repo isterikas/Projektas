@@ -1,8 +1,8 @@
 import { useState } from "react";
-// import UserMenuButton from "./user-menu-button";
 import PhotoUploader from "./photo-uploader";
 import ColorChanger from "./color-changer";
 import { useEffect } from "react";
+import { Bars3Icon, HomeIcon } from "@heroicons/react/16/solid";
 
 const UserDropDownMenu = (props) => {
   const {
@@ -27,8 +27,7 @@ const UserDropDownMenu = (props) => {
   const closeMenu = () => {
     if (isUserMenu) {
       setIsFocused(true);
-    }
-    else (setIsFocused(false))
+    } else setIsFocused(false);
   };
   useEffect(() => {
     closeMenu;
@@ -54,8 +53,12 @@ const UserDropDownMenu = (props) => {
           background: isFocused || isHovered ? "#64748b" : "transparent",
           transition: "background 0.5s ease",
         }}
-        className="rounded p-1 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px]"
+        className=" flex items-center rounded p-[3px] gap-1 md:gap-2 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px]"
       >
+        <Bars3Icon
+          style={{ fill: selectedTextColor }}
+          className="size-[14px] md:size-4"
+        />
         User Menu
       </button>
       <div
@@ -76,8 +79,12 @@ const UserDropDownMenu = (props) => {
                 border: `1px solid ${selectedTextColor}`,
                 transition: "background 0.5s ease",
               }}
-              className="rounded p-1 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
+              className=" flex items-center rounded p-[3px] gap-1 md:gap-2 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
             >
+              <HomeIcon
+                style={{ fill: selectedTextColor }}
+                className="size-[14px] md:size-4"
+              />
               Homepage
             </button>
             <PhotoUploader

@@ -9,7 +9,6 @@ import LogoUserIcon from "./user-account-components.jsx/logo-user-icon";
 import Loading from "./Loading";
 import UserOptions from "./user-account-components.jsx/user-options";
 import UserDropDownMenu from "./user-account-components.jsx/user-menu/dropdown-menu";
-import CameraIcon from "./user-account-components.jsx/camera-icon";
 import AddProfileName from "./user-account-components.jsx/add-profile-name";
 
 const UserAccount = () => {
@@ -171,17 +170,17 @@ const UserAccount = () => {
 
           <hr
             style={{ border: `1px solid ${selectedTextColor}` }}
-            className="mt-4"
+            className="m-3 md:m-4 lg:m-5"
           />
 
-          <div className="flex">
+          <div className="flex ms-[5px] md:ms-[125px] lg:ms-[150px]">
             <AddProfileName
               loggedUser={loggedUser}
               isProfileNameForm={isProfileNameForm}
               setIsProfileNameForm={setIsProfileNameForm}
             />
             <div
-              className=" text-[5rem] md:text-[6rem] lg:text-[7rem] flex justify-center items-center "
+              className=" text-[5rem] md:text-[6rem] lg:text-[7rem] flex justify-center items-center ms-[5px] md:ms-[80px] lg:ms-[110px] "
               // style={{
               //   boxShadow: isHovered
               //     ? `70px 35px 140px 40px #ffffff, inset -20px -5px 40px 0 #ffffff`
