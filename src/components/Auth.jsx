@@ -209,9 +209,10 @@ function Auth() {
             <div className="body-m text-white flex flex-row ml-[34px] mt-[11px] md:ml-[60px]">
               <div className="pr-2">Alread have an account?</div>
               <button
-                onClick={() => {
-                  setError("");
+                onClick={(e) => {
+                  e.preventDefault();
                   setAuthType("login");
+                  setError("");
                   clearErrors();
                 }}
                 className=" text-red body-m"
@@ -223,9 +224,10 @@ function Auth() {
             <div className="body-m text-white flex flex-row ml-[31px] mt-[-6px] md:ml-[60px]">
               <div className="pr-2">Don&#39;t have an account? </div>
               <button
-                onClick={() => {
-                  setError("");
+                onClick={(e) => {
+                  e.preventDefault();
                   setAuthType("signup");
+                  setError("");
                   clearErrors();
                 }}
                 className="text-red body-m"
