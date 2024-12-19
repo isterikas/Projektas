@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { patchData } from "../helpers/update";
 import { useForm } from "react-hook-form";
 import ClickOutside from "./user-menu/click-outside";
-import Loading from "../Loading";
+// import Loading from "../Loading";
 
 const AddProfileName = (props) => {
   const { loggedUser, isProfileNameForm, setIsProfileNameForm } = props;
@@ -57,9 +57,9 @@ const AddProfileName = (props) => {
     timedFormClosure();
   }, [isSubmitName]);
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   if (isProfileNameForm)
     return (
@@ -90,7 +90,7 @@ const AddProfileName = (props) => {
           <button
             type="submit"
             disabled={loading}
-            className="bnt-options"
+            className="w-[65px] text-white"
           >
             {loading ? "Submitting..." : "Submit"}
           </button>
