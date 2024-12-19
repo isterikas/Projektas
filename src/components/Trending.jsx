@@ -9,6 +9,7 @@ function Trending({
   update,
   setUpdate,
   loggedIn,
+  userBookmarks
 }) {
   return (
     <>
@@ -33,6 +34,11 @@ function Trending({
         className="mySwiper background-dark-blue"
       >
         {contents.map((slide) => {
+          const isBookmarked = userBookmarks.find(
+            (bookmark) =>
+              bookmark.contentsId == slide.contentsId &&
+              bookmark.userId == loggedIn
+          );
           if (slide.isTrending) {
             return (
               <SwiperSlide key={slide.contentsId}>
@@ -66,6 +72,7 @@ function Trending({
                     update={update}
                     setUpdate={setUpdate}
                     loggedIn={loggedIn}
+                    isBookmarked={isBookmarked}
                   />
                 </div>
               </SwiperSlide>

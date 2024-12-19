@@ -144,7 +144,7 @@ function Recommended({
       >
         {shuffledContents.length > 0 ? (
           shuffledContents.map((item) => {
-            const checked = userBookmarks.find(
+            const isBookmarked = userBookmarks.find(
               (bookmark) =>
                 bookmark.contentsId == item.contentsId &&
                 bookmark.userId == loggedIn
@@ -158,7 +158,7 @@ function Recommended({
                   userBookmarks={userBookmarks}
                   loggedIn={loggedIn}
                   width={width}
-                  checked={checked}
+                  isBookmarked={isBookmarked}
                 />
               </div>
             );

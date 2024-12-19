@@ -41,7 +41,7 @@ function Bookmarks() {
       );
     } else {
       result2 = result.map((item) => {
-        const checked = userBookmarks.find(
+        const isBookmarked = userBookmarks.find(
           (bookmark) =>
             bookmark.contentsId == item.contentsId &&
             bookmark.userId == loggedIn
@@ -55,7 +55,7 @@ function Bookmarks() {
               setUpdate={setUpdate}
               loggedIn={loggedIn}
               width={width}
-              checked={checked}
+              isBookmarked={isBookmarked}
             />
           </div>
         );
