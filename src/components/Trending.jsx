@@ -58,7 +58,7 @@ function Trending({
                       />
                     )}
                   </div>
-                  <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs">
+                  <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 hover:cursor-pointer opacity-0 hover:opacity-100 text-white place-content-center heading-xs hover:rounded-[8px]">
                     <div className="flex justify-center">
                       <div className="rounded-[100px] bg-white bg-opacity-25 flex gap-[19px] p-3">
                         <img src={PlayIcon} alt="Play icon" />
