@@ -2,7 +2,7 @@ import Card from "./Card.jsx";
 import { useLocation, useOutletContext, useSearchParams } from "react-router";
 import { InputMask } from "@react-input/mask";
 
-function Search({ array, update, setUpdate, loggedIn, width }) {
+function Search({ array, update, setUpdate, loggedIn, width, userBookmarks }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const pattern = /^[a-zA-Z0-9 ąčęėįšųūžĄČĘĖĮŠŲŪŽ]*$/;
@@ -45,6 +45,10 @@ function Search({ array, update, setUpdate, loggedIn, width }) {
       content.title.toLowerCase().includes(searchQuery.toLowerCase())
     )
     .map((item) => {
+      const isBookmarked = userBookmarks.find(
+        (bookmark) =>
+          bookmark.contentsId == item.contentsId && bookmark.userId == loggedIn
+      );
       return (
         <div key={item.contentsId}>
           <Card
@@ -54,6 +58,7 @@ function Search({ array, update, setUpdate, loggedIn, width }) {
             setUpdate={setUpdate}
             loggedIn={loggedIn}
             width={width}
+            isBookmarked={isBookmarked}
           />
         </div>
       );

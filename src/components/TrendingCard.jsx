@@ -1,45 +1,15 @@
-import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
-import { getAllData } from "./helpers/get.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
 import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
-function TrendingCard({ slide, setUpdate, update, loggedIn }) {
+function TrendingCard({ slide, setUpdate, update, loggedIn, isBookmarked }) {
   const { contentsId, title, year, category, rating } = slide;
-  const [checked, setChecked] = useState(false);
-  const [userBookmarks, setUserBookmarks] = useState([]);
-
-  const getAllUserBookmarks = async () => {
-    const userBookmarks = await getAllData("userBookmarks");
-    setUserBookmarks(userBookmarks);
-  };
-
-  const getThisBookmark = () => {
-    const thisBookmark = userBookmarks.find(
-      (bookmark) =>
-        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
-    );
-    if (thisBookmark) setChecked(true);
-  };
-
-  useEffect(() => {
-    getAllUserBookmarks();
-    getThisBookmark();
-  }, []);
 
   const toggleBookmark = async () => {
-    const bookmarks = await getAllData("userBookmarks");
-    setUserBookmarks(bookmarks);
-    const thisBookmark = userBookmarks.find(
-      (bookmark) =>
-        bookmark.userId == loggedIn && bookmark.contentsId == contentsId
-    );
-    if (thisBookmark) {
-      await deleteBookmark(thisBookmark.id);
-      setChecked(false);
+    if (isBookmarked) {
+      await deleteBookmark(isBookmarked.id);
     } else {
-      setChecked(true);
       await postData(
         { contentsId: contentsId, userId: loggedIn },
         "userBookmarks"
@@ -77,16 +47,15 @@ function TrendingCard({ slide, setUpdate, update, loggedIn }) {
         {loggedIn ? (
           <button
             onClick={async () => await toggleBookmark()}
-            className="text-white absolute   bookmark-icon "
+            className="text-white absolute bookmark-icon "
           >
-            <div className="relative icon-bg  bg-slate-500 bg-opacity-50  w-8 h-8  group   hover:bg-white  rounded-full">
-              {checked ? (
-                <div className=" group ">
+            <div className="relative icon-bg bg-slate-500 bg-opacity-50 w-8 h-8 group hover:bg-white rounded-full">
+              {isBookmarked ? (
+                <div className="group">
                   <BookmarkFull />
                 </div>
               ) : (
                 <div>
-                  {" "}
                   <BookmarkEmpty />
                 </div>
               )}

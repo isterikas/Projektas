@@ -72,7 +72,7 @@ The platform was built on Vite using React framework. Additional tools that were
 - Pavel G.
 
 Code testers: 
-- Airida Š.
+- Airida G.
 - Artur D.
 - Dmytro S.
 

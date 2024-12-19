@@ -35,6 +35,7 @@ export default [
       ],
       "react/prop-types": "off",
       "react-hooks/exhaustive-deps": "off",
+      "react-refresh/only-export-components": "off",
     },
   },
 ];
