@@ -4,7 +4,6 @@ import { url } from "./jsonURL";
 import sha1 from "js-sha1";
 import { sha256 } from "js-sha256";
 
-
 export const deleteAccount = async (id) => {
   const { userPassword } = await getOne(id, "users");
 
@@ -13,7 +12,7 @@ export const deleteAccount = async (id) => {
   );
   if (sha256(sha1(confirmed)) != userPassword) {
     alert("password is incorect");
-    return false
+    return false;
   } else {
     const response = await axios.delete(`${url("users")}/${id}`);
     return response.data;

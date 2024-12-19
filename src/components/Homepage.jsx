@@ -24,10 +24,10 @@ function Homepage() {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     initTrending();
-  },[loggedIn])
-  
+  }, [loggedIn]);
+
   return (
     <>
       <div className="lg:pl-40">
