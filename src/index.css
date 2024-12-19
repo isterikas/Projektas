@@ -170,7 +170,7 @@
 
 @layer utilities {
   .profile-image-large {
-    @apply rounded-[20px]  w-[9rem] h-[7rem] md:w-[12rem] md:h-[10rem] lg:w-[15rem] lg:h-[13rem];
+    @apply rounded-[20px] w-[9rem] h-[7rem] md:w-[12rem] md:h-[10rem] lg:w-[15rem] lg:h-[13rem];
   }
 
   .profile-image-small {

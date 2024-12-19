@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { deleteBookmark } from "./helpers/delete.js";
 import { postData } from "./helpers/post.js";
-import { getAllData } from "./helpers/get.js";
 import movieIcon from "../assets/icons/icon-nav-movies.svg";
 import BookmarkFull from "./card-contents-icons/icon-bookmark-full.jsx";
 import BookmarkEmpty from "./card-contents-icons/icon-bookmark-empty.jsx";
@@ -49,16 +47,15 @@ function TrendingCard({ slide, setUpdate, update, loggedIn, isBookmarked }) {
         {loggedIn ? (
           <button
             onClick={async () => await toggleBookmark()}
-            className="text-white absolute   bookmark-icon "
+            className="text-white absolute bookmark-icon "
           >
-            <div className="relative icon-bg  bg-slate-500 bg-opacity-50  w-8 h-8  group   hover:bg-white  rounded-full">
+            <div className="relative icon-bg bg-slate-500 bg-opacity-50 w-8 h-8 group hover:bg-white rounded-full">
               {isBookmarked ? (
-                <div className=" group ">
+                <div className="group">
                   <BookmarkFull />
                 </div>
               ) : (
                 <div>
-                  {" "}
                   <BookmarkEmpty />
                 </div>
               )}
