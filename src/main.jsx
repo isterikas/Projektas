@@ -63,6 +63,7 @@ createRoot(document.getElementById("root")).render(
               }
             />
           </Route>
+          <Route path="/account/deleted" element={<Suspense fallback={<Loading />}><LazyAccountDeleted /></Suspense>}/>
           <Route
             path="*"
             element={
@@ -70,7 +71,6 @@ createRoot(document.getElementById("root")).render(
                 <LazyNotFound />
               </Suspense>
             }/>
-          <Route path="/account/deleted" element={<Suspense fallback={<Loading />}><LazyAccountDeleted /></Suspense>}/>
         </Routes>
       </ErrorBoundary>
     </BrowserRouter>
