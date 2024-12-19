@@ -7,7 +7,7 @@ const DeleteAccount = (props) => {
   const [isDeleteRequest, setDeleteRequest] = useState(false);
 
   const handleDelete = async () => {
-    setDeleteRequest(true);
+    //  setDeleteRequest(true);
     const deletion = await deleteAccount(loggedUser.id);
     if (!deletion) {
       return;
@@ -15,7 +15,7 @@ const DeleteAccount = (props) => {
       try {
         window.localStorage.clear();
         setLoggedIn("");
-        setLoggedUser(null);
+        // setLoggedUser(null);
         setTimeout(() => {
           navigate("/account/deleted");
         }, 1000);
@@ -29,7 +29,12 @@ const DeleteAccount = (props) => {
     <div>
       <button
         type="submit"
-        onClick={handleDelete}
+        onClick={() => {
+          setDeleteRequest(true);
+          setTimeout(() => {
+            handleDelete();
+          }, 100);
+        }}
         className="btn-options-delete"
       >
         <TrashIcon className="size-[14px] md:size-4 fill-red-500" />
