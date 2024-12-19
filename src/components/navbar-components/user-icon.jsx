@@ -20,18 +20,34 @@ const UserIcon = (props) => {
 
   return (
     <div className="relative">
-      {loggedUser?.image ? <img
-        src={`http://localhost:5000${loggedUser.image}`}
-        alt="userImage"
-        onClick={() => {setIsMenuOpen(!isMenuOpen)}}
-        style={{boxShadow: `0 0 5px 0 #ef4444`}}
-        className={`${!isMenuOpen ? "profile-image-small cursor-pointer" : "profile-image-small"}`}
-      /> : <img
-        src={faviconIcon}
-        alt="faviconIcon"
-        onClick={() => {setIsMenuOpen(!isMenuOpen)}}
-        className={`${!isMenuOpen ? "profile-image-small cursor-pointer" : "profile-image-small"}`}
-      />}
+      {loggedUser?.image ? (
+        <img
+          src={`http://localhost:5000${loggedUser.image}`}
+          alt="userImage"
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+          }}
+          style={{ boxShadow: `0 0 5px 0 #ef4444` }}
+          className={`${
+            !isMenuOpen
+              ? "profile-image-small cursor-pointer"
+              : "profile-image-small"
+          }`}
+        />
+      ) : (
+        <img
+          src={faviconIcon}
+          alt="faviconIcon"
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+          }}
+          className={`${
+            !isMenuOpen
+              ? "profile-image-small cursor-pointer"
+              : "profile-image-small"
+          }`}
+        />
+      )}
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
@@ -56,7 +72,7 @@ const UserIcon = (props) => {
           onClick={() => setIsMenuOpen(false)}
         ></div>
       )}
-    </div >
+    </div>
   );
 };
 
