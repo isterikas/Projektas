@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { patchData } from "../helpers/update";
 import { useForm } from "react-hook-form";
 import ClickOutside from "./user-menu/click-outside";
+import Loading from "../Loading";
 
 const AddProfileName = (props) => {
   const { loggedUser, isProfileNameForm, setIsProfileNameForm } = props;
@@ -41,6 +42,8 @@ const AddProfileName = (props) => {
     }
   };
 
+  
+
   const timedFormClosure = () => {
     if (isSubmitName && !loading)
       setTimeout(() => {
@@ -53,6 +56,10 @@ const AddProfileName = (props) => {
   useEffect(() => {
     timedFormClosure();
   }, [isSubmitName]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (isProfileNameForm)
     return (

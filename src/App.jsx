@@ -55,6 +55,7 @@ export default function App() {
 
   const findUser = async () => {
     if (loggedIn && users.length > 0 && !loggedUser) {
+      setIsLoading(true)
       const thisUser = users.find((user) => user.id === loggedIn);
       console.log("test");
       setLoggedUser(thisUser);
