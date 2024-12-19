@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "2",
@@ -42,7 +42,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "a1ac",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "3",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -86,7 +86,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "cce9",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "5",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "6",
@@ -234,7 +234,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "c4aa",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "13",
@@ -324,7 +324,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "7e27",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "18",
@@ -360,7 +360,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "615d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "20",
@@ -414,7 +414,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "41b4",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "23",
@@ -504,7 +504,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "2c31",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "28",
@@ -540,7 +540,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "4432",
-      "latestTrending": 0
+      "latestTrending": 1
     }
   ],
   "users": [
