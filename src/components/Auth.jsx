@@ -84,7 +84,7 @@ function Auth() {
           alt="SVG Image"
           className=" animate-spin-slowerY mt-[48px] md:mt-[10px] mb-[58.4px]"
         />
-        <div className="background-semidark-blue w-[327px]  h-[420px] md:w-[400px] md:h-[418px] rounded-lg">
+        <div className={`background-semidark-blue w-[327px]   ${(errors.password && authType=="signup")?"h-[520px] md:h-[520px]":"h-[420] md:h-[418px]"} md:w-[400px]  rounded-lg`}>
           {authType === "login" ? (
             <h1 className="text-white heading-l mt-[19px] md:mt-[40px] ml-[23px] md:ml-[32px]">
               Login
