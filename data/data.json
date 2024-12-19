@@ -20,7 +20,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "b737",
-      "latestTrending": 1
+      "latestTrending": 3
     },
     {
       "contentsId": "2",
@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "4",
@@ -144,7 +144,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "b649",
-      "latestTrending": 1
+      "latestTrending": 3
     },
     {
       "contentsId": "8",
@@ -162,7 +162,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "25c7",
-      "latestTrending": 1
+      "latestTrending": 4
     },
     {
       "contentsId": "9",
@@ -180,7 +180,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "0afa",
-      "latestTrending": 1
+      "latestTrending": 3
     },
     {
       "contentsId": "10",
@@ -252,7 +252,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "06d9",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "14",
@@ -270,7 +270,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "731b",
-      "latestTrending": 1
+      "latestTrending": 3
     },
     {
       "contentsId": "15",
@@ -342,7 +342,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "c19b",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "19",
@@ -360,7 +360,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "615d",
-      "latestTrending": 1
+      "latestTrending": 2
     },
     {
       "contentsId": "20",
@@ -557,6 +557,14 @@
       "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed",
       "image": "/uploads/1734510011642.JPG",
       "created": "2024-12-18T07:54:47.360Z"
+    },
+    {
+      "id": "5dea",
+      "userName": "edgaraslaptevas38@gmail.com",
+      "userPassword": "14be7a7d55faa13891aa79e41cdd835527432927a1a9772a83ee4d3694dda206",
+      "image": "/uploads/1734609109996.png",
+      "created": "2024-12-19T08:08:42.104Z",
+      "profileName": "Edgaras Laptevas"
     }
   ],
   "userBookmarks": [
@@ -704,6 +712,81 @@
       "id": "cd32",
       "contentsId": "28",
       "userId": "ce30"
+    },
+    {
+      "id": "6b7a",
+      "contentsId": "8",
+      "userId": "e419"
+    },
+    {
+      "id": "7daf",
+      "contentsId": "8",
+      "userId": "e419"
+    },
+    {
+      "id": "8831",
+      "contentsId": "9",
+      "userId": "e419"
+    },
+    {
+      "id": "dcb4",
+      "contentsId": "9",
+      "userId": "e419"
+    },
+    {
+      "id": "a08f",
+      "contentsId": "7",
+      "userId": "e419"
+    },
+    {
+      "id": "62dc",
+      "contentsId": "7",
+      "userId": "e419"
+    },
+    {
+      "id": "9a32",
+      "contentsId": "1",
+      "userId": "e419"
+    },
+    {
+      "id": "caef",
+      "contentsId": "8",
+      "userId": "e419"
+    },
+    {
+      "id": "373d",
+      "contentsId": "1",
+      "userId": "e419"
+    },
+    {
+      "id": "b1bc",
+      "contentsId": "19",
+      "userId": "e419"
+    },
+    {
+      "id": "ea94",
+      "contentsId": "18",
+      "userId": "e419"
+    },
+    {
+      "id": "fcab",
+      "contentsId": "3",
+      "userId": "e419"
+    },
+    {
+      "id": "f997",
+      "contentsId": "13",
+      "userId": "e419"
+    },
+    {
+      "id": "2a3a",
+      "contentsId": "14",
+      "userId": "e419"
+    },
+    {
+      "id": "b10b",
+      "contentsId": "14",
+      "userId": "e419"
     }
   ]
 }

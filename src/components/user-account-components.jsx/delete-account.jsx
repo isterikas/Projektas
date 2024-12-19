@@ -31,7 +31,7 @@ const [isDeleteRequest, setDeleteRequest] = useState(false)
       <button
         type="submit"
         onClick={handleDelete}
-        className="flex w-full items-center h-[2rem] gap-1 md:gap-2 rounded-md p-[3px] text-[10px] md:text-xs hover:bg-black focus:bg-black"
+        className="flex w-full items-center h-[25px] md:h-[30px] gap-1 md:gap-2 rounded-md p-[3px] text-[10px] md:text-xs hover:bg-black focus:bg-black"
       >
         <TrashIcon className="size-[14px] md:size-4 fill-red-500" />
         Delete Account

@@ -54,12 +54,12 @@ const UserDropDownMenu = (props) => {
           background: isFocused || isHovered ? "#64748b" : "transparent",
           transition: "background 0.5s ease",
         }}
-        className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px]"
+        className="rounded p-1 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px]"
       >
         User Menu
       </button>
       <div
-        className={`absolute top-[2.5rem] w-[100px] md:w-[120px] ${
+        className={`absolute top-[30px] md:top-[40px] w-[100px] md:w-[120px] ${
           isUserMenu ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         } transition-all duration-300 ease-in-out`}
       >
@@ -76,7 +76,7 @@ const UserDropDownMenu = (props) => {
                 border: `1px solid ${selectedTextColor}`,
                 transition: "background 0.5s ease",
               }}
-              className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
+              className="rounded p-1 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
             >
               Homepage
             </button>

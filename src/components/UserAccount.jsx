@@ -10,6 +10,7 @@ import Loading from "./Loading";
 import UserOptions from "./user-account-components.jsx/user-options";
 import UserDropDownMenu from "./user-account-components.jsx/user-menu/dropdown-menu";
 import CameraIcon from "./user-account-components.jsx/camera-icon";
+import AddProfileName from "./user-account-components.jsx/add-profile-name";
 
 const UserAccount = () => {
   const {
@@ -33,6 +34,7 @@ const UserAccount = () => {
   );
   const [showModal, setShowModal] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isProfileNameForm, setIsProfileNameForm] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -120,7 +122,7 @@ const UserAccount = () => {
         className="relative px-2 py-4 md:px-4 m-1 md:m-4 lg:m-6 border-2 rounded-2xl border-blue-900"
       >
         <div className="md:mx-[1rem] lg:mx-[2rem]">
-          <div className="flex items-center justify-between mb-4 ">
+          <div className="flex items-center justify-between mb-2 md:mb-4 ">
             <LogoUserIcon selectedTextColor={selectedTextColor} />
             <UserDropDownMenu
               selectedTextColor={selectedTextColor}
@@ -146,34 +148,51 @@ const UserAccount = () => {
                 No image uploaded yet!
               </p>
             )}
-            <p
-              style={{ color: selectedTextColor }}
-              className="text-[20px] md:text-[2rem] lg:text-[2.5rem] font-semibold "
-            >
-              {loggedUser?.userName}
-            </p>
+            {loggedUser.profileName ? (
+              <p
+                style={{ color: selectedTextColor }}
+                className="text-[20px] md:text-[2rem] lg:text-[2.5rem] font-semibold "
+              >
+                {loggedUser?.profileName}
+              </p>
+            ) : (
+              <p
+                style={{ color: selectedTextColor }}
+                className="text-[20px] md:text-[2rem] lg:text-[2.5rem] font-semibold "
+              >
+                {loggedUser?.userName}
+              </p>
+            )}
             <p
               style={{ color: selectedTextColor }}
               className="font-semibold text-[13px] md:text-[18px] lg:text-[23px]"
             >{`Member since: ${formattedDate}`}</p>
           </div>
+
           <hr
             style={{ border: `1px solid ${selectedTextColor}` }}
             className="mt-4"
           />
-          <div className="flex justify-between"></div>
-          <div
-            className=" text-[6rem] md:text-[7rem] lg:text-[8rem] flex justify-center items-center ms-[7rem] md:ms-0 md:h-[210px] rounded-[5rem] w-[10rem] h-[11rem]"
-            // style={{
-            //   boxShadow: isHovered
-            //     ? `70px 35px 140px 40px #ffffff, inset -20px -5px 40px 0 #ffffff`
-            //     : "none",
-            //   transition: "box-shadow 0.3s ease",
-            // }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            🎥
+
+          <div className="flex">
+            <AddProfileName
+              loggedUser={loggedUser}
+              isProfileNameForm={isProfileNameForm}
+              setIsProfileNameForm={setIsProfileNameForm}
+            />
+            <div
+              className=" text-[5rem] md:text-[6rem] lg:text-[7rem] flex justify-center items-center "
+              // style={{
+              //   boxShadow: isHovered
+              //     ? `70px 35px 140px 40px #ffffff, inset -20px -5px 40px 0 #ffffff`
+              //     : "none",
+              //   transition: "box-shadow 0.3s ease",
+              // }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              🎥
+            </div>
           </div>
           <UserOptions
             loggedUser={loggedUser}
@@ -183,6 +202,7 @@ const UserAccount = () => {
             showModal={showModal}
             setShowModal={setShowModal}
             loggedIn={loggedIn}
+            setIsProfileNameForm={setIsProfileNameForm}
           />
           <hr
             style={{ border: `2px solid ${selectedTextColor}` }}
@@ -190,7 +210,6 @@ const UserAccount = () => {
           />
         </div>
       </div>
-      <CameraIcon />
     </div>
   );
 };

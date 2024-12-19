@@ -14,7 +14,7 @@ const PhotoUploader = (props) => {
     setIsColorChanger,
   } = props;
 
-  const timedClosure = () => {
+  const timedUploadClosure = () => {
     if (isUploadSuccess && !isLoading)
       setTimeout(() => {
         setIsPhotoUploader((prev) => !prev);
@@ -22,7 +22,7 @@ const PhotoUploader = (props) => {
   };
 
   useEffect(() => {
-    timedClosure();
+    timedUploadClosure();
   }, [isUploadSuccess]);
 
   const closePhotoUploader = ClickOutside(() => {
@@ -68,7 +68,7 @@ const PhotoUploader = (props) => {
             border: `1px solid ${selectedTextColor}`,
             transition: "background 0.5s ease",
           }}
-        className="rounded p-1 text-[10px] md:text-xs h-[2rem] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
+        className="rounded p-1 text-[10px] md:text-xs h-[25px] md:h-[30px] ms-[120px] md:ms-[8.5rem] lg:ms-[9.5rem] border-[1px] w-[90px] md:w-[100px] lg:w-[120px] hover:bg-slate-700 focus:bg-slate-600"
       >
         Upload Image
       </button>
