@@ -3,6 +3,7 @@ import Trending from "./Trending";
 import { useOutletContext } from "react-router";
 import Search from "./Search";
 import { updateTrending } from "./helpers/updateTrending";
+import { useEffect } from "react";
 
 function Homepage() {
   const {
@@ -23,7 +24,10 @@ function Homepage() {
     }
   };
 
-  initTrending();
+  useEffect(()=>{
+    initTrending();
+  },[loggedIn])
+  
   return (
     <>
       <div className="lg:pl-40">
