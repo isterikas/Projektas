@@ -64,7 +64,7 @@
       "isBookmarked": false,
       "isTrending": true,
       "id": "3b8b",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "4",
@@ -108,7 +108,7 @@
       "isBookmarked": true,
       "isTrending": true,
       "id": "d57d",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "6",
@@ -198,7 +198,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "61af",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "11",
@@ -378,7 +378,7 @@
       "isBookmarked": false,
       "isTrending": false,
       "id": "6333",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "21",
@@ -450,7 +450,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "7939",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "25",
@@ -504,7 +504,7 @@
       "isBookmarked": true,
       "isTrending": false,
       "id": "2c31",
-      "latestTrending": 0
+      "latestTrending": 1
     },
     {
       "contentsId": "28",
@@ -550,7 +550,45 @@
       "userPassword": "62cf7033945991e7fcabcce71686d7fe1239873dcf794e843c6d266fac80f5ed",
       "image": "/uploads/1734594211118.png",
       "created": "2024-12-18T07:54:47.360Z"
+    },
+    {
+      "id": "3b47",
+      "userName": "pavel.gusev431@gmail.com",
+      "userPassword": "d6f81181b7261b90c9488bd9b26abbf2c67e79c23ab09343d5fc1c22c4b1a6fe",
+      "image": "",
+      "created": "2024-12-19T11:43:10.672Z"
     }
   ],
-  "userBookmarks": []
+  "userBookmarks": [
+    {
+      "id": "f118",
+      "contentsId": "5",
+      "userId": null
+    },
+    {
+      "id": "9eea",
+      "contentsId": "3",
+      "userId": null
+    },
+    {
+      "id": "ecbe",
+      "contentsId": "27",
+      "userId": null
+    },
+    {
+      "id": "6d18",
+      "contentsId": "20",
+      "userId": null
+    },
+    {
+      "id": "d473",
+      "contentsId": "24",
+      "userId": null
+    },
+    {
+      "id": "a19d",
+      "contentsId": "10",
+      "userId": null
+    }
+  ]
 }
