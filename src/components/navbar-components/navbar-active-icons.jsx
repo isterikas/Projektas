@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 const NavBarIcons = ({ loggedIn }) => {
   return (
-    <div className="flex justify-between w-[134px] h-[16px] md:w-[173px] md:h-[20px] lg:w-[20px] lg:h-[200px] lg:flex-col">
+    <div className="flex justify-between w-[134px] h-[16px] md:w-[173px] md:h-[20px] lg:w-[20px] lg:h-[200px] lg:flex-col lg:mt-2">
       <NavLink
         to="/"
         aria-label="Homepage"

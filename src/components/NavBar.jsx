@@ -3,7 +3,7 @@ import LogoIcon from "./navbar-components/logo-icon.jsx";
 import NavBarIcons from "./navbar-components/navbar-active-icons";
 import HamburgerMenu from "./navbar-components/navbar-hamburger-icon";
 import UserIcon from "./navbar-components/user-icon.jsx";
-import ExpandingDiv from "./navbar-components/expanding-div.jsx";
+import ExpandingNavbar from "./navbar-components/expanding-navbar.jsx";
 
 function NavBar(props) {
   const { setAuthType, loggedIn, setLoggedIn, loggedUser } = props;
@@ -14,7 +14,9 @@ function NavBar(props) {
       {location.pathname == "/authorization" ||
       location.pathname == "/authorization/" ||
       location.pathname == "/account" ||
-      location.pathname == "/account/" ? (
+      location.pathname == "/account/" ||
+      location.pathname == "/account/deleted" ||
+      location.pathname == "/account/deleted/" ? (
         ""
       ) : (
         <div>
@@ -48,10 +50,11 @@ function NavBar(props) {
               )}
             </div>
           </nav>
-          <ExpandingDiv
+          <ExpandingNavbar
             setAuthType={setAuthType}
             setLoggedIn={setLoggedIn}
             loggedIn={loggedIn}
+            loggedUser={loggedUser}
           />
         </div>
       )}
