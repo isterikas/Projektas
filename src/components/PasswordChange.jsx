@@ -54,7 +54,7 @@ const PasswordChange = ({ showModal, setShowModal, loggedIn }) => {
     <>
       <dialog
         open={showModal}
-        className="fixed bottom-1/2 top-1/2 rounded-xl px-8 py-4 background-dark-blue"
+        className="fixed bottom-1/2 top-1/2 rounded-xl w-[327px] h-[420px] md:w-[400px] md:h-[418px]  background-semidark-blue"
       >
         <div className="flex flex-col items-center font-bold text-white mb-5">
           <button
