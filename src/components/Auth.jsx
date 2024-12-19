@@ -17,7 +17,8 @@ function Auth() {
     formState: { errors },
   } = useForm({ reValidateMode: "onSubmit" });
   const navigate = useNavigate();
-  const { authType, setAuthType, setLoggedIn, setLoggedUser } = useOutletContext();
+  const { authType, setAuthType, setLoggedIn, setLoggedUser, setIsLoading } =
+    useOutletContext();
   const [error, setError] = useState("");
   const [users, setUsers] = useState([]);
 
@@ -65,6 +66,7 @@ function Auth() {
         );
         setLoggedIn(createdUser.id);
         setLoggedUser(createdUser);
+        setIsLoading(false);
         setAuthType("");
         navigate("/");
         alert(`New account ${data.email} was created successfully.`);

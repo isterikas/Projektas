@@ -17,9 +17,9 @@ const [isDeleteRequest, setDeleteRequest] = useState(false)
         window.localStorage.clear();
         setLoggedIn("");
         setLoggedUser(null);
-        setTimeout(() => {
+        // setTimeout(() => {
             navigate("/account/deleted");
-        }, 1000);
+        // }, 1000);
       } catch (error) {
         window.alert("Error deleting account:", error.message);
       }

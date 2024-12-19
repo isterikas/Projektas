@@ -54,9 +54,9 @@ export default function App() {
   };
 
   const findUser = async () => {
-    if (loggedIn && users.length > 0) {
+    if (loggedIn && users.length > 0 && !loggedUser) {
       const thisUser = users.find((user) => user.id === loggedIn);
-
+      console.log("test");
       setLoggedUser(thisUser);
       setIsLoading(false);
     }
@@ -66,10 +66,8 @@ export default function App() {
     getAllcontents();
     getAllUserBookmarks();
     getAllUsers();
-    if (loggedIn) 
-      findUser();
+    if (loggedIn) findUser();
   }, [update, loggedIn]);
-
 
   return (
     <div className="inset-0 background-dark-blue h-dvh">
@@ -80,6 +78,7 @@ export default function App() {
           loggedIn={loggedIn}
           setLoggedIn={setLoggedIn}
           loggedUser={loggedUser}
+          setLoggedUser={setLoggedUser}
         />
       </div>
       <div className="background-dark-blue">
@@ -99,6 +98,7 @@ export default function App() {
               update,
               setUpdate,
               width,
+              setIsLoading,
               loggedUser,
               setLoggedUser,
               isLoading,
