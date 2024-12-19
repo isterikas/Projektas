@@ -13,7 +13,7 @@ export default function App() {
   const [users, setUsers] = useState([]);
   const [userBookmarks, setUserBookmarks] = useState([]);
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [loggedUser, setLoggedUser] = usePersistState({}, "loggedUser");
   const [width, setWidth] = useState(window.innerWidth);
 
