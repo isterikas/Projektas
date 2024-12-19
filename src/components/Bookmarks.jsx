@@ -41,6 +41,11 @@ function Bookmarks() {
       );
     } else {
       result2 = result.map((item) => {
+        const checked = userBookmarks.find(
+          (bookmark) =>
+            bookmark.contentsId == item.contentsId &&
+            bookmark.userId == loggedIn
+        );
         return (
           <div key={item.contentsId}>
             <Card
@@ -50,6 +55,7 @@ function Bookmarks() {
               setUpdate={setUpdate}
               loggedIn={loggedIn}
               width={width}
+              checked={checked}
             />
           </div>
         );
@@ -74,15 +80,15 @@ function Bookmarks() {
           ""
         ) : (
           <>
-          <div className="w-full min-h-fit">
-            <h2 className="content-heading text-white">Bookmarked shows</h2>
-            <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
-              {bookmarkedContent("TV Series")}
-            </div>
-            <h2 className="content-heading text-white">Bookmarked movies</h2>
-            <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
-              {bookmarkedContent("Movie")}
-            </div>
+            <div className="w-full min-h-fit">
+              <h2 className="content-heading text-white">Bookmarked shows</h2>
+              <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
+                {bookmarkedContent("TV Series")}
+              </div>
+              <h2 className="content-heading text-white">Bookmarked movies</h2>
+              <div className="p-3 grid grid-cols-2 md:grid-cols:3 lg:grid-cols-4">
+                {bookmarkedContent("Movie")}
+              </div>
             </div>
           </>
         )}

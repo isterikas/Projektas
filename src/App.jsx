@@ -68,7 +68,7 @@ export default function App() {
     getAllUsers();
     if (loggedIn) 
       findUser();
-  }, [update, loggedIn, users]);
+  }, [update, loggedIn]);
 
 
   return (

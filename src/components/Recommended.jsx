@@ -3,11 +3,12 @@ import Card from "./Card";
 import { getAllData } from "./helpers/get";
 
 function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
+  const array2 = [...array]
+  for (let i = array2.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    [array2[i], array2[j]] = [array2[j], array2[i]];
   }
-  return array;
+  return array2;
 }
 
 const getUserBookmarks = async (loggedIn) => {
@@ -126,7 +127,7 @@ function Recommended({
     } else {
       fetchRecommendations();
     }
-  }, [contents, loggedIn]);
+  }, [loggedIn]);
 
   return (
     <div>
@@ -142,18 +143,26 @@ function Recommended({
         }
       >
         {shuffledContents.length > 0 ? (
-          shuffledContents.map((item) => (
-            <div key={item.contentsId}>
-              <Card
-                item={item}
-                update={update}
-                setUpdate={setUpdate}
-                userBookmarks={userBookmarks}
-                loggedIn={loggedIn}
-                width={width}
-              />
-            </div>
-          ))
+          shuffledContents.map((item) => {
+            const checked = userBookmarks.find(
+              (bookmark) =>
+                bookmark.contentsId == item.contentsId &&
+                bookmark.userId == loggedIn
+            );
+            return (
+              <div key={item.contentsId}>
+                <Card
+                  item={item}
+                  update={update}
+                  setUpdate={setUpdate}
+                  userBookmarks={userBookmarks}
+                  loggedIn={loggedIn}
+                  width={width}
+                  checked={checked}
+                />
+              </div>
+            );
+          })
         ) : (
           <p className="content-text m-5 text-white">
             Currently there are no Movies or TV Series to recommend - come back
