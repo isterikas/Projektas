@@ -139,7 +139,7 @@ const UserAccount = () => {
               navigate={navigate}
             />
           </div>
-          <div className="flex flex-col items-center justify-center h-[185px] md:h-[250px] lg:h-[300px]">
+          <div className="flex flex-col items-center justify-center py-[65px] ">
             <div>{profileImage}</div>
             {profileImage ? (
               <p className="text-slate-300">Profile image</p>

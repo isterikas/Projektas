@@ -7,7 +7,6 @@ const DeleteAccount = (props) => {
   const [isDeleteRequest, setDeleteRequest] = useState(false);
 
   const handleDelete = async () => {
-    //  setDeleteRequest(true);
     const deletion = await deleteAccount(loggedUser.id);
     if (!deletion) {
       return;
@@ -15,7 +14,7 @@ const DeleteAccount = (props) => {
       try {
         window.localStorage.clear();
         setLoggedIn("");
-        // setLoggedUser(null);
+        setLoggedUser("");
         setTimeout(() => {
           navigate("/account/deleted");
         }, 1000);
