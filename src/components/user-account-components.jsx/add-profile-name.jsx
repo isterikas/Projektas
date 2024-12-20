@@ -40,16 +40,26 @@ const AddProfileName = (props) => {
 
   useEffect (() => {
     findProfileName()
-  }, [])
+    setUpdate((prev) => prev + 1);
+  }, [update])
+
+ 
 
   const handleProfileNameForm = async (data) => {
     setLoading(true);
     try {
+      
       await patchData("users", id, { profileName: data.profileName });
-      setUpdate((prev) => prev + 1);
+  
+      
+      setLoggedUser((prev) => ({
+        ...prev,
+        profileName: data.profileName, 
+      }));
+  
+      setUpdate((prev) => prev + 1);  
       reset();
       setError("");
-      window.location.reload()
       setSubmitMessage("You successfully added Profile Name");
     } catch (error) {
       setError(error.message);

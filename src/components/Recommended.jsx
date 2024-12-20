@@ -104,7 +104,7 @@ function Recommended({
       setShuffledContents(sortedContents);
     };
 
-    if (!loggedIn) {
+    if (!loggedIn || !userBookmarks.data) {
       setShuffledContents(shuffleArray([...contents]));
     } else {
       fetchRecommendations();
