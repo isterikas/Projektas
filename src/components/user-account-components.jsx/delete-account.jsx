@@ -1,14 +1,13 @@
 import { deleteAccount } from "../helpers/delete";
-import {TrashIcon,} from '@heroicons/react/16/solid'
+import { TrashIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 
 const DeleteAccount = (props) => {
-
-    const {loggedUser, setLoggedUser, setLoggedIn, navigate, showModal, setShowModal } = props
-const [isDeleteRequest, setDeleteRequest] = useState(false)
+  const { loggedUser, setLoggedUser, setLoggedIn, navigate } = props;
+  const [isDeleteRequest, setDeleteRequest] = useState(false);
 
   const handleDelete = async () => {
-    setDeleteRequest(true)
+    setDeleteRequest(true);
     const deletion = await deleteAccount(loggedUser.id);
     if (!deletion) {
       return;
@@ -17,9 +16,9 @@ const [isDeleteRequest, setDeleteRequest] = useState(false)
         window.localStorage.clear();
         setLoggedIn("");
         setLoggedUser(null);
-        // setTimeout(() => {
-            navigate("/account/deleted");
-        // }, 1000);
+        setTimeout(() => {
+          navigate("/account/deleted");
+        }, 1000);
       } catch (error) {
         window.alert("Error deleting account:", error.message);
       }
@@ -31,7 +30,7 @@ const [isDeleteRequest, setDeleteRequest] = useState(false)
       <button
         type="submit"
         onClick={handleDelete}
-        className="flex w-full items-center h-[2rem] gap-1 md:gap-2 rounded-md p-[3px] text-[10px] md:text-xs hover:bg-black focus:bg-black"
+        className="btn-options-delete"
       >
         <TrashIcon className="size-[14px] md:size-4 fill-red-500" />
         Delete Account
@@ -43,8 +42,6 @@ const [isDeleteRequest, setDeleteRequest] = useState(false)
         ></div>
       )}
     </div>
-    
-    
   );
 };
 
