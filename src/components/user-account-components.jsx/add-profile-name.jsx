@@ -5,7 +5,7 @@ import ClickOutside from "./user-menu/click-outside";
 import Loading from "../Loading";
 
 const AddProfileName = (props) => {
-  const { loggedUser, isProfileNameForm, setIsProfileNameForm, setUpdate, setLoggedUser  } =
+  const { loggedUser, isProfileNameForm, setIsProfileNameForm, setUpdate, setLoggedUser, users, update } =
     props;
   const { id, profileName } = loggedUser;
   const [loading, setLoading] = useState(false);
@@ -26,10 +26,21 @@ const AddProfileName = (props) => {
   const [error, setError] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
   const [isSubmitName, setIsSubmitName] = useState(false);
+  
 
   const closeProfileNameForm = ClickOutside(() => {
     setIsProfileNameForm(false);
   });
+
+  const findProfileName = () => {
+    const thisProfileName = users.find((user) => user.id === id);
+    setLoggedUser(thisProfileName)
+    setUpdate((prev) => prev + 1);
+  }
+
+  useEffect (() => {
+    findProfileName()
+  }, [])
 
   const handleProfileNameForm = async (data) => {
     setLoading(true);
@@ -38,6 +49,7 @@ const AddProfileName = (props) => {
       setUpdate((prev) => prev + 1);
       reset();
       setError("");
+      window.location.reload()
       setSubmitMessage("You successfully added Profile Name");
     } catch (error) {
       setError(error.message);
@@ -57,6 +69,7 @@ const AddProfileName = (props) => {
   };
 
   useEffect(() => {
+    
     timedFormClosure();
   }, [isSubmitName]);
 
@@ -100,6 +113,7 @@ const AddProfileName = (props) => {
           <button
             type="submit"
             disabled={loading}
+           
             className="w-[65px] md:w-[85px] lg:w-[105px] h-[25px] md:h-[30px] rounded-md text-[12px] md:text-[13px] lg:text-[14px] border-[1px] text-white bg-slate-600 hover:bg-slate-500"
           >
             {loading ? "Submitting..." : "Submit"}

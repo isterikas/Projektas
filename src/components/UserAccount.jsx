@@ -21,6 +21,8 @@ const UserAccount = () => {
     loggedIn,
     setLoggedIn,
     setUpdate,
+    users,
+  
   } = useOutletContext();
   const [userImage, setUserImage] = useState(null);
   const [isUploadSuccess, setIsUploadSuccess] = useState(false);
@@ -183,6 +185,8 @@ const UserAccount = () => {
                 setIsProfileNameForm={setIsProfileNameForm}
                 setUpdate={setUpdate}
                 setLoggedUser={setLoggedUser}
+                users={users}
+                
               />
             </div>
             <div className="flex items-end">
