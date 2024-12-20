@@ -5,7 +5,7 @@ import ClickOutside from "./user-menu/click-outside";
 import Loading from "../Loading";
 
 const AddProfileName = (props) => {
-  const { loggedUser, isProfileNameForm, setIsProfileNameForm, setUpdate } =
+  const { loggedUser, isProfileNameForm, setIsProfileNameForm, setUpdate, setLoggedUser  } =
     props;
   const { id, profileName } = loggedUser;
   const [loading, setLoading] = useState(false);
