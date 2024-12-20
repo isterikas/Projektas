@@ -40,7 +40,7 @@ const ColorChanger = (props) => {
               className="p-2 bg-white"
             />
           </div>
-          <div>
+          <div className="z-50">
             <label
               style={{ color: selectedTextColor }}
               className="p-1 text-[10px] md:text-xs lg:text-sm"

@@ -20,6 +20,9 @@ const UserAccount = () => {
     loggedUser,
     loggedIn,
     setLoggedIn,
+    setUpdate,
+    users,
+  
   } = useOutletContext();
   const [userImage, setUserImage] = useState(null);
   const [isUploadSuccess, setIsUploadSuccess] = useState(false);
@@ -114,6 +117,8 @@ const UserAccount = () => {
     />
   ) : null;
 
+  console.log(loggedUser);
+
   return (
     <div>
       <div
@@ -136,7 +141,7 @@ const UserAccount = () => {
               navigate={navigate}
             />
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center justify-center pt-[60px] ">
             <div>{profileImage}</div>
             {profileImage ? (
               <p className="text-slate-300">Profile image</p>
@@ -147,7 +152,7 @@ const UserAccount = () => {
                 No image uploaded yet!
               </p>
             )}
-            {loggedUser.profileName ? (
+            {loggedUser?.profileName ? (
               <p
                 style={{ color: selectedTextColor }}
                 className="text-[20px] md:text-[2rem] lg:text-[2.5rem] font-semibold "
@@ -172,26 +177,36 @@ const UserAccount = () => {
             style={{ border: `1px solid ${selectedTextColor}` }}
             className="m-3 md:m-4 lg:m-5"
           />
-          <div className="grid grid-cols-2 ms-[5px] md:ms-[125px] lg:ms-[150px]">
-            <div className="grid grid-cols-1 ">
+          <div className="grid grid-cols-2 h-[150px] md:h-[200px]">
+            <div className="grid grid-cols-1 ms-[5px] md:ms-[125px] lg:ms-[150px] ">
               <AddProfileName
                 loggedUser={loggedUser}
                 isProfileNameForm={isProfileNameForm}
                 setIsProfileNameForm={setIsProfileNameForm}
+                setUpdate={setUpdate}
+                setLoggedUser={setLoggedUser}
+                users={users}
+                
               />
             </div>
-            <div
-              className=" text-[5rem] md:text-[6rem] lg:text-[7rem] grid grid-cols-1"
-              // style={{
-              //   boxShadow: isHovered
-              //     ? `70px 35px 140px 40px #ffffff, inset -20px -5px 40px 0 #ffffff`
-              //     : "none",
-              //   transition: "box-shadow 0.3s ease",
-              // }}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              🎥
+            <div className="flex items-end">
+              <div
+                className=" text-[5rem] md:text-[7rem] lg:text-[8rem]  relative "
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <div
+                  style={{
+                    boxShadow: isHovered
+                      ? `80px 15px 60px 60px #ffffff`
+                      : "none",
+                    transition: "box-shadow 0.5s ease",
+                  }}
+                  className="w-[1px] h-[38px] md:h-[53px] lg:h-[60px] bg-white absolute left-[93px] bottom-[15px] md:left-[130px] md:bottom-[21px] lg:left-[149px] lg:bottom-[24px]
+                  "
+                ></div>
+                🎥
+              </div>
             </div>
           </div>
           <UserOptions

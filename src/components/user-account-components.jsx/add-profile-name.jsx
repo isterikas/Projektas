@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { patchData } from "../helpers/update";
 import { useForm } from "react-hook-form";
 import ClickOutside from "./user-menu/click-outside";
+import Loading from "../Loading";
 
 const AddProfileName = (props) => {
-  const { loggedUser, isProfileNameForm, setIsProfileNameForm } = props;
-  const { id } = loggedUser;
+  const { loggedUser, isProfileNameForm, setIsProfileNameForm, setUpdate, setLoggedUser, users, update } =
+    props;
+  const { id, profileName } = loggedUser;
   const [loading, setLoading] = useState(false);
 
   const {
@@ -16,20 +18,46 @@ const AddProfileName = (props) => {
   } = useForm({
     mode: "oninput",
     revalidateMode: "onChange",
+    defaultValues: {
+      profileName: profileName || "",
+    },
   });
 
   const [error, setError] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
   const [isSubmitName, setIsSubmitName] = useState(false);
+  
 
   const closeProfileNameForm = ClickOutside(() => {
     setIsProfileNameForm(false);
   });
 
+  const findProfileName = () => {
+    const thisProfileName = users.find((user) => user.id === id);
+    setLoggedUser(thisProfileName)
+    setUpdate((prev) => prev + 1);
+  }
+
+  useEffect (() => {
+    findProfileName()
+    setUpdate((prev) => prev + 1);
+  }, [update])
+
+ 
+
   const handleProfileNameForm = async (data) => {
     setLoading(true);
     try {
+      
       await patchData("users", id, { profileName: data.profileName });
+  
+      
+      setLoggedUser((prev) => ({
+        ...prev,
+        profileName: data.profileName, 
+      }));
+  
+      setUpdate((prev) => prev + 1);  
       reset();
       setError("");
       setSubmitMessage("You successfully added Profile Name");
@@ -51,12 +79,21 @@ const AddProfileName = (props) => {
   };
 
   useEffect(() => {
+    
     timedFormClosure();
   }, [isSubmitName]);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   if (isProfileNameForm)
     return (
-      <form onSubmit={handleSubmit(handleProfileNameForm)} noValidate ref={closeProfileNameForm}>
+      <form
+        onSubmit={handleSubmit(handleProfileNameForm)}
+        noValidate
+        ref={closeProfileNameForm}
+      >
         <div className="flex flex-col gap-[2px]">
           <label
             htmlFor="profileName"
@@ -75,6 +112,9 @@ const AddProfileName = (props) => {
                 message:
                   "Please enter only letters, numbers, or spaces (max 100 characters)",
               },
+              // validate: (value) => {
+              //   if (value === loggedUser.userName) return "Profile name cannot be same as Username"
+              // }
             })}
           />
           <p className="text-red-500 text-[12px] md:text-[13px] lg:text-[14px]">
@@ -83,7 +123,8 @@ const AddProfileName = (props) => {
           <button
             type="submit"
             disabled={loading}
-            className="bnt-options"
+           
+            className="w-[65px] md:w-[85px] lg:w-[105px] h-[25px] md:h-[30px] rounded-md text-[12px] md:text-[13px] lg:text-[14px] border-[1px] text-white bg-slate-600 hover:bg-slate-500"
           >
             {loading ? "Submitting..." : "Submit"}
           </button>
@@ -100,5 +141,4 @@ const AddProfileName = (props) => {
       </form>
     );
 };
-
 export default AddProfileName;
